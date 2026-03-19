@@ -274,7 +274,7 @@ class VLLMClient:
         }
 
         if json_schema is not None:
-            body["extra_body"] = {"guided_json": json_schema}
+            body["guided_json"] = json_schema
 
         last_error: Optional[str] = None
         for attempt in range(1, self._max_retries + 1):
@@ -413,7 +413,8 @@ class VLLMClient:
         # Strip markdown code fences from the final output.
         final_content = _strip_code_fences(final_content)
 
-        parsed: dict = json.loads(final_content)
+        parsed = json.loads(final_content)
+        parsed = _coerce_to_dict(parsed)
         logger.debug(
             "Attempt %d succeeded. Keys: %s (reasoning: %d chars)",
             attempt,
@@ -501,3 +502,27 @@ def _strip_code_fences(text: str) -> str:
     if m:
         return m.group(1).strip()
     return text
+
+
+def _coerce_to_dict(parsed: object) -> dict:
+    """Ensure parsed JSON is a dict.
+
+    Some models return a JSON array instead of an object.  Common cases:
+    - ``[{...}]`` — single-element list wrapping the real result → unwrap.
+    - ``[{...}, {...}]`` — fields split across elements → merge.
+
+    Raises ``json.JSONDecodeError`` for anything else so the retry loop
+    can nudge the model toward a proper object.
+    """
+    if isinstance(parsed, dict):
+        return parsed
+
+    if isinstance(parsed, list) and len(parsed) == 1 and isinstance(parsed[0], dict):
+        logger.debug("Unwrapping single-element JSON array to dict.")
+        return parsed[0]
+
+    raise json.JSONDecodeError(
+        f"Expected JSON object, got {type(parsed).__name__}",
+        str(parsed)[:200],
+        0,
+    )

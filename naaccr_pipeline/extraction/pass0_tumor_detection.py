@@ -129,16 +129,16 @@ class TumorDetector:
         system_prompt, user_prompt = self._build_detection_prompt(condensed)
         schema = self._build_schema()
 
-        response = await self._llm.extract(system_prompt, user_prompt, schema)
+        llm_response = await self._llm.extract(system_prompt, user_prompt, schema)
 
-        if response.get("_error"):
+        if llm_response.parsed.get("_error"):
             logger.error(
                 "LLM error during tumor detection: %s",
-                response.get("_message", "unknown"),
+                llm_response.parsed.get("_message", "unknown"),
             )
             return [self._unknown_candidate()]
 
-        raw_tumors = response.get("tumors", [])
+        raw_tumors = llm_response.parsed.get("tumors", [])
         if not isinstance(raw_tumors, list):
             logger.warning("Unexpected tumors field type: %s", type(raw_tumors))
             return [self._unknown_candidate()]

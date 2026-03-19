@@ -334,18 +334,18 @@ class Pass4Followup(BaseExtractionPass):
 
         user_prompt = TEXT_SUMMARY_USER_TEMPLATE.format(all_text=aggregated_text)
 
-        response = await self._llm.extract(
+        llm_response = await self._llm.extract(
             TEXT_SUMMARY_SYSTEM_PROMPT, user_prompt, text_schema
         )
 
-        if response.get("_error"):
+        if llm_response.parsed.get("_error"):
             logger.warning(
                 "LLM error generating text summaries: %s",
-                response.get("_message", "unknown"),
+                llm_response.parsed.get("_message", "unknown"),
             )
             return []
 
-        return self._parse_text_summary_response(response, text_items, chunks)
+        return self._parse_text_summary_response(llm_response.parsed, text_items, chunks)
 
     # ------------------------------------------------------------------
     # Text aggregation helpers

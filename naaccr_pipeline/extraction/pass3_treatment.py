@@ -383,14 +383,14 @@ class Pass3Treatment(BaseExtractionPass):
             items, resolver_adapter
         )
 
-        response = await self._llm.extract(system_prompt, user_prompt, json_schema)
+        llm_response = await self._llm.extract(system_prompt, user_prompt, json_schema)
 
-        if response.get("_error"):
+        if llm_response.parsed.get("_error"):
             logger.warning(
                 "LLM error for chunk %s: %s",
                 getattr(chunk, "chunk_id", "?"),
-                response.get("_message", "unknown"),
+                llm_response.parsed.get("_message", "unknown"),
             )
             return []
 
-        return self._parse_llm_response(response, items, chunk)
+        return self._parse_llm_response(llm_response.parsed, items, chunk)
