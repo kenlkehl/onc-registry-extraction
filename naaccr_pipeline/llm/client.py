@@ -1,7 +1,8 @@
 """Fully async LLM client for a local vLLM server.
 
-Handles model discovery, size-based adaptation, structured output via
-guided_json, and retry logic for robust extraction.
+Handles model discovery, size classification, and retry logic for
+robust JSON extraction. JSON output is requested via the prompt text
+(no guided_json). On parse failure, retries with error feedback.
 """
 
 import asyncio
@@ -23,7 +24,6 @@ class ModelProfile:
     model_name: str
     context_window: int
     model_size_class: str  # "small" (<15B), "medium" (15-40B), "large" (40B+)
-    items_per_call: int  # how many NAACCR items per LLM call
 
 
 @dataclass
@@ -59,16 +59,15 @@ class LLMResponse:
 # e.g. "Qwen2.5-72B-Instruct" -> 72, "Meta-Llama-3.1-8B" -> 8
 _PARAM_RE = re.compile(r"(\d+)[bB]")
 
-_SIZE_THRESHOLDS: list[tuple[int, str, int]] = [
-    # (upper_bound_exclusive, class_name, items_per_call)
-    (15, "small", 8),
-    (40, "medium", 15),
+_SIZE_THRESHOLDS: list[tuple[int, str]] = [
+    # (upper_bound_exclusive, class_name)
+    (15, "small"),
+    (40, "medium"),
 ]
-_LARGE_ITEMS = 25
 
 
-def _classify_model(name: str) -> tuple[str, int]:
-    """Return (size_class, items_per_call) inferred from model name."""
+def _classify_model(name: str) -> str:
+    """Return size_class inferred from model name."""
     match = _PARAM_RE.search(name)
     if not match:
         logger.info(
@@ -76,13 +75,13 @@ def _classify_model(name: str) -> tuple[str, int]:
             "defaulting to medium.",
             name,
         )
-        return "medium", 15
+        return "medium"
 
     params_b = int(match.group(1))
-    for upper, cls, items in _SIZE_THRESHOLDS:
+    for upper, cls in _SIZE_THRESHOLDS:
         if params_b < upper:
-            return cls, items
-    return "large", _LARGE_ITEMS
+            return cls
+    return "large"
 
 
 # ---------------------------------------------------------------------------
@@ -106,6 +105,15 @@ class _RateLimited(Exception):
         super().__init__("Rate limited (429)")
 
 
+class _JSONParseError(Exception):
+    """Raised when the LLM output cannot be parsed as JSON."""
+
+    def __init__(self, parse_error: str, malformed_output: str) -> None:
+        self.parse_error = parse_error
+        self.malformed_output = malformed_output
+        super().__init__(f"JSON parse error: {parse_error}")
+
+
 # ---------------------------------------------------------------------------
 # VLLMClient
 # ---------------------------------------------------------------------------
@@ -117,14 +125,14 @@ class VLLMClient:
 
         client = VLLMClient()
         await client.initialize()
-        result = await client.extract(system_prompt, user_prompt, schema)
+        result = await client.extract(system_prompt, user_prompt)
         await client.close()
 
     Or as an async context manager::
 
         async with VLLMClient() as client:
             await client.initialize()
-            result = await client.extract(...)
+            result = await client.extract(system, user)
     """
 
     def __init__(
@@ -163,7 +171,7 @@ class VLLMClient:
         3. Infer model size from the name (e.g. ``72b`` -> large).
         4. Set the context window (default 131 072 if the server does not
            report ``max_model_len``).
-        5. Set ``items_per_call`` based on size class.
+        5. Classify model size for logging.
         """
         self._client = httpx.AsyncClient(timeout=self._timeout)
 
@@ -192,19 +200,17 @@ class VLLMClient:
         )
 
         # 3. Size classification ------------------------------------------
-        size_class, items_per_call = _classify_model(model_name)
+        size_class = _classify_model(model_name)
         logger.info(
-            "Model profile: size_class=%s, context_window=%d, items_per_call=%d",
+            "Model profile: size_class=%s, context_window=%d",
             size_class,
             context_window,
-            items_per_call,
         )
 
         self._model_profile = ModelProfile(
             model_name=model_name,
             context_window=context_window,
             model_size_class=size_class,
-            items_per_call=items_per_call,
         )
         return self._model_profile
 
@@ -234,19 +240,20 @@ class VLLMClient:
         self,
         system_prompt: str,
         user_prompt: str,
-        json_schema: Optional[dict] = None,
     ) -> LLMResponse:
         """Send a chat completion request and return the full LLM response.
+
+        JSON output is requested via the prompt text (no guided_json).
+        On JSON parse failure, the prompt is re-submitted with the error
+        and malformed output appended so the LLM can self-correct.
 
         Parameters
         ----------
         system_prompt:
-            The system-level instruction.
+            The system-level instruction (should include JSON format
+            instructions).
         user_prompt:
-            The user-level prompt (typically the clinical text + item list).
-        json_schema:
-            If provided, passed to vLLM as ``guided_json`` for constrained
-            decoding.
+            The user-level prompt (clinical text + item list + valid codes).
 
         Returns
         -------
@@ -273,10 +280,8 @@ class VLLMClient:
             "max_tokens": self._max_tokens,
         }
 
-        if json_schema is not None:
-            body["guided_json"] = json_schema
-
         last_error: Optional[str] = None
+        last_malformed_output: str = ""
         for attempt in range(1, self._max_retries + 1):
             try:
                 llm_resp = await self._post_completion(body, attempt)
@@ -313,26 +318,28 @@ class VLLMClient:
                 )
                 await asyncio.sleep(wait)
                 last_error = str(exc)
-            except json.JSONDecodeError as exc:
+            except _JSONParseError as exc:
                 logger.warning(
                     "JSON parse failure (attempt %d/%d): %s",
                     attempt,
                     self._max_retries,
-                    exc,
+                    exc.parse_error,
                 )
-                # Nudge the model toward valid JSON on subsequent attempts.
+                last_malformed_output = exc.malformed_output
+                # Re-submit with the error and malformed output so the
+                # LLM can self-correct.
+                error_feedback = (
+                    f"\n\nYour previous response was not valid JSON. "
+                    f"Error: {exc.parse_error}\n"
+                    f"Your response was:\n{last_malformed_output[:2000]}\n\n"
+                    f"Please respond with ONLY valid JSON. "
+                    f"No markdown fences, no commentary."
+                )
                 body["messages"] = [
                     {"role": "system", "content": system_prompt},
-                    {
-                        "role": "user",
-                        "content": (
-                            user_prompt
-                            + "\n\nIMPORTANT: Respond ONLY with valid JSON. "
-                            "No markdown fences, no commentary."
-                        ),
-                    },
+                    {"role": "user", "content": user_prompt + error_feedback},
                 ]
-                last_error = f"JSON parse error: {exc}"
+                last_error = f"JSON parse error: {exc.parse_error}"
 
         logger.error(
             "All %d attempts exhausted. Last error: %s",
@@ -348,14 +355,14 @@ class VLLMClient:
 
     async def extract_batch(
         self,
-        requests: list[tuple[str, str, Optional[dict]]],
+        requests: list[tuple[str, str]],
     ) -> list[LLMResponse]:
         """Dispatch multiple extract() calls concurrently.
 
         Parameters
         ----------
         requests:
-            Each element is ``(system_prompt, user_prompt, json_schema)``.
+            Each element is ``(system_prompt, user_prompt)``.
 
         Returns
         -------
@@ -363,8 +370,8 @@ class VLLMClient:
             Results in the same order as the input requests.
         """
         tasks = [
-            self.extract(sys_p, usr_p, schema)
-            for sys_p, usr_p, schema in requests
+            self.extract(sys_p, usr_p)
+            for sys_p, usr_p in requests
         ]
         return list(await asyncio.gather(*tasks))
 
@@ -383,7 +390,7 @@ class VLLMClient:
             On request timeout.
         httpx.ConnectError
             On connection failure.
-        json.JSONDecodeError
+        _JSONParseError
             When the final content (after reasoning strip) is not valid JSON.
         """
         assert self._client is not None  # noqa: S101
@@ -413,8 +420,12 @@ class VLLMClient:
         # Strip markdown code fences from the final output.
         final_content = _strip_code_fences(final_content)
 
-        parsed = json.loads(final_content)
-        parsed = _coerce_to_dict(parsed)
+        try:
+            parsed = json.loads(final_content)
+            parsed = _coerce_to_dict(parsed)
+        except json.JSONDecodeError as exc:
+            raise _JSONParseError(str(exc), final_content) from exc
+
         logger.debug(
             "Attempt %d succeeded. Keys: %s (reasoning: %d chars)",
             attempt,

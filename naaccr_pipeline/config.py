@@ -1,9 +1,9 @@
 """Pipeline configuration for NAACCR v26 extraction."""
 
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class PipelineConfig(BaseModel):
@@ -12,15 +12,17 @@ class PipelineConfig(BaseModel):
     # vLLM server settings
     vllm_base_url: str = "http://localhost:8000/v1"
     vllm_model: str = "auto"  # discovered at runtime
-    vllm_max_tokens: int = 4096
+    vllm_max_tokens: int = 16384
     vllm_temperature: float = 0.0
-    vllm_timeout: int = 120
+    vllm_timeout: int = 300
 
     # Context / chunking settings
     model_context_window: int = 131072  # discovered at runtime
-    chunk_target_tokens: int = 12000
+    chunk_target_tokens: int = 50000
     chunk_overlap_tokens: int = 500
-    prompt_reserve_tokens: int = 4000
+
+    # Extraction batching
+    items_per_call: int = 50  # NAACCR items per LLM call
 
     # NAACCR data-dictionary CSV paths
     data_items_csv: Path = Path("NAACCRDataItems/DataItems.csv")
@@ -36,3 +38,6 @@ class PipelineConfig(BaseModel):
 
     # Output
     output_format: Literal["naaccr_xml", "naaccr_flat", "csv"] = "naaccr_xml"
+
+    # Checkpointing
+    checkpoint_dir: Optional[Path] = None

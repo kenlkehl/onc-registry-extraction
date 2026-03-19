@@ -12,6 +12,7 @@ dependencies = [
     "lxml>=4.9",
     "rapidfuzz>=3.0",
     "tqdm>=4.60",
+    "pyarrow"
 ]
 
 [project.optional-dependencies]

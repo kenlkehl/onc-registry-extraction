@@ -1,9 +1,8 @@
-"""Build JSON schemas for vLLM guided decoding from NAACCR data items.
+"""Build prompt-level JSON format instructions from NAACCR data items.
 
-The schemas produced here are passed to ``VLLMClient.extract()`` as the
-``json_schema`` parameter, which vLLM uses for constrained (guided) decoding.
-This guarantees the model output conforms to the expected structure -- valid
-NAACCR field names, code enumerations, and date/digit patterns.
+Instead of vLLM's guided_json constrained decoding (which is unreliable
+with complex schemas), we describe the expected JSON format in the prompt
+text and let the LLM produce free-form JSON, retrying on parse failure.
 """
 
 from __future__ import annotations
@@ -15,35 +14,14 @@ logger = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
-# Lightweight protocols so we don't create hard import dependencies on the
-# dictionary module (which may not yet exist).  Any object that satisfies
-# the duck-typed interface will work.
+# Lightweight protocols
 # ---------------------------------------------------------------------------
-
-class NAACCRDataItemLike(Protocol):
-    """Minimal interface expected from a NAACCR data item object."""
-
-    @property
-    def item_number(self) -> int: ...
-
-    @property
-    def item_name(self) -> str: ...
-
-    @property
-    def length(self) -> int: ...
-
-    @property
-    def xml_id(self) -> str: ...
-
-    @property
-    def data_type(self) -> str: ...
-
 
 class CodeResolverLike(Protocol):
     """Minimal interface expected from a code resolver."""
 
-    def get_codes(self, item_number: int) -> list[str]:
-        """Return the list of valid code strings for an item, or []."""
+    def get_valid_codes_prompt(self, item_number: int) -> str:
+        """Return a human-readable string of valid codes, or ''."""
         ...
 
 
@@ -52,103 +30,64 @@ class CodeResolverLike(Protocol):
 # ---------------------------------------------------------------------------
 
 class SchemaBuilder:
-    """Builds JSON schemas for vLLM guided decoding from NAACCR data items.
+    """Builds prompt-level JSON format instructions from NAACCR data items.
 
-    Each data item is represented as a JSON object with three fields:
-
-    * ``value`` -- constrained to valid codes, date patterns, digit
-      patterns, or free text depending on the item type.
-    * ``confidence`` -- a float in [0, 1].
-    * ``evidence`` -- a short string (max 200 chars) citing the source text.
+    Generates text blocks that tell the LLM what JSON structure to produce,
+    including field names, valid codes, and format expectations.
     """
 
     # -- public API -------------------------------------------------------
 
-    def build_extraction_schema(
+    def build_json_format_instructions(
         self,
         items: list[Any],
         code_resolver: Any,
-    ) -> dict:
-        """Generate a JSON schema constraining the LLM output to valid values.
+    ) -> str:
+        r"""Generate prompt text describing the expected JSON output format.
 
         Parameters
         ----------
         items:
-            A list of NAACCR data item objects.  Each must expose at minimum:
-            ``item_number``, ``item_name``, ``length``, ``xml_id``, and
-            ``data_type``.
+            NAACCR data item objects with ``item_number``, ``name``,
+            ``length``, ``xml_id``, ``data_type``, ``allowable_values``.
         code_resolver:
-            An object with a ``get_codes(item_number) -> list[str]`` method
-            that returns valid codes for a given NAACCR item number.
+            Object with ``get_valid_codes_prompt(item_number) -> str``.
 
         Returns
         -------
-        dict
-            A complete JSON Schema object (``{"type": "object", ...}``) ready
-            to be passed to ``VLLMClient.extract()`` as ``json_schema``.
-        """
-        properties: dict[str, dict] = {}
-        required: list[str] = []
+        str
+            A text block to embed in the prompt, e.g.::
 
+                Respond with a JSON object. Each field should be ...
+                Expected fields:
+                - "primarySite": ICD-O-3 topography code (C##.#)
+                ...
+        """
+        field_lines: list[str] = []
         for item in items:
             field_name = self._field_name(item)
-            value_schema = self._value_schema(item, code_resolver)
+            desc = self._field_description(item, code_resolver)
+            field_lines.append(f'- "{field_name}": {desc}')
 
-            properties[field_name] = {
-                "type": "object",
-                "properties": {
-                    "value": value_schema,
-                    "confidence": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                    },
-                    "evidence": {
-                        "type": "string",
-                        "maxLength": 200,
-                    },
-                },
-                "required": ["value", "confidence", "evidence"],
-            }
-            required.append(field_name)
+        fields_block = "\n".join(field_lines)
 
-        schema: dict = {
-            "type": "object",
-            "properties": properties,
-            "required": required,
-        }
-        return schema
+        return (
+            "Respond with a JSON object. For each item, provide an object with:\n"
+            '  "value": the extracted value (use valid codes listed below),\n'
+            '  "confidence": a float 0.0-1.0 indicating extraction confidence,\n'
+            '  "evidence": a short quote (max 200 chars) from the text supporting the value.\n'
+            "\n"
+            "If information is not found in the text, set value to the appropriate "
+            '"unknown" code (e.g. "9", "99", "unknown") and confidence to 0.0.\n'
+            "\n"
+            f"Expected fields:\n{fields_block}"
+        )
 
     def build_simple_schema(self, fields: dict[str, dict]) -> dict:
-        """Build a schema from a manual field specification dict.
+        """Build a JSON schema dict for simple extractions (e.g. tumor detection).
 
-        Useful for non-NAACCR extractions such as the Pass 0 tumor
-        detection step.
-
-        Parameters
-        ----------
-        fields:
-            A mapping of field names to JSON Schema type definitions.
-            Example::
-
-                {
-                    "tumors": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "cancer_type": {"type": "string"},
-                                "primary_site": {"type": "string"},
-                            },
-                            "required": ["cancer_type", "primary_site"],
-                        },
-                    }
-                }
-
-        Returns
-        -------
-        dict
-            A complete JSON Schema object.
+        This is still used by TumorDetector which has a simple enough
+        schema that guided_json works fine.
         """
         return {
             "type": "object",
@@ -160,11 +99,7 @@ class SchemaBuilder:
 
     @staticmethod
     def _field_name(item: Any) -> str:
-        """Derive the JSON field name from a NAACCR data item.
-
-        Prefers the XML NAACCR ID (e.g. ``primarySite``).  Falls back to
-        ``item_<number>`` when the XML ID is absent.
-        """
+        """Derive the JSON field name from a NAACCR data item."""
         xml_id = getattr(item, "xml_id", "") or ""
         xml_id = xml_id.strip()
         if xml_id:
@@ -173,49 +108,35 @@ class SchemaBuilder:
         return f"item_{item_number}"
 
     @staticmethod
-    def _value_schema(item: Any, code_resolver: Any) -> dict:
-        """Build the ``value`` sub-schema for a single NAACCR data item.
-
-        Resolution order
-        ----------------
-        1. If the code resolver returns valid codes for this item, constrain
-           to an enum of those code strings.
-        2. If the data type is ``"date"``, constrain to an 8-digit string
-           pattern (YYYYMMDD).
-        3. If the data type is ``"digits"`` (or the item name / format
-           suggests digits), constrain to a digit-only string of the
-           appropriate length.
-        4. Otherwise treat as free text with a ``maxLength`` based on the
-           item length.
-        """
+    def _field_description(item: Any, code_resolver: Any) -> str:
+        """Build a human-readable description for one field."""
         item_number = getattr(item, "item_number", 0)
+        item_name = getattr(item, "name", "") or getattr(item, "item_name", "")
         item_length = getattr(item, "length", 0) or 1
         data_type = (getattr(item, "data_type", "") or "").strip().lower()
 
-        # 1. Enum of valid codes -----------------------------------------
-        codes: list[str] = []
+        # Try to get valid codes prompt
+        codes_text = ""
         if code_resolver is not None:
             try:
-                codes = code_resolver.get_codes(item_number)
+                codes_text = code_resolver.get_valid_codes_prompt(item_number)
             except Exception:
-                logger.debug(
-                    "code_resolver.get_codes(%d) failed; skipping enum.",
-                    item_number,
-                )
+                pass
 
-        if codes:
-            return {"type": "string", "enum": codes}
+        parts = [f"{item_name} (Item {item_number})"]
 
-        # 2. Date fields -------------------------------------------------
-        if data_type == "date":
-            return {"type": "string", "pattern": r"^\d{8}$"}
+        if codes_text:
+            parts.append(f"Valid codes: {codes_text}")
+        elif data_type == "date":
+            parts.append("YYYYMMDD format (use 99 for unknown day/month)")
+        elif data_type == "digits":
+            allowable = getattr(item, "allowable_values", "") or ""
+            parts.append(f"{item_length}-digit number. {allowable}".strip())
+        elif item_number == 400:  # Primary Site
+            parts.append("ICD-O-3 topography code C##.# (e.g., C50.4)")
+        elif item_number == 522:  # Histology
+            parts.append("4-digit ICD-O-3 morphology code 8000-9989")
+        else:
+            parts.append(f"max {item_length} characters")
 
-        # 3. Digit-only fields -------------------------------------------
-        if data_type == "digits":
-            return {
-                "type": "string",
-                "pattern": rf"^\d{{{item_length}}}$",
-            }
-
-        # 4. Free text ---------------------------------------------------
-        return {"type": "string", "maxLength": max(item_length, 1)}
+        return ". ".join(parts)

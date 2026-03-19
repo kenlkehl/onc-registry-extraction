@@ -7,14 +7,15 @@ Automated extraction of [NAACCR v26](https://www.naaccr.org/) cancer registry da
 Given a dataset of patient clinical documents (pathology reports, operative notes, imaging, progress notes, etc.), this pipeline:
 
 1. **Detects** all distinct primary cancers per patient (handles multiple primaries)
-2. **Extracts** ~580 NAACCR data items across 5 sequential passes:
+2. **Extracts** ~580 NAACCR data items per chunk in domain groups:
    - Demographics & cancer identification (ICD-O-3 site/histology codes)
    - Staging & prognostic factors (TNM, biomarkers, site-specific factors)
    - Treatment (surgery, radiation with 3-phase detail, chemotherapy, hormone, immunotherapy)
    - Follow-up & narrative text summaries
-3. **Validates** against NAACCR interfield edit rules (site/sex, site/histology, TNM consistency, etc.)
-4. **Scores confidence** and generates a prioritized human review queue
-5. **Outputs** NAACCR v26 XML, fixed-width flat file, or CSV with full audit trail
+3. **Updates** extraction across chunks (higher confidence wins)
+4. **Validates** against NAACCR interfield edit rules (site/sex, site/histology, TNM consistency, etc.)
+5. **Scores confidence** and generates a prioritized human review queue
+6. **Outputs** NAACCR v26 XML, fixed-width flat file, or CSV with full audit trail
 
 All LLM inference runs locally via [vLLM](https://docs.vllm.ai/) -- no data leaves the machine.
 
@@ -42,10 +43,10 @@ pip install -e .
 
 ### Start vLLM
 
-Start a vLLM server with your preferred model (the pipeline auto-adapts to model size):
+Start a vLLM server with your preferred model:
 
 ```bash
-# Example with Llama 3.3 70B (recommended for best accuracy)
+# Example with a large model (recommended for best accuracy)
 vllm serve meta-llama/Llama-3.3-70B-Instruct
 
 # Example with a smaller model (faster, lower accuracy)
@@ -82,8 +83,10 @@ uv run naaccr-pipeline input.csv output/
 uv run naaccr-pipeline input.parquet output/ \
     --vllm-url http://localhost:8000/v1 \
     --format naaccr_xml \
+    --chunk-size 50000 \
+    --items-per-call 50 \
     --max-concurrent 16 \
-    --confidence-threshold 0.7 \
+    --checkpoint-dir ./checkpoints \
     --verbose
 ```
 
@@ -102,8 +105,9 @@ The pipeline writes to the output directory:
 | `naaccr_output.xml` | NAACCR v26 XML (NaaccrData > Patient > Tumor hierarchy) |
 | `naaccr_output.dat` | NAACCR v26 fixed-width flat file |
 | `naaccr_output.csv` | Flat CSV with one column per NAACCR item |
-| `audit_trail.csv` | Per-item provenance: source chunk, evidence text, confidence, pass number |
+| `audit_trail.csv` | Per-item provenance: source chunk, evidence text, confidence, round |
 | `review_queue.csv` | Prioritized worklist for human review (CRITICAL/HIGH/MEDIUM/LOW) |
+| `llm_calls.jsonl` | Full log of all LLM interactions (prompts, responses, reasoning) |
 
 ### Converting output to JSON or CSV
 
@@ -133,7 +137,9 @@ usage: naaccr-pipeline [-h] [--vllm-url URL] [--max-concurrent N]
                        [--format {naaccr_xml,naaccr_flat,csv}]
                        [--confidence-threshold FLOAT] [--data-dict DIR]
                        [--temperature FLOAT] [--max-tokens N]
-                       [--max-retries N] [--verbose]
+                       [--max-retries N] [--chunk-size N]
+                       [--items-per-call N] [--checkpoint-dir DIR]
+                       [--verbose]
                        input output
 
 positional arguments:
@@ -142,13 +148,16 @@ positional arguments:
 
 options:
   --vllm-url URL           vLLM server base URL (default: http://localhost:8000/v1)
-  --max-concurrent N       Max concurrent patients (default: 16)
+  --max-concurrent N       Max concurrent patients per round (default: 16)
   --format FORMAT          Output format (default: naaccr_xml)
   --confidence-threshold   Confidence threshold for review flagging (default: 0.7)
   --data-dict DIR          Path to NAACCRDataItems directory (default: NAACCRDataItems)
   --temperature FLOAT      LLM sampling temperature (default: 0.0)
-  --max-tokens N           Max tokens per LLM response (default: 4096)
+  --max-tokens N           Max tokens per LLM response (default: 16384)
   --max-retries N          Max LLM call retries (default: 3)
+  --chunk-size N           Chunk size in tokens (default: 50000)
+  --items-per-call N       NAACCR items per LLM call (default: 50)
+  --checkpoint-dir DIR     Directory for round checkpoints (enables resume)
   -v, --verbose            Enable debug logging
 ```
 
@@ -160,25 +169,28 @@ options:
 Input DataFrame
     |
     v
-[Ingest] Group by patient, detect structured columns, classify & chunk documents
+[Ingest] Group by patient, detect structured columns
     |
     v
-[Pass 0] Tumor Detection -- identify distinct primary cancers per patient
-    |
-    v  (for each detected tumor)
-[Pass 1] Demographics + Cancer ID -- primary site, histology, diagnosis date
-    |
-    v  (site/histology determine what Pass 2 extracts)
-[Pass 2] Staging -- TNM, Summary Stage, biomarkers, site-specific factors
+[Chunk] Concatenate notes chronologically, chunk by token count (50K default)
     |
     v
-[Pass 3] Treatment -- 3 sub-passes: surgery, radiation, systemic therapy
+[Tumor Detect] Identify distinct primary cancers per patient
     |
     v
-[Pass 4] Follow-up + narrative text summaries
+[Round-based extraction]
+    Round 0: all patients' chunk 0 in parallel
+    Round 1: all patients' chunk 1 in parallel (updating prior results)
+    ...
+    Per chunk, per tumor:
+      Demographics + Cancer ID -> resolve site/histology
+      Staging (schema-specific: breast, prostate, lung, etc.)
+      Treatment: surgery, radiation, systemic (3 sub-passes)
+      Follow-up coded items
+      Narrative text summaries (running update)
     |
     v
-[Validate] NAACCR interfield edits, cross-pass consistency checks
+[Validate] NAACCR interfield edits, cross-field consistency checks
     |
     v
 [Score] Confidence scoring, human review flagging
@@ -187,21 +199,27 @@ Input DataFrame
 [Output] NAACCR XML/flat/CSV + audit trail + review queue
 ```
 
-### Model adaptation
+### Chunking strategy
 
-The pipeline discovers the model at startup and adapts:
+All patient notes are concatenated chronologically with date headers and chunked into ~50K-token segments with overlap. No document classification or type-based prioritization. Each chunk is processed as a complete unit, extracting all available NAACCR items.
 
-| Model size | Items per LLM call | Prompt style |
-|------------|-------------------|--------------|
-| Small (<15B) | 8 | Simple, focused |
-| Medium (15-40B) | 15 | Moderate detail |
-| Large (40B+) | 25 | Full instructions |
+### Round-based parallelism
 
-### Parallelization
+- **Round N** = Nth chunk from each patient/tumor
+- All patients' chunk N processed in parallel via `asyncio.Semaphore`
+- Within a chunk, domain extraction is sequential (demographics before staging, since staging items depend on primary site)
+- After each round, extraction state is checkpointed (if `--checkpoint-dir` is set)
 
-- **Patient-level**: `asyncio.Semaphore` controls concurrent patients (default 16)
-- **Chunk-level**: independent chunks within a pass processed via `asyncio.gather()`
-- **Sequential within patient**: Pass 0 -> 1 -> 2 -> 3 -> 4 (each depends on prior results)
+### Running updates across chunks
+
+For each subsequent chunk, the prior extraction state is included in the prompt:
+```
+PRIOR EXTRACTION STATE (update only with higher-confidence evidence):
+- Primary Site (Item 400): C50.4 (confidence: 0.95)
+- Histology (Item 522): 8500 (confidence: 0.90)
+...
+```
+Items are only updated when the new chunk provides stronger evidence (higher confidence wins).
 
 ### Site-specific extraction
 
@@ -217,7 +235,7 @@ Implements 11 critical NAACCR interfield edits:
 - Treatment dates >= diagnosis date
 - Surgery/radiation field internal consistency
 
-Plus 7 cross-pass consistency checks (e.g., if surgery performed, pathologic tumor size should exist).
+Plus 7 cross-field consistency checks (e.g., if surgery performed, pathologic tumor size should exist).
 
 ### Confidence and review
 
@@ -226,6 +244,19 @@ Items are flagged at four priority levels:
 - **HIGH**: Required items below 0.7 confidence
 - **MEDIUM**: Items involved in validation violations
 - **LOW**: Any item below 0.5 confidence
+
+### Checkpointing and resume
+
+With `--checkpoint-dir`, the pipeline saves state after each round:
+```
+checkpoint_dir/
+├── metadata.json           # Completed rounds, work unit count
+├── round_0000.json         # Extraction state after round 0
+├── round_0001.json         # Extraction state after round 1
+└── ...
+```
+
+On restart with the same checkpoint directory, the pipeline automatically resumes from the last completed round.
 
 ## NAACCR data dictionary
 

@@ -127,9 +127,8 @@ class TumorDetector:
 
         # 3. Call LLM
         system_prompt, user_prompt = self._build_detection_prompt(condensed)
-        schema = self._build_schema()
 
-        llm_response = await self._llm.extract(system_prompt, user_prompt, schema)
+        llm_response = await self._llm.extract(system_prompt, user_prompt)
 
         if llm_response.parsed.get("_error"):
             logger.error(
@@ -239,7 +238,12 @@ class TumorDetector:
             "5. For each cancer found, provide: cancer type, body site, "
             "approximate diagnosis date, and a quote from the text.\n"
             "6. If only one cancer is found, that is fine.\n\n"
-            "Respond with JSON."
+            "Respond with a JSON object containing a \"tumors\" array. "
+            "Each tumor should have: \"cancer_type\" (string), "
+            "\"primary_site\" (string), \"laterality\" (one of: left, right, "
+            "bilateral, not_applicable, unknown), "
+            "\"approximate_diagnosis_date\" (YYYY-MM or YYYY), "
+            "and \"evidence\" (short quote, max 300 chars)."
         )
 
         text_sections: list[str] = []
