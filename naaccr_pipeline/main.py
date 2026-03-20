@@ -21,6 +21,7 @@ from naaccr_pipeline.llm.client import VLLMClient
 from naaccr_pipeline.llm.structured_output import SchemaBuilder
 from naaccr_pipeline.extraction.pass0_tumor_detection import TumorDetector
 from naaccr_pipeline.extraction.base import ExtractionResult
+from naaccr_pipeline.convert import parse_naaccr_xml, write_json
 from naaccr_pipeline.extraction.round_orchestrator import (
     RoundOrchestrator,
     TumorWorkUnit,
@@ -343,6 +344,10 @@ class NAACCRExtractionPipeline:
                 xml_path = str(output_path / "naaccr_output.xml")
                 writer.write_xml(value_records, xml_path, patient_groups)
                 logger.info("NAACCR XML written to %s", xml_path)
+                json_path = str(output_path / "naaccr_output.json")
+                json_records = parse_naaccr_xml(xml_path)
+                write_json(json_records, json_path, skip_empty=True)
+                logger.info("JSON written to %s", json_path)
             elif fmt == "naaccr_flat":
                 flat_path = str(output_path / "naaccr_output.dat")
                 writer.write_flat_file(value_records, flat_path)

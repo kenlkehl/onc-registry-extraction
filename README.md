@@ -245,6 +245,27 @@ Items are flagged at four priority levels:
 - **MEDIUM**: Items involved in validation violations
 - **LOW**: Any item below 0.5 confidence
 
+### How fields and allowed values reach the LLM
+
+The LLM never sees a raw schema or unconstrained output space. Every prompt includes an explicit list of which NAACCR fields to extract and what values are valid for each one. The flow:
+
+1. **Item selection** (`extraction/chunk_extractor.py`): Hardcoded item-number lists define which NAACCR items to extract per domain (demographics, surgery, radiation, systemic, follow-up, narratives). Staging items are determined dynamically at runtime — `SchemaRegistry` maps the detected primary site + histology to a cancer schema (breast, prostate, lung, etc.) and returns only the relevant staging/prognostic items.
+
+2. **Code lookup** (`dictionary/code_resolver.py`): `CodeResolver.get_valid_codes_prompt()` looks up each item's valid codes from `CodeList.csv` and formats them as a compact reference string, e.g. `"Valid codes: 0=In situ, 1=Localized, 2=Regional by direct extension, ..., 9=Unknown"`.
+
+3. **Field descriptions** (`llm/structured_output.py`): `SchemaBuilder.build_json_format_instructions()` iterates the items for the current batch and builds a text block listing each field with its `xmlNaaccrId` as the JSON key, the item name and number, and the valid codes from step 2. For items without discrete codes, it adds format guidance (e.g. `YYYYMMDD` for dates, `C##.#` for ICD-O-3 sites, digit count for numeric fields). Example output:
+
+   ```
+   Expected fields:
+   - "primarySite": Primary Site (Item 400). ICD-O-3 topography code C##.# (e.g., C50.4)
+   - "behaviorCodeIcdO3": Behavior Code ICD-O-3 (Item 523). Valid codes: 0=Benign, 1=Uncertain..., 3=Malignant
+   - "dateOfDiagnosis": Date of Diagnosis (Item 390). YYYYMMDD format (use 99 for unknown day/month)
+   ```
+
+4. **Prompt injection** (`extraction/chunk_extractor.py` + `extraction/prompts/chunk_extraction.py`): The field descriptions are injected into both the **system prompt** (via `{json_format_instructions}`) and the **user prompt** (via `{json_field_descriptions}`), so the LLM sees the valid codes twice. The domain-specific system prompts also contain hardcoded summaries of the most critical codes (e.g. Summary Stage values, surgical margin codes, radiation modality codes) for additional reinforcement.
+
+5. **Post-hoc validation** (`dictionary/code_resolver.py`): After the LLM responds, `CodeResolver.resolve()` maps each returned value back to a valid NAACCR code using a 6-tier strategy: exact match → case-insensitive → description match → fuzzy match (rapidfuzz, score >85) → numeric range → fail. Resolution confidence is combined with the LLM's self-reported confidence to produce the final score.
+
 ### Checkpointing and resume
 
 With `--checkpoint-dir`, the pipeline saves state after each round:
