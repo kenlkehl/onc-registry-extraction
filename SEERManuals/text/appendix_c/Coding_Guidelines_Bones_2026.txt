@@ -1,0 +1,18 @@
+                         SEER Program Coding and Staging Manual 2026
+
+
+                                      Coding Guidelines
+
+               Bones, Joints, and Articular Cartilage C400–C419
+         Peripheral Nerves and Autonomic Nervous System C470–C479
+         Connective, Subcutaneous, and Other Soft Tissues C490–C499
+
+Laterality
+
+Laterality is required for sites C400-C403, C471-C472, and C491-C492.
+
+
+
+
+                                  Appendix C: Coding Guidelines         1
+

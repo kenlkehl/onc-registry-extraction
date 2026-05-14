@@ -1,0 +1,93 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                            Surgery Codes
+
+                                              Cervix Uteri
+                                              C530–C539
+
+[SEER Note: Do not code dilation and curettage (D&C) as Surgery of Primary Site 2023 (NAACCR
+#1291) for invasive cancers.]
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A100 Local tumor destruction, NOS
+     A110 Photodynamic therapy (PDT)
+     A120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+     A130 Cryosurgery
+     A140 Laser
+     A150 Loop electrocautery excision procedure (LEEP)
+     A160 Laser ablation
+     A170 Thermal ablation
+No specimen sent to pathology from surgical events A100–A170
+
+A200 Local tumor excision, NOS
+[SEER Note: Margins of resection may have microscopic involvement. Procedures in code A200 include
+but are not limited to: cryosurgery, electrocautery, excisional biopsy, laser ablation, or thermal ablation.]
+       A260 Excisional biopsy, NOS
+       A270 Cone biopsy
+       A240 Cone biopsy WITH gross excision of lesion
+       A290 Trachelectomy; removal of cervical stump; cervicectomy
+
+      Any combination of A200, A240, A260, A270, or A290 WITH
+           A210 Electrocautery
+           A220 Cryosurgery
+           A230 Laser ablation or excision
+      A250 Dilatation and curettage; endocervical curettage (for in situ only)
+      A280 Loop electrocautery excision procedure (LEEP)
+
+A300 Total hysterectomy (simple, pan-) WITHOUT removal of tubes and ovaries
+Total hysterectomy removes both the corpus and the cervix uteri and may also include a portion of
+vaginal cuff
+
+A400 Total hysterectomy (simple, pan-) WITH removal of tubes and/or ovary
+Total hysterectomy removes both the corpus and the cervix uteri and may also include a portion of
+vaginal cuff
+
+A500 Modified radical or extended hysterectomy; radical hysterectomy; extended radical hysterectomy
+     A510 Modified radical hysterectomy
+     A520 Extended hysterectomy
+     A530 Radical hysterectomy; Wertheim procedure
+
+
+
+                                       Appendix C: Surgery Codes                                            1
+                         SEER Program Coding and Staging Manual 2026
+
+
+      A540 Extended radical hysterectomy
+
+A600 Hysterectomy, NOS, WITH or WITHOUT removal of tubes and ovaries
+     A610 WITHOUT removal of tubes and ovaries
+     A620 WITH removal of tubes and ovaries
+
+A700 Pelvic exenteration
+     A710 Anterior exenteration
+           Includes bladder, distal ureters, and genital organs WITH their ligamentous attachments and
+           pelvic lymph nodes
+[SEER Note: Do not code removal of pelvic lymph nodes under Surgical Procedure of Other Site
+(NAACCR #1294).]
+     A720 Posterior exenteration
+           Includes rectum and rectosigmoid WITH ligamentous attachments and pelvic lymph nodes
+[SEER Note: Do not code removal of pelvic lymph nodes under Surgical Procedure of Other Site
+(NAACCR #1294).]
+     A730 Total exenteration
+            Includes removal of all pelvic contents and pelvic lymph nodes
+[SEER Note: Do not code removal of pelvic lymph nodes under Surgical Procedure of Other Site
+(NAACCR #1294).]
+     A740 Extended exenteration
+            Includes pelvic blood vessels or bony pelvis
+
+Specimen sent to pathology from surgical events A200-A740
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                    Appendix C: Surgery Codes                                        2
+

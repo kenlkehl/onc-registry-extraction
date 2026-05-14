@@ -1,0 +1,87 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                           Surgery Codes
+
+                                            Rectosigmoid
+                                                C199
+
+Code removal/surgical ablation of single or multiple liver metastases under the data item Surgical
+Procedure of Other Site (NAACCR #1294).
+
+[SEER Note: Code Circumferential Resection Margin (CRM) (NAACCR #3823) when assigning surgery
+codes A270, A300-A800. CRM is not applicable for other surgery codes for this site.]
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A100 Local tumor destruction, NOS
+     A120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+No specimen sent to pathology from surgical events A100 and A120
+
+A200 Local tumor excision, NOS
+     A260 Polypectomy
+     A270 Excisional biopsy
+
+      Any combination of A200, A260, or A270 WITH
+           A220 Electrocautery
+
+A300 Segmental resection; partial proctosigmoidectomy, NOS
+     A310 Plus resection of contiguous organs; example: small bowel, bladder
+
+      Procedures coded A300 include, but are not limited to:
+            Anterior resection
+            Hartmann’s operation
+            Low anterior resection (LAR)
+            Partial colectomy, NOS
+            Rectosigmoidectomy, NOS
+            Sigmoidectomy
+
+A400 Pull through WITH sphincter preservation (colo-anal anastomosis)
+[SEER Note: Procedures coded A400 include but are not limited to: Altemeier’s operation, Duhamel’s
+operation, Soave’s submucosal resection, Swenson’s operation, Turnbull’s operation.]
+
+A500 Total proctectomy
+[SEER Note: Procedures coded A500 include but are not limited to: Abdominoperineal resection (A & P
+resection), anterior/posterior resection (A/P resection)/Miles’ operation, Rankin’s operation.]
+
+A510 Total colectomy
+[SEER Note: Removal of the colon from cecum to rectosigmoid or portion of rectum.]
+
+
+
+
+                                      Appendix C: Surgery Codes                                      1
+                         SEER Program Coding and Staging Manual 2026
+
+
+A550 Total colectomy WITH ileostomy, NOS
+     A560 Ileorectal reconstruction
+     A570 Total colectomy WITH other pouch; example: Koch pouch
+
+A600 Total proctocolectomy, NOS [SEER Note: Combination of A500 and A510.]
+     A650 Total proctocolectomy WITH ileostomy, NOS
+     A660 Total proctocolectomy WITH ileostomy and pouch
+     Removal of the colon from cecum to the rectosigmoid or a portion of the rectum
+
+A700 Colectomy or proctocolectomy resection in continuity with other organs; pelvic exenteration
+[SEER Note: Procedures that may be part of an en bloc resection include, but are not limited to: an
+oophorectomy and a rectal mucosectomy. Code A700 includes any colectomy (partial, hemicolectomy or
+total) with an en bloc resection of any other organs. The “other organs” may be partially or totally
+resected. “In continuity with” or “en bloc” means that all of the tissues were removed during the same
+procedure, but not necessarily in a single specimen.]
+
+A800 Colectomy, NOS; Proctectomy, NOS
+
+Specimen sent to pathology from surgical events A200-A800
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                    Appendix C: Surgery Codes                                        2
+

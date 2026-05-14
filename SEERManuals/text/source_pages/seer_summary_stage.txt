@@ -1,0 +1,258 @@
+Summary Stage 2018 - SEER
+Skip to Main Content
+An official website of the United States government
+Share
+on Facebook
+Tweet
+Print
+Search SEER:
+Main Menu
+
+Main Menu
+
+Home
+
+Cancer Statistics
+
+Cancer Statistics
+
+Reports on Cancer
+
+Annual Report to the Nation on the Status of Cancer
+
+Cancer Stat Facts
+
+Preliminary Cancer Incidence Rates and Trends
+
+SEER Publications
+
+Interactive Tools, Maps, & Graphs
+
+Cancer Statistics Explorer Network
+
+Understanding Statistics
+
+Did You Know? Video Series
+
+Defining Cancer Statistics
+
+Glossary of Statistical Terms
+
+SEER Data & Software
+
+SEER Data & Software
+
+SEER Incidence Database
+
+Comparison of Data Products
+
+How to Request the Data
+
+Documentation for Data
+
+SEER*Stat Database Details
+
+NCCR Databases in SEER*Stat
+
+Variable and Recode Definitions
+
+U.S. Datasets
+
+U.S. Mortality
+
+U.S. Populations
+
+Standard Populations
+
+SEER Linked Databases
+
+Statistical Software
+
+SEER*Stat
+
+SEER*Prep
+
+Health Drivers Calculator (HD*Calc)
+
+Methods & Tools for Population-based Cancer Statistics
+
+Registry Operations
+
+Registry Operations
+
+Reporting Guidelines
+
+SEER Program Coding Manual
+
+Hematopoietic Project
+
+Solid Tumor Rules
+
+Tools & Software
+
+Glossary for Registrars
+
+SEER*Rx - Drug Database
+
+SEER Abstracting Tool
+
+SEER Data Management System (SEER*DMS)
+
+Staging
+
+Registrar Staging Assistant (SEER*RSA)
+
+Summary Stage 2018
+
+Staging Resources
+
+Extent of Disease 2018
+
+Questions & Answers
+
+SEER Inquiry System
+
+Ask a SEER Registrar
+
+Data Collection Answers
+
+Cancer PathCHART
+
+Training
+
+News & Events
+
+About SEER
+
+About SEER
+
+Program Overview
+
+Goals of the SEER Program
+
+Fact Sheets & Brochures
+
+Collaborating Organizations
+
+SEER Registries
+
+What is a Cancer Registry?
+
+List of Registries
+
+Registry Groupings
+
+Population Characteristics
+
+Research Activities
+
+Residual Tissue Repository Program
+
+SEER-Linked Virtual Tissue Repository Program
+
+SEER Data Quality Initiatives
+Section Menu
+
+Home
+
+Registry Operations
+
+Staging
+
+Summary Stage 2018
+
+Summary Stage 2018
+Released November 24, 2025 (Version 3.3)
+Staging
+
+Registrar Staging Assistant (SEER*RSA)
+
+Summary Stage 2018
+
+Summary Stage Manual 2000
+
+Staging Resources
+
+Extent of Disease (EOD) 2018
+
+Pediatric Data Collection System and Staging Manual
+
+Collaborative Stage
+
+Summary Stage is the most basic way of categorizing how far a cancer has spread from its point of origin. Historically, Summary Stage has also been called General Stage, California Stage, historic stage, and SEER Stage. The 2018 version of Summary Stage applies to every site and/or histology combination, including lymphomas and leukemias. Summary Stage uses all information available in the medical record; in other words, it is a combination of the most precise clinical and pathological documentation of the extent of disease.
+
+The Summary Stage Manual is provided below as a single PDF.
+
+Complete Summary Stage 2018 Manual
+(PDF, 3.7 MB)
+
+Revision History
+
+There were no changes between v3.2 and v3.3.
+
+Refer to the
+Historical Staging and Coding Manuals
+for previous versions of the manual.
+
+Suggested Citation
+
+Ruhl JL, Callaghan C, Schussler N (eds.) Summary Stage 2018: Codes and Coding Instructions, National Cancer Institute, Bethesda, MD, 2024.
+
+Copyright Information
+
+All material in this report is in the public domain and may be reproduced or copied without permission; citation as to source, however, is appreciated.
+Return to Top
+
+SEER is supported by the
+Surveillance Research Program (SRP)
+in NCI's
+Division of Cancer Control and Population Sciences (DCCPS)
+. SRP provides national leadership in the science of cancer surveillance as well as analytical tools and methodological expertise in collecting, analyzing, interpreting, and disseminating reliable population-based statistics.
+
+Follow SEER
+
+Sign up for email updates
+Sign Up
+
+Contact Information
+
+Contact SEER
+
+NCI LiveHelp Online Chat
+
+More Information
+
+Careers
+
+Sitemap
+
+Using This Website
+
+Policies
+
+Accessibility
+
+Disclaimer
+
+FOIA
+
+HHS Vulnerability Disclosure
+
+Privacy & Security
+
+Reuse of Graphics and Text
+
+Website Linking
+
+U.S. Department of Health and Human Services
+
+National Institutes of Health
+
+National Cancer Institute
+
+USA.gov
+
+NIH... Turning Discovery Into Health
+®
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125238734-1');
+var fb_page = window.location.href; //current page url var page_title = $("title").text(); //current page title fb_page = "https://www.facebook.com/sharer/sharer.php?u=" + fb_page + "&t=" + page_title; //insert url and title into the FB sharer $(".facebook-share-button").attr('href', fb_page); //add sharer url to link

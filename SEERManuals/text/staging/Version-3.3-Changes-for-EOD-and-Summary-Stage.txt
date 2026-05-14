@@ -1,0 +1,120 @@
+This document shows the changes that were made to EOD and Summary Stage 2018 for the SEER*RSA version 3.3 release.
+
+Table 1: Updated Schemas due to AJCC Version 9 rolling updates, Version 3.3
+
+Table 2: Changes to EOD Schemas, Version 3.3
+
+There were no Summary Stage changes for 2026
+Table 1: Updated Schemas due to AJCC Version 9 rolling updates, Version 3.3
+        Schema        Applicable Years Comments
+    Major Salivary         2026+          AJCC’s Major Salivary Glands, Version 9, will be used with 2026+ diagnosis
+        Glands
+                                          There are now two EOD Major Salivary Gland schemas
+       Version 9
+                                              • EOD Major Salivary Glands 8th: 2018-2025 (Schema ID: 00080)
+                                              • EOD Major Salivary Glands Version 9: 2026+ (Schema ID: 09081)
+
+                                            Summary Stage chapter: Major Salivary Gland (2018+)
+  Oropharynx HPV-            2026+          AJCC’s Oropharynx HPV-Associated, Version 9 will be used with 2026+ diagnosis (previously Oropharynx
+     Associated                             HPV Mediated (p16+). Name change effective for 2018+)
+
+                                            There are now two EOD Oropharynx schemas
+                                               • EOD Oropharynx HPV-Associated; 8th 2018-2025 (Schema ID: 00100)
+                                               • EOD Oropharynx HPV-Associated Version 9: 2026+ (Schema ID: 09100)
+  Oropharynx HPV-                           Name change, previously Oropharynx (p16-), effective for 2018+
+    Independent
+   Table 2: Changes to EOD Schemas, Version 3.3
+     Schema           Data Item     Code   Original Text                    Updated/New Text
+   Lip, Tongue       EOD Regional    NA    Clinical vs pathological notes   Note X: CLINICAL AND PATHOLOGICAL codes
+ Anterior, Gum,        Nodes                                                    • This schema has lymph node codes that are defined
+Floor of Mouth,                                                                     as CLINICAL assessment only
+   Hard Palate,                                                                     or PATHOLOGICAL assessment only.
+ Buccal Mucosa,                                                             No surgical resection
+  Mouth Other,                                                                  • Use CLINICAL assessment only codes (XXX) when there is a
+ Major Salivary                                                                     clinical work up only and there is NO surgical resection of
+     Glands,                                                                        the primary tumor or site WITH
+   Oropharynx-                                                                           o Any microscopic examination of regional lymph
+   Associated,                                                                               nodes, which includes FNA, core biopsy, sentinel
+   Oropharynx                                                                                node biopsy, lymph node excision, or lymph node
+  Independent,                                                                               dissection done during the clinical work up.
+  Hypopharynx,                                                              Surgical resection without neoadjuvant therapy
+Maxillary Sinus,                                                                • Use PATHOLOGICAL assessment only codes (XXX) when
+ Nasal Cavity &                                                                     there is a surgical resection of the primary tumor or
+ Ethmoid Sinus,                                                                     site WITH
+     Larynx,                                                                             o Any microscopic examination of regional lymph
+    Cutaneous                                                                                nodes, which includes FNA, core biopsy, sentinel
+  Carcinoma of                                                                               node biopsy, lymph node excision done or lymph
+Head and Neck,                                                                               node dissection performed.
+ Appendix, Bile                                                             Surgical resection after neoadjuvant therapy
+   Ducts Distal/                                                                • If patient has neoadjuvant therapy, and the clinical
+Perihilar, Breast,                                                                  assessment is equal to or greater than the pathological
+Colon & Rectum,                                                                     assessment, then the clinical assessment codes take
+   Cystic Duct,                                                                     priority. Otherwise, code the pathologic assessment.
+   Esophagus,                                                                            o See EOD 2018 General Instructions for further
+   Gallbladder,                                                                              instructions on coding cases with neoadjuvant
+Pancreas, Small                                                                              therapy,
+    Intestine,                                                                               https://seer.cancer.gov/tools/staging/eod/.
+Stomach, Testis
+Schema     Data Item    Code   Original Text                       Updated/New Text
+ Breast   EOD Primary    NA    Note 2: Extension to skin or        Note 2: Clinical evidence ONLY descriptions
+            Tumor              subcutaneous tissue                    • Adherence, attachment, fixation, induration, and thickening
+                                   • Adherence, attachment,                are clinical evidence of extension to skin or subcutaneous
+                                       fixation, induration, and           tissue; assign code 200 if that is the only information
+                                       thickening are clinical             available.
+                                       evidence of extension to                 o Do not use these descriptions for pathological
+                                       skin or subcutaneous                         assessment of the breast.
+                                       tissue; assign code 200.
+                                                                   Rest of notes renumbered
+Breast    EOD Primary   450,   Two codes set to OBSOLETE           It was determined that codes 450 and 500 were incorrect.
+            Tumor       700                                        Inflammatory carcinoma should not be part of the definition. Code
+                                                                   450 removed, since removing the diagnosis of inflammatory
+                                                                   carcinoma makes it a duplicate of code 400. Code 700 was also
+                                                                   removed since Inflammatory carcinoma can only be one code (600).
+
+                                                                   Codes 450 and 700 are listed as obsolete for Version 3.3. These will
+                                                                   be removed, and older data converted, in Version 3.4.
+
+                                                                   Code 500 had “diagnosis of inflammatory carcinoma” removed
+   Schema          Data Item    Code   Original Text                      Updated/New Text
+Lung, Version 9   EOD Primary    500   Any size tumor                     Any size tumor
+                    Tumor                  • Brachial plexus, inferior       • Azygos vein (moved from code 650)
+                                               branches or NOS               • Chest wall (thoracic wall) (separate lesion-see EOD Mets)
+                                           • Chest wall (thoracic wall)      • Diaphragm (separate lesion-see EOD Mets)
+                                               (separate lesion-see EOD      • Pancoast tumor (superior sulcus syndrome), NOS
+                                               Mets)                         • Parietal pericardium
+                                           • Diaphragm (separate             • Parietal pleura (PL3)
+                                               lesion-see EOD Mets)          • Pericardium, NOS
+                                           • Pancoast tumor (superior        • Phrenic nerve
+                                               sulcus syndrome), NOS         • Stellate ganglion and thoracic nerve roots (see code 650 for
+                                           • Parietal pericardium                 other nerves)
+                                           • Parietal pleura (PL3)        Separate tumor nodule(s) in the same lobe as the primary
+                                           • Pericardium, NOS
+                                           • Phrenic nerve                See code 650 for Brachial plexus, inferior branches or NOS
+                                       Separate tumor nodule(s) in the
+                                       same lobe as the primary
+   Schema          Data Item    Code   Original Text                      Updated/New Text
+Lung, Version 9   EOD Primary    650   Code 600 + (100-500)               Code 600 + (100-500)
+                    Tumor              Carina with involvement of any     Carina with involvement of any other parts of lung
+                                       other parts of lung                Blood vessel(s) (major)
+                                       Blood vessel(s) (major)                • Aorta
+                                           • Aorta                            • Brachiocephalic vein
+                                           • Azygos vein                      • Pulmonary artery or vein
+                                           • Pulmonary artery or vein         • Superior vena cava (SVC syndrome)
+                                           • Superior vena cava (SVC          • Supra-aortic arteries
+                                               syndrome)                  Brachial plexus (trunks, divisions, cords, or terminal nerves) (moved
+                                       Compression of esophagus or        from code 500)
+                                       trachea specified as direct        Compression of esophagus or trachea specified as direct extension
+                                       extension                          Esophagus
+                                       Esophagus                          Mediastinum, extrapulmonary or NOS
+                                       Mediastinum, extrapulmonary or     Nerve(s)
+                                       NOS                                    • Cervical sympathetic (Horner's syndrome)
+                                       Nerve(s)                                       o Excludes stellate ganglion and thoracic nerve roots
+                                           • Cervical sympathetic                          (see Code 500)
+                                               (Horner's syndrome)            • Recurrent laryngeal (vocal cord paralysis)
+                                           • Recurrent laryngeal (vocal       • Vagus
+                                               cord paralysis)            Subclavian vessels
+                                           • Vagus                        Thymus
+                                       Trachea                            Trachea
+
+                                                                          Azygos vein moved to code 500
+

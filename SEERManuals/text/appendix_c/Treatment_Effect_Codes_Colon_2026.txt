@@ -1,0 +1,140 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+          Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+       Schemas: Colon and Rectum, Esophagus, Stomach, Anus, Pancreas
+
+Neoadjuvant Therapy--Treatment Effect data item [NAACCR #1634] is related to the Neoadjuvant
+Therapy data item [NAACCR #1632]. This data item records the findings from the post neoadjuvant
+therapy surgical pathology report ONLY when surgery is performed after neoadjuvant therapy. This set
+of codes applies to the schemas: Colon and Rectum, Esophagus, Stomach, Anus, and Pancreas.
+
+ Code Description
+  0   Neoadjuvant therapy not given/no known presurgical therapy
+  1   Present: No viable cancer cells
+      Complete response
+      Score 0
+  2   Present: Single cells or rare small groups of cancer cells
+      Near complete response
+      Score 1
+  3   Present: Residual cancer with evident tumor regression, but more than single cells or rare small
+      groups of cancer cells
+      Partial response
+      Minimal response
+      Score 2
+  4   Absent: Extensive residual cancer with no evident tumor regression
+      Poor or no response
+      Score 3
+  6   Neoadjuvant therapy completed and surgical resection performed, response not documented or
+      unknown
+      Cannot be determined
+  7   Neoadjuvant therapy completed and planned surgical resection not performed
+  9   Unknown if neoadjuvant therapy performed
+      Unknown if planned surgical procedure performed after completion of neoadjuvant therapy
+      Death certificate only (DCO)
+
+
+For purposes of this data item, neoadjuvant therapy is defined as systemic treatment (chemotherapy,
+endocrine/hormone therapy, targeted therapy, immunotherapy, or biological therapy) and/or radiation
+therapy given to shrink a tumor before surgical resection.
+
+Surgical resection: For purposes of this data item, surgical resection is defined as the most definitive
+surgical procedure that removes some or all of the primary tumor or site, with or without lymph nodes
+and/or distant metastasis. For many sites, this would be Surgical Codes A300-A800 or B300-B800;
+however, there are some sites where surgical codes less than A300 or B300 could be used, for example,
+Code B290 for Breast (central lumpectomy).
+
+Note: This data item is not the same as AJCC’s Post Therapy Path (yp) Pathological Response, which is
+based on the managing/treating physician’s evaluation from the surgical pathology report and clinical
+evaluation after neoadjuvant therapy. This data item addresses response based on the surgical pathology
+report including the Treatment Effect section of the CAP Cancer Protocol if applicable.
+
+
+
+
+            Appendix C: Site-Specific Codes for Neoadjuvant Therapy Treatment Effect                       1
+                         SEER Program Coding and Staging Manual 2026
+
+
+Coding Instructions
+
+Use the Neoadjuvant Therapy--Treatment Effect data item [NAACCR #1634] to record the findings from
+the post neoadjuvant therapy surgical pathology report ONLY including the Treatment Effect section of
+the CAP Cancer Protocol if applicable.
+
+      1.    Assign code 0
+            a.    When the patient did not receive neoadjuvant therapy prior to surgical resection
+            b.    When the treatment administered is not neoadjuvant therapy (pre-surgical treatment)
+                  because surgical resection was not planned
+                  Example: Patient with unresectable cancer (no surgical resection planned),
+                  chemotherapy and radiation administered.
+            c.    It is clear that the patient did not have neoadjuvant therapy based on the sequence of
+                  diagnosis and treatment
+                  Example: Patient diagnosed with cancer via needle core biopsy, had surgical resection
+                  followed by chemotherapy and radiation.
+            d.    For autopsy only cases
+            Note: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 0 or 3.
+      2. Assign code 1 when
+            a.    A complete response (CR) is documented in the surgical pathology report
+                  Note: CR is defined as no viable cancer cells seen.
+            b.    The treatment effect score is documented as 0
+            c.    There is residual in situ cancer only
+            Note: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 1 or 2.
+      3. Assign code 2 when
+            a.    A near complete response is documented in the surgical pathology report
+                  Note: Near complete response is defined as the presence of single cells or rare small
+                  groups of cancer cells.
+            b.    The treatment effect score is documented as 1
+            Note: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 1 or 2.
+      4. Assign code 3 when
+            a.    A partial response is documented in the surgical pathology report
+                  Note: Partial or minimal response is defined as evidence of tumor regression, but
+                  more than single cells present or there are rare small groups of cancer cells present.
+            b.    The treatment effect score is documented as 2
+            Note: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 1 or 2.
+      5. Assign code 4 when
+            a.    A poor or no response is documented in the surgical pathology report
+
+
+
+
+           Appendix C: Site-Specific Codes for Neoadjuvant Therapy Treatment Effect                        2
+                  SEER Program Coding and Staging Manual 2026
+
+
+     Note: Poor or no response is defined as no evidence of tumor regression.
+     b.    The treatment effect score is documented as 3
+     Note: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 1 or 2.
+6. Assign code 6 when
+     a.    Neoadjuvant therapy was completed and there is no documented treatment response in
+           the surgical pathology report
+     Note: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 1 or 2.
+7. Assign code 7 when
+     a.    The planned post neoadjuvant surgical resection was not completed for reasons
+           including
+           i.     Complete clinical response and planned surgical resection cancelled
+           ii.    Treatment failure (stable or progressive disease) and planned surgical resection
+                  cancelled
+           iii.   Complications and planned surgical resection cancelled
+           iv.    Patient refusal of planned surgical resection
+           v.     Planned surgical resection started but not completed (surgical resection aborted)
+     Note 1: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 1 or 2.
+     Note 2: Code the reason for the surgery not done in Reason for No Surgery [NAACCR
+     #1340].
+8. Assign code 9 when
+     a.    It is unknown whether neoadjuvant therapy was administered
+           i.     Planned, but unknown if given
+           ii.    Death certificate only (DCO)
+     b.    The only information available is the managing/treating physician’s evaluation
+     Note 1: Neoadjuvant Therapy data item [NAACCR #1632] is coded to 9.
+     Note 2: Neoadjuvant Therapy--Clinical Response data item [NAACCR #1633] is coded to 9.
+     Note 3: Code 9 (unknown) should be used rarely.
+     Note 4: Use code 0 when it is clear that the patient did not have neoadjuvant therapy based
+     on the sequence of diagnosis and treatment.
+
+
+
+
+     Appendix C: Site-Specific Codes for Neoadjuvant Therapy Treatment Effect                      3
+

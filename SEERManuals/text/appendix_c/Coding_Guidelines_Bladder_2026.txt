@@ -1,0 +1,272 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                               Bladder
+                                              C670–C679
+Reportability
+
+Do not report bladder cancer based on UroVysion test results alone. Report the case if there is a
+physician statement of malignancy and/or the patient was treated for cancer.
+
+Not reportable
+      Papillary urothelial neoplasms of low malignant potential (PUNLMPs)
+             The WHO classification categorizes "PUNLMP" as borderline, 8130/1. The definition is "a
+             papillary urothelial tumor which resembles the exophytic urothelial papilloma, but shows
+             increased cellular proliferation exceeding the thickness of normal urothelium." The
+             histopathologic description is "the papillae of PUNLMP are discrete, slender and not fused
+             and are lined by multilayered urothelium with minimal to absent cytologic atypia….Mitoses
+             are rare and have a basal location."
+      Papilloma of bladder
+             The WHO classification categorizes "urothelial papilloma" as benign, 8120/0. The definition
+             is "composed of a delicate fibrovascular core covered by urothelium indistinguishable from
+             that of normal urothelium." The histopathologic description is "characterized by discrete
+             papillary fronds with occasional branching…the epithelium lacks atypia…mitoses are absent
+             to rare and, if present, are basal in location and not abnormal. The lesions are often small and
+             occasionally show concomitant inverted growth pattern. Rarely, papilloma may show
+             extensive involvement of the mucosa."
+
+
+Primary Site
+
+C670 Trigone of bladder
+     Base of bladder
+     Floor
+     Below interureteric ridge* (interureteric crest or interureteric fold)
+
+C671 Dome of bladder
+     Vertex
+     Roof
+     Vault
+
+C672 Lateral wall of bladder
+     Right wall
+     Left wall
+     Lateral to ureteral orifice
+     Sidewall
+
+C673 Anterior wall of bladder
+
+C674 Posterior wall of bladder
+
+
+
+                                     Appendix C: Coding Guidelines                                         1
+                          SEER Program Coding and Staging Manual 2026
+
+
+C675 Bladder neck
+     Vesical neck
+     Internal urethral orifice
+     Internal urethral/uretero orifice
+
+C676 Ureteric orifice
+     Just above ureteric orifice
+
+C677 Urachus
+     Mid umbilical ligament
+     Urachal remnant
+
+C678 Overlapping lesion of bladder
+     Lateral-posterior wall (hyphen)
+     Fundus
+
+C679 Bladder, NOS
+     Lateral posterior wall (no hyphen)
+     Posterolateral wall
+
+* The interureteric ridge is a fold of mucous membrane extending across the bladder between the
+      ureteric orifices and forms one of the boundaries for the trigone of the bladder.
+
+
+                                    Bladder Anatomy and ICD-O-3
+
+
+
+
+                                              Source: UICC TNM Atlas, 3rd edition, 2nd revision
+
+
+                                    Appendix C: Coding Guidelines                                 2
+                          SEER Program Coding and Staging Manual 2026
+
+
+Priority Order for Coding Subsites
+
+Use the information from reports in the following priority order to code a subsite when the medical record
+contains conflicting information:
+
+Operative report (TURB)
+Pathology report
+
+
+Multifocal Tumors
+
+Assign site code C679 when there are multifocal tumors all of the same behavior in more than one subsite
+of the bladder and the specific subsite of origin is not known.
+
+If the TURB or pathology proves invasive tumor in one subsite and in situ tumor in all other involved
+subsites, code to the subsite involved with invasive tumor.
+
+
+
+
+                                    Appendix C: Coding Guidelines                                       3
+                           SEER Program Coding and Staging Manual 2026
+
+
+Bladder Wall Pathology
+
+The bladder wall is composed of three layers. There may be “sub layers” within the major layer of the
+bladder.
+
+ Bladder Layer           Sub Layer                Synonyms                   Staging            Description
+ Mucosa                                    Epithelium, transitional   No blood vessels,      First layer on
+                                           epithelium, urothelium,    in situ/noninvasive    inside of
+                                           mucosal surface,                                  bladder; Lines
+                                           transitional mucosa                               bladder, ureters,
+                                                                                             and urethra
+                    Basement                                          No invasion of         Single layer of
+                    membrane                                          basement               cells that lies
+                                                                      membrane is in         beneath the
+                                                                      situ                   mucosal layer
+                                                                      Invasion/penetratio    separating the
+                                                                      n of basement          epithelial layer
+                                                                      membrane is            from the lamina
+                                                                      invasive               propria
+                    Submucosa              Submucous coat,            Invasive               Areolar
+                                           lamina propria, areolar                           connective tissue
+                                           connective tissue                                 interlaced with
+                                                                                             the muscular
+                                                                                             coat. Contains
+                                                                                             blood vessels,
+                                                                                             nerves, and in
+                                                                                             some regions,
+                                                                                             glands
+ Lamina propria                            Submucosa,             Invasive
+                                           Suburothelial
+                                           connective tissue,
+                                           subepithelial tissue,
+                                           stroma, muscularis
+                                           mucosa, transitional
+                                           epithelium
+ Muscle             Bladder wall           Muscularis, muscularis Invasive
+                                           propria, muscularis
+                                           externa, smooth muscle
+
+Tumor extends through the bladder wall (invades regional tissue) when the tumor is stated to involve one
+of the following areas.
+
+Serosa (Tunica serosa): The outermost serous coat is a reflection of the peritoneum that covers the
+      superior surface and the upper parts of the lateral surfaces of the urinary bladder. The serosa is part
+      of visceral peritoneum. The serosa is reflected from these bladder surfaces onto the abdominal and
+      pelvic walls.
+Perivesical fat
+Adventitia: Some areas of the bladder do not have a serosa. Where there is no serosa, the connective
+      tissue of surrounding structures merges with the connective tissue of the bladder and is called
+      adventitia.
+
+
+                                     Appendix C: Coding Guidelines                                          4
+                              SEER Program Coding and Staging Manual 2026
+
+
+Histology 1
+
+Over 90% of bladder cancers are urothelial (transitional) cell carcinomas, derived from the uroepithelium.
+Other types include squamous cell carcinoma (about 2% to 7%) and adenocarcinoma (about 2%).
+Adenocarcinomas may be of urachal origin or nonurachal origin, with the nonurachal type generally
+thought to arise from metaplasia of chronically irritated transitional epithelium. Small cell carcinoma, and
+rarely sarcoma, can also occur. Childhood rhabdomyosarcoma, a type of sarcoma, can form in muscle
+tissue of the bladder.
+
+
+Behavior Code
+
+Especially for bladder, the behavior code and the stage may not match. Different rules apply to assigning
+behavior code compared to assigning stage. Use the rules as they apply to each data item, do not mix
+instructions from one data item to another.
+
+Code the behavior as malignant (/3), not in situ (/2), when
+
+• The diagnosis is high grade urothelial carcinoma AND there is no information regarding invasion
+
+OR
+
+• The pathology report says the submucosa is invaded with tumor
+
+OR
+
+• The only surgery performed is a transurethral resection of the bladder (TURB) documenting that depth
+  of invasion cannot be measured because there is no muscle in the specimen AND
+
+     o There is no information regarding invasion and the physician’s TNM designation is not available
+
+     OR
+
+     o The pathology report does not mention whether the submucosa is free of tumor or has been
+       invaded
+
+Code the behavior as in situ (/2) when
+
+• The diagnosis is low grade urothelial carcinoma AND there is no information regarding invasion
+
+OR
+
+• The pathology report says the submucosa is free of tumor
+
+OR
+
+
+
+
+1 https://www.cancer.gov/types/bladder/hp/bladder-treatment-pdq#_33
+
+
+
+
+                                         Appendix C: Coding Guidelines                                      5
+                           SEER Program Coding and Staging Manual 2026
+
+
+• The only surgery performed is a transurethral resection of the bladder (TURB) documenting that depth
+ of invasion cannot be measured because there is no muscle in the specimen AND
+
+           o   The TNM designation is Ta or Tis for TURB with no muscle in the specimen
+
+OR
+
+• The pathology report includes terminology using terms such as
+             Non-invasive
+             No stromal invasion identified
+             No invasion identified
+             No lamina propria invasion identified
+             Extent of invasion: Absent
+
+
+First Course Treatment
+
+BCG
+Code BCG as both surgery and immunotherapy. See the SEER manual, Appendix C, Bladder Surgery
+Codes, SEER Note under code 16.
+
+Treatment Modalities (most common treatments)
+
+TURB with fulguration
+TURB with fulguration followed by intravesical BCG (bacillus Calmette-Guerin) is usually used for
+       patients with multiple tumors or for high-risk patients.
+TURB with fulguration followed by intravesical chemotherapy
+Photodynamic therapy (PDT) using laser light and chemotherapy
+Segmental cystectomy (rare)
+Radical cystectomy in patients with extensive or refractory superficial tumor
+Internal irradiation (needles, seeds, wires, or catheters placed into or near the tumor) with or without
+       external-beam irradiation
+Chemotherapy
+Immunotherapy/biologic therapy
+
+
+
+
+                                     Appendix C: Coding Guidelines                                         6
+

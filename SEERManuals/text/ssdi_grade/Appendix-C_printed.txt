@@ -1,0 +1,558 @@
+                                                   SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                  Active Years      Schema ID
+   1068       Grade Post Therapy Clin (yc)                        2021+          All Schemas
+                                                                                 00710: Lymphoma Ocular Adnexa
+                                                                                 00790: Lymphoma (excluding CLL/SLL)
+                                                                                 00795: Lymphoma-CLL/SLL
+   1172       PTLD                                                2025+          00812: Primary Cutaneous Lymphomas (excluding
+                                                                                 MF)
+                                                                                 00821: Plasma Cell Myeloma
+                                                                                 00822: Plasma Cell Disorders
+   1174       PD-L1                                               2025+          09360: Lung 9th
+   1176       Spread Through Air Spaces (STAS)                    2026+          09360: Lung 9th
+   1178       Residual Cancer Burden                              2026+          00480: Breast
+   1179       Residual Cancer Burden Class                        2026+          00480: Breast
+   3800       Schema ID                                           2018+          All Schemas
+                                                                                 00721: Brain 8th (2018-2022)
+                                                                                 09721: Brain 9th (2023+)
+   3801       Chromosome 1p: Loss of Heterozygosity (LOH)         2018+
+                                                                                 00722: CNS Other 8th (2018-2022)
+                                                                                 09722: CNS Other 9th (2023+)
+                                                                                 00721: Brain 8th (2018-2022)
+                                                                                 09721: Brain 9th (2023+)
+   3802       Chromosome 19q: Loss of Heterozygosity (LOH)        2018+
+                                                                                 00722: CNS Other 8th (2018-2022)
+                                                                                 09722: CNS Other 9th (2023+)
+   3803       Adenoid Cystic Basaloid Pattern                     2018+          00690: Lacrimal Gland
+   3804       Adenopathy                                          2018+          00795: Lymphoma (CLL/SLL)
+   3805       AFP Post-Orchiectomy Lab Value                      2018+          00590: Testis
+   3806       AFP Post-Orchiectomy Range                          2018+          00590: Testis
+   3807       AFP Pre-Orchiectomy Lab Value                       2018+          00590: Testis
+   3808       AFP Pre-Orchiectomy Range                           2018+          00590: Testis
+   3809       AFP Pretreatment Interpretation                     2018+          00220: Liver
+   3810       AFP Pretreatment Lab Value                          2018+          00220: Liver
+   3811       Anemia                                              2018+          00795: Lymphoma (CLL/SLL)
+                                                       SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                      Active Years      Schema ID
+                                                                                     00790: Lymphoma
+   3812       B symptoms                                              2018+
+                                                                                     00795: Lymphoma (CLL/SLL)
+   3813       Bilirubin Pretreatment Total Lab Value                  2018+          00220: Liver
+   3814       Bilirubin Pretreatment Unit of Measure                  2018+          00220: Liver
+                                                                                     00400: Soft Tissues Head and Neck
+                                                                                     00410: Soft Tissues Trunk and Extremities
+                                                                                     00421: Soft Tissues Abdomen and Thoracic (excluding
+                                                                                     Heart, Mediastinum, Pleura)
+   3815       Bone Invasion                                           2018+
+                                                                                     00422: Heart, Mediastinum, and Pleura
+                                                                                     00440: Retroperitoneum
+                                                                                     00450: Soft Tissue Rare
+                                                                                     00459: Soft Tissue Other
+                                                                                     00721: Brain 8th (2018-2022)
+                                                                                     09721: Brain 9th (2023+)
+   3816       Brain Molecular Markers                                 2018+          00722: CNS Other 8th (2018-2022)
+                                                                                     09722: CNS Other 9th (2023+)
+                                                                                     09724: Medulloblastoma 9th (2023+)
+   3817       Breslow Tumor Thickness                                 2018+          00470: Melanoma Skin
+                                                                                     00551: Ovary
+   3818       CA-125 Pretreatment Interpretation                      2018+          00552: Primary Peritoneal Carcinoma
+                                                                                     00553: Fallopian Tube
+                                                                                     00190: Appendix 8th (2018-2022)
+   3819       CEA Pretreatment Intrepretation                         2018+          09190: Appendix 9th (2023+)
+                                                                                     00200: Colon and Rectum
+                                                                                     00190: Appendix 8th (2018-2022)
+   3820       CEA Pretreatment Lab Value                              2018+          09190: Appendix 9th (2023+)
+                                                                                     00200: Colon and Rectum
+                                                                                     00671: Melanoma Iris
+   3821       Chromosome 3 Status                                     2018+
+                                                                                     00672: Melanoma Choroid and Ciliary Body
+                                                    SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                   Active Years      Schema ID
+                                                                                  00671: Melanoma Iris
+   3822       Chromosome 8q Status                                 2018+
+                                                                                  00672: Melanoma Choroid and Ciliary Body
+   3823       Circumferential Resection Margin                    2018+           00200: Colon and Rectum
+   3824       Creatinine Pretreatment Lab Value                   2018+           00220: Liver
+   3825       Creatinine Pretreatment Unit of Measure             2018+           00220: Liver
+   3826       Estrogen Receptor Percent Positive or Range         2018+           00480: Breast
+   3827       Estrogen Receptor Summary                           2018+           00480: Breast
+   3828       Estrogen Receptor Total Allred Score              2018-2022         00480: Breast
+                                                                                  00161: Esophagus and Esophagus GE Junction
+   3829       Esophagus and EGJ Tumor Epicenter                    2018+
+                                                                                  (Squamous)
+
+   3830       Extranodal Extension Clin (non-Head and Neck)        2018+          00460: Merkel Cell Skin00570: Penis
+                                                    SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                   Active Years      Schema ID
+
+
+                                                                                  00060: Cervical Lymph Nodes and Unknown Primary
+                                                                                  00071: Lip
+                                                                                  00072: Tongue Anterior
+                                                                                  00073: Gum
+                                                                                  00074: Floor of Mouth
+                                                                                  00075: Palate Hard
+                                                                                  00076: Buccal Mucosa
+                                                                                  00077: Mouth Other
+                                                                                  00080: Major Salivary Glands, 8th (2018-2025)
+                                                                                  09080: Major Salivary Glands, 9th (2026+)
+                                                                                  00090: Nasopharynx 8th (2018-2024)
+   3831       Extranodal Extension Head and Neck Clinical          2018+          09090: Nasopharynx 9th (2025+)
+                                                                                  00100: Oropharynx HPV-Associated (2018-2025)
+                                                                                  09100: Oropharynx HPV-Associated (2026+)
+                                                                                  00111: Oropharynx HPV-independent
+                                                                                  00112: Hypopharynx
+                                                                                  00121: Maxillary Sinus
+                                                                                  00122: Nasal Cavity and Ethmoid Sinus
+                                                                                  00130: Larynx Other00131: Larynx SupraGlottic
+                                                                                  00132: Larynx Glottic
+                                                                                  00133: Larynx Subglottic
+                                                                                  00140: Melanoma Head and Neck
+                                                                                  00150: Cutaneous Carcinoma of Head and Neck
+                                                   SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #              NAACCR Data Item Name                 Active Years      Schema ID
+
+                                                                                 00060: Cervical Lymph Nodes and Unknown Primary
+                                                                                 00071: Lip
+                                                                                 00072: Tongue Anterior
+                                                                                 00073: Gum
+                                                                                 00074: Floor of Mouth
+                                                                                 00075: Palate Hard
+                                                                                 00076: Buccal Mucosa
+                                                                                 00077: Mouth Other
+                                                                                 00080: Major Salivary Glands, 8th (2018-2025)
+                                                                                 09080: Major Salivary Glands, 9th (2026+)
+                                                                                 00090: Nasopharynx 8th (2018-2024)
+              Extranodal Extension Head and Neck                                 09090: Nasopharynx 9th (2025+)
+   3832                                                           2018+
+              Pathological                                                       00100: Oropharynx HPV-Associated (2018-2025)
+                                                                                 09100: Oropharynx HPV-Associated (2026+)
+                                                                                 00111: Oropharynx HPV-independent
+                                                                                 00112: Hypopharynx
+                                                                                 00121: Maxillary Sinus
+                                                                                 00122: Nasal Cavity and Ethmoid Sinus
+                                                                                 00130: Larynx Other
+                                                                                 00131: Larynx SupraGlottic
+                                                                                 00132: Larynx Glottic
+                                                                                 00133: Larynx Subglottic
+                                                                                 00140: Melanoma Head and Neck
+                                                                                 00150: Cutaneous Carcinoma of Head and Neck
+
+
+   3833       Extranodal Extension Path (non-Head and Neck)       2018+          00460: Merkel Cell Skin00570: Penis
+
+                                                                                 00671: Melanoma Iris
+   3834       Extravascular Matrix Pattern                        2018+
+                                                                                 00672: Melanoma Choroid and Ciliary Body
+                                                                                 00220: Liver
+   3835       Fibrosis Score                                      2018+
+                                                                                 00230: Bile Ducts Intrahepatic
+                                                     SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                    Active Years      Schema ID
+                                                                                   00520: Cervix 8th (2018-2020)
+   3836       FIGO Stage (Cervix)                                   2018+
+                                                                                   09520: Cervix 9th (2021+)
+   3836       FIGO Stage (Corpus Adenosarcoma)                      2018+          00542: Corpus Adenosarcoma
+              FIGO Stage (Corpus Carcinoma and
+   3836                                                             2018+          00530: Corpus Carcinoma and Carcinosarcoma
+              Carcinosarcoma)
+                                                                    2018+          00541: Corpus Sarcoma
+   3836       FIGO Stage (Corpus Sarcoma, Cervix Sarcoma)
+                                                                    2021+          00528: Cervix Sarcoma
+   3836       FIGO Stage (Gestational Trophoblastic Tumors)         2018+          00560: Placenta
+                                                                                   00551: Ovary
+              FIGO Stage (Ovary, Fallopian Tube and Primary
+   3836                                                             2018+          00552: Primary Peritoneal Carcinoma
+              Peritoneal Carcinomas)
+                                                                                   00553: Fallopian Tube
+   3836       FIGO Stage (Vagina)                                   2018+          00510: Vagina
+                                                                                   00500: Vulva 8th (2018-2023)
+   3836       FIGO Stage (Vulva)                                    2018+
+                                                                                   09500: Vulva 9th (2024+)
+              Gestational Trophoblastic Prognostic Scoring
+   3837                                                             2018+          00560: Placenta
+              Index
+   3838       Gleason Patterns Clinical                            2018+           00580: Prostate
+   3839       Gleason Patterns Pathological                        2018+           00580: Prostate
+   3840       Gleason Score Clinical                               2018+           00580: Prostate
+   3841       Gleason Score Pathological                           2018+           00580: Prostate
+   3842       Gleason Tertiary Pattern                             2018+           00580: Prostate
+   3843       Grade Clinical                                       2018+           All Schemas
+   3844       Grade Pathological                                   2018+           All Schemas
+   3845       Grade Post-therapy                                   2018+           All Schemas
+   3846       hCG Post-orchiectomy Lab Value                       2018+           00590: Testis
+   3847       hCG Post-orchiectomy Range                           2018+           00590: Testis
+   3848       hCG Pre-orchiectomy Lab Value                        2018+           00590: Testis
+   3849       hCG Pre-orchiectomy Range                            2018+           00590: Testis
+   3850       HER2 IHC Summary                                   2018-2020         00480: Breast
+                                                    SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #                NAACCR Data Item Name                Active Years      Schema ID
+   3851       HER2 ISH Dual Probe Copy Number                   2018-2020         00480: Breast
+   3852       HER2 ISH Dual Probe Ratio                         2018-2020         00480: Breast
+   3853       HER2 ISH Single Probe Copy Number                 2018-2020         00480: Breast
+   3854       HER2 ISH Summary                                  2018-2020         00480: Breast
+                                                                                  00480: Breast
+                                                                                  00161: Esophagus (including GE Junction) Squamous
+                                                                                  (2021+)
+   3855       HER2 Overall Summary                                 2018+
+                                                                                  00169: Esophagus (including GE junction) (excluding
+                                                                                  squamous) (2021+)
+                                                                                  00170: Stomach (2021+)
+   3856       Heritable Trait                                      2018+          00680: Retinoblastoma
+   3857       High Risk Cytogenetics                               2018+          00821: Plasma Cell Myeloma
+                                                                                  00150: Cutaneous Squamous Cell Carcinoma of Head
+   3858       High Risk Histologic Features                        2018+
+                                                                                  and Neck
+                                                                                  00790: Lymphoma
+   3859       HIV Status                                           2018+
+                                                                                  00795: Lymphoma (CLL/SLL)
+              International Normalized Ratio for Prothrombin
+   3860                                                            2018+          00220: Liver
+              Time
+   3861       Ipsilateral Adrenal Gland Involvement                2018+          00600: Kidney Parenchyma
+   3862       JAK2                                                 2018+          00830: HemeRetic
+                                                  SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                 Active Years      Schema ID
+
+                                                                                00480: Breast
+                                                                                00290: NET Stomach (2021-2023)
+                                                                                09290: NET Stomach (2024+)
+                                                                                00301: NET Duodenum (2021-2023)
+                                                                                09301: NET Duodenum (2024+)
+                                                                                00302: NET Ampulla of Vater (2021-2023)
+                                                                                09302: NET Ampulla of Vater (2024+)
+   3863       Ki-67                                              2018+          00310: NET Jejunum and Ileum (2021-2023)
+                                                                                09310: NET Jejunum and Ileum (2024+)
+                                                                                00320: NET Appendix (2021-2023)
+                                                                                09320: NET Appendix (2024+)
+                                                                                00330: NET Colon and Rectum (2021-2023)
+                                                                                09330: NET Colon and Rectum (2024+)
+                                                                                00340: NET Pancreas (2021-2023)
+                                                                                09340: NET Pancreas (2024+)
+   3864       Invasion Beyond Capsule                            2018+          00600: Kidney Parenchyma
+   3865       KIT Gene Immunohistochemistry                      2018+          00430: GIST
+   3866       KRAS                                               2018+          00200: Colon and Rectum
+   3867       LDH Post-Orchiectomy Range                         2018+          00590: Testis
+   3868       LDH Pre-Orchiectomy Range                          2018+          00590: Testis
+                                                                                00470: Melanoma Skin
+   3869       LDH Pretreatment Level                             2018+
+                                                                                00821: Plasma Cell Myeloma
+   3870       LDH Upper Limits of Normal                         2018+          00470: Melanoma Skin
+                                                                                00500: Vulva 8th (2018-2023)
+   3871       LN Assessment Method Femoral-Inguinal              2018+          09500: Vulva 9th (2024+)
+                                                                                00510: Vagina
+                                                                                00510: Vagina
+   3872       LN Assessment Method Para-aortic                   2018+          00520: Cervix 8th (2018-2020)
+                                                                                09520: Cervix 9th (2021+)
+                                                  SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #               NAACCR Data Item Name               Active Years      Schema ID
+
+                                                                                00500: Vulva 8th (2018-2023)
+                                                                                09500: Vulva 9th (2024+)
+   3873       LN Assessment Method Pelvic                        2018+          00510: Vagina
+                                                                                00520: Cervix 8th (2018-2020)
+                                                                                09520: Cervix 9th (2021+)
+                                                                                00510: Vagina
+   3874       LN Distant Assessment Method                       2018+          00520: Cervix 8th (2018-2020)
+                                                                                09520: Cervix 9th (2021+)
+
+                                                                                00510: Vagina00520: Cervix 8th (2018-2020)
+   3875       LN Distant: Mediastinal, Scalene                   2018+
+                                                                                09520: Cervix 9th (2021+)
+
+                                                                                00060: Cervical Lymph Nodes and Unknown Primary
+   3876       LN Head and Neck Levels I-III                      2018+
+                                                                                00140: Mucosal Melanoma Head and Neck
+                                                                                00060: Cervical Lymph Nodes and Unknown Primary
+   3877       LN Head and Neck Levels IV-V                       2018+
+                                                                                00140: Mucosal Melanoma Head and Neck
+                                                                                00060: Cervical Lymph Nodes and Unknown Primary
+   3878       LN Head and Neck Levels VI-VII                     2018+
+                                                                                00140: Mucosal Melanoma Head and Neck
+                                                                                00060: Cervical Lymph Nodes and Unknown Primary
+   3879       LN Head and Neck Other                             2018+
+                                                                                00140: Mucosal Melanoma Head and Neck
+   3880       LN Isolated Tumor Cells (ITC)                      2018+          00460: Merkel Cell Skin
+                                                                                00500: Vulva (2018-2023)
+   3881       LN Laterality                                      2018+
+                                                                                09500: Vulva (2024+)
+   3882       LN Positive Axillary Level I-II                    2018+          00480: Breast
+                                                SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name               Active Years      Schema ID
+
+
+                                                                              00060: Cervical Lymph Nodes and Unknown Primary
+                                                                              00071: Lip
+                                                                              00072: Tongue Anterior
+                                                                              00073: Gum
+                                                                              00074: Floor of Mouth
+                                                                              00075: Palate Hard
+                                                                              00076: Buccal Mucosa
+                                                                              00077: Mouth Other
+                                                                              00080: Major Salivary Glands, 8th (2018-2025)
+                                                                              09080: Major Salivary Glands, 9th (2026+)
+                                                                              00090: Nasopharynx 8th (2018-2024)
+   3883       LN Size                                          2018+          09090: Nasopharynx 9th (2025+)
+                                                                              00100: Oropharynx HPV-Associated (2018-2025)
+                                                                              09100: Oropharynx HPV-Associated (2026+)
+                                                                              00111: Oropharynx HPV-independent
+                                                                              00112: Hypopharynx00121: Maxillary Sinus
+                                                                              00122: Nasal Cavity and Ethmoid Sinus
+                                                                              00130: Larynx Other
+                                                                              00131: Larynx SupraGlottic
+                                                                              00132: Larynx Glottic
+                                                                              00133: Larynx Subglottic
+                                                                              00140: Melanoma Head and Neck
+                                                                              00150: Cutaneous Carcinoma of Head and Neck
+
+   3885       Lymphocytosis                                    2018+          00795: Lymphoma (CLL/SLL)
+   3886       Major Vein Involvement                           2018+          00600: Kidney Parenchyma
+                                                                              00671: Melanoma Iris
+   3887       Measured Basal Diameter                          2018+
+                                                                              00672: Melanoma Choroid and Ciliary Body
+                                                     SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #              NAACCR Data Item Name                   Active Years      Schema ID
+                                                                                   00660: Melanoma Conjunctiva
+   3888       Measured Thickness                                    2018+          00671: Melanoma Iris
+                                                                                   00672: Melanoma Choroid and Ciliary Body
+                                                                                   00721: Brain (2018-2022)
+              Methylation of O6-Methylguanine-                                     09721: Brain (2023+)
+   3889                                                             2018+
+              Methyltransferase                                                    00722: CNS Other (2018-2022)
+                                                                                   09722: CNS Other (2023+)
+                                                                    2018+          00200: Colon and Rectum
+   3890       Microsatellite Instability (MSI)
+                                                                    2026+          00530: Corpus Carcinoma and Carcinosarcoma
+                                                                                   00671: Melanoma Iris
+   3891       Microvascular Density                                 2018+
+                                                                                   00672: Melanoma Choroid and Ciliary Body
+                                                                                   00671: Melanoma Iris
+   3892       Mitotic Count Uveal Melanoma                          2018+
+                                                                                   00672: Melanoma Choroid and Ciliary Body
+   3893       Mitotic Rate Melanoma                                2018+           00470: Melanoma Skin
+   3894       Multigene Signature Method                         2018-2025         00480: Breast
+   3895       Multigene Signature Results                        2018-2025         00480: Breast
+                                                                                   00790: Lymphoma
+   3896       NCCN International Prognostic Index (IPI)             2018+
+                                                                                   00795: Lymphoma (CLL/SLL)
+   3897       Number of Cores Examined                              2018+          00580: Prostate
+   3898       Number of Cores Positive                              2018+          00580: Prostate
+                                                                                   00530: Corpus Carcinoma and Carcinosarcoma
+                                                                    2018+          00541: Corpus Sarcoma
+   3899       Number of Examined Para-Aortic Nodes
+                                                                                   00542: Corpus Adenocarcinoma
+                                                                    2021+          00528: Cervix Sarcoma
+                                                                                   00530: Corpus Carcinoma and Carcinosarcoma
+                                                                    2018+          00541: Corpus Sarcoma
+   3900       Number of Examined Pelvic Nodes
+                                                                                   00542: Corpus Adenocarcinoma
+                                                                    2021+          00528: Cervix Sarcoma
+                                                      SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                     Active Years      Schema ID
+                                                                                    00530: Corpus Carcinoma and Carcinosarcoma
+                                                                     2018+          00541: Corpus Sarcoma
+   3901       Number of Positive Para-Aortic Nodes
+                                                                                    00542: Corpus Adenocarcinoma
+                                                                     2021+          00528: Cervix Sarcoma
+                                                                                    00530: Corpus Carcinoma and Carcinosarcoma
+                                                                     2018+          00541: Corpus Sarcoma
+   3902       Number of Positive Pelvic Nodes
+                                                                                    00542: Corpus Adenocarcinoma
+                                                                     2021+          00528: Cervix Sarcoma
+   3903       Oncotype Dx Recurrence Score-DCIS                      2018+          00480: Breast
+   3904       Oncotype Dx Recurrence Score-Invasive                  2018+          00480: Breast
+   3905       Oncotype Dx Risk Level-DCIS                            2018+          00480: Breast
+   3906       Oncotype Dx Risk Level-Invasive                        2018+          00480: Breast
+   3907       Organomegaly                                           2018+          00795: Lymphoma (CLL/SLL)
+                                                                                    00381: Bone Appendicular Skeleton
+   3908       Percent Necrosis Post Neoadjuvant                      2018+          00382: Bone Spine
+                                                                                    00383: Bone Pelvis
+                                                                                    00150: Cutaneous Squamous Cell Carcinoma of Head
+                                                                                    and Neck
+   3909       Perineural Invasion                                    2018+          00200: Colon and Rectum
+                                                                                    00640: Skin of Eyelid
+                                                                                    00690: Lacrimal Gland
+   3910       Peripheral Blood Involvement                           2018+          00811: Mycosis Fungoides
+                                                                                    00530: Corpus Carcinoma and Carcinosarcoma
+                                                                     2018+          00541: Corpus Sarcoma
+   3911       Peritoneal Cytology
+                                                                                    00542: Corpus Adenocarcinoma
+                                                                     2021+          00528: Cervix Sarcoma
+   3913       Pleural Effusion                                       2018+          00370: Pleura
+              Progesterone Receptor Percent Positive or
+   3914                                                              2018+          00480: Breast
+              Range
+   3915       Progesterone Receptor Summary                          2018+          00480: Breast
+                                                      SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #              NAACCR Data Item Name                    Active Years      Schema ID
+   3916       Progesterone Receptor Total Allred Score            2018-2022         00480: Breast
+                                                                                    00230: Bile Ducts Intrahepatic
+   3917       Primary Sclerosing Cholangitis                         2018+
+                                                                                    00250: Bile Ducts Perihilar
+   3918       Profound Immune Suppression                            2018+          00460: Merkel Cell Skin
+   3920       PSA (Prostatic Specific Antigen) Lab Value             2018+          00580: Prostate
+                                                                                    00551: Ovary
+   3921       Residual Tumor Volume Post Cytoreduction               2018+          00552: Primary Peritoneal Carcinoma
+                                                                                    00553: Fallopian Tube
+   3922       Response to Neoadjuvant Therapy                        2018+          00480: Breast
+   3923       S Category Clinical                                    2018+          00590: Testis
+   3924       S Category Pathological                                2018+          00590: Testis
+   3925       Sarcomatoid Features                                   2018+          00600: Kidney Parenchyma
+                                                                                    00242: Cystic Duct
+              Schema Discriminator 1
+   3926                                                              2018+          00250: Bile Ducts Perihilar
+              (BileDuctsDistal/BileDuctsPerihilar/ CysticDuct)
+                                                                                    00260: Bile Ducts Distal
+                                                                                    00161: Esophagus and Esophagus GE Junction
+                                                                                    (Squamous)
+              Schema Discriminator 1 (EsophagusGEJunction
+   3926                                                              2018+          00169: Esophagus and Esophagus GE Junction
+              (EGJ)/Stomach) (primary site C160)
+                                                                                    (excluding Squamous)
+                                                                                    00170: Stomach
+              Schema Discriminator 1 (Histology                                     00790: Lymphoma
+   3926                                                              2018+
+              Discriminator for 9591/3)                                             00830: HemeRetic
+              Schema Discriminator 1 (Lacrimal                                      00690: Lacrimal Gland
+   3926                                                              2018+
+              Gland/Lacrimal Sac)                                                   00699: Lacrimal Sac
+              Schema Discriminator 1 (Melanoma Ciliary                              00671: Melanoma Iris
+   3926                                                              2018+
+              Body/Melanoma Iris)                                                   00672: Melanoma Choroid and Ciliary Body
+              Schema Discriminator 1 (Multiple Myeloma
+   3926                                                              2018+          00821: Plasma Cell Myeloma
+              Terminology)
+                                                    SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #             NAACCR Data Item Name                   Active Years      Schema ID
+                                                                                  00090: Nasopharynx 8th
+              Schema Discriminator 1
+   3926                                                         2018-2025         00100: Oropharynx HPV-Associated 8th
+              (Nasopharynx/PharyngealTonsil)
+                                                                                  00111: Oropharynx HPV-Independent
+                                                                                  00060: Cervical Lymph Nodes and Unknown Primary
+              Schema Discriminator 1 (Occult Head and Neck
+   3926                                                            2018+          00450: Soft Tissue Other
+              Lymph Nodes)
+                                                                                  99999: Ill-Defined Other
+              Schema Discriminator 1 (Primary Peritoneum
+   3926                                                            2018+          00430: GIST
+              Tumor) (Primary Site C481 only)
+              Schema Discriminator 1 (Thyroid                                     00730: Thyroid
+   3926                                                            2018+
+              Gland/Thyroglossal Duct)                                            00740: Thyroid (Medullary)
+              Schema Discriminator 1 (Urethra/Prostatic                           00631: Urethra (excluding Prostatic)
+   3926                                                            2018+
+              Urethra)                                                            00633: Urethra (Prostatic)
+                                                                                  00161: Esophagus and Esophagus GE Junction
+              Schema Discriminator 2 (Histology                                   (Squamous)
+   3927                                                            2018+
+              Discriminator for 8020/3)                                           00169: Esophagus and Esophagus GE Junction
+                                                                                  (excluding Squamous)
+                                                                                  00100: Oropharynx HPV-Associated (2018-2025)
+   3927       Schema Discriminator 2 (Oropharyngeal p16)           2018+          09100: Oropharynx HPV-Associated (2026+)
+                                                                                  00111: Oropharynx HPV-Independent
+                                                                                  00410: Soft Tissue Trunk and Extremities
+              Schema Discriminator 2: Soft Tissue Trunk and
+   3927                                                            2021+          00421: Soft Tissue Abdomen and Thoracic
+              Extremities/Soft Tissue Abdomen and Thoracic
+                                                                                  00459: Soft Tissue Other
+   3929       Separate Tumor Nodules                               2018+          00360: Lung
+   3930       Serum Albumin Pretreatment Level                     2018+          00821: Plasma Cell Myeloma
+   3931       Serum Beta-2 Microglobulin Pretreatment Level        2018+          00821: Plasma Cell Myeloma
+   3932       LDH Pretreatment Lab Value                           2018+          00470: Melanoma Skin
+   3933       Thrombocytopenia                                     2018+          00795: Lymphoma (CLL/SLL)
+   3934       Tumor Deposits                                       2018+          00200: Colon and Rectum
+   3935       Tumor Growth Pattern                                 2018+          00230: Bile Ducts Intrahepatic
+   3936       Ulceration                                           2018+          00470: Melanoma Skin
+                                                       SSDI Manual Appendix C v3.3
+
+
+
+
+Data Item #              NAACCR Data Item Name                     Active Years      Schema ID
+                                                                                     00360: Lung 8th (2018-2024)
+   3937       Visceral and Parietal Pleural Invasion                  2018+
+                                                                                     09360: Lung 9th (2025+)
+                                                                                     00360: Lung 8th (2021-2024)
+   3938       ALK Rearrangement                                       2021+
+                                                                                     09360: Lung 9th (2025+)
+                                                                                     00360: Lung 8th (2021-2024)
+   3939       EGFR Mutational Analysis                                2021+
+                                                                                     09360: Lung 9th (2025+)
+   3940       BRAF Mutational Analysis                                2021+          00200: Colon and Rectum
+   3941       NRAS Mutational Analysis                                2021+          00200: Colon and Rectum
+   3942       CA 19-9 PreTx Lab Value                                 2021+          00280: Pancreas
+   3955       Derived Rai Stage                                       2021+          00795: Lymphoma (CLL/SLL)
+                                                                                     09520: Cervix 9th (2021+)
+   3956       p16                                                     2021+          09210: Anus 9th (2023+)
+                                                                                     09500: Vulva 9th (2024+)
+                                                                                     00500: Vulva 8th (2018-2023)
+                                                                                     09500: Vulva 9th (2024+)
+   3957       LN Status: Pelvic                                       2018+          00510: Vagina
+                                                                                     00520: Cervix 8th (2018-2020)
+                                                                                     09520: Cervix 9th (2021+)
+                                                                                     00510: Vagina
+   3958       LN Status: Para-aortic                                  2018+          00520: Cervix 8th (2018-2020)
+                                                                                     09520: Cervix 9th (2021+)
+                                                                                     00500: Vulva 8th (2018-2023)
+   3959       LN Status: Femoral-Inguinal                             2018+          09500: Vulva 9th (2024+)
+                                                                                     00510: Vagina
+   3960       Histologic Subtype                                      2023+          09190: Appendix 9th
+   3961       Clinical Width Margin                                   2023+          00460: Melanoma Skin
+

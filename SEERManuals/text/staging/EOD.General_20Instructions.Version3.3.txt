@@ -1,0 +1,1326 @@
+                               EXTENT OF DISEASE (EOD) 2018
+                              GENERAL CODING INSTRUCTIONS
+                                 Published November 2025
+                           Effective with cases diagnosed January 1, 2018, and forward
+
+
+                                                    Prepared by
+                                 Data Quality, Analysis and Interpretation Branch
+                                          Surveillance Research Program
+                                Division of Cancer Control and Population Sciences
+                                             National Cancer Institute
+                                 U.S. Department of Health and Human Services
+                                               Public Health Service
+                                            National Institutes of Health
+
+
+
+
+                                                    Editors
+                              Jennifer Ruhl, MSHCA, RHIT, CCS, ODS-C, NCI SEER
+                               Carolyn Callaghan, ODS-C (SEER Seattle Registry)
+                                           Nicki Schussler, BS (IMS)
+
+
+
+
+Suggested Citation: Ruhl JL, Callaghan C, Schussler N (eds.) Extent of Disease (EOD) 2018 General Coding
+                    Instructions, National Cancer Institute, Bethesda, MD, 2025
+                                              Acknowledgements
+                                  Tiffany Janes, ODS-C (SEER Seattle Registry)
+                                  Denise Harrison, ODS-C (Trainer Educatory)
+
+
+       We would also like to give a special thanks to the following individuals at Information Management
+            Services, Inc. (IMS) who provided us with document support and web development.
+
+                                           Suzanne Adams, BS, ODS-C
+                                               Ginger Carter, BA
+                                                 Jean Cyr, BA
+                                               Bran Handley, BS
+                                                Charles May, BS
+
+
+
+
+                                               Copyright information:
+        All material in this report may be reproduced or copied without permission, citation as to source,
+                                              however, is appreciated.
+
+
+
+
+Version 3.3                                         EOD 2018                                                 2
+    Publication History
+
+    EOD was first published as part of the 1976 SEER Code Manual. The first EOD-specific coding manual was
+    the April 1977 EOD Manual, which included a 13-digit and 2-digit coding schemas. This manual was used
+    for diagnosis years 1977-1982. In 1983, EOD was moved to a 4-digit coding schema that provided
+    schemas for all sites.
+
+    The next major update was the EOD 1988 10-digit, which was revised in 1992 and 1998. EOD was
+    discontinued as of diagnosis date 12/31/2003. Collaborative Stage was implemented for diagnosis dates
+    1/1/2004 through 12/31/2015. Although Collaborative Stage was discontinued for the cancer registry
+    community at that time, some SEER registries continued to collect Collaborative Stage for 2016 and
+    2017. As of 12/31/2017, Collaborative Stage is discontinued for those SEER registries as well, and EOD
+    2018 is implemented for SEER registries starting 1/1/2018.
+
+    Comparisons between EOD 2018 and earlier versions of EOD or CS are evaluated on a schema-by-
+    schema basis, as some schemas cannot be compared and those that can be compared usually have
+    limitations.
+
+    EOD 2018 has three main data items: EOD Primary Tumor, EOD Regional Nodes and EOD Mets. EOD
+    2018 is fully compatible with the AJCC TNM staging manual, 8th edition. Thorough review of EOD 2018
+    was done by NCI SEER staff, SEER*Educate Staff from the SEER Seattle registry, and contractors.
+
+
+
+
+Version 3.3                                       EOD 2018                                                   3
+                                                                     Table of Contents
+
+
+    Table of Contents .......................................................................................................................................... 4
+    Extent of Disease........................................................................................................................................... 5
+    Definitions of Terms Used in this Manual..................................................................................................... 6
+    Ambiguous Terminology ............................................................................................................................... 8
+    EOD 2018 Schemas ..................................................................................................................................... 10
+    General Coding Instructions ....................................................................................................................... 14
+    General Guidelines ...................................................................................................................................... 14
+    EOD DATA ITEMS ........................................................................................................................................ 16
+       EOD PRIMARY TUMOR ............................................................................................................................ 17
+       EOD REGIONAL NODES ........................................................................................................................... 20
+       EOD METS ............................................................................................................................................... 26
+       DERIVED EOD 2018 T .............................................................................................................................. 30
+       DERIVED EOD 2018 N .............................................................................................................................. 31
+       DERIVED EOD 2018 M ............................................................................................................................. 32
+       DERIVED EOD 2018 STAGE GROUP ......................................................................................................... 33
+       DERIVED SUMMARY STAGE 2018 ........................................................................................................... 34
+
+
+
+
+Version 3.3                                                                 EOD 2018                                                                                 4
+                                                Extent of Disease
+
+    Extent of Disease (EOD) 2018 is a new version of EOD with significant differences from previous
+    versions. NCI SEER maintains a surveillance system for cancer identification for the following purposes:
+        • Supporting Department of Health and Human Services (DHHS)-wide cancer control initiatives,
+            including Healthy People 2020
+        • Permitting staging of the most comprehensive set of patients for all cancer sites
+        • Reporting and monitoring trends in cancer incidence and outcomes
+        • Supporting and promoting research for all types of cancer
+        • Enabling and ensuring ongoing continuity of staging trends over time reflecting the combination
+            of clinical and pathologic information (since 1994)
+
+    The 2018 version of EOD applies to every site/histology combination, including lymphomas and
+    leukemias.
+
+    EOD uses all information available in the medical record; in other words, it is a combination of the most
+    precise clinical and pathological documentation of the extent of disease.
+
+    There are 3 main data items in EOD, each of which is discussed in detail.
+
+        1. EOD Primary Tumor
+        2. EOD Regional Nodes
+        3. EOD Mets
+
+    This manual is effective for all cases diagnosed 1/1/2018 and after.
+        • Once a new version is released, that version can be used for all cases diagnosed 2018+.
+
+    Send questions, suggestions and corrections to:
+           Ask a SEER Registrar
+           Choose subject: Extent of Disease (EOD)
+
+
+
+
+Version 3.3                                         EOD 2018                                                    5
+                                     Definitions of Terms Used in this Manual
+
+    Adjacent connective tissue
+    These are unnamed tissues that immediately surround an organ or structure containing a primary
+    cancer. Use this category when a tumor has invaded past the outer border (capsule, serosa, or other
+    edge) of the primary organ into the organ’s surrounding supportive structures but has not invaded into
+    larger structures or adjacent organs. The structures considered in ICD-O-3 as connective tissue include
+    the following: adipose tissue; aponeuroses; arteries; blood vessels; bursa; connective tissue, NOS; fascia;
+    fatty tissue; fibrous tissue; ganglia; ligaments; lymphatic channels (not nodes); muscle; nerves (spinal,
+    sympathetic and peripheral); skeletal muscle; subcutaneous tissue; synovia; tendons; tendon sheaths;
+    veins, and vessels, NOS. In general, these tissues do not have specific names. These tissues form the
+    framework of many organs, provide support to hold organs in place, bind tissues and organs together,
+    and serve as storage sites for nutrients.
+
+    Adjacent organs/structures
+    Organs are anatomic structures with specific physiologic functions other than (or in addition to) support
+    and storage. There are two types:
+            • Unnamed: Contiguous growth into an unnamed organ lying next to the primary is coded to
+                ‘adjacent organs/structures.’
+            • Named: Connective tissues may be large enough to be given a specific name.
+                    o Examples include Blood, cartilage and bone are sometimes considered connective
+                        tissues, but in this manual, they would be listed separately.
+                    o Contiguous growth from one organ into an adjacent named structure would be
+                        coded to ‘adjacent organs/structures.’ For example, the brachial artery has a name,
+                        as does the broad ligament and both are structures.
+
+
+    Circulating Tumor Cells (CTCs)
+    See Isolated Tumor Cells
+
+    Contiguous
+    Directly adjacent; continuously adjoining; without lapse or intervening space; used in reference to
+    regionalized cancers and extent of disease.
+
+    Cortex (adjective: cortical)
+    The external or outer surface layer of an organ, as distinguished from the core, or medulla, of the organ.
+    In some organs, such as the adrenal glands, the cortex has a different function than the medulla.
+
+    Noncontiguous/Discontinuous
+    Tumors that are not connected; tumors in more than one area with normal tissue between them; often
+    a sign of metastatic disease.
+
+    Disseminated Tumor Cells (DTCs)
+    See Isolated Tumor Cells
+
+    Direct extension/involvement
+    A term used in staging to indicate contiguous growth of tumor from the primary into an adjacent organ
+    or surrounding tissue.
+
+
+
+
+Version 3.3                                         EOD 2018                                                      6
+    Distant
+    Refers to cancer that has spread from the original (primary) tumor to distant organs or distant lymph
+    nodes.
+
+    Isolated tumor cells (ITCS), Circulating tumor cells (CTCs), Disseminated tumor cells (DTCs)
+    Isolated tumor cells (ITC) are single tumor cells or small clusters of cells not more than 0.2 mm in
+    greatest extent that can be detected by routine H and E stains or immunohistochemistry. An additional
+    criterion has been proposed to include a cluster of fewer than 200 cells in a single histological cross-
+    section. The same applies to cases with findings suggestive of tumor cells or their components by non-
+    morphological techniques such as flow cytometry or DNA analysis.
+
+    ITCs do not typically show evidence of metastatic activity (e.g., proliferation or stromal reaction) or
+    penetration of lymphatic sinus walls.
+
+    This definition also refers to circulating tumor cells (CTCs) and disseminated tumor cells (DTCs)
+
+    Localized
+    In medicine, it describes disease that is limited to a certain part of the body. For example, localized
+    cancer is usually found only in the tissue or organ where it began and has not spread to nearby lymph
+    nodes or to other parts of the body. Some localized cancers can be completely removed by surgery.
+
+    Medulla (adjective: medullary)
+    The medulla (central) portion of an organ, in contrast to the outer layer or cortex. It is sometimes called
+    marrow. In some organs, such as bone, the medulla or marrow has a different physiologic role than the
+    cortex.
+
+    Parenchyma
+    The parenchyma is the functional portion of an organ, in contrast to its framework or stroma. For
+    example, the parenchyma of the kidney contains all the structures which filter and remove waste
+    products from the blood. In general, malignancies tend to arise in the parenchyma of an organ.
+
+    Regional
+    In oncology, describes the body area right around a tumor.
+
+    Stroma
+    The stroma are the cells and tissues that support, store nutrients, and maintain viability within an organ.
+    Stroma consists of connective tissue, vessels and nerves, and provides the framework of an organ. In
+    general, spread of tumor to the stroma of an organ is still localized or confined to the organ of origin.
+
+
+
+
+Version 3.3                                          EOD 2018                                                     7
+                                             Ambiguous Terminology
+
+
+    Most of the time, registrars will find definitive statements of extension/involvement; however, for those
+    situations where extension/involvement is described with non-definitive (ambiguous) terminology, use
+    the guidelines below to interpret and determine the appropriate assignment of EOD Primary Tumor,
+    EOD Regional Nodes or EOD Mets.
+
+    Determination of the cancer stage is both a subjective and objective assessment by the physician(s) of
+    how far the cancer has spread. When it is not possible to determine the extent of involvement because
+    terminology is ambiguous, look at the documentation that the physician used to make informed
+    decisions on how the patient is being treated. For example, assign the EOD fields based on
+    extension/involvement when the patient was treated as though adjacent organs or nodes were
+    involved.
+
+    Use the following lists to interpret the intent of the clinician ONLY when further documentation is not
+    available and/or there is no specific statement of extension/involvement in the medical record. The
+    clinician’s definitions/descriptions and choice of therapy have priority over these lists because individual
+    clinicians may use these terms differently.
+        Note 1: Terminology in the schema takes priority over this list. Some schemas interpret certain
+        words as involvement, such as ‘encasing’ the carotid artery for a head and neck site or “abutment,”
+        “encases,” or “encasement” for pancreas primaries.
+        Note 2: Use this list only for EOD 2018 or Summary Stage 2018.
+        Note 3: This is not the same list used for determining reportability as published in the SEER manual,
+        Hematopoietic Manual or in Section 1 of the Standards for Oncology Registry Entry (STORE). This is
+        not the same list of ambiguous terminology provided in the Solid Tumors Rules published and
+        maintained by the SEER Program.
+
+
+
+
+Version 3.3                                          EOD 2018                                                      8
+    Use the following lists as a guide when no other information is available.
+
+                                                    Involved
+
+                                                                     Incipient invasion
+                   Adherent
+                                                                     Induration
+                   Apparent(ly)
+                                                                     Infringe/infringing
+                   Appears to
+                                                                     Into*
+                   Comparable with
+                                                                     Intrude
+                   Compatible with
+                                                                     Most likely
+                   Consistent with
+                                                                     Onto*
+                   Contiguous/continuous with
+                                                                     Overstep
+                   Encroaching upon*
+                                                                     Presumed
+                   Extension to, into, onto, out onto                Probable
+                   Features of                                       Protruding into (unless encapsulated)
+                   Fixation to a structure other than primary**      Suspected
+                   Fixed to another structure**                      Suspicious
+                   Impending perforation of                          To*
+                   Impinging upon                                    Up to
+                   Impose/imposing on
+
+
+
+                                                  Not Involved
+
+                   Abuts                                            Extension to without invasion/involvement of
+                   Approaching                                      Kiss/kissing
+                   Approximates                                     Matted (except for lymph nodes)
+                   Attached                                         Possible
+                   Cannot be excluded/ruled out                     Questionable
+                   Efface/effacing/effacement                       Reaching
+                   Encased/encasing                                 Rule out
+                   Encompass(ed)                                    Suggests
+                   Entrapped                                        Very close to
+                   Equivocal                                        Worrisome
+
+    * Interpret as involvement whether the description is clinical or operative/pathologic
+    ** Interpret as involvement of the other organ or tissue
+
+
+
+
+Version 3.3                                         EOD 2018                                                  9
+                                             EOD 2018 Schemas
+
+
+    The EOD site-specific schemas are based on historical schemas, Summary Stage 2000, AJCC 8th Edition,
+    and starting in 2021, the AJCC Version 9 rolling updates. Applicable years for the schemas have been
+    added. Some of the AJCC chapters were divided to line up with historical Summary Stage chapters. See
+    SEER*RSA for schema-specific coding guidelines, codes and code descriptions for EOD Primary Tumor,
+    EOD Regional Nodes and EOD Mets.
+
+    Note: The individual schemas are not included in the EOD Manual.
+
+      Schema
+                  EOD Schema                        Applicable Years SS Chapter
+         ID
+       00588      Adnexa Uterine Other                   2018+         Adnexa Uterine Other
+       00760      Adrenal Gland                          2018+         Adrenal Gland (including NET)
+       00270      Ampulla Vater                          2018+         Ampulla Vater (including NET)
+       00210      Anus                                 2018-2022       Anus
+       09210      Anus                                   2023+         Anus
+       00190      Appendix                             2018-2022       Appendix (including NET)
+       09190      Appendix                               2023+         Appendix (including NET)
+       00260      Bile Ducts Distal                      2018+         Extrahepatic Bile Ducts
+       00230      Bile Ducts Intrahepatic                2018+         Intrahepatic Bile Ducts
+       00250      Bile Ducts Perihilar                   2018+         Extrahepatic Bile Ducts
+       00278      Biliary Other                          2018+         Biliary Other
+       00620      Bladder                                2018+         Bladder
+       00381      Bone Appendicular Skeleton             2018+         Bone
+       00383      Bone Pelvis                            2018+         Bone
+       00382      Bone Spine                             2018+         Bone
+       00721      Brain                                2018-2022       Brain
+       09721      Brain                                  2023+         Brain
+       00480      Breast                                 2018+         Breast
+       00076      Buccal Mucosa                          2018+         Buccal Mucosa
+                  Cervical Lymph Nodes and                             Cervical Lymph Nodes and
+       00060      Unknown Primary Tumors of the          2018+         Unknown Primary Tumors of the
+                  Head and Neck                                        Head and Neck
+       00520      Cervix                              2018 - 2020      Cervix
+       09520      Cervix                                2021+          Cervix
+       00528      Cervix Sarcoma                        2021+          Cervix
+       00722      CNS Other                           2018-2022        CNS Other
+       09722      CNS Other                             2023+          CNS Other
+       00200      Colon and Rectum                      2018+          Colon and Rectum (including NET)
+       00650      Conjunctiva                           2018+          Conjunctiva
+                                                                       Corpus Sarcoma (including
+       00542      Corpus Adenosarcoma                    2018+
+                                                                       Adenosarcoma)
+
+
+
+
+Version 3.3                                       EOD 2018                                                 10
+      Schema
+               EOD Schema                        Applicable Years SS Chapter
+         ID
+                                                                  Corpus Carcinoma and
+       00530   Corpus Carcinoma                       2018+
+                                                                  Carcinosarcoma
+                                                                  Corpus Sarcoma (including
+       00541   Corpus Sarcoma                         2018+
+                                                                  Adenosarcoma)
+               Cutaneous Carcinoma of Head
+       00150                                          2018+       Skin (except Eyelid)
+               and Neck
+       00242   Cystic Duct                            2018+       Extrahepatic Bile Ducts
+       00288   Digestive Other                        2018+       Digestive Other
+       00778   Endocrine Other                        2018+       Endocrine Other
+               Esophagus (including GE
+       00161                                          2018+       Esophagus (including GE junction)
+               junction) Squamous
+               Esophagus (including GE
+       00169                                          2018+       Esophagus (including GE junction)
+               junction) (excluding Squamous)
+       00718   Eye Other                              2018+       Eye Other
+       00553   Fallopian Tube                         2018+       Fallopian Tube
+       00074   Floor of Mouth                         2018+       Floor of Mouth
+       00241   Gallbladder                            2018+       Gallbladder
+       00559   Genital Female Other                   2018+       Genital Female Other
+       00598   Genital Male Other                     2018+       Genital Male Other
+       00430   GIST                                   2018+       GIST
+       00073   Gum                                    2018+       Gum
+       00422   Heart, Mediastinum, and Pleura         2018+       Heart, Mediastinum, and Pleura
+       00830   HemeRetic                              2018+       HemeRetic
+       00112   Hypopharynx                            2018+       Hypopharynx
+       99999   Ill-Defined Other                      2018+       Ill-Defined Other
+       00723   Intracranial Gland                   2018-2022     Intracranial Gland
+       09723   Intracranial Gland                     2023+       Intracranial Gland
+       00458   Kaposi Sarcoma                         2018+       Kaposi Sarcoma
+       00600   Kidney Parenchyma                      2018+       Kidney Parenchyma
+       00610   Kidney Renal Pelvis                    2018+       Kidney Renal Pelvis
+       00690   Lacrimal Gland                         2018+       Lacrimal Gland/Sac
+       00698   Lacrimal Sac                           2018+       Lacrimal Gland/Sac
+       00132   Larynx Glottic                         2018+       Larynx Glottic
+       00130   Larynx Other                           2018+       Larynx Other
+       00133   Larynx SubGlottic                      2018+       Larynx SubGlottic
+       00132   Larynx SupraGlottic                    2018+       Larynx SupraGlottic
+       00071   Lip                                    2018+       Lip
+       00220   Liver                                  2018+       Liver
+       00360   Lung                                 2018-2024     Lung
+       09360   Lung                                   2025+       Lung
+       00790   Lymphoma                               2018+       Lymphoma
+       00795   Lymphoma-CLL/SLL                       2018+       Lymphoma
+
+
+
+
+Version 3.3                                     EOD 2018                                              11
+      Schema
+               EOD Schema                        Applicable Years SS Chapter
+         ID
+       00710   Lymphoma Ocular Adnexa                 2018+       Lymphoma Ocular Adnexa
+       00080   Major Salivary Glands                2018-2025     Major Salivary Glands
+       09081   Major Salivary Glands                  2026+       Major Salivary Glands
+                                                                  Nasal Cavity and Paranasal
+       00121   Maxillary Sinus                        2018+
+                                                                  Sinuses
+       09724   Medulloblastoma                        2023+       Medulloblastoma
+               Melanoma Choroid and Ciliary
+       00672                                          2018+       Melanoma Uvea
+               Body
+       00660   Melanoma Conjunctiva                   2018+       Melanoma Conjunctiva
+       00140   Melanoma Head and Neck                 2018+       Melanoma Head and Neck
+       00671   Melanoma Iris                          2018+       Melanoma Uvea
+       00470   Melanoma Skin                          2018+       Melanoma Skin
+       00460   Merkel Cell Skin                       2018+       Merkel Cell Skin
+       00119   Middle Ear                             2018+       Middle Ear
+       00077   Mouth Other                            2018+       Mouth Other
+               Mycosis Fungoides and Sézary
+       00811                                          2018+       Mycosis Fungoides
+               Syndrome
+                                                                  Nasal Cavity and Paranasal
+       00122   Nasal Cavity and Ethmoid Sinus         2018+
+                                                                  Sinuses
+       00090   Nasopharynx                          2018-2024     Nasopharynx
+       09090   Nasopharynx                            2025+
+       00770   NET Adrenal Gland                      2018+       Adrenal Gland (including NET)
+       00302   NET Ampulla of Vater                   2018+       Ampulla Vater (including NET)
+       00320   NET Appendix                         2018-2023     Appendix (including NET)
+       09320   NET Appendix                           2024+       Appendix (including NET)
+       00330   NET Colon and Rectum                   2018+       Colon and Rectum (including NET)
+       09330   NET Colon and Rectum                   2024+       Colon and Rectum (including NET)
+       00301   NET Duodenum                         2018-2023     Small Intestine (including NET)
+       09301   NET Duodenum                           2024+       Small Intestine (including NET)
+       00310   NET Jejunum and Ileum                2018-2023     Small Intestine (including NET)
+       09310   NET Jejunum and Ileum                  2024+       Small Intestine (including NET)
+       00340   NET Pancreas                         2018-2023     Pancreas (including NET)
+       09340   NET Pancreas                           2024+       Pancreas (including NET)
+       00290   NET Stomach                          2018-2023     Stomach (including NET)
+       09290   NET Stomach                            2024+       Stomach (including NET)
+       00700   Orbital Sarcoma                        2018+       Orbit
+       00100   Oropharynx HPV-Associated            2018-2025     Oropharynx
+       09100   Oropharynx HPV-Associated              2026+       Oropharynx
+       00111   Oropharynx HPV-Independent             2018+       Oropharynx
+                                                                  Ovary and Primary Peritoneal
+       00551   Ovary                                  2018+
+                                                                  Carcinoma
+       00075   Palate Hard                            2018+       Palate Hard
+       00280   Pancreas                               2018+       Pancreas (including NET)
+
+
+
+
+Version 3.3                                     EOD 2018                                             12
+      Schema
+               EOD Schema                       Applicable Years SS Chapter
+         ID
+       00750   Parathyroid                           2018+       Parathyroid
+       00570   Penis                                 2018+       Penis
+       00118   Pharynx Other                         2018+       Pharynx Other
+       00560   Placenta                              2018+       Placenta
+       00822   Plasma Cell Disorders                 2018+       Myeloma Plasma Cell Disorder
+       00821   Plasma Cell Myeloma                   2018+       Myeloma Plasma Cell Disorder
+       00370   Pleura Mesothelioma                 2018-2024     Pleura Mesothelioma
+       09370   Pleura Mesothelioma                   2025+       Pleura Mesothelioma
+               Primary Cutaneous Lymphomas                       Primary Cutaneous Lymphomas
+       00812                                         2018+
+               (excluding Mycosis Fungoides)                     (excluding Mycosis Fungoides)
+                                                                 Ovary and Primary Peritoneal
+       00552   Primary Peritoneal Carcinoma          2018+
+                                                                 Carcinoma
+       00580   Prostate                              2018+       Prostate
+       00378   Respiratory Other                     2018+       Respiratory Other
+       00680   Retinoblastoma                        2018+       Retinoblastoma
+       00440   Retroperitoneum                       2018+       Retroperitoneum
+       00128   Sinus Other                           2018+       Sinus Other
+       00640   Skin Eyelid                           2018+       Skin Eyelid
+       00478   Skin Other                            2018+       Skin (except Eyelid)
+       00180   Small Intestine                       2018+       Small Intestine (including NET)
+               Soft Tissue Abdomen and
+       00421   Thoracic (excluding Heart,            2018+       Soft Tissue
+               Mediastinum, Pleura)
+       00400   Soft Tissue Head and Neck             2018+       Soft Tissue
+       00450   Soft Tissue Rare                      2018+       Soft Tissue
+       00459   Soft Tissue Other                     2018+       Soft Tissue
+               Soft Tissue Trunk and
+       00410                                         2018+       Soft Tissue
+               Extremities
+       00170   Stomach                              2018+        Stomach (including NET)
+       00590   Testis                               2018+        Testis
+       00350   Thymus                             2018-2024      Thymus
+       09350   Thymus                               2025+        Thymus
+       00730   Thyroid                              2018+        Thyroid (including Medullary)
+       00740   Thyroid Medullary                    2018+        Thyroid (including Medullary)
+       00072   Tongue Anterior                      2018+        Tongue Anterior
+       00358   Trachea                              2018+        Trachea
+       00631   Urethra                              2018+        Urethra (including prostatic)
+       00633   Urethra-Prostatic                    2018+        Urethra (including prostatic)
+       00638   Urinary Other                        2018+        Urinary Other
+       00510   Vagina                               2018+        Vagina
+       00500   Vulva                              2018-2023+     Vulva
+       09500   Vulva                                2024+        Vulva
+
+
+
+Version 3.3                                    EOD 2018                                            13
+                                          General Coding Instructions
+
+    Extent of Disease (EOD) 2018 is a data collection system which has three data items: EOD Primary
+    Tumor, EOD Regional Nodes, and EOD Mets. These items may be combined with other data to derive
+    different types of stage. EOD 2018 is collected for every site and histology combination for cases
+    diagnosed 1/1/2018 and forward.
+
+    Do not use this system for any cases diagnosed prior to 1/1/2018.
+
+    Note: ALWAYS check site-specific EOD 2018 schemas for exceptions and/or additional information.
+
+
+
+                                              General Guidelines
+
+        1. EOD schemas apply to ALL primary sites and specified histologies. Most schemas are based on
+           primary site, while some are based on histology alone.
+
+        2. For ALL sites, EOD is based on a combined clinical and operative/pathological assessment. Gross
+           observations at surgery are particularly important when all malignant tissue cannot be or was
+           not removed.
+               a. In the event of a discrepancy between pathology and operative reports concerning
+                   excised tissue, priority is given to the pathology report
+
+        3. EOD should include all information available within four months of diagnosis in the absence of
+           disease progression or upon completion of surgery(ies) in first course of treatment, whichever is
+           longer.
+
+        4. Clinical information, such as description of skin involvement for breast cancer and distant lymph
+           nodes for any site, can change the EOD stage. Be sure to review the clinical information carefully
+           to accurately determine the extent of disease.
+                a. If the operative/pathology information disproves the clinical information, use the
+                     operative/pathology information
+
+        5. Information for EOD from a surgical resection after neoadjuvant treatment may be used, but
+           ONLY if the extent of disease is greater than the pre-treatment clinical findings.
+
+        6. Disease progression, including metastatic involvement, known to have developed after the
+           initial stage workup, should be excluded when coding the EOD fields.
+
+        7. Autopsy reports are used in coding EOD just as are pathology reports, applying the same rules
+           for inclusion and exclusion.
+
+        8. Death Certificate only (DCO) cases
+              a. Code the following for DCO’s. Do not use any other code, even for those that may have
+                  a default value.
+                           i) EOD Primary Tumor: 999
+                           ii) EOD Regional Nodes: 999
+
+
+
+
+Version 3.3                                         EOD 2018                                                    14
+                           iii) EOD Mets: 99
+
+        9. T, N, M information may be used to code EOD 2018 when it is the only information available.
+
+        10. Use the medical record documentation to assign EOD when there is a discrepancy between the
+            T, N, M information and the documentation in the medical record. If you have access to the
+            physician, please query to resolve the discrepancy.
+                a. When there is doubt that documentation in the medical record is complete, code the
+                    EOD corresponding to the physician staging
+
+                   Example: Patient diagnosed at community hospital with limited workup. Staging note
+                   from medical oncologist suggesting missing results from further outside test
+
+        11. EOD Schema-specific guidelines take precedence over general guidelines. Always read the
+            information pertaining to a specific primary site or histology schema.
+
+
+
+
+Version 3.3                                       EOD 2018                                               15
+              EOD DATA ITEMS
+
+
+
+
+Version 3.3      EOD 2018      16
+                                                EOD PRIMARY TUMOR
+
+                                                                                              Item Length: 3
+                                                                                         NAACCR Item #: 772
+                                                                             NAACCR Name: EOD Primary Tumor
+    Description
+    EOD Primary Tumor is part of the EOD 2018 data collection system and is used to classify contiguous
+    growth (extension) of the primary tumor within the organ of origin or its direct extension into
+    neighboring organs. See also EOD Regional Nodes [NAACCR Data item #774] and EOD Mets [NAACCR
+    Data item #776]. Effective for cases diagnosed 1/1/2018 and forward.
+
+    Rationale
+    EOD Primary tumor is used to calculate Derived EOD 2018 T (when applicable) [NAACCR Data item
+    #785] and Derived Summary Stage 2018 [NAACCR Data item #762]. Derivation will occur at the level of
+    the central registry.
+
+    Note: ALWAYS check site-specific EOD 2018 schemas for exceptions and/or additional information
+
+    See the most current version of SEER*RSA for rules and site-specific codes and coding structures.
+
+     Code                 Description
+     000                  In situ, intraepithelial, noninvasive, non-infiltrating
+                          SCHEMA-SPECIFIC CODES WHERE NEEDED
+     800                  No evidence of primary tumor
+     999                  Unknown; extension not stated
+                          Primary tumor cannot be assessed
+                          Not documented in patient record
+
+                          Death Certificate Only
+
+    Coding Instructions
+        1. Assign the farthest documented contiguous involvement of the primary tumor. Code the
+           farthest documented contiguous direct extension/involvement of tumor away from the primary
+           site. If an involved organ or tissue is not specifically mentioned in the code descriptions,
+           approximate the location from listed structures in the same anatomic area and assign the
+           appropriate code based on that information. EOD Primary Tumor codes are hierarchical except
+           for code 800.
+        2. CLINICAL vs PATHOLOGICAL codes
+
+                  a. Some schemas have EOD extension/involvement codes that are noted as “clinical
+                     assessment only” or “pathological assessment only.”
+
+                          i. Clinical assessment codes should be used when there is a clinical work up only
+                             and there is no surgical resection of the primary tumor or site. This includes
+                             physical exam, imaging and biopsy
+
+
+
+
+Version 3.3                                            EOD 2018                                                17
+                                1. Exception: If patient has neoadjuvant therapy, and the clinical
+                                   assessment is equal to or greater than the pathological assessment,
+                                   then the clinical assessment code would take priority
+
+                        ii. Pathological assessment codes can be used when there is a surgical resection of
+                            the primary tumor or site
+
+        3. A “localized, NOS” code is provided for those cases in which the only description is “localized
+           with no further information.” “NOS” codes should be used only after an exhaustive search for
+           more specific information.
+        4. Pathological findings take priority over clinical findings.
+                a. Assign the highest code representing the greatest extension/involvement pathologically
+                   (based on pathology report), when available
+                b. If there is no applicable pathology, assign the highest code representing the greatest
+                   extension/involvement clinically. Imaging takes precedence over physical examination
+                c. If extension/involvement is positive based on imaging and/or physical exam, but is
+                   confirmed to be negative on pathological exam, then code EOD Primary Tumor based on
+                   the pathological findings
+        5. Neoadjuvant (preoperative) therapy: If the patient receives neoadjuvant (preoperative)
+           systemic therapy (chemotherapy, immunotherapy) or radiation therapy, code the clinical
+           information if that is the farthest extension/involvement documented. If the post-neoadjuvant
+           surgery shows more extensive disease, code the extension/involvement based on the post-
+           neoadjuvant information. If the clinical and pathological information are the same, code the
+           extension/involvement based on the clinical information.
+
+        6. In situ tumors: Assign code 000 for in situ tumors.
+
+                a. Exception: For some schemas, e.g., Breast, there may be multiple categories of in situ
+                   codes. Use schema-specific instructions and codes.
+
+        7. In situ tumors with nodal or metastatic involvement: In the event of an in-situ tumor with
+           nodal or metastatic involvement, assign EOD Primary Tumor as in situ and code the EOD
+           Regional Nodes and/or EOD Mets appropriately. This is a change from previous versions of EOD
+           and Summary Stage.
+
+                a. Note: Behavior would be /3 for these tumors. The primary tumor is in situ; however,
+                   there is evidence of an invasive component due to the positive lymph nodes or
+                   metastatic involvement
+
+        8. When multiple tumors are reported as a single primary, code the furthest direct
+           extension/involvement from any tumor.
+
+        9. Noncontiguous/Discontinuous or distant metastases: Noncontiguous/discontiguous
+           metastases are usually coded in the EOD Mets field. Some exceptions include mucinous
+           carcinoma of the appendix, corpus uteri, ovary, fallopian tube and female peritoneum, where
+
+
+
+Version 3.3                                         EOD 2018                                                  18
+              noncontiguous/discontinuous metastases in the pelvis or abdomen are coded in EOD Primary
+              Tumor.
+
+                 a. For some schemas, e.g., Breast, Lung, and Kidney, direct (contiguous)
+                    extension/involvement to certain specific sites is listed under EOD Mets. If the structure
+                    involved by direct extension/involvement is not listed in EOD Primary Tumor categories,
+                    look for it in EOD Mets. If the specific structure involved by direct
+                    extension/involvement is not listed in either data item, assign the highest known
+                    contiguous extension/involvement code in EOD Primary Tumor.
+
+        10. Code 800 when there is no evidence of the primary tumor (occult primary).
+
+                 a. Use code 800 when clinically and/or pathologically there is no evidence of the primary
+                    tumor. This code does not apply to those cases where a biopsy removes all the tumor
+                    and there is no residual tumor on the surgical resection
+
+                 b. When EOD Primary Tumor is coded 800
+
+                          i. Tumor Size Clinical should be coded to 000 when there is no surgical resection
+                             for the primary tumor or site, but clinically no primary tumor was identified
+
+                         ii. Tumor Size Pathological should be coded to 000 when the suspected primary
+                             tumor or site is resected, but no tumor is found. If no surgical resection is done,
+                             code 999
+
+        11. Code ‘888’ for the following schemas:
+
+                 a. Ill-Defined Other (includes unknown primary site) (99999)
+
+        12. Code 999
+
+                 a. Assign code 999 when there is no information on primary tumor extent.
+
+                 b. Code 999 is to be used by default for death certificate only (DCO) cases.
+                        i. Do not use any other code, even for those that may have a default value.
+                           Example: HemeRetic schema, EOD Primary Tumor for Acute Myeloid Leukemia
+                           is always coded as 700. For DCO’s, assign 999.
+
+        13. Document choice of EOD Primary Tumor code in text. It is strongly recommended that the
+            assessment of the primary tumor extension/involvement be documented, as well as the choice
+            of the EOD Primary Tumor code in a related STAGE text field on the abstract. While primary
+            tumor extension/involvement can be found in a variety of places, it’s most found in a pathology
+            and/or operative report.
+
+
+
+
+Version 3.3                                          EOD 2018                                                      19
+                                              EOD REGIONAL NODES
+
+                                                                                          Item Length: 3
+                                                                                     NAACCR Item #: 774
+                                                                        NAACCR Name: EOD Regional Nodes
+
+    Description
+
+    EOD Regional Nodes is part of the EOD 2018 data collection system and is used to classify the regional
+    lymph nodes involved with cancer at the time of diagnosis. See also EOD Primary Tumor [NAACCR Data
+    item #772] and EOD Mets [NAACCR Data item #776]. Effective for cases diagnosed 1/1/2018 and
+    forward.
+
+    Rationale
+
+    EOD Regional Nodes is used to calculate Derived EOD 2018 N (when applicable) [NAACCR Data item
+    #815] and Derived Summary Stage 2018 [NAACCR Data item #762]. Derivation will occur at the level of
+    the central registry.
+
+    Note: ALWAYS check site specific EOD 2018 schemas for exceptions and/or additional information
+
+    See the most current version of SEER*RSA for rules and site-specific codes and coding structures.
+
+              Code        Description
+               000        No regional lymph node involvement
+                          SCHEMA-SPECIFIC CODES WHERE NEEDED
+              800         Regional lymph node(s), NOS
+                          Lymph node(s), NOS
+              888         Use for these sites only: Brain; CNS Other; HemeRetic; Ill-Defined Other (includes
+                          unknown primary site); Intracranial Gland; Lymphoma; Lymphoma-CLL/SLL, Plasma
+                          Cell Myeloma
+              999         Unknown; regional lymph node(s) not stated
+                          Regional lymph node(s) cannot be assessed
+                          Not documented in patient record
+
+                          Death Certificate Only
+
+
+    Coding Instructions
+
+    1. Record the specific involved regional lymph node chain(s) farthest from the primary site. Regional
+       lymph nodes are listed for each schema. EOD Regional Nodes are hierarchical, except for code 800.
+
+        a. Generally, the regional lymph nodes in the chain(s) closest to the primary site have lower codes,
+           while nodes farther away from the primary or in farther lymph node chains have higher codes,
+           although there are exceptions due to lymph drainage patterns.
+
+
+
+
+Version 3.3                                          EOD 2018                                                  20
+        b. If a lymph node chain is not listed, check the abstractor notes in SEER*RSA, Appendix C of the
+           Hematopoietic Manual, an anatomy textbook, ICD-O-3, or a medical dictionary for a synonym. If
+           the lymph node chain or its synonym are not listed in regional lymph nodes, code the involved
+           node(s) in EOD Mets.
+
+              i.   Tip for coding lymph nodes: If not possible to determine if a lymph node is regional or
+                   distant, check the scheme for a site that is nearby.
+
+                   Example: If unable to determine if a listed regional node for esophagus is regional or distant,
+                   check the stomach EOD regional nodes. If the lymph node chain is listed as regional for
+                   stomach, assume the named lymph node is not an obscure name for a lymph node chain
+                   and that it is probably distant for the esophagus.
+
+        c. Make sure your EOD Lymph Node code agrees with Regional Nodes Positive
+
+              i.   If Regional Nodes Positive = 01-90, 95, 97, this indicates that regional lymph nodes are
+                   involved, and EOD Lymph Nodes should be coded appropriately
+
+    2. CLINICAL vs PATHOLOGICAL codes
+
+        a. Some schemas have EOD regional node codes that are noted as “clinical assessment only” or
+           “pathological assessment only.
+
+              i.   Clinical assessment codes should be used only when there is a clinical work up and there is
+                   no surgical resection of the primary tumor or site. This includes physical exam, FNA, needle
+                   core biopsy, sentinel node biopsy, or lymph node excision.
+
+                   a)   Exception: If patient has neoadjuvant therapy, and the clinical assessment is equal to
+                        or greater than the pathological assessment, then the clinical assessment code would
+                        take priority
+
+              ii. Pathological assessment codes can be used when there is a surgical resection of the primary
+                  tumor or site in conjunction with a FNA, Sentinel Lymph Node biopsy or lymph node
+                  dissection. The FNA or sentinel lymph node biopsy can be done during the clinical workup
+                  and then followed by a negative lymph node dissection
+
+    3. Pathological findings take priority over clinical findings: It is not necessary to biopsy every lymph
+       node in the suspicious area to disprove involvement. See next section for coding instructions when
+       neo-adjuvant therapy is administered.
+
+        a. Code the lymph node involvement at diagnosis pathologically (based on pathology report),
+           when available.
+
+        b. If there is no applicable histology, assign lymph node involvement based on clinical findings.
+           Imaging takes precedence over physical examination.
+
+        c. If nodes are determined positive based on imaging and then confirmed to be negative on
+           pathological exam, then code EOD Regional Nodes based on the negative pathological findings.
+
+
+
+
+Version 3.3                                            EOD 2018                                                      21
+        Exception: Assign code 800, “Regional lymph node(s), NOS or Lymph node(s), NOS” only when there
+        is lymph node involvement, but no available information regarding the specific node(s) involved.
+
+    4. Neoadjuvant (preoperative) therapy: If the patient receives neoadjuvant (preoperative) systemic
+       therapy (chemotherapy, immunotherapy) or radiation therapy, code the clinical information if that
+       is the most extensive lymph node involvement documented. If the post-neoadjuvant surgery shows
+       more extensive lymph node involvement, code the regional nodes based on the post-neoadjuvant
+       information. If the clinical and pathological information are the same, code regional lymph nodes
+       based on the clinical information.
+
+    5. Terms meaning lymph node involvement: For solid tumors, the terms “fixed” or “matted” and
+       “mass in the hilum, mediastinum, retroperitoneum, and/or mesentery” (with no specific information
+       as to tissue involved) are recorded as involvement of lymph nodes.
+
+        a. Other terms, such as “palpable,” “enlarged,” “visible swelling,” “shotty,” or “lymphadenopathy”
+           should be ignored for solid tumors, unless there is a statement of involvement by the clinician,
+           or the patient was treated as though regional nodes were involved.
+
+              Example: Palpable axillary lymph nodes found, consistent with mets. Record as involvement of
+              lymph nodes.
+
+              Example: Enlarged renal hilar nodes found on CT, positive for cancer. Record as involvement of
+              lymph nodes.
+
+        b. The terms “homolateral,” “ipsilateral,” and “same side” are used interchangeably.
+
+    6. Accessible lymph nodes: For “accessible” lymph nodes that can be observed, palpated, or examined
+       without instruments, such as the regional nodes for the breast, oral cavity, salivary gland, skin,
+       thyroid, and other organs, look for some description of the regional lymph nodes. A statement such
+       as “remainder of examination negative” is sufficient to code 000 negative regional lymph nodes.
+
+                  Note: If there is mention of a clinical evaluation but no mention of positive lymph nodes,
+                  assign code 000.
+
+    7. Inaccessible lymph nodes: For certain primary sites, regional lymph nodes are not easily examined
+       by palpation, observation, physical examination, or other clinical methods. These are lymph nodes
+       within body cavities that in most situations cannot be palpated, making them inaccessible. Bladder,
+       colon, corpus uteri, esophagus, kidney, liver, lung, ovary, prostate, and stomach are examples of
+       inaccessible sites (this is not an all-inclusive list). When EOD Primary Tumor is low stage/Localized
+       and standard treatment is done, it is sufficient to code 000 for negative regional lymph nodes.
+
+    8. Code EOD Regional Nodes 000 (negative) instead of 999 (unknown) when ALL three of the following
+       conditions are met:
+
+        a. There is no mention of regional lymph node involvement in the physical examination, pre-
+           treatment diagnostic testing, or surgical exploration
+
+        b. The patient has localized disease
+
+
+
+Version 3.3                                           EOD 2018                                                 22
+        c. The patient receives what would be the standard treatment to the primary site (treatment
+           appropriate to the stage of disease as determined by the physician), or patient is offered usual
+           treatment but refuses it
+
+              These guidelines apply only to localized cancers. Assign code 999 when there is reasonable
+              doubt that the tumor is localized.
+
+              Example: When there is evidence that a prostate cancer has penetrated through the capsule
+              into the surrounding tissues (regional disease) and regional lymph node involvement is not
+              mentioned, it would be correct to code 999 for unknown lymph node involvement in the
+              absence of any specific information regarding regional nodes.
+
+    9. In situ tumors (behavior /2): Code 000 for lymph node involvement.
+
+        a. Note: Pure in situ tumors (behavior /2) cannot have lymph node mets
+
+              i.   For Breast and Thyroid, there are multiple lymph node codes indicating no regional lymph
+                   node involvement (depending on whether lymph nodes were pathologically examined or
+                   not)
+
+    10. In situ tumors with metastatic nodal involvement: In the event of an in-situ tumor with metastatic
+        nodal involvement, assign EOD Primary Tumor as in situ (code 000) and code EOD Regional Nodes
+        appropriately (positive). This is a change from prior versions of EOD.
+
+        a. Note: Behavior would be /3 for these tumors. The primary tumor is in situ; however, there is
+           evidence of an invasive component due to the positive lymph nodes
+
+    11. Direct tumor extension/involvement into lymph node: If direct extension/involvement of the
+        primary tumor into a regional lymph node is shown, code the involved node(s) in EOD Regional
+        Nodes.
+
+    12. Sentinel lymph nodes: Involved nodes found during sentinel lymph node procedures are classified
+        as positive regional nodes.
+
+        a. The sentinel lymph node is the first lymph node to receive lymphatic drainage from a primary
+           tumor.
+        b. If it contains metastatic tumor, this indicates that other lymph nodes may contain tumor. If it
+           does not contain metastatic tumor, other lymph nodes are not likely to contain tumor.
+           Occasionally there is more than one sentinel lymph node
+
+    13. Isolated Tumor cells (ITCs): For some schemas, ITCs are counted as positive regional nodes, while
+        other schemas count them as negative. See the individual schemas to determine how to code ITCs.
+
+    Noncontiguous/Discontinuous (satellite) tumor deposits (peritumoral nodules) for colon, appendix,
+    rectosigmoid and rectum: These can occur WITH or WITHOUT regional lymph node involvement. Assign
+    the appropriate code according to guidelines in individual schemas. Tumor nodules in pericolic or
+    perirectal fat without evidence of residual lymph node structures can be one of several aspects of the
+
+
+
+Version 3.3                                           EOD 2018                                                23
+    primary cancer: noncontiguous/discontinuous spread, venous invasion with extravascular spread, or a
+    totally replaced lymph node. If there are Tumor Deposits and node involvement, code only the
+    information on node involvement in this field. Specific information on Tumor Deposits is coded in the
+    data item: Tumor Deposits [NAACCR Data Item #3934].
+
+    14. Code 800. Use code 800 for the following situations:
+
+        a. Lymph node assignment for the EOD schema is based on location (specifically listed lymph
+           nodes) and the only documentation available is that lymph nodes are involved.
+        b. Lymph node assignment for the EOD is based on number and/or size and the only
+           documentation available is that lymph nodes are involved.
+        c. Statement of “regional lymph nodes involved,” with no further information on location, number
+           and/or size.
+        d. Unidentified nodes included with the resected primary site.
+              i.   Nodes may be identified in the operative or pathology report (including the final diagnosis),
+                   microscopic or gross description.
+        e. Lymph nodes which are not specified as regional or distant should be assumed to be regional
+           nodes.
+    15. Code ‘888’ for the following schemas:
+
+              i. Brain (00721, 09721)
+              ii. CNS Other (00722, 09722)
+              iii. Intracranial Gland (00723, 09723)
+              iv. Medulloblastoma (09724)
+              v. Lymphoma (00790)
+                    a)   Primary Cutaneous Lymphoma (00812) and Ocular Adnexal Lymphoma (00710) have
+                         separate schemas from Lymphoma. EOD Regional Nodes must be coded for those
+                         two schemas (888 is not valid)
+              vi. Lymphoma-CLL/SLL (00795)
+              vii. Plasma Cell Myeloma (00821)
+              viii. HemeRetic (00830)
+              ix. Ill-Defined Other (includes unknown primary site) (99999)
+
+
+    16. Code 999
+
+        a. Assign code 999 when there is no information on regional lymph node involvement and the
+           primary tumor is not localized.
+
+        b. Code 999 is to be used by default for death certificate only (DCO) case.
+           i. Do not use any other code, even for those that may have a default value.
+              a)   Exception: Field is not defined for that schema.
+                   Example: HemeRetic schema, EOD Regional Nodes is always 888 (N/A)
+
+
+
+Version 3.3                                            EOD 2018                                                    24
+    17. Document choice of EOD Regional Nodes code in text. It is strongly recommended that the positive
+        and negative assessment of regional lymph node(s) be documented, as well as the choice of the EOD
+        Regional Nodes code in a related STAGE text field on the abstract. Information on regional node
+        status can be found on physical exam, scans and pathology reports.
+
+
+
+
+Version 3.3                                       EOD 2018                                                  25
+                                                      EOD METS
+                                                                                              Item Length: 2
+                                                                                         NAACCR Item #: 776
+                                                                                     NAACCR Name: EOD Mets
+
+    Description
+
+    EOD Mets is part of the EOD 2018 data collection system and is used to classify the distant site(s) of
+    metastatic involvement at time of diagnosis. See also EOD Primary Tumor [NAACCR Data item #772]
+    and EOD Regional Nodes [NAACCR Data item #774]. Effective for cases diagnosed 1/1/2018 and
+    forward.
+
+    Rationale
+
+    EOD Mets is used to calculate Derived EOD 2018 M (when applicable) [NAACCR Data item #795] and
+    Derived Summary Stage 2018 [NAACCR Data item #762]. Derivation will occur at the level of the central
+    registry.
+
+    Note: ALWAYS check site-specific EOD 2018 schemas for exceptions and/or additional information
+
+    See the most current version of SEER*RSA for rules and site-specific codes and coding structures.
+
+              Code          Description
+               00           No distant metastasis
+                            Unknown if distant metastasis
+                            None
+                            SCHEMA-SPECIFIC CODES WHERE NEEDED
+               70           Distant metastasis, NOS
+               88           Use for these sites only: HemeRetic; Ill-Defined Other (includes unknown primary
+                            site); Kaposi Sarcoma; Lymphoma; Lymphoma-CLL/SLL; Plasma Cell Myeloma,
+                            Plasmacytomas
+               99           Death certificate only (DCO)
+
+
+    Coding Instructions
+
+    1. Determination of EOD Mets requires only history and physical examination. Imaging of distant
+       organs is not required. In other words, when a case lacks any extensive workup, the registrar can
+       infer that there are no distant metastases based solely on physical exam documentation.
+
+        a. Assign 00 for cases in which there are no distant metastases as determined by clinical,
+           radiographic and/or pathologic methods.
+
+        b. A case is classified as clinically free of metastases (code 00) unless there is documented
+           evidence of metastasis by clinical means or by cytological/pathological examination of a
+           metastatic site. For the following scenarios, code 00 can be used:
+
+              i.    No information is available (no PE, imaging or pathology)
+
+
+
+
+Version 3.3                                            EOD 2018                                                26
+              ii. There is reasonable doubt that the tumor is no longer localized and there is no
+                  documentation of distant metastasis
+
+        c. Assign the appropriate EOD Mets codes 10-70 for cases in which one or more distant metastases
+           is identified by clinical, radiographic and/or pathologic methods. EOD Mets codes are
+           hierarchical except for code 70.
+
+    2. For a few schemas, such as Breast, Lung, Kidney, and Ovary, the EOD Mets category may include
+       direct extension/involvement of the primary tumor into distant organs or tissues. If the structure
+       involved by direct involvement is not listed in EOD Primary Tumor, look for the structure in EOD
+       Mets. If the specific structure involved by contiguous involvement is not listed in either EOD
+       Primary Tumor or EOD Mets, assign the highest available code in EOD Primary Tumor.
+
+    3. Noncontiguous/Discontinuous or hematogenous metastases: Distant metastasis known at the
+       time of diagnosis is coded in EOD Mets. In other words, when the patient was diagnosed, tumor had
+       already spread indirectly (through vascular or lymph channels) to distant lymph nodes or to site(s)
+       distant from the primary site. Refer to the individual schemas for detailed instructions.
+
+    4. Positive pathological findings take priority over clinical findings.
+        a. Assign the highest applicable code for metastasis at diagnosis pathologically (based on
+           pathology report), when available.
+              i.   Not every metastatic site may be biopsied; however, for purposes of coding this data item,
+                   each metastatic site, whether confirmed clinically or pathologically, should be included,
+                   which may mean that clinical evidence would take priority over pathological.
+                   Example: Colon cancer with microscopically confirmed metastases to Liver (code 10 for
+                   involvement of one organ); however, per imaging, mets also noted in the peritoneum and
+                   distant lymph nodes. EOD Mets would be coded to 50 (peritoneum involved with or without
+                   distant lymph nodes/organs) based on the clinical evidence of mets.
+        b.    If there is no applicable pathology or the pathology does not show metastasis, code EOD Mets
+              based on clinical findings. Imaging takes precedence over physical examination.
+    5. Not all possible metastatic sites are listed in each of the schemas. If there is confirmed metastasis of
+       a site that is not listed, assign the highest code as described below.
+
+        a. For schemas that have only codes 10 (distant lymph nodes) and 70 (all other mets), code 70 is to
+           be used for all mets (except distant lymph nodes only)
+
+        b. For schemas where there are additional codes, use the highest code before code 70 when mets
+           are present that are not specified in any of the other codes. Code 70 in these cases should only
+           be used when the only information is “distant metastasis, NOS,” and there is no documentation
+           regarding the specific metastases
+
+              i.   For schemas where there are multiple distant site codes and the specific mets is not
+                   described, use the code that includes “other specific metastasis.”
+
+              ii. For example, history only cases or cases with minimal information available.
+
+
+
+
+Version 3.3                                           EOD 2018                                                    27
+              iii. There will be enough information to code the numerically lower, but more specific, EOD
+                   Mets code when the location of the metastases is documented in the chart or abstract.
+
+    6. Neoadjuvant (preoperative) therapy: If the patient receives neoadjuvant (preoperative) systemic
+       therapy (chemotherapy, immunotherapy) or radiation therapy, code the clinical information
+       description that identifies the most extensive metastasis. If the post-neoadjuvant surgery shows
+       additional or more extensive metastasis, code EOD Mets based on the post-neoadjuvant
+       information. If the clinical and pathological information are the same, code mets based on the
+       clinical information.
+
+    7. Isolated Tumor Cells (ITCs), Circulating Tumor Cells (CTCs), and Disseminated Tumor Cells (DTCs):
+       small clusters of tumor cells not greater than 0.2 mm in largest dimension found in distant sites such
+       as bone, circulating blood, or bone marrow and having uncertain prognostic significance.
+
+        a. For breast, code 05 when a biopsy of a distant site shows ITCs, CTCs or DTCs detected by IHC or
+           molecular techniques.
+
+        b. For other sites, CTCs, DTCs, and ITCs are coded 00.
+
+    8. In situ tumors with metastatic involvement: In the event of an in-situ tumor with metastatic
+       involvement, assign EOD Primary Tumor as in situ (code 000) and code EOD Mets appropriately
+       (positive). This is a change from prior versions of EOD.
+
+        a. Note: Behavior would be /3 for these tumors. The primary tumor is in situ; however, there is
+           evidence of an invasive component due to the metastatic involvement
+
+    9. Code 88 for the following schemas/Schema IDs
+          i. Kaposi Sarcoma (00458)
+          ii. Lymphoma (00790)
+               a)    Primary Cutaneous Lymphoma (00812) and Ocular Adnexal Lymphoma (00710) have
+                     separate schemas from Lymphoma. EOD Mets must be coded for those two schemas
+                     (88 is not valid)
+          iii. Lymphoma-CLL/SLL (00795)
+          iv. HemeRetic (00830)
+          v. Plasma Cell Disorders (00822)
+          vi. Plasma Cell Myeloma (00821)
+          vii. Ill-Defined Other (includes unknown primary site) (99999)
+
+    10. Code 99: Code 99 is to be used ONLY for death certificate only (DCO) cases.
+
+        a. Do not use any other code, even for those that may have a default value.
+           i. Exception: Field is not defined for that schema.
+              Example: HemeRetic schema, EOD Mets is always 88 (N/A)
+
+        b. When it is unknown if there are distant metastases, code 00 (see rule 1b).
+
+
+
+
+Version 3.3                                          EOD 2018                                                   28
+    11. Document choice of EOD Mets code in text. It is strongly recommended that the positive and
+        negative assessment of distant lymph nodes and/or distant metastasis be documented, as well as
+        the choice of the EOD Mets code in a related STAGE text field on the abstract. Information on
+        distant mets can be found mostly in Physical Exam and Scans.
+
+
+
+
+Version 3.3                                       EOD 2018                                               29
+                                               DERIVED EOD 2018 T
+
+                                                                                           Item Length: 15
+                                                                                      NAACCR Item #: 785
+                                                                          NAACCR Name: Derived EOD 2018 T
+
+
+    New Data Item for Diagnosis Year 2018 and forward. Derived in Central registry only.
+
+    Description
+
+    This item stores the derived EOD 2018 T value derived from coded fields using the EOD algorithm.
+    Effective for cases diagnosed 1/1/2018 and forward.
+
+    Rationale
+
+    Derived EOD 2018 T can be used to evaluate disease spread at diagnosis, treatment patterns and
+    outcomes over time.
+
+    Derived EOD 2018 T is only available at the central registry level.
+
+
+
+
+Version 3.3                                          EOD 2018                                                30
+                                              DERIVED EOD 2018 N
+
+                                                                                           Item Length: 15
+                                                                                       NAACCR Item #: 815
+                                                                          NAACCR Name: Derived EOD 2018 N
+
+
+    New Data Item for Diagnosis Year 2018 and forward. Derived in Central registry only.
+
+    Description
+
+    This item stores the derived EOD 2018 N staging element from coded fields using the EOD algorithm.
+    Effective for cases diagnosed 1/1/2018 and forward.
+
+    Rationale
+
+    Derived EOD 2018 N can be used to evaluate disease spread at diagnosis, treatment patterns and
+    outcomes over time.
+
+    Derived EOD 2018 N is only available at the central registry level.
+
+
+
+
+Version 3.3                                          EOD 2018                                                31
+                                              DERIVED EOD 2018 M
+
+                                                                                            Item Length: 15
+                                                                                       NAACCR Item #: 795
+                                                                          NAACCR Name: Derived EOD 2018 M
+
+
+    New Data Item for Diagnosis Year 2018 and forward. Derived in Central registry only.
+
+    Description
+
+    This item stores the derived EOD 2018 M staging element from coded fields using the EOD algorithm.
+    Effective for cases diagnosed 1/1/2018 and forward.
+
+    Rationale
+
+    Derived EOD 2018 M can be used to evaluate disease spread at diagnosis, treatment patterns and
+    outcomes over time.
+
+    Derived EOD 2018 M is only available at the central registry level.
+
+
+
+
+Version 3.3                                          EOD 2018                                                 32
+                                       DERIVED EOD 2018 STAGE GROUP
+
+                                                                                          Item Length: 15
+                                                                                      NAACCR Item #: 818
+                                                               NAACCR Name: Derived EOD 2018 Stage Group
+
+    New Data Item for Diagnosis Year 2018 and forward. Derived in Central registry only.
+
+    Description
+
+    Derived EOD 2018 Stage Group is derived using the EOD data collection system (EOD Primary Tumor
+    [NAACCR Data item #772], EOD Regional Nodes [NAACCR Data item #774] and EOD Mets [NAACCR
+    Data item #776]) algorithm. Other data items may be included in the derivation process. Effective for
+    cases diagnosed 1/1/2018 and forward.
+
+    Rationale
+
+    Derived EOD 2018 Stage Group can be used to evaluate disease spread at diagnosis, treatment patterns
+    and outcomes over time.
+
+    Derived EOD 2018 Stage Group is only available at the central registry level.
+
+
+
+
+Version 3.3                                         EOD 2018                                                33
+                                        DERIVED SUMMARY STAGE 2018
+
+                                                                                       Item Length: 1
+                                                                                   NAACCR Item #: 762
+                                                              NAACCR Name: Derived Summary Stage 2018
+
+    New Data Item for Diagnosis Year 2018 and forward. Derived in Central registry only.
+
+    Description
+
+    Derived Summary Stage 2018 is derived using the EOD data collection system (EOD Primary Tumor
+    [NAACCR Data item #772], EOD Regional Nodes [NAACCR Data item #774], and EOD Mets [NAACCR
+    Data item #776]) algorithm. Effective for cases diagnosed 1/1/2018 and forward.
+
+    Rationale
+
+    The SEER program has collected staging information on cases since its inception in 1973. For many
+    cancer sites, the different versions of AJCC stage over time have made the analyses of long-term trends
+    in stage very difficult. Therefore, for long-term staging trends, SEER has relied on a more simplified
+    summary stage. When Collaborative Stage (CS) information is no longer available, SEER will need to
+    derive summary stage via computer algorithm based on T, N, or M (clinical, pathologic, Derived SEER
+    combined) or EOD Primary Tumor, EOD Regional Nodes, and EOD Mets and other information as
+    needed. Directly Assigned SS2018 data item is provided for those wishing to collect summary stage but
+    are not collecting all the fields needed by the computer algorithm to derive SS2018.
+
+
+     Code     Description
+      0       In situ
+      1       Localized
+      2       Regional, direct extension only
+      3       Regional, regional lymph nodes only
+      4       Regional, direct extension and regional lymph nodes
+      7       Distant
+      8       Benign, borderline
+      9       Unstaged
+
+    Note: Code 5 (Regional, NOS) has been removed for Summary Stage 2018.
+
+
+
+
+Version 3.3                                        EOD 2018                                                   34
+

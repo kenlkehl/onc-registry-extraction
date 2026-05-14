@@ -1,0 +1,39 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                               Colon
+                                             C180–C189
+
+The prognosis of patients with colon cancer is related to the degree of penetration of the tumor through
+the bowel wall, the presence or absence of nodal involvement, and the presence or absence of distant
+metastases.
+
+
+Primary Site
+
+Priority Order for Coding Primary Site
+Use the information from reports in the following priority order to code the primary site when there is
+conflicting information:
+
+Resected cases
+      Operative report with surgeon’s description
+      Pathology report
+      Imaging
+
+Polypectomy or excision without resection
+      Endoscopy report
+      Pathology report
+
+
+Subsites
+
+Code the subsite with the most tumor when the tumor overlaps two subsites.
+Code C188 when both subsites are equally involved.
+
+
+
+
+                                    Appendix C: Coding Guidelines                                          1
+

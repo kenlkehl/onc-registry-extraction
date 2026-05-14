@@ -1,0 +1,1266 @@
+SEER Program Coding and Staging Manual 2026
+
+
+
+
+            Appendix A
+
+          County Codes
+
+
+
+
+         Appendix A: County Codes
+                                  SEER Program Coding and Staging Manual 2026
+
+Appendix A lists the valid county codes for coding county of residence at diagnosis for SEER states and
+regions.
+
+Reference:
+Changes to Counties and County Equivalent Entities: 1970-Present (census.gov), accessed March 28, 2025
+2020 Population Estimates FIPS Codes (census.gov), accessed March 28, 2025
+
+                               In alphabetical order by name of SEER state or region
+
+Alaska (AK) Native Americans –                                  large geographically to provide a suitable basis for data
+                                                                analysis, the State of Alaska and the Bureau of the Census
+SEER Area                                                       have divided it into “census areas” for statistical purposes.
+                                                                The census areas are identified in the list by “(CA)”
+                                                                following the name. Data systems that use the unorganized
+The following is a complete list of all current
+                                                                borough may code it as 999. Changes since the 1980s:
+Alaska county equivalents where (B) identifies a                Aleutian Islands (CA) (010) was replaced by Aleutians East
+borough or municipality and (CA) identifies a                   (1978 October 23) and Aleutians West (CA) (1990 January
+census area)                                                    1); Kobuk (CA) (140) was replaced by Northwest Arctic
+                                                                (1986 June 2); Lake and Peninsula was established from
+                                                                part of Dillingham (CA) (1989 April 24). Wrangell City and
+ Code           County                                          Borough (02-275) was created from part of the former
+ 013*           Aleutians East (B)                              Wrangell-Petersburg CA (02-280) and part of Prince of
+ 016            Aleutians West (CA)                             Wales-Outer Ketchikan CA (02-201) (Meyers Chuck area)
+ 020*           Anchorage (B)                                   (2008 June 1). The remainder of the former Wrangell-
+                                                                Petersburg CA was established as the new Petersburg CA
+ 050            Bethel (CA)                                     (02-195) (2008 June 1). Petersburg CA (02-195) was
+ 060*           Bristol Bay (B)                                 created from the remainder of the former Wrangell-
+ 063            Chugach (CA)                                    Petersburg CA (02-280) when the new Wrangell City and
+ 066            Copper River (CA)                               Borough was created (2008 June 1). Prince of Wales-Hyder
+                                                                CA (02-198) was created from the remainder of the former
+ 068*           Denali (B)
+                                                                Prince of Wales-Outer Ketchikan CA (02-201) after part
+ 070            Dillingham (CA)                                 (Outer Ketchikan area) was annexed by Ketchikan Gateway
+ 090*           Fairbanks North Star (B)                        Borough (02-130) (2008 May 19), and part (Meyers Chuck
+ 100*           Haines (B)                                      area) included in the new Wrangell City and Borough
+ 105            Hoonah-Angoon (CA)                              (2008 June 1). Skagway Municipality (02-230) was created
+                                                                from part of the former Skagway-Hoonah-Angoon CA (02-
+ 110*           Juneau (B)                                      232) (2007 June 20). The remainder of the former
+ 122*           Kenai Peninsula (B)                             Skagway-Hoonah-Angoon CA was established as the new
+ 130*           Ketchikan Gateway (B)                           Hoonah-Angoon CA (02-105). Hoonah-Angoon CA (02-
+ 150*           Kodiak Island (B)                               105) was created from the remainder of the former
+ 158            Kusilvak (CA)                                   Skagway-Hoonah-Angoon (CA) (02-232) when the new
+                                                                Skagway Municipality (02-230) was created (2007 June
+ 164*           Lake and Peninsula (B)                          20). Petersburg Borough (02-195) was created from part of
+ 170*           Matanuska-Susitna (B)                           former Petersburg CA (02-195) and part of Hoonah-
+ 180            Nome (CA)                                       Angoon CA (02-105) (2013 January 3). Prince of Wales-
+ 185*           North Slope (B)                                 Hyder CA (02-198) added part of the former Petersburg CA
+                                                                (02-195) (2013 January 3). Hoonah-Angoon CA (02-105)
+ 188*           Northwest Arctic (B)                            was taken in part to create new Petersburg Borough (02-
+ 195*           Petersburg (B)                                  195) (2013 January 3). Wade Hampton Census Area (02-
+ 198            Prince of Wales-Hyder (CA)                      270) changed name and code to Kusilvak CA (02-158)
+ 220*           Sitka (B)                                       (2015 July 1). Chugach Census Area (02-063) created from
+ 230*           Skagway (B)                                     part of former Valdez-Cordova Census Area (02-261) (2019
+                                                                January 02). Copper River Census Area (02-066) created
+ 240            Southeast Fairbanks (CA)                        from part of former Valdez-Cordova Census Area (02-261)
+ 275*           Wrangell (B)                                    (2019 January 02). Valdez-Cordova Census Area (02-261)
+ 282*           Yakutat (B)                                     split to for Chugach Census Area (02-063 and Copper
+ 290            Yukon-Koyukuk (CA)                              River Census Area (02-066) (2019 January 02).
+
+* The legally defined first-order subdivisions of Alaska are
+  called boroughs (B). The portion of Alaska that is not
+  within organized boroughs is covered by a single
+  “unorganized borough,” a legal entity administered by the
+  State government. Because the unorganized borough is too
+
+
+
+                                                Appendix A: County Codes                                                A-1
+                                 SEER Program Coding and Staging Manual 2026
+
+Arizona (AZ) Native Americans –                                Code       County
+SEER Area                                                      049        Fulton
+                                                               051        Garland
+                                                               053        Grant
+ Code           County
+                                                               055        Greene
+ 001            Apache
+                                                               057        Hempstead
+ 003            Cochise
+                                                               059        Hot Spring
+ 005            Coconino
+                                                               061        Howard
+ 007            Gila
+                                                               063        Independence
+ 009            Graham
+                                                               065        Izard
+ 011            Greenlee
+                                                               067        Jackson
+ 012*           La Paz
+                                                               069        Jefferson
+ 013            Maricopa
+                                                               071        Johnson
+ 015            Mohave
+                                                               073        Lafayette
+ 017            Navajo
+                                                               075        Lawrence
+ 019            Pima
+                                                               077        Lee
+ 021            Pinal
+                                                               079        Lincoln
+ 023            Santa Cruz
+                                                               081        Little River
+ 025            Yavapai
+                                                               083        Logan
+ 027*           Yuma
+                                                               085        Lonoke
+* La Paz was established from part of Yuma effective January   087        Madison
+  1, 1983. Cases diagnosed 1973-1982 were reviewed and         089        Marion
+  recoded as needed to La Paz County. However, for analysis
+  purposes, SEER combines the data for La Paz with Yuma,       091        Miller
+  for all years.                                               093        Mississippi
+                                                               095        Monroe
+                                                               097        Montgomery
+Arkansas – SEER Area                                           099        Nevada
+                                                               101        Newton
+ Code           County                                         103        Ouachita
+ 001            Arkansas                                       105        Perry
+ 003            Ashley                                         107        Phillips
+ 005            Baxter                                         109        Pike
+ 007            Benton                                         111        Poinsett
+ 009            Boone                                          113        Polk
+ 011            Bradley                                        115        Pope
+ 013            Calhoun                                        117        Prairie
+ 015            Carroll                                        119        Pulaski
+ 017            Chicot                                         121        Randolph
+ 019            Clark                                          123        St. Francis
+ 021            Clay                                           125        Saline
+ 023            Cleburne                                       127        Scott
+ 025            Cleveland                                      129        Searcy
+ 027            Columbia                                       131        Sebastian
+ 029            Conway                                         133        Sevier
+ 031            Craighead                                      135        Sharp
+ 033            Crawford                                       137        Stone
+ 035            Crittenden                                     139        Union
+ 037            Cross                                          141        Van Buren
+ 039            Dallas                                         143        Washington
+ 041            Desha                                          145        White
+ 043            Drew                                           147        Woodruff
+ 045            Faulkner                                       149        Yell
+ 047            Franklin
+
+
+                                               Appendix A: County Codes                  A-2
+                       SEER Program Coding and Staging Manual 2026
+
+California (CA) – SEER Area                       Code           County
+                                                  091            Sierra (Greater California)
+Code     County                                   093            Siskiyou (Greater California)
+001      Alameda (San Francisco-Oakland           095            Solano (Greater California)
+         SMSA)                                    097            Sonoma (Greater California)
+003      Alpine (Greater California)              099            Stanislaus (Greater California)
+005      Amador (Greater California)              101            Sutter (Greater California)
+007      Butte (Greater California)               103            Tehama (Greater California)
+009      Calaveras (Greater California)           105            Trinity (Greater California)
+011      Colusa (Greater California)              107            Tulare (Greater California)
+013      Contra Costa (San Francisco-Oakland      109            Tuolumne (Greater California)
+         SMSA)                                    111            Ventura (Greater California)
+015      Del Norte (Greater California)           113            Yolo (Greater California)
+017      El Dorado (Greater California)           115            Yuba (Greater California)
+019      Fresno (Greater California)             * Conversion table required:
+021      Glenn (Greater California)                    2004            Description       Pre-2004
+023      Humboldt (Greater California)                 053              Monterey           027
+025      Imperial (Greater California)                 069             San Benito          035
+027      Inyo (Greater California)                     085             Santa Clara         043
+029      Kern (Greater California)                     087             Santa Cruz          044
+031      Kings (Greater California)
+033      Lake (Greater California)
+035      Lassen (Greater California)             Colorado (CO) – SEER Area
+037      Los Angeles (Los Angeles)
+039      Madera (Greater California)              Code           County
+041      Marin (San Francisco-Oakland             001            Adams County
+         SMSA)                                    003            Alamosa County
+043      Mariposa (Greater California)            005            Arapahoe County
+045      Mendocino (Greater California)           007            Archuleta County
+047      Merced (Greater California)              009            Baca County
+049      Modoc (Greater California)               011            Bent County
+051      Mono (Greater California)                013            Boulder County
+053*     Monterey (San Jose-Monterey)             014            Broomfield County
+055      Napa (Greater California)                015            Chaffee County
+057      Nevada (Greater California)              017            Cheyenne County
+059      Orange (Greater California)              019            Clear Creek County
+061      Placer (Greater California)              021            Conejos County
+063      Plumas (Greater California)              023            Costilla County
+065      Riverside (Greater California)           025            Crowley County
+067      Sacramento (Greater California)          027            Custer County
+069*     San Benito (San Jose-Monterey)           029            Delta County
+071      San Bernardino (Greater California)      031            Denver County
+073      San Diego (Greater California)           033            Dolores County
+075      San Francisco (San Francisco-            035            Douglas County
+         Oakland SMSA)                            037            Eagle County
+077      San Joaquin(Greater California)          039            Elbert County
+079      San Luis Obispo (Greater California)     041            El Paso County
+081      San Mateo (San Francisco-Oakland         043            Fremont County
+         SMSA)                                    045            Garfield County
+083      Santa Barbara (Greater California)       047            Gilpin County
+085*     Santa Clara (San Jose-Monterey)          049            Grand County
+087*     Santa Cruz (San Jose-Monterey)           051            Gunnison County
+089      Shasta (Greater California)              053            Hinsdale County
+
+
+                                  Appendix A: County Codes                                         A-3
+                     SEER Program Coding and Staging Manual 2026
+
+Code    County                               Detroit (Metropolitan) – SEER Area
+055     Huerfano County
+057     Jackson County                        Code       County
+059     Jefferson County                      099        Macomb
+061     Kiowa County                          125        Oakland
+063     Kit Carson County                     163        Wayne
+065     Lake County
+067     La Plata County
+069     Larimer County                       Georgia (GA) – SEER Area
+071     Las Animas County
+073     Lincoln County                        Code       County
+075     Logan County                          001        Appling
+077     Mesa County                           003        Atkinson
+079     Mineral County                        005        Bacon
+081     Moffat County                         007        Baker
+083     Montezuma County                      009        Baldwin
+085     Montrose County                       011        Banks
+087     Morgan County                         013        Barrow
+089     Otero County                          015        Bartow
+091     Ouray County                          017        Ben Hill
+093     Park County                           019        Berrien
+095     Phillips County                       021        Bibb
+097     Pitkin County                         023        Bleckley
+099     Prowers County                        025        Brantley
+101     Pueblo County                         027        Brooks
+103     Rio Blanco County                     029        Bryan
+105     Rio Grande County                     031        Bulloch
+107     Routt County                          033        Burke
+109     Saguache County                       035        Butts
+111     San Juan County                       037        Calhoun
+113     San Miguel County                     039        Camden
+115     Sedgwick County                       043        Candler
+117     Summit County                         045        Carroll
+119     Teller County                         047        Catoosa
+121     Washington County                     049        Charlton
+123     Weld County                           051        Chatham
+125     Yuma County                           053        Chattahoochee
+                                              055        Chattooga
+                                              057        Cherokee
+Connecticut (CT) – SEER Area                  059        Clarke
+                                              061        Clay
+Code    County                                063        Clayton
+001     Fairfield                             065        Clinch
+003     Hartford                              067        Cobb
+005     Litchfield                            069        Coffee
+007     Middlesex                             071        Colquitt
+009     New Haven                             073        Columbia
+011     New London                            075        Cook
+013     Tolland                               077        Coweta
+015     Windham                               079        Crawford
+                                              081        Crisp
+                                              083        Dade
+                                              085        Dawson
+
+
+                              Appendix A: County Codes                       A-4
+                    SEER Program Coding and Staging Manual 2026
+
+Code   County                                Code       County
+087    Decatur                               191        McIntosh
+089    DeKalb                                193        Macon
+091    Dodge                                 195        Madison
+093    Dooly                                 197        Marion
+095    Dougherty                             199        Meriwether
+097    Douglas                               201        Miller
+099    Early                                 205        Mitchell
+101    Echols                                207        Monroe
+103    Effingham                             209        Montgomery
+105    Elbert                                211        Morgan
+107    Emanuel                               213        Murray
+109    Evans                                 215*       Muscogee
+111    Fannin                                217        Newton
+113    Fayette                               219        Oconee
+115    Floyd                                 221        Oglethorpe
+117    Forsyth                               223        Paulding
+119    Franklin                              225        Peach
+121    Fulton                                227        Pickens
+123    Gilmer                                229        Pierce
+125    Glascock                              231        Pike
+127    Glynn                                 233        Polk
+129    Gordon                                235        Pulaski
+131    Grady                                 237        Putnam
+133    Greene                                239        Quitman
+135    Gwinnett                              241        Rabun
+137    Habersham                             243        Randolph
+139    Hall                                  245        Richmond
+141    Hancock                               247        Rockdale
+143    Haralson                              249        Schley
+145    Harris                                251        Screven
+147    Hart                                  253        Seminole
+149    Heard                                 255        Spalding
+151    Henry                                 257        Stephens
+153    Houston                               259        Stewart
+155    Irwin                                 261        Sumter
+157    Jackson                               263        Talbot
+159    Jasper                                265        Taliaferro
+161    Jeff Davis                            267        Tattnall
+163    Jefferson                             269        Taylor
+165    Jenkins                               271        Telfair
+167    Johnson                               273        Terrell
+169    Jones                                 275        Thomas
+171    Lamar                                 277        Tift
+173    Lanier                                279        Toombs
+175    Laurens                               281        Towns
+177    Lee                                   283        Treutlen
+179    Liberty                               285        Troup
+181    Lincoln                               287        Turner
+183    Long                                  289        Twiggs
+185    Lowndes                               291        Union
+187    Lumpkin                               293        Upson
+189    McDuffie                              295        Walker
+
+
+                             Appendix A: County Codes                A-5
+                                 SEER Program Coding and Staging Manual 2026
+
+ Code          County                                          Code       County
+ 297           Walton                                          035        Clearwater
+ 299           Ware                                            037        Custer
+ 301           Warren                                          039        Elmore
+ 303           Washington                                      041        Franklin
+ 305           Wayne                                           043        Fremont
+ 307           Webster                                         045        Gem
+ 309           Wheeler                                         047        Gooding
+ 311           White                                           049        Idaho
+ 313           Whitfield                                       051        Jefferson
+ 315           Wilcox                                          053        Jerome
+ 317           Wilkes                                          055        Kootenai
+ 319           Wilkinson                                       057        Latah
+ 321           Worth                                           059        Lemhi
+* Muscogee was reported incorrectly as “Columbus               061        Lewis
+  (consolidated government)” (510) in former NIST FIPS         063        Lincoln
+  PUB 6-3.                                                     065        Madison
+                                                               067        Minidoka
+                                                               069        Nez Perce
+Hawaii (HI) – SEER Area                                        071        Oneida
+                                                               073        Owyhee
+ Code          County                                          075        Payette
+ 001           Hawaii                                          077        Power
+ 003           Honolulu                                        079        Shoshone
+ 005*          Kalawao                                         081        Teton
+ 007           Kauai                                           083        Twin Falls
+ 009*          Maui                                            085        Valley
+*Kalawao was established from part of Maui during the          087        Washington
+ 1970s. Kalawao does not have its own local government; it
+ is administered by the State of Hawaii. It may be included
+ with Maui for statistical purposes. For analysis purposes,   Illinois (IL) – SEER Area
+ SEER combines data for all Hawaii counties.
+
+                                                               Code       County
+Idaho (ID) – SEER Area                                         001        Adams
+                                                               003        Alexander
+ Code          County                                          005        Bond
+ 001           Ada                                             007        Boone
+ 003           Adams                                           009        Brown
+ 005           Bannock                                         011        Bureau
+ 007           Bear Lake                                       013        Calhoun
+ 009           Benewah                                         015        Carroll
+ 011           Bingham                                         017        Cass
+ 013           Blaine                                          019        Champaign
+ 015           Boise                                           021        Christian
+ 017           Bonner                                          023        Clark
+ 019           Bonneville                                      025        Clay
+ 021           Boundary                                        027        Clinton
+ 023           Butte                                           029        Coles
+ 025           Camas                                           031        Cook
+ 027           Canyon                                          033        Crawford
+ 029           Caribou                                         035        Cumberland
+ 031           Cassia                                          037        DeKalb
+ 033           Clark                                           039        De Witt
+
+
+                                               Appendix A: County Codes                   A-6
+                    SEER Program Coding and Staging Manual 2026
+
+Code   County                                Code       County
+041    Douglas                               095        Knox
+043    DuPage                                097        Lake
+045    Edgar                                 099        LaSalle
+047    Edwards                               101        Lawrence
+049    Effingham                             103        Lee
+001    Adams                                 105        Livingston
+003    Alexander                             107        Logan
+005    Bond                                  109        McDonough
+007    Boone                                 111        McHenry
+009    Brown                                 113        McLean
+011    Bureau                                115        Macon
+013    Calhoun                               117        Macoupin
+015    Carroll                               119        Madison
+017    Cass                                  121        Marion
+019    Champaign                             123        Marshall
+021    Christian                             125        Mason
+023    Clark                                 127        Massac
+025    Clay                                  129        Menard
+027    Clinton                               131        Mercer
+029    Coles                                 133        Monroe
+031    Cook                                  135        Montgomery
+033    Crawford                              137        Morgan
+035    Cumberland                            139        Moultrie
+037    DeKalb                                141        Ogle
+039    De Witt                               143        Peoria
+041    Douglas                               145        Perry
+043    DuPage                                147        Piatt
+045    Edgar                                 149        Pike
+047    Edwards                               151        Pope
+049    Effingham                             153        Pulaski
+051    Fayette                               155        Putnam
+053    Ford                                  157        Randolph
+055    Franklin                              159        Richland
+057    Fulton                                161        Rock Island
+059    Gallatin                              163        St. Clair
+061    Greene                                165        Saline
+063    Grundy                                167        Sangamon
+065    Hamilton                              169        Schuyler
+067    Hancock                               171        Scott
+069    Hardin                                173        Shelby
+071    Henderson                             175        Stark
+073    Henry                                 177        Stephenson
+075    Iroquois                              179        Tazewell
+077    Jackson                               181        Union
+079    Jasper                                183        Vermilion
+081    Jefferson                             185        Wabash
+083    Jersey                                187        Warren
+085    Jo Daviess                            189        Washington
+087    Johnson                               191        Wayne
+089    Kane                                  193        White
+091    Kankakee                              195        Whiteside
+093    Kendall                               197        Will
+
+
+                             Appendix A: County Codes                 A-7
+                      SEER Program Coding and Staging Manual 2026
+
+Code    County                                 Code       County
+199     Williamson                             091        Humboldt
+201     Winnebago                              093        Ida
+203     Woodford                               095        Iowa
+                                               097        Jackson
+                                               099        Jasper
+Iowa (IA) – SEER Area                          101        Jefferson
+                                               103        Johnson
+Code    County                                 105        Jones
+001     Adair                                  107        Keokuk
+003     Adams                                  109        Kossuth
+005     Allamakee                              111        Lee
+007     Appanoose                              113        Linn
+009     Audubon                                115        Louisa
+011     Benton                                 117        Lucas
+013     Black Hawk                             119        Lyon
+015     Boone                                  121        Madison
+017     Bremer                                 123        Mahaska
+019     Buchanan                               125        Marion
+021     Buena Vista                            127        Marshall
+023     Butler                                 129        Mills
+025     Calhoun                                131        Mitchell
+027     Carroll                                133        Monona
+029     Cass                                   135        Monroe
+031     Cedar                                  137        Montgomery
+033     Cerro Gordo                            139        Muscatine
+035     Cherokee                               141        O’Brien
+037     Chickasaw                              143        Osceola
+039     Clarke                                 145        Page
+041     Clay                                   147        Palo Alto
+043     Clayton                                149        Plymouth
+045     Clinton                                151        Pocahontas
+047     Crawford                               153        Polk
+049     Dallas                                 155        Pottawattamie
+051     Davis                                  157        Poweshiek
+053     Decatur                                159        Ringgold
+055     Delaware                               161        Sac
+057     Des Moines                             163        Scott
+059     Dickinson                              165        Shelby
+061     Dubuque                                167        Sioux
+063     Emmet                                  169        Story
+065     Fayette                                171        Tama
+067     Floyd                                  173        Taylor
+069     Franklin                               175        Union
+071     Fremont                                177        Van Buren
+073     Greene                                 179        Wapello
+075     Grundy                                 181        Warren
+077     Guthrie                                183        Washington
+079     Hamilton                               185        Wayne
+081     Hancock                                187        Webster
+083     Hardin                                 189        Winnebago
+085     Harrison                               191        Winneshiek
+087     Henry                                  193        Woodbury
+089     Howard
+
+                               Appendix A: County Codes                   A-8
+                       SEER Program Coding and Staging Manual 2026
+
+Code    County                                  Code       County
+195     Worth                                   093        Hardin
+197     Wright                                  095        Harlan
+                                                097        Harrison
+                                                099        Hart
+Kentucky (KY) – SEER Area                       101        Henderson
+                                                103        Henry
+Code    County                                  105        Hickman
+001     Adair                                   107        Hopkins
+003     Allen                                   109        Jackson
+005     Anderson                                111        Jefferson
+007     Ballard                                 113        Jessamine
+009     Barren                                  115        Johnson
+011     Bath                                    117        Kenton
+013     Bell                                    119        Knott
+015     Boone                                   121        Knox
+017     Bourbon                                 123        Larue
+019     Boyd                                    125        Laurel
+021     Boyle                                   127        Lawrence
+023     Bracken                                 129        Lee
+025     Breathitt                               131        Leslie
+027     Breckinridge                            133        Letcher
+029     Bullitt                                 135        Lewis
+031     Butler                                  137        Lincoln
+033     Caldwell                                139        Livingston
+035     Calloway                                141        Logan
+037     Campbell                                143        Lyon
+039     Carlisle                                145        McCracken
+041     Carroll                                 147        McCreary
+043     Carter                                  149        McLean
+045     Casey                                   151        Madison
+047     Christian                               153        Magoffin
+049     Clark                                   155        Marion
+051     Clay                                    157        Marshall
+053     Clinton                                 159        Martin
+055     Crittenden                              161        Mason
+057     Cumberland                              163        Meade
+059     Daviess                                 165        Menifee
+061     Edmonson                                167        Mercer
+063     Elliott                                 169        Metcalfe
+065     Estill                                  171        Monroe
+067     Fayette                                 173        Montgomery
+069     Fleming                                 175        Morgan
+071     Floyd                                   177        Muhlenberg
+073     Franklin                                179        Nelson
+075     Fulton                                  181        Nicholas
+077     Gallatin                                183        Ohio
+079     Garrard                                 185        Oldham
+081     Grant                                   187        Owen
+083     Graves                                  189        Owsley
+085     Grayson                                 191        Pendleton
+087     Green                                   193        Perry
+089     Greenup                                 195        Pike
+091     Hancock
+
+                                Appendix A: County Codes                A-9
+                     SEER Program Coding and Staging Manual 2026
+
+Code    County                                Code       County (Parish)
+197     Powell                                053        Jefferson Davis
+199     Pulaski                               055        Lafayette
+201     Robertson                             057        Lafourche
+203     Rockcastle                            059        LaSalle
+205     Rowan                                 061        Lincoln
+207     Russell                               063        Livingston
+209     Scott                                 065        Madison
+211     Shelby                                067        Morehouse
+213     Simpson                               069        Natchitoches
+215     Spencer                               071        Orleans
+217     Taylor                                073        Ouachita
+219     Todd                                  075        Plaquemines
+221     Trigg                                 077        Pointe Coupee
+223     Trimble                               079        Rapides
+225     Union                                 081        Red River
+227     Warren                                083        Richland
+229     Washington                            085        Sabine
+231     Wayne                                 087        St. Bernard
+233     Webster                               089        St. Charles
+235     Whitley                               091        St. Helena
+237     Wolfe                                 093        St. James
+239     Woodford                              095        St. John the Baptist
+                                              097        St. Landry
+                                              099        St. Martin
+Louisiana (LA) – SEER Area                    101        St. Mary
+                                              103        St. Tammany
+Code    County (Parish)                       105        Tangipahoa
+001     Acadia                                107        Tensas
+003     Allen                                 109        Terrebonne
+005     Ascension                             111        Union
+007     Assumption                            113        Vermilion
+009     Avoyelles                             115        Vernon
+011     Beauregard                            117        Washington
+013     Bienville                             119        Webster
+015     Bossier                               121        West Baton Rouge
+017     Caddo                                 123        West Carroll
+019     Calcasieu                             125        West Feliciana
+021     Caldwell                              127        Winn
+023     Cameron
+025     Catahoula
+027     Claiborne                            Massachusetts (MA) – SEER Area
+029     Concordia
+031     De Soto                               Code       County
+033     East Baton Rouge                      001        Barnstable
+035     East Carroll                          003        Berkshire
+037     East Feliciana                        005        Bristol
+039     Evangeline                            007        Dukes
+041     Franklin                              009        Essex
+043     Grant                                 011        Franklin
+045     Iberia                                013        Hampden
+047     Iberville                             015        Hampshire
+049     Jackson                               017        Middlesex
+051     Jefferson                             019        Nantucket
+
+                              Appendix A: County Codes                          A-10
+                     SEER Program Coding and Staging Manual 2026
+
+Code    County                                Code           County
+021     Norfolk                               033            Mora
+023     Plymouth                              035            Otero
+025     Suffolk                               037            Quay
+027     Worcester                             039            Rio Arriba
+                                              041            Roosevelt
+                                              043            Sandoval
+New Jersey (NJ) – SEER Area                   045            San Juan
+                                              047            San Miguel
+Code    County                                049            Santa Fe
+001     Atlantic                              051            Sierra
+003     Bergen                                053            Socorro
+005     Burlington                            055            Taos
+007     Camden                                057            Torrance
+009     Cape May                              059            Union
+011     Cumberland                            061*           Valencia
+013     Essex                                * Cibola was established from part of Valencia on June 19,
+015     Gloucester                             1981. Cases diagnosed 1973-1981 were reviewed and
+017     Hudson                                 recoded as needed to Cibola. For analysis purposes, SEER
+019     Hunterdon                              combines the data for Cibola with Valencia for years 1973-
+021     Mercer                                 81.
+023     Middlesex
+025     Monmouth
+027     Morris
+                                             Michigan (MI) – SEER Area
+029     Ocean
+                                              Code           County
+031     Passaic
+033     Salem                                 001            Alcona County
+035     Somerset                              003            Alger County
+                                              005            Allegan County
+037     Sussex
+                                              007            Alpena County
+039     Union
+                                              009            Antrim County
+041     Warren
+                                              011            Arenac County
+                                              013            Baraga County
+New Mexico (NM) – SEER Area                   015            Barry County
+                                              017            Bay County
+Code    County                                019            Benzie County
+001     Bernalillo                            021            Berrien County
+003     Catron                                023            Branch County
+005     Chaves                                025            Calhoun County
+006*    Cibola                                027            Cass County
+007     Colfax                                029            Charlevoix County
+009     Curry                                 031            Cheboygan County
+011     De Baca                               033            Chippewa County
+013     Dona Ana                              035            Clare County
+015     Eddy                                  037            Clinton County
+017     Grant                                 039            Crawford County
+019     Guadalupe                             041            Delta County
+021     Harding                               043            Dickinson County
+023     Hidalgo                               045            Eaton County
+025     Lea                                   047            Emmet County
+027     Lincoln                               049            Genesee County
+028     Los Alamos                            051            Gladwin County
+029     Luna                                  053            Gogebic County
+031     McKinley                              055            Grand Traverse County
+
+
+                              Appendix A: County Codes                                             A-11
+                    SEER Program Coding and Staging Manual 2026
+
+Code   County                                Code       County
+057    Gratiot County                        161        Washtenaw
+059    Hillsdale County                      163        Wayne
+061    Houghton County                       165        Wexford
+063    Huron County
+065    Ingham
+067    Ionia                                Missouri (MO) – SEER Area
+069    Iosco
+071    Iron                                  Code       County
+073    Isabella                              001        Adair
+075    Jackson                               003        Andrew
+077    Kalamazoo                             005        Atchison
+079    Kalkaska                              007        Audrain
+081    Kent                                  009        Barry
+083    Keweenaw                              011        Barton
+085    Lake                                  013        Bates
+087    Lapeer                                015        Benton
+089    Leelanau                              017        Bollinger
+091    Lenawee                               019        Boone
+093    Livingston                            021        Buchanan
+095    Luce                                  023        Butler
+097    Mackinac                              025        Caldwell
+099    Macomb                                027        Callaway
+101    Manistee                              029        Camden
+103    Marquette                             031        Cape Girardeau
+105    Mason                                 033        Carroll
+107    Mecosta                               035        Carter
+109    Menominee                             037        Cass
+111    Midland                               039        Cedar
+113    Missaukee                             041        Chariton
+115    Monroe                                043        Christian
+117    Montcalm                              045        Clark
+119    Montmorency                           047        Clay
+121    Muskegon                              049        Clinton
+123    Newaygo                               051        Cole
+125    Oakland                               053        Cooper
+127    Oceana                                055        Crawford
+129    Ogemaw                                057        Dade
+131    Ontonagon                             059        Dallas
+133    Osceola                               061        Daviess
+135    Oscoda                                063        DeKalb
+137    Otsego                                065        Dent
+139    Ottawa                                067        Douglas
+141    Presque Isle                          069        Dunklin
+143    Roscommon                             071        Franklin
+145    Saginaw                               073        Gasconade
+147    St. Clair                             075        Gentry
+149    St. Joseph                            077        Greene
+151    Sanilac                               079        Grundy
+153    Schoolcraft                           081        Harrison
+155    Shiawassee                            083        Henry
+157    Tuscola                               085        Hickory
+159    Van Buren                             087        Holt
+                                             089        Howard
+
+                             Appendix A: County Codes                    A-12
+                    SEER Program Coding and Staging Manual 2026
+
+Code   County                                Code       County
+091    Howell                                197        Schuyler
+093    Iron                                  199        Scotland
+095    Jackson                               201        Scott
+097    Jasper                                203        Shannon
+099    Jefferson                             205        Shelby
+101    Johnson                               207        Stoddard
+103    Knox                                  209        Stone
+105    Laclede                               211        Sullivan
+107    Lafayette                             213        Taney
+109    Lawrence                              215        Texas
+111    Lewis                                 217        Vernon
+113    Lincoln                               219        Warren
+115    Linn                                  221        Washington
+117    Livingston                            223        Wayne
+119    McDonald                              225        Webster
+121    Macon                                 227        Worth
+123    Madison                               229        Wright
+125    Maries                                510        St. Louis city
+127    Marion
+129    Mercer
+131    Miller                               New Hampshire (NH) – SEER Area
+133    Mississippi
+135    Moniteau                              Code       County
+137    Monroe                                001        Belknap
+139    Montgomery                            003        Carroll
+141    Morgan                                005        Cheshire
+143    New Madrid                            007        Coos
+145    Newton                                009        Grafton
+147    Nodaway                               011        Hillsborough
+149    Oregon                                013        Merrimack
+151    Osage                                 015        Rockingham
+153    Ozark                                 017        Strafford
+155    Pemiscot                              019        Sullivan
+157    Perry
+159    Pettis
+161    Phelps                               New York (NY) – SEER Area
+163    Pike
+165    Platte                                Code       County
+167    Polk                                  001        Albany
+169    Pulaski                               003        Allegany
+171    Putnam                                005        Bronx
+173    Ralls                                 007        Broome
+175    Randolph                              009        Cattaraugus
+177    Ray                                   011        Cayuga
+179    Reynolds                              013        Chautauqua
+181    Ripley                                015        Chemung
+183    St. Charles                           017        Chenango
+185    St. Clair                             019        Clinton
+186    Ste. Genevieve                        021        Columbia
+187    St. Francois                          023        Cortland
+189    St. Louis                             025        Delaware
+195    Saline                                027        Dutchess
+                                             029        Erie
+
+                             Appendix A: County Codes                    A-13
+                      SEER Program Coding and Staging Manual 2026
+
+Code   County                                 Oklahoma (OK) Native Americans –
+031    Essex                                  SEER Area
+033    Franklin
+035    Fulton
+                                               Code       County
+037    Genesee
+                                               001        Adair
+039    Greene
+                                               003        Alfalfa
+041    Hamilton
+                                               005        Atoka
+043    Herkimer
+                                               007        Beaver
+045    Jefferson
+                                               009        Beckham
+047    Kings
+                                               011        Blaine
+049    Lewis
+                                               013        Bryan
+051    Livingston
+                                               015        Caddo
+053    Madison
+                                               017        Canadian
+055    Monroe
+                                               019        Carter
+057    Montgomery
+                                               021        Cherokee
+059    Nassau
+                                               023        Choctaw
+061    New York
+                                               025        Cimarron
+063    Niagara
+                                               027        Cleveland
+065    Oneida
+                                               029        Coal
+067    Onondaga
+                                               031        Comanche
+069    Ontario
+                                               033        Cotton
+071    Orange
+                                               035        Craig
+073    Orleans
+                                               037        Creek
+075    Oswego
+                                               039        Custer
+077    Otsego
+                                               041        Delaware
+079    Putnam
+                                               043        Dewey
+081    Queens
+                                               045        Ellis
+083    Rensselaer
+                                               047        Garfield
+085    Richmond
+                                               049        Garvin
+087    Rockland
+                                               051        Grady
+089    St. Lawrence
+                                               053        Grant
+091    Saratoga
+                                               055        Greer
+093    Schenectady
+                                               057        Harmon
+095    Schoharie
+                                               059        Harper
+097    Schuyler
+                                               061        Haskell
+099    Seneca
+                                               063        Hughes
+101    Steuben
+                                               065        Jackson
+103    Suffolk
+                                               067        Jefferson
+105    Sullivan
+                                               069        Johnston
+107    Tioga
+                                               071        Kay
+109    Tompkins
+                                               073        Kingfisher
+111    Ulster
+                                               075        Kiowa
+113    Warren
+                                               077        Latimer
+115    Washington
+                                               079        Le Flore
+117    Wayne
+                                               081        Lincoln
+119    Westchester
+                                               083        Logan
+121    Wyoming
+                                               085        Love
+123    Yates
+                                               087        McClain
+                                               089        McCurtain
+                                               091        McIntosh
+                                               093        Major
+                                               095        Marshall
+                                               097        Mayes
+
+
+                               Appendix A: County Codes                    A-14
+                       SEER Program Coding and Staging Manual 2026
+
+Code    County                                  Code       County
+099     Murray                                  041        Lincoln
+101     Muskogee                                043        Linn
+103     Noble                                   045        Malheur
+105     Nowata                                  047        Marion
+107     Okfuskee                                049        Morrow
+109     Oklahoma                                051        Multnomah
+111     Okmulgee                                053        Polk
+113     Osage                                   055        Sherman
+115     Ottawa                                  057        Tillamook
+117     Pawnee                                  059        Umatilla
+119     Payne                                   061        Union
+121     Pittsburg                               063        Wallowa
+123     Pontotoc                                065        Wasco
+125     Pottawatomie                            067        Washington
+127     Pushmataha                              069        Wheeler
+129     Roger Mills                             071        Yamhill
+131     Rogers
+133     Seminole
+135     Sequoyah                               Seattle-Puget Sound – SEER Area
+137     Stephens
+139     Texas                                   Code       County
+141     Tillman                                 009        Clallam
+143     Tulsa                                   027        Grays Harbor
+145     Wagoner                                 029        Island
+147     Washington                              031        Jefferson
+149     Washita                                 033        King
+151     Woods                                   035        Kitsap
+153     Woodward                                045        Mason
+                                                053        Pierce
+                                                055        San Juan
+Oregon (OR) – SEER Area                         057        Skagit
+                                                061        Snohomish
+Code    County                                  067        Thurston
+001     Baker                                   073        Whatcom
+003     Benton
+005     Clackamas
+007     Clatsop                                Tennessee (TN) – SEER Area
+009     Columbia
+011     Coos                                    Code       County
+013     Crook                                   001        Anderson
+015     Curry                                   003        Bedford
+017     Deschutes                               005        Benton
+019     Douglas                                 007        Bledsoe
+021     Gilliam                                 009        Blount
+023     Grant                                   011        Bradley
+025     Harney                                  013        Campbell
+027     Hood River                              015        Cannon
+029     Jackson                                 017        Carroll
+031     Jefferson                               019        Carter
+033     Josephine                               021        Cheatham
+035     Klamath                                 023        Chester
+037     Lake                                    025        Claiborne
+039     Lane                                    027        Clay
+
+                                Appendix A: County Codes                     A-15
+                    SEER Program Coding and Staging Manual 2026
+
+Code   County                                Code       County
+029    Cocke                                 133        Overton
+031    Coffee                                135        Perry
+033    Crockett                              137        Pickett
+035    Cumberland                            139        Polk
+037    Davidson                              141        Putnam
+039    Decatur                               143        Rhea
+041    DeKalb                                145        Roane
+043    Dickson                               147        Robertson
+045    Dyer                                  149        Rutherford
+047    Fayette                               151        Scott
+049    Fentress                              153        Sequatchie
+051    Franklin                              155        Sevier
+053    Gibson                                157        Shelby
+055    Giles                                 159        Smith
+057    Grainger                              161        Stewart
+059    Greene                                163        Sullivan
+061    Grundy                                165        Sumner
+063    Hamblen                               167        Tipton
+065    Hamilton                              169        Trousdale
+067    Hancock                               171        Unicoi
+069    Hardeman                              173        Union
+071    Hardin                                175        Van Buren
+073    Hawkins                               177        Warren
+075    Haywood                               179        Washington
+077    Henderson                             181        Wayne
+079    Henry                                 183        Weakley
+081    Hickman                               185        White
+083    Houston                                          Williamson
+                                             187
+085    Humphreys
+                                             189        Wilson
+087    Jackson
+089    Jefferson
+091    Johnson
+093    Knox
+                                            Texas (TX)– SEER Area
+095    Lake
+                                             Code       County
+097    Lauderdale
+                                             001        Anderson
+099    Lawrence
+                                             003        Andrews
+101    Lewis
+                                             005        Angelina
+103    Lincoln
+                                             007        Aransas
+105    Loudon
+                                             009        Archer
+107    McMinn
+                                             011        Armstrong
+109    McNairy
+                                             013        Atascosa
+111    Macon
+                                             015        Austin
+113    Madison
+                                             017        Bailey
+115    Marion
+                                             019        Bandera
+117    Marshall
+                                             021        Bastrop
+119    Maury
+                                             023        Baylor
+121    Meigs
+                                             025        Bee
+123    Monroe
+                                             027        Bell
+125    Montgomery
+                                             029        Bexar
+127    Moore
+                                             031        Blanco
+129    Morgan
+                                             033        Borden
+131    Obion
+                                             035        Bosque
+
+
+                             Appendix A: County Codes                A-16
+                       SEER Program Coding and Staging Manual 2026
+
+Code   County                                   Code       County
+037    Bowie                                    141        El Paso
+039    Brazoria                                 143        Erath
+041    Brazos                                   145        Falls
+043    Brewster                                 147        Fannin
+045    Briscoe                                  149        Fayette
+047    Brooks                                   151        Fisher
+049    Brown                                    153        Floyd
+051    Burleson                                 155        Foard
+053    Burnet                                   157        Fort Bend
+055    Caldwell                                 159        Franklin
+057    Calhoun                                  161        Freestone
+059    Callahan                                 163        Frio
+061    Cameron                                  165        Gaines
+063    Camp                                     167        Galveston
+065    Carson                                   169        Garza
+067    Cass                                     171        Gillespie
+069    Castro                                   173        Glasscock
+071    Chambers                                 175        Goliad
+073    Cherokee                                 177        Gonzales
+075    Childress                                179        Gray
+077    Clay                                     181        Grayson
+079    Cochran                                  183        Gregg
+081    Coke                                     185        Grimes
+083    Coleman                                  187        Guadalupe
+085    Collin                                   189        Hale
+087    Collingsworth                            191        Hall
+089    Colorado                                 193        Hamilton
+091    Comal                                    195        Hansford
+093    Comanche                                 197        Hardeman
+095    Concho                                   199        Hardin
+097    Cooke                                    201        Harris
+099    Coryell                                  203        Harrison
+101    Cottle                                   205        Hartley
+103    Crane                                    207        Haskell
+105    Crockett                                 209        Hays
+107    Crosby                                   211        Hemphill
+109    Culberson                                213        Henderson
+111    Dallam                                   215        Hidalgo
+113    Dallas                                   217        Hill
+115    Dawson                                   219        Hockley
+117    Deaf Smith                               221        Hood
+119    Delta                                    223        Hopkins
+121    Denton                                   225        Houston
+123    DeWitt                                   227        Howard
+125    Dickens                                  229        Hudspeth
+127    Dimmit                                   231        Hunt
+129    Donley                                   233        Hutchinson
+131    Duval                                    235        Irion
+133    Eastland                                 237        Jack
+135    Ector                                    239        Jackson
+137    Edwards                                  241        Jasper
+139    Ellis                                    243        Jeff Davis
+
+
+                                Appendix A: County Codes                A-17
+                     SEER Program Coding and Staging Manual 2026
+
+Code   County                                 Code       County
+245    Jefferson                              349        Navarro
+247    Jim Hogg                               351        Newton
+249    Jim Wells                              353        Nolan
+251    Johnson                                355        Nueces
+253    Jones                                  357        Ochiltree
+255    Karnes                                 359        Oldham
+257    Kaufman                                361        Orange
+259    Kendall                                363        Palo Pinto
+261    Kenedy                                 365        Panola
+263    Kent                                   367        Parker
+265    Kerr                                   369        Parmer
+267    Kimble                                 371        Pecos
+269    King                                   373        Polk
+271    Kinney                                 375        Potter
+273    Kleberg                                377        Presidio
+275    Knox                                   379        Rains
+277    Lamar                                  381        Randall
+279    Lamb                                   383        Reagan
+281    Lampasas                               385        Real
+283    La Salle                               387        Red River
+285    Lavaca                                 389        Reeves
+287    Lee                                    391        Refugio
+289    Leon                                   393        Roberts
+291    Liberty                                395        Robertson
+293    Limestone                              397        Rockwall
+295    Lipscomb                               399        Runnels
+297    Live Oak                               401        Rusk
+299    Llano                                  403        Sabine
+301    Loving                                 405        San Augustine
+303    Lubbock                                407        San Jacinto
+305    Lynn                                   409        San Patricio
+307    McCulloch                              411        San Saba
+309    McLennan                               413        Schleicher
+311    McMullen                               415        Scurry
+313    Madison                                417        Shackelford
+315    Marion                                 419        Shelby
+317    Martin                                 421        Sherman
+319    Mason                                  423        Smith
+321    Matagorda                              425        Somervell
+323    Maverick                               427        Starr
+325    Medina                                 429        Stephens
+327    Menard                                 431        Sterling
+329    Midland                                433        Stonewall
+331    Milam                                  435        Sutton
+333    Mills                                  437        Swisher
+335    Mitchell                               439        Tarrant
+337    Montague                               441        Taylor
+339    Montgomery                             443        Terrell
+341    Moore                                  445        Terry
+343    Morris                                 447        Throckmorton
+345    Motley                                 449        Titus
+347    Nacogdoches                            451        Tom Green
+
+
+                              Appendix A: County Codes                   A-18
+                     SEER Program Coding and Staging Manual 2026
+
+Code    County                                Code       County
+453     Travis                                041        Sevier
+455     Trinity                               043        Summit
+457     Tyler                                 045        Tooele
+459     Upshur                                047        Uintah
+461     Upton                                 049        Utah
+463     Uvalde                                051        Wasatch
+465     Val Verde                             053        Washington
+467     Van Zandt                             055        Wayne
+469     Victoria                              057        Weber
+471     Walker
+473     Waller
+475     Ward                                 Wisconsin (WI) – SEER Area
+477     Washington
+479     Webb                                  Code       County
+481     Wharton                               001        Adams
+483     Wheeler                               003        Ashland
+485     Wichita                               005        Barron
+487     Wilbarger                             007        Bayfield
+489     Willacy                               009        Brown
+491     Williamson                            011        Buffalo
+493     Wilson                                013        Burnett
+495     Winkler                               015        Calumet
+497     Wise                                  017        Chippewa
+499     Wood                                  019        Clark
+501     Yoakum                                021        Columbia
+503     Young                                 023        Crawford
+505     Zapata                                025        Dane
+507     Zavala                                027        Dodge
+                                              029        Door
+                                              031        Douglas
+Utah (UT) – SEER Area                         033        Dunn
+                                              035        Eau Claire
+Code    County                                037        Florence
+001     Beaver                                039        Fond du Lac
+003     Box Elder                             041        Forest
+005     Cache                                 043        Grant
+007     Carbon                                045        Green
+009     Daggett                               047        Green Lake
+011     Davis                                 049        Iowa
+013     Duchesne                              051        Iron
+015     Emery                                 053        Jackson
+017     Garfield                              055        Jefferson
+019     Grand                                 057        Juneau
+021     Iron                                  059        Kenosha
+023     Juab                                  061        Kewaunee
+025     Kane                                  063        La Crosse
+027     Millard                               065        Lafayette
+029     Morgan                                067        Langlade
+031     Piute                                 069        Lincoln
+033     Rich                                  071        Manitowoc
+035     Salt Lake                             073        Marathon
+037     San Juan                              075        Marinette
+039     Sanpete                               077        Marquette
+
+                              Appendix A: County Codes                    A-19
+                        SEER Program Coding and Staging Manual 2026
+
+Code      County
+078       Menominee
+079       Milwaukee
+081       Monroe
+083       Oconto
+085       Oneida
+087       Outagamie
+089       Ozaukee
+091       Pepin
+093       Pierce
+095       Polk
+097       Portage
+099       Price
+101       Racine
+103       Richland
+105       Rock
+107       Rusk
+109       St. Croix
+111       Sauk
+113       Sawyer
+115       Shawano
+117       Sheboygan
+119       Taylor
+121       Trempealeau
+123       Vernon
+125       Vilas
+127       Walworth
+129       Washburn
+131       Washington
+133       Waukesha
+135       Waupaca
+137       Waushara
+139       Winnebago
+141       Wood
+
+
+For all areas
+Code      County
+999       Unknown
+
+
+
+
+                                 Appendix A: County Codes             A-20
+

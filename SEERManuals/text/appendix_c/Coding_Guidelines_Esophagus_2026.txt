@@ -1,0 +1,41 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                        Coding Guidelines
+
+                                          Esophagus
+                                     C150-C155, C158-C159
+
+Primary Site
+
+There are two systems that divide the esophagus into three subsites. The first system divides the
+esophagus into the upper third, middle third, and lower third. The second system describes the subsites as
+the cervical esophagus, upper thoracic esophagus, mid thoracic esophagus, and lower thoracic
+(abdominal) esophagus. The subsites for these two different systems are not identical. Assign the ICD-O-
+3 topography code that describes the primary site documented in the medical record. See the following
+image for an illustration of both systems.
+
+                                   Measurements of the Esophagus
+                                  (From the Incisors to the Stomach)
+
+
+
+
+                                    Appendix C: Coding Guidelines                                        1
+                         SEER Program Coding and Staging Manual 2026
+
+
+First Course Treatment
+
+Do not code proton pump inhibitors (PPI) as treatment
+
+Do not code radiofrequency ablation (RFA) for Barrett’s esophagus as treatment
+
+      HALO 90 ultra RFA of Barrett's esophagus is used to reduce progression of high-grade dysplasia to
+      esophageal cancer. It is not used to treat esophageal cancer.
+
+
+
+
+                                  Appendix C: Coding Guidelines                                      2
+

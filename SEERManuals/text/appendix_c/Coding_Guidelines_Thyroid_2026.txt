@@ -1,0 +1,49 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                           Thyroid Gland
+                                               C739
+
+Coding Hormone Therapy
+
+Code Hormone Therapy as 01 for follicular and/or papillary thyroid cancer when thyroid hormone
+therapy is given.
+
+Do not code replacement therapy as treatment unless the tumor is papillary and/or follicular. The thyroid
+gland produces hormones that influence essentially every organ, tissue and cell in the body. When the
+thyroid is partially or totally removed, it is no longer able to secrete these essential hormones and the
+patient is placed on hormone replacement therapy.
+
+The growth of follicular cell cancer depends on thyroid stimulating hormone. Suppression of these
+hormones is thought to deprive the cells of a growth-promoting influence. Patients with follicular cell-
+derived cancers have been treated with supraphysiologic doses of thyroid hormone to suppress serum
+thyroid-stimulating hormones. This treatment has been an industry standard for more than forty years.
+
+
+Generic Thyroid Drug Names
+
+Levothyroxine/L-thyroxine
+Liothyronine
+Liotrix
+Natural Thyroid
+Thyrotropin alfa
+
+
+Thyroid Drugs Brand Names
+
+Armour Thyroid
+Cytomel
+Levothroid
+Levoxyl
+Synthroid
+Thyrogen
+Thyrolar
+Unithroid
+
+
+
+
+                                    Appendix C: Coding Guidelines                                           1
+

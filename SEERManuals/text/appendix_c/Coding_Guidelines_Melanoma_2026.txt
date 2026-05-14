@@ -1,0 +1,95 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                        Coding Guidelines
+
+                           Melanoma Skin
+  C000-C002, C006, C440-C449, C500, C510-C512, C518-C519, C600-C602,
+               C608-C609, C632) with Histology 8720-8790
+
+Reportability
+
+As of cases diagnosed January 1, 2021, early or evolving melanoma of any type is reportable. This
+includes both invasive and in situ melanomas; early or evolving are reportable.
+
+
+Primary Site
+
+Assign C449 for melanoma when the primary site is unknown and there is no information suggesting that
+the melanoma originated in a non-skin site. Assign C809 when the site of origin is unknown and there is
+some indication that the primary site of the melanoma is not skin.
+
+
+NAACCR Item #3817: Breslow Tumor Thickness
+Maximum thickness (depth) in millimeters (mm)
+
+[Based on information provided by the Seattle/Puget Sound SEER Registry]
+
+Breslow tumor thickness is a four-character field. The field includes a decimal point. Depth/thickness
+values between 0.1 and 99.9 can be coded. The field requires one digit or character before the decimal
+point and one digit after the decimal point.
+
+The field includes one place after the decimal point (Example: 12.3). The usual rounding rules apply to
+measurements with two digits after the decimal point: round 0-4 down and 5-9 up.
+
+Examples
+
+                  Thickness/Depth                                              Code
+                       0.22 mm                                                  0.2
+                        .75 mm                                                  0.8
+
+When thickness/depth is recorded as a decimal point followed by one digit, code with a zero to the left
+before the decimal point.
+
+Examples
+
+                  Thickness/Depth                                              Code
+                        .2 mm                                                   0.2
+                        .7 mm                                                   0.7
+
+
+
+
+                                    Appendix C: Coding Guidelines                                         1
+                           SEER Program Coding and Staging Manual 2026
+
+
+When thickness/depth is greater than 0.0 and less than or equal to 0.1, code to 0.1.
+
+Examples
+
+                  Thickness/Depth                                               Code
+               Less than 0.1 mm                                                   0.1
+                         0.1 mm                                                   0.1
+
+When thickness/depth is stated as "at least" some measured value of 0.1 to 9.9, code A0.1-A9.9.
+
+Examples
+
+                  Thickness/Depth                                               Code
+                   At least 0.2 mm                                              A0.2
+                  At least 2.05 mm                                              A2.1
+                    At least 8 mm                                               A8.0
+
+When thickness/depth is stated as greater than 9.9 mm, code AX.0.
+
+Examples
+
+                  Thickness/Depth                                               Code
+                   At least 10 mm                                               AX.0
+                  At least 20.5 mm                                              AX.0
+
+
+When thickness/depth is 100 mm or more, code XX.1.
+
+Examples
+
+                  Thickness/Depth                                               Code
+                     100.1 mm                                                   XX.1
+                       10 cm                                                    XX.1
+
+
+
+
+                                    Appendix C: Coding Guidelines                                 2
+

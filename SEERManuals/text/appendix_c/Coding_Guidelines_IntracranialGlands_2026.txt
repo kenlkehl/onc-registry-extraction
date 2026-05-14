@@ -1,0 +1,41 @@
+                            SEER Program Coding and Staging Manual 2026
+
+
+                                          Coding Guidelines
+
+                                         Intracranial Glands
+                                          C751, C752, C753
+
+Primary Site
+
+
+      Intracranial Glands
+
+       Pituitary gland C751                                       Craniopharyngeal duct C752
+       Pineal gland C753
+
+
+
+
+Adenohypophysis: Anterior pituitary
+
+Craniopharyngeal duct: Also called hypophyseal canal or craniopharyngeal canal. A bony channel that
+connects the floor of the sella turcica along the midline to the nasopharynx. Shown as a dotted line on the
+illustration. It can persist as a defect of the midline sphenoid body. Thought to arise from an error in
+normal development of the pituitary gland; evidence supports its origin from incomplete closure of the
+Rathke pouch, which is the precursor of the adenohypophysis or anterior pituitary.
+
+Neurohypophysis: Posterior lobe of pituitary
+
+Pineal gland: Located in the mid-line of the brain, outside the blood-brain barrier. Attached to the roof of
+the third ventricle by a short stalk.
+
+Pituitary gland: Also called the hypophysis. Located in the pituitary fossa of the sella turcica.
+
+Suprasellar: Meaning situated or rising above the sella turcica, often refers to the pituitary.
+
+
+
+
+                                     Appendix C: Coding Guidelines                                         1
+

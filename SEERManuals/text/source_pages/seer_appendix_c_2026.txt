@@ -1,0 +1,1673 @@
+Appendix C: Site-Specific Coding Modules - 2026 SEER Program Coding and Staging Manual
+Skip to Main Content
+An official website of the United States government
+Share
+on Facebook
+Tweet
+Print
+Search SEER:
+Main Menu
+
+Main Menu
+
+Home
+
+Cancer Statistics
+
+Cancer Statistics
+
+Reports on Cancer
+
+Annual Report to the Nation on the Status of Cancer
+
+Cancer Stat Facts
+
+Preliminary Cancer Incidence Rates and Trends
+
+SEER Publications
+
+Interactive Tools, Maps, & Graphs
+
+Cancer Statistics Explorer Network
+
+Understanding Statistics
+
+Did You Know? Video Series
+
+Defining Cancer Statistics
+
+Glossary of Statistical Terms
+
+SEER Data & Software
+
+SEER Data & Software
+
+SEER Incidence Database
+
+Comparison of Data Products
+
+How to Request the Data
+
+Documentation for Data
+
+SEER*Stat Database Details
+
+NCCR Databases in SEER*Stat
+
+Variable and Recode Definitions
+
+U.S. Datasets
+
+U.S. Mortality
+
+U.S. Populations
+
+Standard Populations
+
+SEER Linked Databases
+
+Statistical Software
+
+SEER*Stat
+
+SEER*Prep
+
+Health Drivers Calculator (HD*Calc)
+
+Methods & Tools for Population-based Cancer Statistics
+
+Registry Operations
+
+Registry Operations
+
+Reporting Guidelines
+
+SEER Program Coding Manual
+
+Hematopoietic Project
+
+Solid Tumor Rules
+
+Tools & Software
+
+Glossary for Registrars
+
+SEER*Rx - Drug Database
+
+SEER Abstracting Tool
+
+SEER Data Management System (SEER*DMS)
+
+Staging
+
+Registrar Staging Assistant (SEER*RSA)
+
+Summary Stage 2018
+
+Staging Resources
+
+Extent of Disease 2018
+
+Questions & Answers
+
+SEER Inquiry System
+
+Ask a SEER Registrar
+
+Data Collection Answers
+
+Cancer PathCHART
+
+Training
+
+News & Events
+
+About SEER
+
+About SEER
+
+Program Overview
+
+Goals of the SEER Program
+
+Fact Sheets & Brochures
+
+Collaborating Organizations
+
+SEER Registries
+
+What is a Cancer Registry?
+
+List of Registries
+
+Registry Groupings
+
+Population Characteristics
+
+Research Activities
+
+Residual Tissue Repository Program
+
+SEER-Linked Virtual Tissue Repository Program
+
+SEER Data Quality Initiatives
+Section Menu
+
+Home
+
+Registry Operations
+
+Reporting Guidelines
+
+SEER Coding and Staging Manual
+
+Appendix C for 2026 Manual
+
+Appendix C: Site-Specific Coding Modules
+
+2026 SEER Program Coding and Staging Manual
+Reporting Guidelines
+
+Casefinding Lists
+
+SEER Coding and Staging Manual
+
+Appendix C for 2025 Manual
+
+Appendix C for 2026 Manual
+
+Hematopoietic Project
+
+Hematopoietic and Lymphoid Database
+
+Revision History
+
+Online Training
+
+ICD-O-3 Coding Materials
+
+Solid Tumor Rules
+
+2026 Update Revisions
+
+Revision Archive
+
+Histology Coding Clarifications
+
+Historical Staging and Coding Manuals
+
+MP/H Rules
+
+Download the Rules Manual
+
+Revision History
+
+Task Force Membership
+
+Grade Coding Instructions 2014-2017
+
+SEER Data Submission Requirements
+
+COVID-19 Abstraction Guidance
+
+COVID-19 Presentations
+
+COVID-19 Q&A
+
+Appendix C brings together the site-specific instructions needed to abstract a case, facilitating efficiency and accuracy. The site-specific coding modules include SEER Coding Guidelines, Extent of Disease, Site-Specific Neoadjuvant Therapy Effect coding documents, and Surgery of Primary Site codes.
+1
+
+General instructions in the main manual are applicable in the absence of site-specific instructions. All modules include the extent of disease and surgery codes, Site-Specific Neoadjuvant Therapy Effect coding documents, and solid tumor coding rules. Some modules include site-specific coding guidelines. Additional site-specific coding instructions are found in
+SEER*RSA
+, the
+SSDI manual
+, and the
+Grade manual
+.
+Expand All
+Collapse All
+
+Oral Cavity, Tonsil, Oropharynx
+
+Coding Guidelines: Tongue
+(PDF, 287 KB)
+
+Solid Tumor Rules: Head and Neck
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Oral Cavity - (C000-C009, C019, C020-C029, C030-C039, C040-C049, C050-C059, C060-C069)
+(PDF, 140 KB)
+
+Pharynx - (C090-C099, C100-C109, C110-C119, C129, C130-C139, C140)
+(PDF, 139 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Oral Cavity, Tonsil, Oropharynx
+
+EOD Schemas
+
+Lip (excluding Malignant Melanoma)
+
+Gum (excluding Malignant Melanoma)
+
+Anterior 2/3 of Tongue, Tip, Border, and Tongue, NOS (excluding Malignant Melanoma)
+
+Oropharynx HPV-Independent
+
+Oropharynx HPV-Associated
+
+Hard Palate (excluding Malignant Melanoma)
+
+Floor of Mouth (excluding Malignant Melanoma)
+
+Other Mouth (excluding Malignant Melanoma)
+
+Cheek (Buccal) Mucosa, Vestibule
+
+Malignant Melanoma of Head and Neck
+
+Cervical Lymph Nodes and Unknown Primary
+
+Parotid, Other and Unspecified Glands
+
+Solid Tumor Rules: Head and Neck
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Parotid and Other Unspecified Glands - (C079, C080-C089)
+(PDF, 141 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Parotid, Other and Unspecified Glands
+
+EOD Schemas
+
+Major Salivary Glands
+
+Pharynx, Hypopharynx, Nasopharynx, Pyriform Sinus
+
+Solid Tumor Rules: Head and Neck
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Pharynx - (C090-C099, C100-C109, C110-C119, C129, C130-C139, C140)
+(PDF, 139 KB)
+
+All Other Sites - (C142-C148)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Pharynx, Hypopharynx, Nasopharynx, Pyriform Sinus
+
+EOD Schemas
+
+Pharynx, NOS, and Overlapping Lesion of Lip, Oral Cavity, and Pharynx (excluding Malignant Melanoma)
+
+Pyriform Sinus, Hypopharynx, Laryngopharynx (excluding Malignant Melanoma)
+
+Malignant Melanoma of Head and Neck
+
+Nasopharynx
+
+Cervical Lymph Nodes and Unknown Primary
+
+Esophagus
+
+Coding Guidelines: Esophagus
+(PDF, 141 KB)
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Esophagus - (C150-C159)
+(PDF, 138 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Colon and Rectum, Esophagus, Stomach, Anus, Pancreas
+(PDF, 224 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Esophagus
+
+EOD Schemas
+
+Esophagus (including GE junction) (Excluding squamous)
+
+Esophagus (including GE junction) Squamous
+
+Stomach (excluding Gastrointestinal Stromal Tumor and Neuroendocrine Tumor)
+
+Stomach
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Stomach - (C160-C169)
+(PDF, 144 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Colon and Rectum, Esophagus, Stomach, Anus, Pancreas
+(PDF, 224 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Stomach
+
+EOD Schemas
+
+Stomach (excluding Gastrointestinal Stromal Tumor and Neuroendocrine Tumor)
+
+Neuroendocrine Tumors of Stomach
+
+Small Intestine
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C170-C179)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Small Intestine
+
+EOD Schemas
+
+Small Intestine
+
+Neuroendocrine Tumors of the Jejunum and Ileum
+
+Neuroendocrine Tumors of the Duodenum
+
+Colon, Appendix, Rectosigmoid, Rectum
+
+Coding Guidelines: Colon
+(PDF, 104 KB)
+
+Coding Guidelines: Rectosigmoid, Rectum
+(PDF, 138 KB)
+
+Solid Tumor Rules: Colon, Rectosigmoid, and Rectum
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Colon - (C180-C189)
+(PDF, 197 KB)
+
+Rectosigmoid - (C199)
+(PDF, 168 KB)
+
+Rectum - (C209)
+(PDF, 166 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Colon and Rectum, Esophagus, Stomach, Anus, Pancreas
+(PDF, 224 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Colon, Appendix, Rectosigmoid, Rectum
+
+EOD Schemas
+
+Colon and Rectum (excluding Appendix, Gastrointestinal Stromal Tumor, and Neuroendocrine Tumor)
+
+Neuroendocrine Tumors of Colon (excluding Appendix) and Rectum
+
+Carcinomas of the Appendix (excluding Carcinoid Tumor and Neuroendocrine Carcinoma)
+
+Neuroendocrine Tumors of Appendix
+
+Anus
+
+Coding Guidelines: Anus
+(PDF, 219 KB)
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Anus - (C210-C218)
+(PDF, 140 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Colon and Rectum, Esophagus, Stomach, Anus, Pancreas
+(PDF, 224 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Anus
+
+EOD Schemas
+
+Anus, Anal Canal, and Other Parts of Rectum
+
+Liver, Intrahepatic Bile Ducts
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Liver and Intrahepatic Bile Ducts - (C220-C221)
+(PDF, 158 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Liver, Intrahepatic Bile Ducts
+
+EOD Schemas
+
+Liver
+
+Intrahepatic Bile Ducts
+
+Gallbladder, Extrahepatic Bile Ducts, Ampulla of Vater
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C239, C240-C249)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Gallbladder, Extrahepatic Bile Ducts, Ampulla of Vater
+
+EOD Schemas
+
+Gallbladder
+
+Cystic Duct
+
+Distal Bile Duct
+
+Perihilar Bile Ducts
+
+Other Biliary and Biliary, NOS
+
+Ampulla of Vater (excluding Neuroendocrine Tumor)
+
+Neuroendocrine Tumors of the Ampulla of Vater
+
+Pancreas
+
+Coding Guidelines: Pancreas
+(PDF, 161 KB)
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Pancreas - (C250-C259)
+(PDF, 135 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Colon and Rectum, Esophagus, Stomach, Anus, Pancreas
+(PDF, 224 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Pancreas
+
+EOD Schemas
+
+Pancreas (excluding Neuroendocrine Tumor)
+
+Neuroendocrine Tumors of Pancreas
+
+Gastrointestinal Stromal Tumors
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C260-C269)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+
+EOD Schemas
+
+Gastrointestinal Stromal Tumors
+
+Other Digestive
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C260-C269)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Other Digestive
+
+EOD Schemas
+
+Other and Ill-Defined Digestive Organs
+
+Nasal Cavity, Middle Ear, Sinuses
+
+Solid Tumor Rules: Head and Neck
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+All Other Sites - (C300-C301, C310-C319)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Nasal Cavity, Middle Ear, Sinuses
+
+EOD Schemas
+
+Nasal Cavity and Ethmoid Sinus (excluding Malignant Melanoma)
+
+Middle Ear
+
+Accessory (Paranasal) Sinuses (excluding Malignant Melanoma)
+
+Maxillary Sinus (excluding Malignant Melanoma)
+
+Larynx
+
+Solid Tumor Rules: Head and Neck
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Larynx - (C320-C329)
+(PDF, 162 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Larynx
+
+EOD Schemas
+
+Glottic Larynx
+
+Laryngeal Cartilage, Overlapping Lesion of Larynx, and Larynx, NOS
+
+Subglottic Larynx
+
+Supraglottic Larynx
+
+Trachea, Other Respiratory
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C339)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Trachea, Other Respiratory
+
+EOD Schemas
+
+Trachea
+
+Other and Ill-Defined Respiratory Sites and Intrathoracic Organs
+
+Lung
+
+Coding Guidelines: Lung
+(PDF, 109 KB)
+
+Solid Tumor Rules: Lung
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Lung - (C340-C349)
+(PDF, 172 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Lung
+(PDF, 223 KB)
+
+EOD Schemas
+
+Lung
+
+Pleural Mesothelioma
+
+Heart, Mediastinum, Pleura
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C380-C388, C390-C399)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Heart, Mediastinum, Pleura
+
+Pleural Mesothelioma
+(PDF, 224 KB)
+
+EOD Schemas
+
+Heart, Mediastinum and Pleura
+
+Pleural Mesothelioma
+
+Bones, Joints, Cartilage
+
+Coding Guidelines: Bones, Joints, Cartilage
+(PDF, 99 KB)
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Bones, Joints, and Articular Cartilage; Peripheral Nerves and Autonomic Nervous System; Connective, Subcutaneous, and Other Soft Tissues - (C400-C419)
+(PDF, 142 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Bone Appendicular, Bone Pelvis, Bone Spine
+(PDF, 199 KB)
+
+EOD Schemas
+
+Bone Appendicular Skeleton, Trunk, Skull, and Facial Bones
+
+Bone Pelvis
+
+Bone Spine
+
+Skin
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Skin - (C440-C449)
+(PDF, 183 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Skin
+
+EOD Schemas
+
+Skin Other (excluding Skin of Eyelid, SCC of Head and Neck, Malignant Melanoma, Merkel Cell Carcinoma, Sarcoma, Mycosis Fungoides, Sezary Disease, and Other Lymphomas)
+
+Skin Eyelid
+
+Cutaneous Carcinoma of Head and Neck
+
+Merkel Cell Skin
+
+Melanoma
+
+Coding Guidelines: Melanoma
+(PDF, 150 KB)
+
+Solid Tumor Rules: Cutaneous Melanoma
+(PDF, 8.7 MB)
+- Use for cases diagnosed 2021 and later
+
+Surgery Codes
+
+Skin - (C440-C449)
+(PDF, 183 KB)
+
+All Other Sites - (C510-C519, C600-C609, C632)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+EOD Schemas
+
+Malignant Melanoma of Skin, Vulva, Penis, Scrotum
+
+Malignant Melanoma of Choroid and Ciliary Body (excluding Iris)
+
+Malignant Melanoma of Conjunctiva
+
+Malignant Melanoma of Iris (excluding Ciliary Body)
+
+Malignant Melanoma of Head and Neck
+
+Mycosis Fungoides, Sezary Disease
+
+Hematopoietic and Lymphoid Neoplasm Coding Manual
+(PDF, 3.6 MB)
+
+Surgery Codes
+
+Skin - (C440-C449)
+(PDF, 183 KB)
+
+Oral Cavity - (C000-C009, C019, C020-C029, C030-C039, C040-C049, C050-C059, C060-C069)
+(PDF, 140 KB)
+
+All Other Sites - (C510-C519, C600-C609, C632)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders, HemeRetic, Ill-Defined Other
+(PDF, 161 KB)
+
+EOD Schemas
+
+Mycosis Fungoides and Sezary disease of Skin, Vulva, Penis, Scrotum
+
+Soft Tissues, Nerves, Nervous System
+
+Coding Guidelines: Nerves, Nervous System, Soft Tissues
+(PDF, 99 KB)
+
+Solid Tumor Rules: Malignant CNS and Peripheral Nerves
+(PDF, 8.7 MB)
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Bones, Joints, and Articular Cartilage; Peripheral Nerves and Autonomic Nervous System; Connective, Subcutaneous, and Other Soft Tissues - (C470-C479, C490-C499)
+(PDF, 142 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Soft Tissues, Nerves, Nervous System
+
+EOD Schemas
+
+Soft Tissue Sarcoma of the Abdomen and Thoracic Visceral Organs (excluding Heart, Mediastinum and Pleura)
+
+Soft Tissue Sarcoma of the Head and Neck
+
+Soft Tissue Other
+
+Soft Tissue Sarcoma of the Trunk and Extremities
+
+Retroperitoneum, Peritoneum
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C480-C488)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Ovary, Fallopian Tube, Primary Peritoneal Carcinoma
+(PDF, 200 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Retroperitoneum, Peritoneum
+
+EOD Schemas
+
+Retroperitoneum
+
+Primary Peritoneal Carcinoma
+
+Breast
+
+Coding Guidelines: Breast
+(PDF, 277 KB)
+
+Solid Tumor Rules: Breast
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Breast - (C500-C509)
+(PDF, 193 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Breast
+(PDF, 200 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Breast
+
+EOD Schemas
+
+Breast
+
+Vulva, Vagina
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C510-C519, C529)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Vulva, Vagina
+
+EOD Schemas
+
+Vulva (including Skin of Vulva)
+
+Vagina
+
+Cervix Uteri
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Cervix Uteri - (C530-C539)
+(PDF, 166 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Cervix Uteri
+
+EOD Schemas
+
+Cervix Uteri
+
+Corpus Uteri, Uterus, NOS
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Corpus Uteri - (C540-C559)
+(PDF, 169 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Corpus Uteri, Uterus, NOS
+
+EOD Schemas
+
+Adenosarcoma of the Corpus Uteri; Uterus, NOS
+
+Carcinoma and Carcinosarcoma of Corpus Uteri; Uterus, NOS (excluding Placenta and Adenosarcoma, Leiomyosarcoma, and Endometrial Stromal Sarcoma (ESS))
+
+Sarcoma (Leiomyosarcoma and Endometrial Stromal Sarcoma) of the Corpus Uteri; Uterus, NOS (excluding Placenta and Adenosarcoma, Carcinoma, and Carcinosaroma)
+
+Ovary
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Ovary (C569)
+(PDF, 166 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Ovary, Fallopian Tube, Primary Peritoneal Carcinoma
+(PDF, 200 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Ovary
+
+EOD Schemas
+
+Ovary
+
+Fallopian Tube, Ligaments, Adnexa
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C570-C574)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Ovary, Fallopian Tube, Primary Peritoneal Carcinoma
+(PDF, 200 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Fallopian Tube, Ligaments, Adnexa
+
+EOD Schemas
+
+Fallopian Tube
+
+Broad and Round Ligaments, Parametrium, Uterine Adnexa
+
+Other and Unspecified Female Genital Organs, Placenta
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C577-C579, C589)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Other and Unspecified Female Genital Organs, Placenta
+
+EOD Schemas
+
+Other and Unspecified Female Genital Organs
+
+Placenta
+
+Penis
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C600-C609)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Penis
+
+EOD Schemas
+
+Penis (excludes Malignant Melanoma, Merkel Cell Carcinoma, Kaposi Sarcoma, Mycosis Fungoides, Sezary Disease and Other Lymphomas)
+
+Prostate
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Prostate - (C619)
+(PDF, 169 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Prostate
+(PDF, 180 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Prostate
+
+EOD Schemas
+
+Prostate
+
+Testis
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Testis - (C620-C629)
+(PDF, 128 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Testis
+
+EOD Schemas
+
+Testis
+
+Other and Unspecified Male Genital Organs
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C630-C639)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Other and Unspecified Male Genital Organs
+
+EOD Schemas
+
+Other and Unspecified Male Genital Organs (excluding Scrotum, Kaposi Sarcoma and Lymphoma)
+
+Kidney
+
+Coding Guidelines: Kidney
+(PDF, 101 KB)
+
+Solid Tumor Rules: Kidney
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Kidney, Renal Pelvis, and Ureter - (C649, C659, C669)
+(PDF, 140 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Kidney
+
+EOD Schemas
+
+Kidney (Renal Parenchyma)
+
+Renal Pelvis, Ureter
+
+Coding Guidelines: Renal Pelvis and Ureter
+(PDF, 102 KB)
+
+Solid Tumor Rules: Urinary
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Kidney, Renal Pelvis, and Ureter - (C649, C659, C669)
+(PDF, 140 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Renal Pelvis, Ureter
+
+EOD Schemas
+
+Renal Pelvis and Ureter
+
+Bladder
+
+Coding Guidelines: Bladder
+(PDF, 256 KB)
+
+Solid Tumor Rules: Urinary
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Bladder - (C670-C679)
+(PDF, 168 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+Bladder
+(PDF, 201 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Bladder
+
+EOD Schemas
+
+Bladder
+
+Urethra, Urinary Other
+
+Coding Guidelines: Urethra
+(PDF, 103 KB)
+
+Solid Tumor Rules: Urinary
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+All Other Sites - (C680-C689)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Urethra, Urinary Other
+
+EOD Schemas
+
+Urethra
+
+Urethra-Prostatic
+
+Urinary Other
+
+Eye
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C690-C699)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Eye
+
+EOD Schemas
+
+Conjunctiva
+
+Cornea, Retina, Choroid, Ciliary Body, Iris, Overlapping Lesion of Eye, and Other Eye (excluding Retinoblastoma)
+
+Lacrimal Gland (excluding Lacrimal Sac, Lacrimal Duct)
+
+Lacrimal Sac (excluding Lymphoma)
+
+Orbital Sarcoma (excluding Lymphoma)
+
+Retinoblastoma
+
+Brain, Central Nervous System, Malignant
+
+Coding Guidelines: Brain, Central Nervous System, Malignant
+(PDF, 1.1 MB)
+
+Solid Tumor Rules: Malignant CNS and Peripheral Nerves
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Brain - (C700-C709, C710-C719, C720-C729)
+(PDF, 134 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Brain, Central Nervous System, Malignant
+
+EOD Schemas
+
+Brain and Cerebral Meninges
+
+Medulloblastoma
+
+Other Parts of Central Nervous System
+
+Brain, Central Nervous System, Benign and Borderline
+
+Coding Guidelines: Brain, Central Nervous System, Benign and Borderline
+(PDF, 1.1 MB)
+
+Solid Tumor Rules: Non-Malignant CNS
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+Brain - (C700-C709, C710-C719, C720-C729)
+(PDF, 134 KB)
+
+EOD Schemas
+
+Brain and Cerebral Meninges
+
+Other Parts of Central Nervous System
+
+Intracranial Glands
+
+Coding Guidelines: Intracranial Glands
+(PDF, 295 KB)
+
+Solid Tumor Rules: Non-Malignant CNS
+(PDF, 8.7 MB)
+
+Solid Tumor Rules: Malignant CNS and Peripheral Nerves
+(PDF, 8.7 MB)
+
+Surgery Codes
+
+All Other Sites – (C751, C752, C753)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Intracranial Glands, Malignant
+
+EOD Schemas
+
+Intracranial Gland
+
+Thyroid
+
+Coding Guidelines: Thyroid Gland
+(PDF, 129 KB)
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+Thyroid Gland - (C739)
+(PDF, 111 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Thyroid
+
+EOD Schemas
+
+Thyroid-Differentiated and Anaplastic Carcinoma
+
+Thyroid Medullary
+
+Thymus, Adrenal and Other Endocrine Glands
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+All Other Sites - (C379, C740-C749, C750, C754-C759)
+(PDF, 157 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Thymus, Adrenal and Other Endocrine Glands
+
+EOD Schemas
+
+Thymus
+
+Adrenal Gland
+
+Neuroendocrine Tumors of Adrenal Gland
+
+Parathyroid
+
+Other and Ill-Defined Endocrine Organs
+
+Kaposi Sarcoma
+
+Coding Guidelines: Kaposi Sarcoma of All Sites
+(PDF, 127 KB)
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+See Site-specific Codes
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+EOD Schemas
+
+Kaposi Sarcoma
+
+Lymphoma
+
+Coding Guidelines: Lymphoma
+(PDF, 193 KB)
+
+Hematopoietic and Lymphoid Neoplasm Coding Manual
+(PDF, 3.6 MB)
+
+Surgery Codes
+
+Lymph Nodes - (C770-C779)
+(PDF, 158 KB)
+
+See site-specific codes
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders, HemeRetic, Ill-Defined Other
+(PDF, 161 KB)
+
+EOD Schemas
+
+Hodgkin and Non-Hodgkin Lymphomas of All Sites (excluding CLL/SLL, Primary Cutaneous Lymphomas, including Mycosis Fungoides and Sezary Disease)
+
+Primary Cutaneous Lymphoma (excluding MF and SS)
+
+Lymphoma of the Ocular Adnexa and Skin of Eyelid
+
+Lymphoma-CLL/SLL
+
+Hematopoietic, Reticuloendothelial, Immunoproliferative and Myeloproliferative
+
+Hematopoietic and Lymphoid Neoplasm Coding Manual
+(PDF, 3.6 MB)
+
+Surgery Codes
+
+Hematopoietic/Reticuloendothelial/Immunoproliferative/Myeloproliferative Disease - (C420, C421, C423, C424)
+(PDF, 149 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders, HemeRetic, Ill-Defined Other
+(PDF, 161 KB)
+
+EOD Schemas
+
+Hematopoietic, Reticuloendothelial, Immunoproliferative, and Myeloproliferative Neoplasms
+
+Plasma Cell Disorders
+
+Plasma Cell Myeloma
+
+Other and Unknown Sites
+
+Solid Tumor Rules: Other Sites
+(PDF, 8.7 MB)
+- For cases diagnosed 1/1/2023+
+
+Surgery Codes
+
+See Hematopoietic, Reticuloendothelial, Immunoproliferative, and Myeloproliferative Disease - (C420, C421, C423, C424)
+(PDF, 149 KB)
+
+Spleen - (C422)
+(PDF, 106 KB)
+
+Unknown and Ill-Defined Primary Sites - (C760-C768, C809)
+(PDF, 149 KB)
+
+Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+All Other Schemas
+(PDF, 233 KB)
+
+Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST
+(PDF, 202 KB)
+- Use these codes for sarcomas of the Other and Unknown Sites
+
+EOD Schemas
+
+Other and Ill-Defined Sites, Unknown Primary Site
+
+1
+The surgery codes are based on the American College of Surgeons Commission on Cancer's Standards for Oncology Registry Entry, American College of Surgeons, Chicago, IL, 60611-321 (STORE), Revised for 2026, Appendix B: Site-specific Surgery Codes. The surgery codes in this document are identical to the STORE manual; only formatting and annotations may vary. The SEER Notes that appear in the Surgery Code sections contain information or instructions not found in STORE or that are different from STORE.
+Return to Top
+
+SEER is supported by the
+Surveillance Research Program (SRP)
+in NCI's
+Division of Cancer Control and Population Sciences (DCCPS)
+. SRP provides national leadership in the science of cancer surveillance as well as analytical tools and methodological expertise in collecting, analyzing, interpreting, and disseminating reliable population-based statistics.
+
+Follow SEER
+
+Sign up for email updates
+Sign Up
+
+Contact Information
+
+Contact SEER
+
+NCI LiveHelp Online Chat
+
+More Information
+
+Careers
+
+Sitemap
+
+Using This Website
+
+Policies
+
+Accessibility
+
+Disclaimer
+
+FOIA
+
+HHS Vulnerability Disclosure
+
+Privacy & Security
+
+Reuse of Graphics and Text
+
+Website Linking
+
+U.S. Department of Health and Human Services
+
+National Institutes of Health
+
+National Cancer Institute
+
+USA.gov
+
+NIH... Turning Discovery Into Health
+®
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125238734-1');
+var fb_page = window.location.href; //current page url var page_title = $("title").text(); //current page title fb_page = "https://www.facebook.com/sharer/sharer.php?u=" + fb_page + "&t=" + page_title; //insert url and title into the FB sharer $(".facebook-share-button").attr('href', fb_page); //add sharer url to link
+$(document).ready(function(){ $('a[href^="#jump-"]').click(function(e){ e.preventDefault(); //disable the default action of jumping to the link var region = $(this).attr("href"); //open it before we get there // check if it is open, if it isn't open it if( $(region).children("button").attr("aria-expanded") === "false") { $(region).children().click().focus(); // move focus here $(region).next().find("button").click(); } //references offset.. var refsOffset = $(region).offset().top; //body,html animate selector is a cross-browser fix. $('body, html').animate({ scrollTop: refsOffset }); }); });

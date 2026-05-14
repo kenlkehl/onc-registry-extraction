@@ -1,0 +1,24 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                                 Urethra
+                                                  C680
+Primary Site
+
+C680 is the only ICD-O-3 code available for urethra. Assign C680 for penile urethra and for prostatic
+urethra.
+
+Urothelial carcinoma originates in the urethra, bladder, ureters, and renal pelvis. Code the primary site to
+urethra (C680) when urothelial carcinoma involves the prostate and the urethra.
+
+First Course of Therapy
+
+Do not code Lupron as treatment for a primary in the prostatic urethra.
+
+
+
+
+                                     Appendix C: Coding Guidelines                                             1
+

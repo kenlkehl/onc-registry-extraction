@@ -1,0 +1,74 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                           Surgery Codes
+
+                                              Larynx
+                                             C320–C329
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A100 Local tumor destruction, NOS
+     A110 Photodynamic therapy (PDT)
+     A120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+     A130 Cryosurgery
+     A140 Laser
+     A150 Stripping
+No specimen sent to pathology from surgical events A100–A150
+
+A200 Local tumor excision, NOS
+     A260 Polypectomy
+     A270 Excisional biopsy
+
+      Any combination of A200, A260, or A270 WITH
+           A210 Photodynamic therapy (PDT)
+           A220 Electrocautery
+           A230 Cryosurgery
+           A240 Laser ablation
+           A250 Laser excision
+           A280 Stripping
+
+A300 Partial excision of the primary site, NOS; subtotal/partial laryngectomy NOS; hemilaryngectomy
+     NOS
+     A310 Vertical laryngectomy
+     A320 Anterior commissure laryngectomy
+     A330 Supraglottic laryngectomy
+
+      [SEER Note: Vertical laryngectomy: Removal of involved true vocal cord, ipsilateral false vocal
+      cord, intervening ventricle, and/or ipsilateral thyroid and may include removal of the arytenoids.
+
+      Supraglottic laryngectomy: Conservative surgery intended to preserve the laryngeal function.
+      Standard procedure involves removal of epiglottis, false vocal cords, aryepiglottic folds, arytenoid
+      cartilages, ventricle, upper one third of thyroid cartilage, and/or thyroid membrane. The true vocal
+      cords and arytenoids remain in place to allow vocalization and deglutition.]
+
+A400 Total or radical laryngectomy, NOS
+     A410 Total laryngectomy ONLY
+     A420 Radical laryngectomy ONLY
+     [SEER Note: Radical laryngectomy: Includes removal of adjacent sites. Do not code the removal
+     of adjacent sites in Surgical Procedure of Other Site (NAACCR #1294).]
+
+
+
+
+                                      Appendix C: Surgery Codes                                              1
+                        SEER Program Coding and Staging Manual 2026
+
+
+A500 Pharyngolaryngectomy
+
+A800 Laryngectomy, NOS
+
+Specimen sent to pathology from surgical events A200-A800
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                  Appendix C: Surgery Codes           2
+

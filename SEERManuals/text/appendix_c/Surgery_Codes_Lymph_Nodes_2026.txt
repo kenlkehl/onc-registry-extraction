@@ -1,0 +1,54 @@
+                         SEER Program Coding and Staging Manual 2026
+
+
+                                         Surgery Codes
+
+                                         Lymph Nodes
+                                          C770–C779
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A190 Local tumor destruction or excision, NOS
+Unknown whether a specimen was sent to pathology for surgical events coded to A190 (principally
+for cases diagnosed prior to January 1, 2003)
+
+A150 Local tumor destruction, NOS
+No specimen sent to pathology from surgical event A150
+
+A250 Local tumor excision, NOS
+     Less than a full chain, includes an excisional biopsy of a single lymph node
+     [SEER Note: The use of code A250 in Surgery of Primary Site 2023 [NAACCR #1291] is for a
+     primary in one and only one lymph node. The single involved lymph node is removed by an
+     excisional biopsy only. CDC-NPCR, CoC, and SEER are in agreement on the wording of code
+     A250.]
+
+A300 Lymph node dissection, NOS
+     A310 One chain
+     A320 Two or more chains
+
+A400 Lymph node dissection, NOS PLUS splenectomy
+     A410 One chain
+     A420 Two or more chains
+
+A500 Lymph node dissection, NOS and partial/total removal of adjacent organ(s)
+     A510 One chain
+     A520 Two or more chains
+
+A600 Lymph node dissection, NOS and partial/total removal of adjacent organ(s) PLUS splenectomy
+     (Includes staging laparotomy for lymphoma)
+     A610 One chain
+     A620 Two or more chains
+
+Specimen sent to pathology for surgical events A250-A620
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                    Appendix C: Surgery Codes                                     1
+

@@ -1,0 +1,2153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Appendix C: Site-Specific Coding Modules - 2026 SEER Program Coding and Staging Manual</title>
+
+<script src="/j/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/s/base.css" />
+<link rel="stylesheet" href="/s/styles.css" />
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://static.cancer.gov">
+<link rel="preconnect" href="https://www.platform.twitter.com">
+
+
+<!-------------------------Meta Tags for Social Sharing---------------------------------->
+<!----TWITTER---->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://seer.cancer.gov/i/tile-fact.jpg" />
+
+<!----Open Graph---->
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://seer.cancer.gov/i/tile-fact.jpg" />
+<meta property="og:site_name" content="SEER" />
+<!--custom_head--><!-- Start Meta Tag Insertion -->
+					  <meta name='description' content=''>
+					   <meta property='twitter:title' content='Appendix C: Site Specific Coding Modules - 2026 SEER Coding and Staging Manual'> 
+				       <meta property='twitter:description' content=''> 
+				       <meta property='twitter:url' content='https://seer.cancer.gov/manuals/2026/appendixc.html'> 
+				       <meta property='og:title' content='Appendix C: Site Specific Coding Modules - 2026 SEER Coding and Staging Manual'> 
+				       <meta property='og:description' content=''> 
+				       <meta property='og:url' content='https://seer.cancer.gov/manuals/2026/appendixc.html'> 
+				       <!-- End Meta Tag Insertion --><!--/custom_head--></head>
+
+<body  class="reporting " onload='IMS_Onload.run();'>
+
+	<a class="visually-hidden-focusable" href="#skipnav">Skip to Main Content</a>
+
+<!-- Blue Header -->
+<!-- NCI, SEER, Search, Navigation -->
+<!-- HEADER --> 
+<header class="push" role="banner">
+	<!---gov banner--->
+<section id="usa-banner" aria-label="Official government website">
+	<div class="container-lg">
+	  <div class="row">
+		<div class="usa-banner__header-text py-3">
+		  <img class="me-2" src="/i/usa-banner-flag-icon.png" alt="" /> An official website of the United States government
+		</div>
+	  </div>
+	</div>
+  </section>
+<!---end gov banner--> 
+
+	<div class="container-lg">
+    	<div class="row">
+        	<div class="col-md-8">
+		        <a class="seerLogo" href="/" title="Return Home">
+		        	<img src="/i/seer.svg" alt="Surveillance, Epidemiology, and End Results Program" width="1022.1" height="85.8" />
+		        </a>
+            </div>
+            <div class="col-md-4 search">
+				<div class="share">
+					<a class="facebook-share-button" href="" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+							<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+						</svg>
+						Share <span class="visually-hidden"> on Facebook</span>
+					</a>
+						
+						<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="small" data-dnt="true" data-show-count="false">Tweet</a>
+						<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<a class="print text-nowrap" href="javascript:window.print();">
+							<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" viewBox="0 0 32 32">
+								<g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g>
+							</svg>
+							<span>Print</span>
+						</a>
+					</div>
+	
+		        <form action="/search" method="get" name="search" onSubmit="return searchCheck(this.q) && NCIAnalytics.SiteSearch(this);">
+                        <label for="searchsite">Search SEER:</label>
+                        <input id="searchsite" type="text" size="15" name="q" placeholder="Search SEER" />
+                        <input type="image" src="/i/search_btn.png" class="greenBtn" alt="Search"/>
+                </form>
+            </div>
+        </div>
+ </div>
+</header>
+<div id="topnav">
+
+    <!-- Global nav/utilit bar/language  -->
+        <!-- BEGIN NAVIGATION -->
+        <!-- Begin nav-search bar -->
+			<nav class="navbar navbar-expand-lg navbar-dark" aria-labelledby="offcanvasLabel">
+				<div class="container-lg">
+					<button class="navbar-toggler my-2 py-1" id="mainNavToggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+						<strong class="align-middle">Main Menu</strong>
+					</button>
+					<div class="offcanvas offcanvas-start container-fluid px-0" id="mainNav" aria-controls="offcanvasLabel" aria-labelledby="offcanvasLabel" data-bs-scroll="true">
+						<div class="offcanvas-header">
+							<div class="menu-label-wrapper"><div class="navbar-brand d-lg-none seer-logo"></div>
+							<h3 class="offcanvas-title text-white" id="offcanvasLabel">Main Menu</h3></div>
+							
+							<button type="button" class="btn-close text-reset me-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body">
+							<ul class="navbar-nav mb-2 mb-lg-0 w-100">
+								<li class="nav-item short-text">
+									<a class="nav-link active" href="/" id="home-nav">Home</a>
+								</li>
+								<li class="nav-item dropdown">
+									<button class="nav-link dropdown-toggle text-nowrap" href="#" id="cancerStatisticsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Cancer Statistics
+									</button>
+									<ul class="dropdown-menu three-column" aria-labelledby="cancerStatisticsDropdown">
+										<div class="container-lg">
+											<div class="row dropdown-header-wrapper">
+												<div class="col-12 ps-lg-0">
+													<li class="pe-0 ps-lg-0">
+														<a class="dropdown-item dropdown-header landing-link" href="/statistics/">Cancer Statistics</a>
+													</li>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-4">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/statistics/reports.html">Reports on Cancer</a></li>
+														<li><a class="dropdown-item" href="/report_to_nation/">Annual Report to the Nation on the Status of Cancer</a></li>
+														<li><a class="dropdown-item" href="/statfacts/">Cancer Stat Facts</a></li>
+														<li><a class="dropdown-item" href="/statistics/preliminary-estimates/">Preliminary Cancer Incidence Rates and Trends</a></li>
+														<li class="d-lg-none"><a class="dropdown-item" href="/publications/">SEER Publications</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-4">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/statistics/interactive.html">Interactive Tools, Maps, &amp; Graphs</a></li>
+														<li><a class="dropdown-item" href="/statistics-network/">Cancer Statistics Explorer Network</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-4">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/statistics/resources.html">Understanding Statistics</a></li>
+														<li><a class="dropdown-item" href="/statistics/videos/">Did You Know? Video Series</a></li>
+														<li><a class="dropdown-item" href="/statistics/types.html">Defining Cancer Statistics</a></li>
+														<li><a class="dropdown-item" href="/cgi-bin/glossary/glossary.pl">Glossary of Statistical Terms</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<button class="nav-link dropdown-toggle text-nowrap" href="#" id="dataSoftwareDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										SEER Data &amp; Software
+									</button>
+									<ul class="dropdown-menu four-column" aria-labelledby="dataSoftwareDropdown">
+										<div class="container-lg">
+											<div class="row dropdown-header-wrapper">
+												<div class="col-12 ps-lg-0">
+													<li class="pe-0 ps-lg-0">
+														<a class="dropdown-item dropdown-header landing-link" href="/data-software/">SEER Data &amp; Software</a>
+													</li>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/data/">SEER Incidence Database</a></li>
+														<li><a class="dropdown-item" href="/data/product-comparison.html">Comparison of Data Products</a></li>
+														<li><a class="dropdown-item" href="/data/access.html">How to Request the Data</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/data-software/documentation/">Documentation for Data</a></li>
+														<li><a class="dropdown-item" href="/data-software/documentation/seerstat/">SEER*Stat Database Details</a></li>
+														<li><a class="dropdown-item" href="/data-software/documentation/seerstat/nccr/">NCCR Databases in SEER*Stat</a></li>
+														<li><a class="dropdown-item" href="/analysis/">Variable and Recode Definitions</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/data-software/datasets.html">U.S. Datasets</a></li>
+														<li><a class="dropdown-item" href="/mortality/">U.S. Mortality</a></li>
+														<li><a class="dropdown-item" href="/data-software/uspopulations.html">U.S. Populations</a></li>
+														<li><a class="dropdown-item" href="/stdpopulations/">Standard Populations</a></li>
+														<li><a class="dropdown-item" href="/data-software/linked_databases.html">SEER Linked Databases</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/data-software/software.html">Statistical Software</a></li>
+														<li><a class="dropdown-item" href="/seerstat/">SEER*Stat</a></li>
+														<li><a class="dropdown-item" href="/seerprep/">SEER*Prep</a></li>
+														<li><a class="dropdown-item" href="/hdcalc/">Health Drivers Calculator (HD*Calc)</a></li>
+														<li><a class="dropdown-item exit pe-5 pe-lg-2" href="https://surveillance.cancer.gov/tools/">Methods &amp; Tools for Population-based Cancer Statistics</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</ul>
+								</li>
+								<li class="nav-item dropdown">
+									<button class="nav-link dropdown-toggle text-nowrap" href="#" id="registryOperationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Registry Operations
+									</button>
+									<ul class="dropdown-menu four-column" aria-labelledby="registryOperationsDropdown">
+										<div class="container-lg">
+											<div class="row dropdown-header-wrapper">
+												<div class="col-12 ps-lg-0">
+													<li class="pe-0 ps-lg-0">
+														<a class="dropdown-item dropdown-header landing-link" href="/registrars/">Registry Operations</a>
+													</li>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/registrars/guidelines.html">Reporting Guidelines</a></li>
+														<li><a class="dropdown-item" href="/tools/codingmanuals/">SEER Program Coding Manual</a></li>
+														<li><a class="dropdown-item" href="/tools/heme/">Hematopoietic Project</a></li>
+														<li><a class="dropdown-item" href="/tools/solidtumor/">Solid Tumor Rules</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/registrars/tools-software.html">Tools &amp; Software</a></li>
+														<li><a class="dropdown-item" href="/seertools/glossary/">Glossary for Registrars</a></li>
+														<li><a class="dropdown-item" href="/tools/seerrx/">SEER*Rx - Drug Database</a></li>
+														<li><a class="dropdown-item" href="/seerabs/">SEER Abstracting Tool</a></li>
+														<li><a class="dropdown-item" href="/seerdms/">SEER Data Management System (SEER*DMS)</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown mb-lg-2">
+														<li><a class="dropdown-item dropdown-header" href="/registrars/staging.html">Staging</a></li>
+														<li><a class="dropdown-item" href="/tools/staging/rsa.html">Registrar Staging Assistant (SEER*RSA)</a></li>
+														<li><a class="dropdown-item" href="/tools/ssm/">Summary Stage 2018</a></li>
+														<li><a class="dropdown-item" href="/tools/staging/index.html">Staging Resources</a></li>
+														<li><a class="dropdown-item" href="/tools/staging/eod/" id="eod-menu-link">Extent of Disease 2018</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/registrars/qa.html">Questions &amp; Answers</a></li>
+														<li><a class="dropdown-item" href="/seer-inquiry/">SEER Inquiry System</a></li>
+														<li><a class="dropdown-item" href="/registrars/contact.html">Ask a SEER Registrar</a></li>
+														<li><a class="dropdown-item" href="/registrars/data-collection.html">Data Collection Answers</a></li>
+													</ul>
+													<li class="mb-0 mb-lg-3"><a class="dropdown-item dropdown-header unlisted-children" href="/cancerpathchart/">Cancer PathCHART</a></li>
+													
+													<li class="mb-0 mb-lg-3"><a class="dropdown-item dropdown-header" href="/training/">Training</a></li>
+												</div>
+											</div>
+										</div>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link text-nowrap text-nowrap" href="/news/" id="news-nav">News &amp; Events</a>
+								</li>
+								<li class="nav-item dropdown short-text">
+									<button class="nav-link dropdown-toggle text-nowrap" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										About SEER
+									</button>
+									<ul class="dropdown-menu three-column" aria-labelledby="aboutDropdown">
+										<div class="container-lg">
+											<div class="row dropdown-header-wrapper">
+												<div class="col-12 ps-lg-0">
+													<li class="pe-0 ps-lg-0">
+														<a class="dropdown-item dropdown-header landing-link" href="/about/">About SEER</a>
+													</li>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-4">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/about/overview.html">Program Overview</a></li>
+														<li><a class="dropdown-item" href="/about/goals.html">Goals of the SEER Program</a></li>
+														<li><a class="dropdown-item" href="/about/factsheets/">Fact Sheets &amp; Brochures</a></li>
+														<li><a class="dropdown-item" href="/about/organizations.html">Collaborating Organizations</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-4">
+													<ul class="multi-column-dropdown">
+														<li><a class="dropdown-item dropdown-header" href="/registries/">SEER Registries</a></li>
+														<li><a class="dropdown-item" href="/registries/cancer_registry/">What is a Cancer Registry?</a></li>
+														<li><a class="dropdown-item" href="/registries/list.html">List of Registries</a></li>
+														<li><a class="dropdown-item" href="/registries/terms.html">Registry Groupings</a></li>
+														<li><a class="dropdown-item" href="/registries/characteristics.html">Population Characteristics</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-4">
+													<ul class="multi-column-dropdown mb-lg-2">
+														<li><a class="dropdown-item dropdown-header" href="/about/activities.html">Research Activities</a></li>
+														<li><a class="dropdown-item" href="/biospecimen/">Residual Tissue Repository Program</a></li>
+														<li><a class="dropdown-item" href="/vtr/">SEER-Linked Virtual Tissue Repository Program</a></li>
+													</ul>
+													<li class="mb-0 mb-lg-3"><a class="dropdown-item dropdown-header unlisted-children" href="/qi/">SEER Data Quality Initiatives</a></li>
+												</div>
+											</div>
+										</div>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div> <!-- End offcanvas -->
+				</div>
+			</nav>
+        <!-- End nav-search bar -->
+        <!-- END NAVIGATION -->
+    <!-- END Global nav/utility bar/language -->
+
+</div>
+
+ <!-- BEGIN NAVIGATION -->
+    <!-- Begin nav-search bar -->
+
+
+<!-- End topnav -->
+
+ 
+
+<!-- White Section -->
+<div class="section">
+	<div class="highlighted">
+    	<!-- Crumbs -->
+        <div class="container-lg">  
+			<button class="togLeftNav button" data-bs-toggle="modal" data-bs-target="#leftNav"><span>Section Menu</span></button>
+            <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/">Home</a> </li><li class="breadcrumb-item"><a href="/registrars/">Registry Operations</a> </li><li class="breadcrumb-item"><a href="/registrars/guidelines.html">Reporting Guidelines</a> </li><li class="breadcrumb-item mobile-crumb"><a href="/tools/codingmanuals/">SEER Coding and Staging Manual</a> </li><li class="breadcrumb-item" aria-current="page">Appendix C for 2026 Manual</li></ol>            						<h1><!--body_title-->Appendix C: Site-Specific Coding Modules<br />
+<span class="release">2026 SEER Program Coding and Staging Manual</span><!--/body_title--></h1>
+					        </div>    	
+		    </div>
+    <div class="container-lg body ps-lg-0 pb-4"><img src="/i/left-body.png" alt="" class="bg-front">
+    	<div class="row">
+    	<!-- Smaller, Aside Column -->
+        <div class="col-lg-3">
+ 	 	 	<div class="leftNav-wrap">
+            	<nav class="subNav leftNav" aria-label="Reporting Guidelines">
+	<strong><a href="/registrars/guidelines.html">Reporting Guidelines</a></strong>
+	<ul>
+		<li><a href="/tools/casefinding/">Casefinding Lists</a></li>
+		<li><a href="/tools/codingmanuals/">SEER Coding and Staging Manual</a>
+			<ul>
+				<li><a href="/manuals/2025/appendixc.html">Appendix C for 2025 Manual</a></li>
+				<li><a class="active" href="/manuals/2026/appendixc.html">Appendix C for 2026 Manual</a></li>
+			</ul>
+		</li>       
+		<li><a href="/tools/heme/">Hematopoietic Project</a>
+		  <ul>
+		    <li><a href="/seertools/hemelymph/">Hematopoietic and Lymphoid Database</a></li>
+            <li><a href="/tools/heme/update.html">Revision History</a></li>
+		    <li><a href="/tools/heme/training/">Online Training</a></li>
+		    </ul>
+	  </li>
+		
+		<li><a href="/icd-o-3/">ICD-O-3 Coding Materials</a></li>
+        <li><a href="/tools/solidtumor/">Solid Tumor Rules</a>
+			<ul>
+				<li><a href="/tools/solidtumor/revisions.html">2026 Update Revisions</a></li>
+				<li><a href="/tools/solidtumor/revisions-nov2024.html">Revision Archive</a></li>
+				<li><a href="/tools/solidtumor/clarifications.html">Histology Coding Clarifications</a></li>
+			</ul>	
+		</li>
+   
+        <li><a href="/tools/codingmanuals/historical.html">Historical Staging and Coding Manuals</a>
+        <ul>		
+        <li><a href="/tools/mphrules/">MP/H Rules</a>
+			<ul>
+				<li><a href="/tools/mphrules/download.html">Download the Rules Manual</a></li>
+				<li><a href="/tools/mphrules/revisions.html">Revision History</a></li>		
+				<li><a href="/tools/mphrules/committee.html">Task Force Membership</a></li>
+			</ul>
+		</li>
+        </ul> 
+        </li>
+    	<li><a href="/tools/grade/">Grade Coding Instructions 2014-2017</a></li>    					    
+		<li><a href="/tools/submission.html">SEER Data Submission Requirements</a></li>  
+		<li><a href="/tools/covid-19/">COVID-19 Abstraction Guidance</a>
+			<ul>
+				<li><a href="/tools/covid-19/presentations.html">COVID-19 Presentations</a></li>
+				<li><a href="/tools/covid-19/qa.html">COVID-19 Q&amp;A</a></li>
+			</ul>	
+		</li>
+	</ul>
+</nav>			</div>
+        </div>
+        <!-- Main Content Column -->	
+        <main class="col-lg-9" id="content" role="main">          
+            <a name="skipnav" id="skipnav" tabindex="-1"></a>
+            <!--body_content--><p>Appendix C brings together the site-specific instructions needed to abstract a case, facilitating efficiency and accuracy. The site-specific coding modules include SEER Coding Guidelines, Extent of Disease, Site-Specific Neoadjuvant Therapy Effect coding documents, and Surgery of Primary Site codes.<sup><a href="#foot1">1</a></sup></p>
+
+<p>General instructions in the main manual are applicable in the absence of site-specific instructions. All modules include the extent of disease and surgery codes, Site-Specific Neoadjuvant Therapy Effect coding documents, and solid tumor coding rules. Some modules include site-specific coding guidelines. Additional site-specific coding instructions are found in <a href="https://staging.seer.cancer.gov/eod_public">SEER*RSA</a>, the <a href="https://apps.naaccr.org/ssdi/list/">SSDI manual</a><a class="extlink" href="https://www.cancer.gov/policies/linking"><img src="/images/exit.png" alt="External Web Site Policy" title="External Web Site Policy"></a>, and the <a href="https://apps.naaccr.org/ssdi/list/">Grade manual</a><a class="extlink" href="https://www.cancer.gov/policies/linking"><img src="/images/exit.png" alt="External Web Site Policy" title="External Web Site Policy"></a>.</p>
+
+<div class="treeWrap">
+	<div class="superTog">
+		<a class="expandAll" href="#" title="Expand All Stat Fact Sections">Expand All</a>
+		<a class="collapseAll" href="#" title="Collapse All Fact Sheet Sections">Collapse All</a>
+	</div>
+	<div class="tree-list">
+		<h2 class="tog-control">Oral Cavity, Tonsil, Oropharynx</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+				<li class="sub-tree">
+          <div class="col-sm-12">
+			  			<p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Tongue_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Tongue</a> <span class="docinfo">(PDF, 287 KB)</span></p>
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Head and Neck</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+          <h3>Surgery Codes</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Oral_Cavity_2026.pdf" target="_blank" rel="noopener noreferrer">Oral Cavity - (C000-C009, C019, C020-C029, C030-C039, C040-C049, C050-C059, C060-C069)</a> <span class="docinfo">(PDF, 140 KB)</span></li>
+							<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Pharynx_2026.pdf" target="_blank" rel="noopener noreferrer">Pharynx - (C090-C099, C100-C109, C110-C119, C129, C130-C139, C140)</a> <span class="docinfo">(PDF, 139 KB)</span></li>
+            </ul>
+            <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+							<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Oral Cavity, Tonsil, Oropharynx</li>
+            </ul><strong></strong>  
+          </div>
+					</li>	
+				<li class="sub-tree">
+					<h3 class="tog-control">EOD Schemas</h3>
+						<div class="tog-content">
+							<div class="row">
+								<div class="col-md-6">
+									<ul class="links-only">
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/lip/">Lip (excluding Malignant Melanoma)</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/gum/">Gum (excluding Malignant Melanoma)</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/tongue_anterior/">Anterior 2/3 of Tongue, Tip, Border, and Tongue, NOS (excluding Malignant Melanoma)</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/oropharynx_p16_neg/">Oropharynx HPV-Independent</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/oropharynx_hpv_associated_v9_2026">Oropharynx HPV-Associated</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/palate_hard/">Hard Palate (excluding Malignant Melanoma)</a></li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<ul class="links-only">
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/floor_mouth/">Floor of Mouth (excluding Malignant Melanoma)</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/mouth_other/">Other Mouth (excluding Malignant Melanoma)</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/buccal_mucosa/">Cheek (Buccal) Mucosa, Vestibule</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/melanoma_head_neck/">Malignant Melanoma of Head and Neck</a></li>
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/cervical_lymph_nodes_occult_head_neck/">Cervical Lymph Nodes and Unknown Primary</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+				</li>
+			</ul>
+		</div>
+
+		<h2 class="tog-control">Parotid, Other and Unspecified Glands</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+					<li class="sub-tree">
+					<div class="col-sm-12">
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Head and Neck</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+						<h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Parotid_2026.pdf" target="_blank" rel="noopener noreferrer">Parotid and Other Unspecified Glands - (C079, C080-C089)</a> <span class="docinfo">(PDF, 141 KB)</span></li>
+              </ul>
+						<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                          <ul class="links-only">
+                            <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                        	<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Parotid, Other and Unspecified Glands</li>
+                          </ul>
+						<h3>EOD Schemas</h3>
+              <ul class="links-only">
+                <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/major_salivary_glands_v9_2026">Major Salivary Glands</a></li>
+              </ul>
+            </div>
+					</li>
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Pharynx, Hypopharynx, Nasopharynx, Pyriform Sinus</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+          <li class="sub-tree">
+          <div class="col-sm-12">
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Head and Neck</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+          <h3>Surgery Codes</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Pharynx_2026.pdf" target="_blank" rel="noopener noreferrer">Pharynx - (C090-C099, C100-C109, C110-C119, C129, C130-C139, C140)</a> <span class="docinfo">(PDF, 139 KB)</span></li>
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C142-C148)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+            </ul>
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Pharynx, Hypopharynx, Nasopharynx, Pyriform Sinus</li>
+              </ul>
+            </div>
+          </li>
+					<li class="sub-tree">
+						<h3 class="tog-control">EOD Schemas</h3>
+							<div class="tog-content">
+								<div class="row">
+									<div class="col-md-6">
+										<ul class="links-only">
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/pharynx_other/">Pharynx, NOS, and Overlapping Lesion of Lip, Oral Cavity, and Pharynx (excluding Malignant Melanoma)</a></li>
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/hypopharynx/">Pyriform Sinus, Hypopharynx, Laryngopharynx (excluding Malignant Melanoma)</a></li>	
+										</ul>
+									</div>
+									<div class="col-md-6">
+										<ul class="links-only">
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/melanoma_head_neck/">Malignant Melanoma of Head and Neck</a></li>
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/nasopharynx_v9_2025">Nasopharynx</a></li>
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/cervical_lymph_nodes_occult_head_neck/">Cervical Lymph Nodes and Unknown Primary</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+					</li>	
+		  </ul>
+		</div>
+
+		<h2 class="tog-control">Esophagus</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+          <li class="sub-tree">
+           <div class="col-sm-12">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Esophagus_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Esophagus</a> <span class="docinfo">(PDF, 141 KB)</span></p>
+						 <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Esophagus_2026.pdf" target="_blank" rel="noopener noreferrer">Esophagus - (C150-C159)</a> <span class="docinfo">(PDF, 138 KB)</span></li>	
+              </ul>
+			   <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Colon_2026.pdf" target="_blank" rel="noopener noreferrer">Colon and Rectum, Esophagus, Stomach, Anus, Pancreas</a> <span class="docinfo">(PDF, 224 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Esophagus</li>
+                  </ul>
+            </div>
+          </li>		
+				<li class="sub-tree">
+					<h3 class="tog-control">EOD Schemas</h3>
+						<div class="tog-content">
+								<div class="row">
+									<div class="col-sm-12">
+											<ul class="links-only">
+                        <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/esophagus_gejunction/">Esophagus (including GE junction) (Excluding squamous)</a></li>
+                        <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/esophagus_including_ge_junction_squamous/">Esophagus (including GE junction) Squamous</a></li>
+												<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/stomach/">Stomach (excluding Gastrointestinal Stromal Tumor and Neuroendocrine Tumor)</a></li>
+                                               											</ul>
+									</div>
+								</div>
+						</div>
+				</li> 
+		</ul>
+	  </div>   
+
+		<h2 class="tog-control">Stomach</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+          <li class="sub-tree">
+          <div class="col-sm-12">
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+					<h3>Surgery Codes</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Stomach_2026.pdf" target="_blank" rel="noopener noreferrer">Stomach - (C160-C169)</a> <span class="docinfo">(PDF, 144 KB)</span></li>
+            </ul>
+			  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Colon_2026.pdf" target="_blank" rel="noopener noreferrer">Colon and Rectum, Esophagus, Stomach, Anus, Pancreas</a> <span class="docinfo">(PDF, 224 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Stomach</li>
+                  </ul>
+          </div>
+          </li>		
+				<li class="sub-tree">
+					<h3 class="tog-control">EOD Schemas</h3>
+						<div class="tog-content">
+								<div class="row">
+									<div class="col-sm-12">
+											<ul class="links-only">
+                        <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/stomach/">Stomach (excluding Gastrointestinal Stromal Tumor and Neuroendocrine Tumor) </a></li>
+                        <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_stomach_v9_2024">Neuroendocrine Tumors of Stomach</a></li>
+											</ul>
+									</div>
+								</div>
+						</div>
+				</li> 
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Small Intestine</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+          <li class="sub-tree">
+          <div class="col-sm-12">
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+					<h3>Surgery Codes</h3>
+					  <ul class="links-only">
+  						<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C170-C179)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+					  </ul>
+			  
+			  		<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                          <ul class="links-only">
+                            <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                        	<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Small Intestine</li>
+                          </ul>
+          </div>
+          </li>		
+				<li class="sub-tree">
+					<h3 class="tog-control">EOD Schemas</h3>
+						<div class="tog-content">
+								<div class="row">
+									<div class="col-sm-12">
+											<ul class="links-only">
+						  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/small_intestine/">Small Intestine</a></li>
+						  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_jejunum_and_ileum_v9_2024">Neuroendocrine Tumors of the Jejunum and Ileum</a></li>
+						  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_duodenum_v9_2024">Neuroendocrine Tumors of  the Duodenum</a></li>
+											</ul>
+									</div>
+								</div>
+						</div>
+				</li> 
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Colon, Appendix, Rectosigmoid, Rectum</h2>
+			<div class="tog-content">
+        <ul class="links-only">
+       	<li class="sub-tree">
+         <div class="col-sm-12">
+          <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Colon_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Colon</a> <span class="docinfo">(PDF, 104 KB)</span></p>
+          <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Rectosigmoid_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Rectosigmoid, Rectum</a> <span class="docinfo">(PDF, 138 KB)</span></p>
+					 <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Colon, Rectosigmoid, and Rectum</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+          <h3>Surgery Codes</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Colon_2026.pdf" target="_blank" rel="noopener noreferrer">Colon - (C180-C189)</a> <span class="docinfo">(PDF, 197 KB)</span></li>
+							<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Rectosigmoid_2026.pdf" target="_blank" rel="noopener noreferrer">Rectosigmoid - (C199)</a> <span class="docinfo">(PDF, 168 KB)</span></li>
+							<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Rectum_2026.pdf" target="_blank" rel="noopener noreferrer">Rectum - (C209)</a> <span class="docinfo">(PDF, 166 KB)</span></li>
+            </ul>
+			 
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Colon_2026.pdf" target="_blank" rel="noopener noreferrer">Colon and Rectum, Esophagus, Stomach, Anus, Pancreas</a> <span class="docinfo">(PDF, 224 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Colon, Appendix, Rectosigmoid, Rectum</li>
+                  </ul>
+          </div>
+					</li>	
+					<li class="sub-tree">
+						<h3 class="tog-control">EOD Schemas</h3>
+							<div class="tog-content">
+										<div class="row">
+											<div class="col-md-6">
+													<ul class="links-only">
+							  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/colon_rectum/">Colon and Rectum (excluding Appendix, Gastrointestinal Stromal Tumor, and Neuroendocrine Tumor)</a></li>
+							  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_colon_and_rectum_v9_2024">Neuroendocrine Tumors of Colon (excluding Appendix) and Rectum</a></li>
+													</ul>
+											</div>
+											<div class="col-md-6">
+													<ul class="links-only">
+							  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/appendix_v9_2023">Carcinomas of the Appendix (excluding Carcinoid Tumor and Neuroendocrine Carcinoma)</a></li>
+							  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_appendix_v9_2024">Neuroendocrine Tumors of Appendix</a></li>
+													</ul>
+											</div>
+										</div>
+							</div>
+					</li>	
+		  </ul>
+		</div>
+
+		<h2 class="tog-control">Anus</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+          <li class="sub-tree">
+           <div class="col-sm-12">
+			<p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Anus_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Anus</a> <span class="docinfo">(PDF, 219 KB)</span></p>
+						 <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Anus_2026.pdf" target="_blank" rel="noopener noreferrer">Anus - (C210-C218)</a> <span class="docinfo">(PDF, 140 KB)</span></li>
+              </ul>
+			   
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Colon_2026.pdf" target="_blank" rel="noopener noreferrer">Colon and Rectum, Esophagus, Stomach, Anus, Pancreas</a> <span class="docinfo">(PDF, 224 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Anus</li>
+                  </ul>
+						<h3>EOD Schemas</h3>
+						<ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/anus_v9_2023">Anus, Anal Canal, and Other Parts of Rectum</a></li>
+						</ul>
+            </div>
+          </li>	
+				</ul>
+	  </div>
+
+		<h2 class="tog-control">Liver, Intrahepatic Bile Ducts</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+          <li class="sub-tree">
+           <div class="col-sm-12">
+						 <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Liver_2026.pdf" target="_blank" rel="noopener noreferrer">Liver and Intrahepatic Bile Ducts - (C220-C221)</a> <span class="docinfo">(PDF, 158 KB)</span></li>
+              </ul>
+			   
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                <ul class="links-only">
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Liver, Intrahepatic Bile Ducts</li>
+                </ul>
+            </div>
+          </li>	
+            <li class="sub-tree">
+              <h3 class="tog-control">EOD Schemas</h3>
+                <div class="tog-content">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <ul class="links-only">
+                          <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/liver/">Liver</a></li>
+                          <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/bile_ducts_intrahepat/">Intrahepatic Bile Ducts</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+            </li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Gallbladder, Extrahepatic Bile Ducts, Ampulla of Vater</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+       <div class="col-sm-12">
+				 <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+        <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C239, C240-C249)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+          </ul>
+		   
+		 <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Gallbladder, Extrahepatic Bile Ducts, Ampulla of Vater</li>
+            </ul>
+        </div>
+			</li>
+				<li class="sub-tree">
+					<h3 class="tog-control">EOD Schemas</h3>
+						<div class="tog-content">
+							<div class="row">
+								<div class="col-md-6">
+								<ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/gallbladder/">Gallbladder</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/cystic_duct/">Cystic Duct </a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/bile_ducts_distal/">Distal Bile Duct </a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/bile_ducts_perihilar/">Perihilar Bile Ducts </a></li>
+								</ul>
+								</div>
+								<div class="col-md-6">
+								<ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/biliary_other/">Other Biliary and Biliary, NOS </a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/ampulla_vater/">Ampulla of Vater (excluding Neuroendocrine Tumor) </a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_ampulla_of_vater_v9_2024">Neuroendocrine Tumors of the Ampulla of Vater </a></li>
+								</ul>
+								</div>
+							</div>
+						</div>
+				</li>
+			</ul>
+		</div>	
+
+		<h2 class="tog-control">Pancreas</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+		  <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Pancreas_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Pancreas</a> <span class="docinfo">(PDF, 161 KB)</span></p>		
+		  <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Pancreas_2026.pdf" target="_blank" rel="noopener noreferrer">Pancreas - (C250-C259)</a> <span class="docinfo">(PDF, 135 KB)</span></li>
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Colon_2026.pdf" target="_blank" rel="noopener noreferrer">Colon and Rectum, Esophagus, Stomach, Anus, Pancreas</a> <span class="docinfo">(PDF, 224 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Pancreas</li>
+              </ul>
+        </div>
+			</li>
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						<ul class="links-only">
+						  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/pancreas/">Pancreas (excluding Neuroendocrine Tumor)</a></li>
+						  <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_pancreas_v9_2024">Neuroendocrine Tumors of Pancreas</a></li>
+						</ul>
+					  </div>
+					</div>
+				</div>
+			  </li>
+			</ul>
+	  </div>
+		
+	<h2 class="tog-control">Gastrointestinal Stromal Tumors</h2>
+	<div class="tog-content">
+	<ul class="links-only">	
+		<li class="sub-tree">
+		<div class="col-sm-12">
+			<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+		<h3>Surgery Codes</h3>
+			<ul class="links-only">
+				<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C260-C269)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+			</ul>
+			
+		<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span></li>
+            </ul>
+		<h3>EOD Schemas</h3>
+			<ul class="links-only">
+				<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/gist/">Gastrointestinal Stromal Tumors</a></li>
+			</ul>
+		</div>
+		</li>
+		</ul>
+		</div>
+
+		<h2 class="tog-control">Other Digestive</h2>
+		  <div class="tog-content">
+			<ul class="links-only">	
+			  <li class="sub-tree">
+			  <div class="col-sm-12">
+					<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+				<h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C260-C269)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+          </ul> 
+				  
+				<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                    <ul class="links-only">
+                      <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                      <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Other Digestive</li>
+                    </ul>
+				<h3>EOD Schemas</h3>
+					<ul class="links-only">
+						<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/digestive_other/">Other and Ill-Defined Digestive Organs</a></li>
+					</ul>
+				</div>
+			  </li>
+		  </ul>
+		</div>
+
+		<h2 class="tog-control">Nasal Cavity, Middle Ear, Sinuses</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+          <div class="col-sm-12">
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Head and Neck</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+			    <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C300-C301, C310-C319)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+          </ul>
+			  
+			  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Nasal Cavity, Middle Ear, Sinuses</li>
+                  </ul>
+          </div>
+					</li>	
+			<li class="sub-tree">
+			<h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+						<div class="col-md-6">
+								<ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/nasal_cavity_ethmoid_sinus/">Nasal Cavity and Ethmoid Sinus (excluding Malignant Melanoma)</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/middle_ear/">Middle Ear</a></li>
+								</ul>
+						</div>
+						<div class="col-md-6">
+								<ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/sinus_other/">Accessory (Paranasal) Sinuses (excluding Malignant Melanoma)</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/maxillary_sinus/">Maxillary Sinus (excluding Malignant Melanoma)</a></li>
+								</ul>
+						</div>	
+					</div>
+				</div>
+		  </li>
+		 </ul>
+		</div>
+
+		<h2 class="tog-control">Larynx</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+         <div class="col-sm-12">
+					 <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Head and Neck</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+          <h3>Surgery Codes</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Larynx_2026.pdf" target="_blank" rel="noopener noreferrer">Larynx - (C320-C329)</a> <span class="docinfo">(PDF, 162 KB)</span></li>
+            </ul>
+			 
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Larynx</li>
+              </ul>
+            </div>
+					</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					<div class="col-md-6">
+           	<ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/larynx_glottic/">Glottic Larynx</a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/larynx_other/">Laryngeal Cartilage, Overlapping Lesion of Larynx, and Larynx, NOS</a></li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/larynx_subglottic/">Subglottic Larynx</a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/larynx_supraglottic/">Supraglottic Larynx</a></li>
+						</ul>          
+					</div>
+					</div>
+				</div>
+			</li>			
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Trachea, Other Respiratory</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C339)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Trachea, Other Respiratory</li>
+              </ul>
+        </div>
+			</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/trachea/">Trachea</a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/respiratory_other/">Other and Ill-Defined Respiratory Sites and Intrathoracic Organs</a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Lung</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+					  <div class="col-sm-12"> 
+					  <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Lung_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Lung</a> <span class="docinfo">(PDF, 109 KB)</span></p>
+							<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Lung</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+					   <h3>Surgery Codes</h3>						
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Lung_2026.pdf" target="_blank" rel="noopener noreferrer">Lung - (C340-C349)</a> <span class="docinfo">(PDF, 172 KB)</span></li>
+              </ul>
+						  
+						<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                          <ul class="links-only">
+                            <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Lung_2026.pdf" target="_blank" rel="noopener noreferrer">Lung</a> <span class="docinfo">(PDF, 223 KB)</span></li>
+                          </ul>
+            </div>
+					</li>				
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/lung_v9_2025/">Lung</a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/pleural_mesothelioma_v9_2025">Pleural Mesothelioma</a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Heart, Mediastinum, Pleura</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites  - (C380-C388, C390-C399)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+              </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Heart, Mediastinum, Pleura</li>
+			  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Pleural_Mesothelioma_2026.pdf" target="_blank" rel="noopener noreferrer">Pleural Mesothelioma</a> <span class="docinfo">(PDF, 224 KB)</span></li>
+            </ul>
+            </div>
+					</li>				
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/heart_mediastinum_pleura/">Heart, Mediastinum and Pleura</a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/pleural_mesothelioma_v9_2025">Pleural Mesothelioma</a></li>
+							</ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Bones, Joints, Cartilage</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+					  <div class="col-sm-12">
+					  <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Bones_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Bones, Joints, Cartilage</a> <span class="docinfo">(PDF, 99 KB)</span></p>
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+					  <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Bones_2026.pdf" target="_blank" rel="noopener noreferrer">Bones, Joints, and Articular Cartilage; Peripheral Nerves and Autonomic Nervous System; Connective, Subcutaneous, and Other Soft Tissues  - (C400-C419)</a> <span class="docinfo">(PDF, 142 KB)</span></li>
+              </ul>
+						  
+						<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                          <ul class="links-only">
+                            <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Bone_2026.pdf" target="_blank" rel="noopener noreferrer">Bone Appendicular, Bone Pelvis, Bone Spine</a> <span class="docinfo">(PDF, 199 KB)</span></li>
+                          </ul>
+            </div>
+					</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/bone_appendicular_skeleton/">Bone Appendicular Skeleton, Trunk, Skull, and Facial Bones </a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/bone_pelvis/">Bone Pelvis </a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/bone_spine/">Bone Spine </a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Skin</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Skin_2026.pdf" target="_blank" rel="noopener noreferrer">Skin  - (C440-C449)</a> <span class="docinfo">(PDF, 183 KB)</span></li>
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Skin</li>
+              </ul>
+        </div>
+			</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-md-6">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/skin_other/">Skin Other (excluding Skin of Eyelid, SCC of Head and Neck, Malignant Melanoma, Merkel Cell Carcinoma, 
+									Sarcoma, Mycosis Fungoides, Sezary Disease, and Other Lymphomas) </a></li>
+						  </ul>
+					  </div>
+					  <div class="col-md-6">
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/skin_eyelid/">Skin Eyelid </a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/cutaneous_carcinoma_head_neck/">Cutaneous Carcinoma of Head and Neck</a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/merkel_cell_skin/">Merkel Cell Skin</a></li>
+							</ul>
+					  </div> 
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Melanoma</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+          <div class="col-sm-12">
+						<p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Melanoma_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Melanoma</a> <span class="docinfo">(PDF, 150 KB)</span></p>
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Cutaneous Melanoma</a> <span class="docinfo">(PDF, 8.7 MB)</span> - Use for cases diagnosed 2021 and later</p>
+				    <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Skin_2026.pdf" target="_blank" rel="noopener noreferrer">Skin - (C440-C449)</a> <span class="docinfo">(PDF, 183 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C510-C519, C600-C609, C632)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+              </ul>
+			  
+			  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                  </ul>
+            </div>
+					</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-md-6">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/melanoma_skin/">Malignant Melanoma of Skin, Vulva, Penis, Scrotum </a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/melanoma_choroid_ciliary_body/">Malignant Melanoma of Choroid and Ciliary Body (excluding Iris) </a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/melanoma_conjunctiva/">Malignant Melanoma of Conjunctiva </a></li>
+						  </ul>
+					  </div>
+					<div class="col-md-6">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/melanoma_iris/">Malignant Melanoma of Iris (excluding Ciliary Body) </a></li>								
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/melanoma_head_neck/">Malignant Melanoma of Head and Neck </a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Mycosis Fungoides, Sezary Disease</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/heme/Hematopoietic_Instructions_and_Rules.pdf" target="_blank" rel="noopener noreferrer">Hematopoietic and Lymphoid Neoplasm Coding Manual</a> <span class="docinfo">(PDF, 3.6 MB)</span></p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Skin_2026.pdf" target="_blank" rel="noopener noreferrer">Skin - (C440-C449)</a> <span class="docinfo">(PDF, 183 KB)</span></li>
+						<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Oral_Cavity_2026.pdf" target="_blank" rel="noopener noreferrer">Oral Cavity - (C000-C009, C019, C020-C029, C030-C039, C040-C049, C050-C059, C060-C069)</a> <span class="docinfo">(PDF, 140 KB)</span></li>
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C510-C519, C600-C609, C632)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+			    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Lymphoma_2026.pdf" target="_blank" rel="noopener noreferrer">Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders, HemeRetic, Ill-Defined Other</a> <span class="docinfo">(PDF, 161 KB)</span></li>
+			  </ul>
+		  
+				<h3>EOD Schemas</h3>
+					<ul class="links-only">
+						<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/mycosis_fungoides/">Mycosis Fungoides and Sezary disease of Skin, Vulva, Penis, Scrotum</a></li>
+					</ul>
+        </div>
+			</li>
+    </ul>
+	  </div>
+
+		<h2 class="tog-control">Soft Tissues, Nerves, Nervous System</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+            <div class="col-sm-12">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Bones_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Nerves, Nervous System, Soft Tissues</a> <span class="docinfo">(PDF, 99 KB)</span></p>	
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Malignant CNS and Peripheral Nerves</a> <span class="docinfo">(PDF, 8.7 MB)</span><br />
+						<a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules:  Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Bones_2026.pdf" target="_blank" rel="noopener noreferrer">Bones, Joints, and Articular Cartilage; Peripheral Nerves and Autonomic Nervous System; Connective, Subcutaneous, and Other Soft Tissues - (C470-C479, C490-C499)</a> <span class="docinfo">(PDF, 142 KB)</span></li>
+              </ul>
+				
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Soft Tissues, Nerves, Nervous System</li>
+            </ul>
+            </div>
+					</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/soft_tissue_abdomen_thoracic/">Soft Tissue Sarcoma of the Abdomen and Thoracic Visceral Organs (excluding Heart, Mediastinum and Pleura)</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/soft_tissue_head_neck/">Soft Tissue Sarcoma of the Head and Neck</a></li>	
+                </ul>
+              </div>
+						  <div class="col-md-6">
+                <ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/soft_tissue_other/">Soft Tissue Other</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/soft_tissue_trunk_extremities/">Soft Tissue Sarcoma of the Trunk and Extremities</a></li>	
+								</ul>
+              </div>
+						</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Retroperitoneum, Peritoneum</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+			<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C480-C488)</a> <span class="docinfo">(PDF, 157 KB)</span></li>
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+				<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Ovary_2026.pdf" target="_blank" rel="noopener noreferrer">Ovary, Fallopian Tube, Primary Peritoneal Carcinoma</a> <span class="docinfo">(PDF, 200 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Retroperitoneum, Peritoneum</li>
+              </ul>
+        </div>
+			</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/retroperitoneum/">Retroperitoneum</a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/primary_peritoneal_carcinoma/">Primary Peritoneal Carcinoma</a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>				  
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Breast</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					 <li class="sub-tree">
+						 <div class="col-sm-12">
+								<p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Breast_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Breast</a> <span class="docinfo">(PDF, 277 KB)</span></p>
+								<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Breast</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+								<h3>Surgery Codes</h3>
+									<ul class="links-only">
+										<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Breast_2026.pdf" target="_blank" rel="noopener noreferrer">Breast - (C500-C509)</a> <span class="docinfo">(PDF, 193 KB)</span></li>
+									</ul>
+							    <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+								  <ul class="links-only">
+									<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Breast_2026.pdf" target="_blank" rel="noopener noreferrer">Breast</a> <span class="docinfo">(PDF, 200 KB)</span></li>
+									<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Breast</li>
+								  </ul>
+								<h3>EOD Schemas</h3>
+									<ul class="links-only">
+										<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/breast/">Breast</a></li>
+									</ul>
+						 </div>
+					 </li>	
+				</ul>
+				</div>
+
+		<h2 class="tog-control">Vulva, Vagina</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites  - (C510-C519, C529)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Vulva, Vagina</li>
+              </ul>
+        </div>
+			</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-md-6">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/vulva_v9_2024">Vulva (including Skin of Vulva)</a></li> 
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/vagina/">Vagina</a></li> 
+						  </ul>
+					  </div>  
+					</div>
+				</div>
+			</li>      
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Cervix Uteri</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+					 <div class="col-sm-12">
+						 <p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+						<h3>Surgery Codes</h3>
+							<ul class="links-only">
+								<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Cervix_2026.pdf" target="_blank" rel="noopener noreferrer">Cervix Uteri - (C530-C539)</a> <span class="docinfo">(PDF, 166 KB)</span></li> 
+							</ul>
+						 
+						 <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                          <ul class="links-only">
+                            <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                        	<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Cervix Uteri</li>
+                          </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/cervix_9th_2021/">Cervix Uteri</a></li>
+							</ul>
+						 </div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Corpus Uteri, Uterus, NOS</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Corpus_Uteri_2026.pdf" target="_blank" rel="noopener noreferrer">Corpus Uteri - (C540-C559)</a> <span class="docinfo">(PDF, 169 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Corpus Uteri, Uterus, NOS</li>
+              </ul>
+        </div>
+			</li>
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+                <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/corpus_adenosarcoma/">Adenosarcoma of the Corpus Uteri; Uterus, NOS</a></li>
+                <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/corpus_carcinoma/">Carcinoma and Carcinosarcoma of Corpus Uteri; Uterus, NOS (excluding Placenta and Adenosarcoma, Leiomyosarcoma, and Endometrial Stromal Sarcoma (ESS))</a></li>
+                <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/corpus_sarcoma/">Sarcoma (Leiomyosarcoma and Endometrial Stromal Sarcoma) of the Corpus Uteri; Uterus, NOS (excluding Placenta and Adenosarcoma, Carcinoma, and Carcinosaroma)</a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+    </ul>
+	  </div>
+
+		<h2 class="tog-control">Ovary</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Ovary_2026.pdf" target="_blank" rel="noopener noreferrer">Ovary (C569)</a> <span class="docinfo">(PDF, 166 KB)</span></li> 
+          </ul>
+		  
+              <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Ovary_2026.pdf" target="_blank" rel="noopener noreferrer">Ovary, Fallopian Tube, Primary Peritoneal Carcinoma</a> <span class="docinfo">(PDF, 200 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Ovary</li>
+                  </ul>
+				<h3>EOD Schemas</h3>
+				  <ul class="links-only">
+            <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/ovary/">Ovary</a></li> 
+          </ul>
+       </div>
+			</li>	
+    </ul>
+	  </div>
+
+		<h2 class="tog-control">Fallopian Tube, Ligaments, Adnexa</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites  - (C570-C574)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+				<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Ovary_2026.pdf" target="_blank" rel="noopener noreferrer">Ovary, Fallopian Tube, Primary Peritoneal Carcinoma</a> <span class="docinfo">(PDF, 200 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Fallopian Tube, Ligaments, Adnexa</li>
+              </ul>
+        </div>
+			</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						<h3>  </h3>
+						  <ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/fallopian_tube/">Fallopian Tube</a></li>
+              <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/adnexa_uterine_other/">Broad and Round Ligaments, Parametrium, Uterine Adnexa</a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>			
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Other and Unspecified Female Genital Organs, Placenta</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C577-C579, C589)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Other and Unspecified Female Genital Organs, Placenta</li>
+              </ul>
+        </div>
+			</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+                <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/genital_female_other/">Other and Unspecified Female Genital Organs</a></li>
+                <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/placenta/">Placenta</a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Penis</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+					<div class="col-sm-12">
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+						<h3>Surgery Codes</h3>
+							<ul class="links-only">
+								<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C600-C609)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+							</ul>
+						
+						<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                          <ul class="links-only">
+                            <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                        	<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Penis</li>
+                          </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/penis/">Penis (excludes Malignant Melanoma, Merkel Cell Carcinoma, Kaposi Sarcoma, Mycosis Fungoides, Sezary Disease and Other Lymphomas)</a></li>
+							</ul>
+					 </div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Prostate</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Prostate_2026.pdf" target="_blank" rel="noopener noreferrer">Prostate - (C619)</a> <span class="docinfo">(PDF, 169 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Prostate_2026.pdf" target="_blank" rel="noopener noreferrer">Prostate</a> <span class="docinfo">(PDF, 180 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Prostate</li>
+              </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/prostate/">Prostate</a></li>
+							</ul>
+					 </div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Testis</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Testis_2026.pdf" target="_blank" rel="noopener noreferrer">Testis - (C620-C629)</a> <span class="docinfo">(PDF, 128 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Testis</li>
+              </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/testis/">Testis</a></li>
+							</ul>
+					 </div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Other and Unspecified Male Genital Organs</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C630-C639)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Other and Unspecified Male Genital Organs</li>
+              </ul>
+				<h3>EOD Schemas</h3>
+					<ul class="links-only">
+						<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/genital_male_other/">Other and Unspecified Male Genital Organs (excluding Scrotum, Kaposi Sarcoma and Lymphoma)</a></li>
+					</ul>
+			 </div>
+			</li>	
+		</ul>
+	</div>
+
+
+		<h2 class="tog-control">Kidney</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+            <div class="col-sm-12">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Kidney_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Kidney</a> <span class="docinfo">(PDF, 101 KB)</span></p>
+							<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Kidney</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Kidney_2026.pdf" target="_blank" rel="noopener noreferrer">Kidney, Renal Pelvis, and Ureter - (C649, C659, C669)</a> <span class="docinfo">(PDF, 140 KB)</span></li> 
+              </ul>
+				
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+              <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Kidney</li>
+            </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/kidney_parenchyma/">Kidney (Renal Parenchyma)</a></li>
+							</ul>
+					 </div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Renal Pelvis, Ureter</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+            <div class="col-sm-12">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Renal_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Renal Pelvis and Ureter</a> <span class="docinfo">(PDF, 102 KB)</span></p>
+							<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Urinary</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+						<h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Kidney_2026.pdf" target="_blank" rel="noopener noreferrer">Kidney, Renal Pelvis, and Ureter - (C649, C659, C669)</a> <span class="docinfo">(PDF, 140 KB)</span></li> 
+              </ul>
+				
+              <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Renal Pelvis, Ureter</li>
+                  </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/kidney_renal_pelvis/">Renal Pelvis and Ureter</a></li>
+							</ul>
+					 </div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Bladder</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+          <div class="col-sm-12">
+          <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Bladder_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Bladder</a> <span class="docinfo">(PDF, 256 KB)</span></p>
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Urinary</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+          <h3>Surgery Codes</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Bladder_2026.pdf" target="_blank" rel="noopener noreferrer">Bladder - (C670-C679)</a> <span class="docinfo">(PDF, 168 KB)</span></li> 
+            </ul>
+			  
+			  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                  <ul class="links-only">
+					<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Bladder_2026.pdf" target="_blank" rel="noopener noreferrer">Bladder</a> <span class="docinfo">(PDF, 201 KB)</span></li>
+                    <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Bladder</li>
+                  </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/bladder/">Bladder</a></li>
+							</ul>
+					 </div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Urethra, Urinary Other</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+            <div class="col-sm-12">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Urethra_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Urethra</a> <span class="docinfo">(PDF, 103 KB)</span></p>
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Urinary</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C680-C689)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+              </ul>
+				
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                <ul class="links-only">
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Urethra, Urinary Other</li>
+                </ul>
+            </div>
+					</li>	
+
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+          <div class="tog-content">
+              <div class="row">
+                <div class="col-sm-12">
+                  <ul class="links-only">
+                    <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/urethra/">Urethra</a></li>
+                    <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/urethra_prostatic/">Urethra-Prostatic</a></li>
+					<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/urinary_other/">Urinary Other</a></li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+			</li>
+		</ul>
+	  </div>	
+
+		<h2 class="tog-control">Eye</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C690-C699)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Eye</li>
+              </ul>
+        </div>
+			</li>							
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-md-6">
+						<ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/conjunctiva/">Conjunctiva</a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/eye_other/">Cornea, Retina, Choroid, Ciliary Body, Iris, Overlapping Lesion of Eye, and Other Eye (excluding Retinoblastoma)</a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/lacrimal_gland/">Lacrimal Gland (excluding Lacrimal Sac, Lacrimal Duct)</a></li>
+						</ul>
+					  </div>
+					  <div class="col-md-6">
+						<ul class="links-only">
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/lacrimal_sac/">Lacrimal Sac (excluding Lymphoma)</a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/orbital_sarcoma/">Orbital Sarcoma (excluding Lymphoma)</a></li>
+							<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/retinoblastoma/">Retinoblastoma</a></li>
+						</ul>
+					  </div>	
+					</div>
+				</div>
+			</li>			 
+		</ul>
+	  </div>
+
+		<h2 class="tog-control" id="jump-malignant">Brain, Central Nervous System, Malignant</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+            <div class="col-sm-12">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Brain_Malig_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Brain, Central Nervous System, Malignant</a> <span class="docinfo">(PDF, 1.1 MB)</span></p>
+							<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Malignant CNS and Peripheral Nerves</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Brain_2026.pdf" target="_blank" rel="noopener noreferrer">Brain - (C700-C709, C710-C719, C720-C729)</a> <span class="docinfo">(PDF, 134 KB)</span></li> 
+              </ul>
+				
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                <ul class="links-only">
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Brain, Central Nervous System, Malignant</li>
+                </ul>
+            </div>
+					</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+            <div class="row">
+              <div class="col-sm-12">
+                <ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/brain_v9_2023">Brain and Cerebral Meninges</a></li>
+									
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/medulloblastoma_v9_2023/">Medulloblastoma</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/cns_other_v9_2023">Other Parts of Central Nervous System</a></li>
+                </ul>
+              </div>
+            </div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+		<h2 class="tog-control" id="jump-benign">Brain, Central Nervous System, Benign and Borderline</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+            <div class="col-sm-12">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Brain_Benign_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Brain, Central Nervous System, Benign and Borderline</a> <span class="docinfo">(PDF, 1.1 MB)</span></p>
+							<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Non-Malignant CNS</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Brain_2026.pdf" target="_blank" rel="noopener noreferrer">Brain - (C700-C709, C710-C719, C720-C729)</a> <span class="docinfo">(PDF, 134 KB)</span> </li> 
+              </ul>
+            </div>
+					</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						<h3>  </h3>
+						  <ul class="links-only">
+                <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/brain_v9_2023">Brain and Cerebral Meninges</a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/cns_other_v9_2023">Other Parts of Central Nervous System </a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+		<h2 class="tog-control">Intracranial Glands</h2>
+		<div class="tog-content">
+			<ul class="links-only">	
+				<li class="sub-tree">
+					<div class="col-sm-12">
+						<p><a href="/manuals/2026/AppendixC/Coding_Guidelines_IntracranialGlands_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Intracranial Glands</a> <span class="docinfo">(PDF, 295 KB)</span></p>
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Non-Malignant CNS</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+						<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Malignant CNS and Peripheral Nerves</a> <span class="docinfo">(PDF, 8.7 MB)</span></p>
+						<h3>Surgery Codes</h3>
+						<ul>
+							<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites – (C751, C752, C753)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+						</ul>
+						<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+						<ul>
+							<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+							<li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Intracranial Glands, Malignant</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<h3>EOD Schemas</h3>
+								<ul>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/intracranial_gland_v9_2023">Intracranial Gland</a></li>
+								</ul>
+				</li>
+			</ul>
+	</div>
+		<h2 class="tog-control">Thyroid</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+         <li class="sub-tree">
+  				<div class="col-sm-12">
+  				<p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Thyroid_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Thyroid Gland</a> <span class="docinfo">(PDF, 129 KB)</span></p>
+					<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>	
+					<h3>Surgery Codes</h3>
+            <ul class="links-only">
+              <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Thyroid_2026.pdf" target="_blank" rel="noopener noreferrer">Thyroid Gland - (C739)</a> <span class="docinfo">(PDF, 111 KB)</span></li> 
+            </ul>
+					
+					<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                        <ul class="links-only">
+                          <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                          <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Thyroid</li>
+                        </ul>
+          </div>
+			</li>	 
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+					<div class="row">
+					  <div class="col-sm-12">
+						  <ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/thyroid/">Thyroid-Differentiated and Anaplastic Carcinoma</a></li>
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/thyroid_medullary/">Thyroid Medullary</a></li>
+						  </ul>
+					  </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Thymus, Adrenal and Other Endocrine Glands</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+			<li class="sub-tree">
+      <div class="col-sm-12">
+				<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+			  <h3>Surgery Codes</h3>
+          <ul class="links-only">
+            <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Sites - (C379, C740-C749, C750, C754-C759)</a> <span class="docinfo">(PDF, 157 KB)</span></li> 
+          </ul>
+		  
+		  <h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Thymus, Adrenal and Other Endocrine Glands</li>
+              </ul>
+        </div>
+			</li>	
+			<li class="sub-tree">
+			  <h3 class="tog-control">EOD Schemas</h3>
+				<div class="tog-content">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/thymus_v9_2025">Thymus</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/adrenal_gland/">Adrenal Gland</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/net_adrenal_gland/">Neuroendocrine Tumors of Adrenal Gland</a></li>
+                </ul>
+							</div>	
+              <div class="col-md-6">
+                <ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/parathyroid/">Parathyroid</a></li>
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/endocrine_other/">Other and Ill-Defined Endocrine Organs</a></li>
+								</ul>
+              </div>
+            </div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+
+		<h2 class="tog-control">Kaposi Sarcoma</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+						<div class="col-sm-12">
+						<p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Kaposi_Sarcoma_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Kaposi Sarcoma of All Sites</a> <span class="docinfo">(PDF, 127 KB)</span></p>
+							<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+						<h3>Surgery Codes</h3>
+							<ul class="links-only">
+								<li>See Site-specific Codes</li> 
+							</ul>
+						<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                          <ul class="links-only">
+                            <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+			  			  </ul>
+						<h3>EOD Schemas</h3>
+							<ul class="links-only">
+								<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/kaposi_sarcoma/">Kaposi Sarcoma</a></li>
+							</ul>
+						</div>
+					</li>	
+				</ul>
+			</div>
+
+		<h2 class="tog-control">Lymphoma</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+					<li class="sub-tree">
+            <p><a href="/manuals/2026/AppendixC/Coding_Guidelines_Lymphoma_2026.pdf" target="_blank" rel="noopener noreferrer">Coding Guidelines: Lymphoma</a> <span class="docinfo">(PDF, 193 KB)</span></p>
+						<p><a href="/tools/heme/Hematopoietic_Instructions_and_Rules.pdf" target="_blank" rel="noopener noreferrer">Hematopoietic and Lymphoid Neoplasm Coding Manual</a> <span class="docinfo">(PDF, 3.6 MB)</span></p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Lymph_Nodes_2026.pdf" target="_blank" rel="noopener noreferrer">Lymph Nodes - (C770-C779)</a> <span class="docinfo">(PDF, 158 KB)</span></li>
+                <li>See site-specific codes</li> 
+              </ul>
+				
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                <ul class="links-only">
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                   <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Lymphoma_2026.pdf" target="_blank" rel="noopener noreferrer">Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders, HemeRetic, Ill-Defined Other</a> <span class="docinfo">(PDF, 161 KB)</span></li>
+                </ul>
+          </li>		
+          <li class="sub-tree">
+            <h3 class="tog-control">EOD Schemas</h3>
+            <div class="tog-content">
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="links-only">
+                      <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/lymphoma/">Hodgkin and Non-Hodgkin Lymphomas of All Sites (excluding CLL/SLL, Primary Cutaneous Lymphomas, including Mycosis Fungoides and Sezary Disease)</a></li>
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/primary_cutaneous_lymphoma_non_mf_ss/">Primary Cutaneous Lymphoma (excluding MF and SS)</a></li>
+                    </ul>
+									</div>
+									<div class="col-md-6">
+                    <ul class="links-only">	
+                      <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/lymphoma_ocular_adnexa/">Lymphoma of the Ocular Adnexa and Skin of Eyelid</a></li>
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/lymphoma_cll_sll/">Lymphoma-CLL/SLL</a></li>
+										</ul>	
+                  </div>
+                </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+		<h2 class="tog-control">Hematopoietic, Reticuloendothelial, Immunoproliferative and Myeloproliferative</h2>
+			<div class="tog-content">
+				<ul class="links-only">	
+          <li class="sub-tree">
+						<p><a href="/tools/heme/Hematopoietic_Instructions_and_Rules.pdf" target="_blank" rel="noopener noreferrer">Hematopoietic and Lymphoid Neoplasm Coding Manual</a> <span class="docinfo">(PDF, 3.6 MB)</span></p>
+            <h3>Surgery Codes</h3>
+              <ul class="links-only">
+                <li><a href="/manuals/2026/AppendixC/Surgery_Codes_Hematopoietic_2026.pdf" target="_blank" rel="noopener noreferrer">Hematopoietic/Reticuloendothelial/Immunoproliferative/Myeloproliferative Disease - (C420, C421, C423, C424)</a> <span class="docinfo">(PDF, 149 KB)</span></li> 
+              </ul>
+			<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                <ul class="links-only">
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Lymphoma_2026.pdf" target="_blank" rel="noopener noreferrer">Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders, HemeRetic, Ill-Defined Other</a> <span class="docinfo">(PDF, 161 KB)</span></li>
+                </ul>
+          </li>	
+          <li class="sub-tree">
+            <h3 class="tog-control">EOD Schemas</h3>
+            <div class="tog-content">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <ul class="links-only">
+                      <li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/hemeretic/">Hematopoietic, Reticuloendothelial, Immunoproliferative, and Myeloproliferative Neoplasms</a></li>
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/plasma_cell_disorders/">Plasma Cell Disorders</a></li>
+											<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/plasma_cell_myeloma/">Plasma Cell Myeloma</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+		<h2 class="tog-control" id="jump-other">Other and Unknown Sites</h2>
+			<div class="tog-content">
+				<ul class="links-only">
+					<li class="sub-tree">
+						<div class="col-sm-12">
+							<p><a href="/tools/solidtumor/current/STM_Combined.pdf" target="_blank" rel="noopener noreferrer">Solid Tumor Rules: Other Sites</a> <span class="docinfo">(PDF, 8.7 MB)</span> - For cases diagnosed 1/1/2023+</p>
+							<h3>Surgery Codes</h3>
+								<ul class="links-only">
+									<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Hematopoietic_2026.pdf" target="_blank" rel="noopener noreferrer">See Hematopoietic, Reticuloendothelial, Immunoproliferative, and Myeloproliferative Disease - (C420, C421, C423, C424)</a> <span class="docinfo">(PDF, 149 KB)</span></li>
+									<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Spleen_2026.pdf" target="_blank" rel="noopener noreferrer">Spleen - (C422)</a> <span class="docinfo">(PDF, 106 KB)</span></li>
+									<li><a href="/manuals/2026/AppendixC/Surgery_Codes_Unknown_2026.pdf" target="_blank" rel="noopener noreferrer">Unknown and Ill-Defined Primary Sites - (C760-C768, C809)</a> <span class="docinfo">(PDF, 149 KB)</span></li> 
+								</ul>
+							<h3>Site-Specific Codes for Neoadjuvant Therapy Treatment Effect</h3>
+                                <ul class="links-only">
+                                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf" target="_blank" rel="noopener noreferrer">All Other Schemas</a> <span class="docinfo">(PDF, 233 KB)</span></li>
+                                  <li><a href="/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf" target="_blank" rel="noopener noreferrer">Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST</a> <span class="docinfo">(PDF, 202 KB)</span> - Use these codes for sarcomas of the Other and Unknown Sites</li>
+                                </ul>
+							<h3>EOD Schemas</h3>
+								<ul class="links-only">
+									<li><a href="https://staging.seer.cancer.gov/eod_public/schema/latest/ill_defined_other/">Other and Ill-Defined Sites, Unknown Primary Site</a></li>
+								</ul>
+						</div>
+					</li>
+				</ul>			
+		</div>
+		</div>
+</div> <!-- end treeWrap -->
+
+<p class="footnote" id="foot1"><sup>1</sup>The surgery codes are based on the American College of Surgeons Commission on Cancer's Standards for Oncology Registry Entry, American College of Surgeons, Chicago, IL, 60611-321 (STORE), Revised for 2026, Appendix B: Site-specific Surgery Codes. The surgery codes in this document are identical to the STORE manual; only formatting and annotations may vary. The SEER Notes that appear in the Surgery Code sections contain information or instructions not found in STORE or that are different from STORE.</p><!--/body_content-->        </main>
+        </div><!--close row-->
+    <img src="/i/right-body.png" alt="" class="bg-back"></div>
+
+    <div class="wrapper">
+        <meta http-equiv="last_modified" content="Wed, 07 Jan 2026 10:47:07 -0500" />
+    </div>
+</div>
+
+
+<!-- Blue Footer -->
+<footer class="footer" role="contentinfo">
+	<a class="returntop" href="#content" style="display: inline;"><span>Return to Top</span></a>
+	<div class="container-lg">
+    	<div class="row justify-content-around">
+    		<div class="col-lg-9">
+				<p class="seer-logo">SEER is supported by the <a href="https://surveillance.cancer.gov/">Surveillance Research Program (SRP)</a> in NCI's <a href="https://cancercontrol.cancer.gov/">Division of Cancer Control and Population Sciences (DCCPS)</a>. SRP provides national leadership in the science of cancer surveillance as well as analytical tools and methodological expertise in collecting, analyzing, interpreting, and disseminating reliable population-based statistics.</p>
+			</div>
+        </div>
+	</div>
+	
+	<div class="footer-links">
+    	<div class="container-lg"> 
+			<div class="row links-col">
+				<div class="col-md-3">
+					<h2>Follow SEER</h2>
+					<ul class="social">
+						<li><a href="https://surveillance.cancer.gov/blog"><img loading="lazy" src="/i/blog-icon.png" alt="SRP Blog" width="40" height="32"></a></li>
+						<li><a href="https://www.linkedin.com/showcase/nci-cancer-control-and-population-sciences/"><img loading="lazy" src="/i/linkedin-icon.png" alt="DCCPS LinkedIn" width="32" height="32"></a></li>
+					</ul>
+					<h2>Sign up for email updates</h2>
+					<a class="button-gray fw-bold" href="https://public.govdelivery.com/accounts/USNIHNCI/subscriber/new?topic_id=USNIHNCI_396">Sign Up</a>
+				</div>
+				
+				<div class="col-md-3">
+					<h2>Contact Information</h2>
+					<ul>        	
+						<li><a href="/about/contact.html">Contact SEER</a></li>
+						<li><a href="https://livehelp.cancer.gov/">NCI LiveHelp Online Chat</a></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-3">
+					<h2>More Information</h2>
+					<ul>    
+						<li><a href="https://surveillance.cancer.gov/jobs/">Careers</a></li>	
+						<li><a href="/sitemap.html">Sitemap</a></li>
+						<li><a href="/about/using-website.html">Using This Website</a></li>
+					</ul>
+				</div>	
+				
+				<div class="col-md-3">
+					<h2>Policies</h2>
+					<ul>        						
+						<li><a href="https://www.cancer.gov/policies/accessibility">Accessibility</a></li>
+						<li><a href="https://www.cancer.gov/policies/disclaimer">Disclaimer</a></li>
+						<li><a href="https://www.cancer.gov/policies/foia">FOIA</a></li>
+						<li><a href="https://www.hhs.gov/vulnerability-disclosure-policy">HHS Vulnerability Disclosure</a></li>
+						<li><a href="https://www.cancer.gov/policies/privacy-security">Privacy &amp; Security</a></li>
+						<li><a href="https://www.cancer.gov/policies/copyright-reuse">Reuse of Graphics and Text</a></li>
+						<li><a href="https://www.cancer.gov/policies/linking">Website Linking</a></li>
+					</ul>
+				</div>	
+			</div>
+
+			<ul class="linkList ps-0 p-md-2">
+				<li><a href="https://www.hhs.gov/">U.S. Department of Health and Human Services</a></li>
+				<li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+				<li><a href="https://www.cancer.gov/">National Cancer Institute</a></li>
+				<li class="last"><a href="https://www.usa.gov/">USA.gov</a></li>
+			</ul>
+			<p class="text-center">NIH... Turning Discovery Into Health<sup>&reg;</sup></p>
+    	</div>
+	</div>
+</footer>
+
+
+<script type="text/javascript" src="/j/general.js"></script>
+
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Do not defer jquery-ui, it needs to be available for mnav -->
+<script src="/j/jquery-ui.min.js" type="text/javascript"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125238734-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125238734-1');
+</script>
+
+<!-- NCI WEB ANALYTICS CODE -->
+<script src="//static.cancer.gov/webanalytics/WA_DCCPS_PageLoad.js"></script>
+
+<!-- create Facebook share URL for current page-->
+<script>
+    var fb_page = window.location.href; //current page url
+    var page_title = $("title").text(); //current page title
+    fb_page = "https://www.facebook.com/sharer/sharer.php?u=" + fb_page + "&t=" + page_title; //insert url and title into the FB sharer
+    $(".facebook-share-button").attr('href', fb_page); //add sharer url to link
+</script>
+<!-- Additional Scripts -->
+<script type="text/javascript">
+    $(document).ready(function(){
+		$('a[href^="#jump-"]').click(function(e){
+			e.preventDefault(); //disable the default action of jumping to the link
+
+			var region = $(this).attr("href");
+			
+			//open it before we get there
+			// check if it is open, if it isn't open it
+			if( $(region).children("button").attr("aria-expanded") === "false") {
+				$(region).children().click().focus(); // move focus here
+				$(region).next().find("button").click();
+			}
+
+			//references offset..
+			var refsOffset = $(region).offset().top;
+
+			//body,html animate selector is a cross-browser fix.
+			$('body, html').animate({
+				scrollTop: refsOffset
+			});
+		});
+    });
+</script>
+</body>
+</html>

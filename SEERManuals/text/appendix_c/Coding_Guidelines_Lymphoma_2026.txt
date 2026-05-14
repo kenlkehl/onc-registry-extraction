@@ -1,0 +1,71 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                   Lymphoma
+                 M9590-9699, 9702-9727, 9735, 9737-9738, 9823, 9827
+
+Background
+
+The two general types of lymphoma are Hodgkin lymphoma (HL), also known as Hodgkin disease, and
+non-Hodgkin lymphoma (NHL).
+
+Hodgkin lymphoma can originate almost anywhere in the body. Hodgkin lymphoma may occur in a
+single lymph node, a group of lymph nodes, or, sometimes, in other parts of the lymphatic system such as
+the bone marrow and spleen.
+
+Non-Hodgkin lymphoma may originate in a single lymph node, a group of lymph nodes, or in
+another organ.
+
+When lymphoma originates in a lymph node, it is referred to as “nodal.” When lymphoma originates in
+an organ, it is referred to as “extranodal.”
+
+
+Coding Instructions
+
+Primary Site
+The primary site for nodal lymphomas is coded to lymph nodes (C770-C779). The primary site for
+extranodal lymphoma is coded to a site other than lymph nodes (primary sites other than C770-C779).
+
+First Course of Therapy
+
+Do not code proton pump inhibitors as treatment. Proton pump inhibitors are used for gastric acid
+suppression; they treat symptoms, not the lymphoma itself.
+
+Surgery of Primary Site 2023 (NAACCR ID #1291)
+
+Nodal Lymphoma (C770-C779)
+
+Assign the appropriate surgery code using the Lymph Nodes Surgery Codes.
+
+Note: Assign code 25 (Local tumor excision, NOS) only when one lymph node was identified through
+clinical evaluations and was removed.
+
+Do not code in Surgery of Primary Site 2023 when multiple nodes are involved and only one is removed.
+Code as a biopsy.
+
+Extranodal Lymphoma (Primary Sites other than C770-C779)
+
+Use the site-specific surgery codes corresponding to the primary site.
+
+Example 1: Stomach lymphoma. Use the Stomach Surgery Codes to code Surgery of Primary Site 2023.
+
+
+
+                                    Appendix C: Coding Guidelines                                      1
+                        SEER Program Coding and Staging Manual 2026
+
+
+Example 2: Tonsil lymphoma. Use the Pharynx Surgery Codes to code Surgery of Primary Site 2023.
+The surgery codes for Pharynx cover Tonsil (C090–C099).
+
+
+See the Hematopoietic and Lymphoid Neoplasm Case Reportability and Coding Manual and the
+Hematopoietic Database (DB) for more information and additional coding instructions.
+
+
+
+
+                                 Appendix C: Coding Guidelines                                    2
+

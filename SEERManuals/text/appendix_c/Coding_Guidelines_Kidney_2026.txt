@@ -1,0 +1,23 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                                 Kidney
+                                                  C649
+
+Primary Site
+
+Urothelial cell carcinoma originates in the urethra, bladder, ureters, and renal pelvis. Code the primary
+site to renal pelvis (C659) when urothelial cell carcinoma originates in the “kidney.”
+
+
+Laterality
+
+Laterality is required for C649.
+
+
+
+
+                                     Appendix C: Coding Guidelines                                          1
+

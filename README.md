@@ -1,4 +1,4 @@
-# NAACCR v26 Cancer Registry Abstraction Pipeline
+# Oncology Registry NAACCR v26 Abstraction Pipeline
 
 Automated extraction of [NAACCR v26](https://www.naaccr.org/) cancer registry data from EHR clinical text using a local LLM. Produces registry-grade output suitable for state cancer registry submission.
 
@@ -6,16 +6,18 @@ Automated extraction of [NAACCR v26](https://www.naaccr.org/) cancer registry da
 
 Given a dataset of patient clinical documents (pathology reports, operative notes, imaging, progress notes, etc.), this pipeline:
 
-1. **Detects** all distinct primary cancers per patient (handles multiple primaries)
-2. **Extracts** ~580 NAACCR data items per chunk in domain groups:
+1. **Detects** all distinct primary cancers per patient by scanning every chronological chunk
+2. **Creates one independent extraction work unit per diagnosis**, keyed by primary site + histology + laterality + diagnosis date
+3. **Extracts** ~580 NAACCR data items per diagnosis/chunk in domain groups:
    - Demographics & cancer identification (ICD-O-3 site/histology codes)
    - Staging & prognostic factors (TNM, biomarkers, site-specific factors)
    - Treatment (surgery, radiation with 3-phase detail, chemotherapy, hormone, immunotherapy)
    - Follow-up & narrative text summaries
-3. **Updates** extraction across chunks (higher confidence wins)
-4. **Validates** against NAACCR interfield edit rules (site/sex, site/histology, TNM consistency, etc.)
-5. **Scores confidence** and generates a prioritized human review queue
-6. **Outputs** NAACCR v26 XML, fixed-width flat file, or CSV with full audit trail
+4. **Injects cancer-type-specific registry context** from the NAACCR dictionary plus locally vendored SEER/NAACCR manuals
+5. **Updates** extraction across chunks (higher confidence wins)
+6. **Validates** against NAACCR interfield edit rules (site/sex, site/histology, TNM consistency, etc.)
+7. **Scores confidence** and generates a prioritized human review queue
+8. **Outputs** NAACCR v26 XML, fixed-width flat file, or CSV with full audit trail
 
 All LLM inference runs locally via [vLLM](https://docs.vllm.ai/) -- no data leaves the machine.
 
@@ -31,7 +33,7 @@ All LLM inference runs locally via [vLLM](https://docs.vllm.ai/) -- no data leav
 
 ```bash
 git clone <this-repo>
-cd registry_skills
+cd onc-registry-extraction
 uv sync
 ```
 
@@ -77,14 +79,15 @@ The input is a CSV or Parquet file with **one row per document**, multiple rows 
 
 ```bash
 # Basic usage
-uv run naaccr-pipeline input.csv output/
+uv run onc-registry-pipeline input.csv output/
 
 # With options
-uv run naaccr-pipeline input.parquet output/ \
+uv run onc-registry-pipeline input.parquet output/ \
     --vllm-url http://localhost:8000/v1 \
     --format naaccr_xml \
     --chunk-size 50000 \
     --items-per-call 50 \
+    --seer-manuals-dir SEERManuals \
     --max-concurrent 16 \
     --checkpoint-dir ./checkpoints \
     --verbose
@@ -93,7 +96,7 @@ uv run naaccr-pipeline input.parquet output/ \
 Or without uv:
 
 ```bash
-python -m naaccr_pipeline.main input.csv output/
+python -m onc_registry_pipeline.main input.csv output/
 ```
 
 ### Output files
@@ -111,20 +114,20 @@ The pipeline writes to the output directory:
 
 ### Converting output to JSON or CSV
 
-The `naaccr-convert` tool converts NAACCR XML output to JSON or simple CSV for downstream use (analytics, data science, integration with other systems):
+The `onc-registry-convert` tool converts NAACCR XML output to JSON or simple CSV for downstream use (analytics, data science, integration with other systems):
 
 ```bash
 # XML -> JSON (format inferred from extension)
-uv run naaccr-convert output/naaccr_output.xml output/data.json
+uv run onc-registry-convert output/naaccr_output.xml output/data.json
 
 # XML -> CSV with human-readable column names
-uv run naaccr-convert output/naaccr_output.xml output/data.csv --readable-names
+uv run onc-registry-convert output/naaccr_output.xml output/data.csv --readable-names
 
 # Drop empty fields for a cleaner file
-uv run naaccr-convert output/naaccr_output.xml output/data.json --skip-empty
+uv run onc-registry-convert output/naaccr_output.xml output/data.json --skip-empty
 
 # Combine options
-uv run naaccr-convert output/naaccr_output.xml output/data.csv \
+uv run onc-registry-convert output/naaccr_output.xml output/data.csv \
     --readable-names --skip-empty
 ```
 
@@ -133,12 +136,13 @@ The `--readable-names` flag replaces XML IDs (e.g., `primarySite`) with full NAA
 ## CLI reference
 
 ```
-usage: naaccr-pipeline [-h] [--vllm-url URL] [--max-concurrent N]
+usage: onc-registry-pipeline [-h] [--vllm-url URL] [--max-concurrent N]
                        [--format {naaccr_xml,naaccr_flat,csv}]
                        [--confidence-threshold FLOAT] [--data-dict DIR]
                        [--temperature FLOAT] [--max-tokens N]
                        [--max-retries N] [--chunk-size N]
-                       [--items-per-call N] [--checkpoint-dir DIR]
+                       [--items-per-call N] [--seer-manuals-dir DIR]
+                       [--seer-context-max-chars N] [--checkpoint-dir DIR]
                        [--verbose]
                        input output
 
@@ -148,7 +152,7 @@ positional arguments:
 
 options:
   --vllm-url URL           vLLM server base URL (default: http://localhost:8000/v1)
-  --max-concurrent N       Max concurrent patients per round (default: 16)
+  --max-concurrent N       Max concurrent diagnosis work units per round (default: 16)
   --format FORMAT          Output format (default: naaccr_xml)
   --confidence-threshold   Confidence threshold for review flagging (default: 0.7)
   --data-dict DIR          Path to NAACCRDataItems directory (default: NAACCRDataItems)
@@ -157,6 +161,8 @@ options:
   --max-retries N          Max LLM call retries (default: 3)
   --chunk-size N           Chunk size in tokens (default: 50000)
   --items-per-call N       NAACCR items per LLM call (default: 50)
+  --seer-manuals-dir DIR   Vendored SEER/NAACCR manuals directory (default: SEERManuals)
+  --seer-context-max-chars Max registry manual context per prompt (default: 12000)
   --checkpoint-dir DIR     Directory for round checkpoints (enables resume)
   -v, --verbose            Enable debug logging
 ```
@@ -175,15 +181,21 @@ Input DataFrame
 [Chunk] Concatenate notes chronologically, chunk by token count (50K default)
     |
     v
-[Tumor Detect] Identify distinct primary cancers per patient
+[Tumor Detect] Process every chunk, merge candidates, deduplicate diagnoses
+    |
+    v
+[Diagnosis work units]
+    One work unit per detected diagnosis:
+    primary site + histology + laterality + diagnosis date
     |
     v
 [Round-based extraction]
-    Round 0: all patients' chunk 0 in parallel
-    Round 1: all patients' chunk 1 in parallel (updating prior results)
+    Round 0: all diagnosis work units' chunk 0 in parallel
+    Round 1: all diagnosis work units' chunk 1 in parallel (updating prior results)
     ...
-    Per chunk, per tumor:
+    Per chunk, per diagnosis:
       Demographics + Cancer ID -> resolve site/histology
+      Retrieve relevant NAACCR schema context + local SEER manual excerpts
       Staging (schema-specific: breast, prostate, lung, etc.)
       Treatment: surgery, radiation, systemic (3 sub-passes)
       Follow-up coded items
@@ -203,10 +215,14 @@ Input DataFrame
 
 All patient notes are concatenated chronologically with date headers and chunked into ~50K-token segments with overlap. No document classification or type-based prioritization. Each chunk is processed as a complete unit, extracting all available NAACCR items.
 
+### Diagnosis detection strategy
+
+Pass 0 sends every patient chunk to the LLM to identify primary cancer diagnoses mentioned in that chunk. The chunk-level candidates are merged and deduplicated by normalized primary site, histology, laterality, and diagnosis date. Each resulting diagnosis becomes an independent work unit with its own extraction state and output tumor record.
+
 ### Round-based parallelism
 
-- **Round N** = Nth chunk from each patient/tumor
-- All patients' chunk N processed in parallel via `asyncio.Semaphore`
+- **Round N** = Nth chunk from each diagnosis work unit
+- All work units' chunk N processed in parallel via `asyncio.Semaphore`
 - Within a chunk, domain extraction is sequential (demographics before staging, since staging items depend on primary site)
 - After each round, extraction state is checkpointed (if `--checkpoint-dir` is set)
 
@@ -224,6 +240,8 @@ Items are only updated when the new chunk provides stronger evidence (higher con
 ### Site-specific extraction
 
 The 342 staging/prognostic factor items in NAACCR v26 are not all relevant to every cancer. The `SchemaRegistry` maps primary site + histology to one of ~15 cancer schemas (breast, prostate, lung, colon, melanoma, etc.), each with 10-30 site-specific data items. A breast cancer case extracts ER/PR/HER2/Oncotype; a prostate case extracts Gleason/PSA.
+
+The `SEERManualContextProvider` reads `SEERManuals/manifest.json`, scores vendored SEER/NAACCR manuals by the current cancer type, site, histology, and resolved schema, then adds bounded excerpts to the prompt. This keeps the prompt focused on the relevant coding instructions rather than loading full manuals.
 
 ### Validation
 
@@ -262,9 +280,11 @@ The LLM never sees a raw schema or unconstrained output space. Every prompt incl
    - "dateOfDiagnosis": Date of Diagnosis (Item 390). YYYYMMDD format (use 99 for unknown day/month)
    ```
 
-4. **Prompt injection** (`extraction/chunk_extractor.py` + `extraction/prompts/chunk_extraction.py`): The field descriptions are injected into both the **system prompt** (via `{json_format_instructions}`) and the **user prompt** (via `{json_field_descriptions}`), so the LLM sees the valid codes twice. The domain-specific system prompts also contain hardcoded summaries of the most critical codes (e.g. Summary Stage values, surgical margin codes, radiation modality codes) for additional reinforcement.
+4. **Registry reference retrieval** (`manuals/seer.py`): The resolved diagnosis/schema is used to retrieve short relevant excerpts from local SEER/NAACCR manual text under `SEERManuals/text/`.
 
-5. **Post-hoc validation** (`dictionary/code_resolver.py`): After the LLM responds, `CodeResolver.resolve()` maps each returned value back to a valid NAACCR code using a 6-tier strategy: exact match → case-insensitive → description match → fuzzy match (rapidfuzz, score >85) → numeric range → fail. Resolution confidence is combined with the LLM's self-reported confidence to produce the final score.
+5. **Prompt injection** (`extraction/chunk_extractor.py` + `extraction/prompts/chunk_extraction.py`): The field descriptions are injected into both the **system prompt** (via `{json_format_instructions}`) and the **user prompt** (via `{json_field_descriptions}`), so the LLM sees the valid codes twice. The domain-specific system prompts also contain hardcoded summaries of the most critical codes (e.g. Summary Stage values, surgical margin codes, radiation modality codes), plus the retrieved registry manual excerpts when available.
+
+6. **Post-hoc validation** (`dictionary/code_resolver.py`): After the LLM responds, `CodeResolver.resolve()` maps each returned value back to a valid NAACCR code using a 6-tier strategy: exact match → case-insensitive → description match → fuzzy match (rapidfuzz, score >85) → numeric range → fail. Resolution confidence is combined with the LLM's self-reported confidence to produce the final score.
 
 ### Checkpointing and resume
 
@@ -286,6 +306,8 @@ The `NAACCRDataItems/` directory contains the NAACCR v26 data dictionary:
 - `DataItems.csv` -- 771 active data items with coding instructions
 - `CodeList.csv` -- 4,372 valid codes for 512 items
 - `AlternateNames.csv` -- 412 historical name mappings
+
+The `SEERManuals/` directory contains current vendored SEER/NAACCR coding, staging, Appendix C, SSDI, Grade, Summary Stage, EOD, Solid Tumor Rules, and hematopoietic manuals. PDF text extractions under `SEERManuals/text/` are used at runtime; no network access is required during extraction.
 
 ## License
 

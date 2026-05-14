@@ -1,0 +1,340 @@
+Solid Tumor Rules
+Skip to Main Content
+An official website of the United States government
+Share
+on Facebook
+Tweet
+Print
+Search SEER:
+Main Menu
+
+Main Menu
+
+Home
+
+Cancer Statistics
+
+Cancer Statistics
+
+Reports on Cancer
+
+Annual Report to the Nation on the Status of Cancer
+
+Cancer Stat Facts
+
+Preliminary Cancer Incidence Rates and Trends
+
+SEER Publications
+
+Interactive Tools, Maps, & Graphs
+
+Cancer Statistics Explorer Network
+
+Understanding Statistics
+
+Did You Know? Video Series
+
+Defining Cancer Statistics
+
+Glossary of Statistical Terms
+
+SEER Data & Software
+
+SEER Data & Software
+
+SEER Incidence Database
+
+Comparison of Data Products
+
+How to Request the Data
+
+Documentation for Data
+
+SEER*Stat Database Details
+
+NCCR Databases in SEER*Stat
+
+Variable and Recode Definitions
+
+U.S. Datasets
+
+U.S. Mortality
+
+U.S. Populations
+
+Standard Populations
+
+SEER Linked Databases
+
+Statistical Software
+
+SEER*Stat
+
+SEER*Prep
+
+Health Drivers Calculator (HD*Calc)
+
+Methods & Tools for Population-based Cancer Statistics
+
+Registry Operations
+
+Registry Operations
+
+Reporting Guidelines
+
+SEER Program Coding Manual
+
+Hematopoietic Project
+
+Solid Tumor Rules
+
+Tools & Software
+
+Glossary for Registrars
+
+SEER*Rx - Drug Database
+
+SEER Abstracting Tool
+
+SEER Data Management System (SEER*DMS)
+
+Staging
+
+Registrar Staging Assistant (SEER*RSA)
+
+Summary Stage 2018
+
+Staging Resources
+
+Extent of Disease 2018
+
+Questions & Answers
+
+SEER Inquiry System
+
+Ask a SEER Registrar
+
+Data Collection Answers
+
+Cancer PathCHART
+
+Training
+
+News & Events
+
+About SEER
+
+About SEER
+
+Program Overview
+
+Goals of the SEER Program
+
+Fact Sheets & Brochures
+
+Collaborating Organizations
+
+SEER Registries
+
+What is a Cancer Registry?
+
+List of Registries
+
+Registry Groupings
+
+Population Characteristics
+
+Research Activities
+
+Residual Tissue Repository Program
+
+SEER-Linked Virtual Tissue Repository Program
+
+SEER Data Quality Initiatives
+Section Menu
+
+Home
+
+Registry Operations
+
+Reporting Guidelines
+
+Solid Tumor Rules
+
+Solid Tumor Rules
+
+2026 Update (view
+Revision History
+)
+Reporting Guidelines
+
+Casefinding Lists
+
+SEER Coding and Staging Manual
+
+Appendix C for 2025 Manual
+
+Appendix C for 2026 Manual
+
+Hematopoietic Project
+
+Hematopoietic and Lymphoid Database
+
+Revision History
+
+Online Training
+
+ICD-O-3 Coding Materials
+
+Solid Tumor Rules
+
+2026 Update Revisions
+
+Revision Archive
+
+Histology Coding Clarifications
+
+Historical Staging and Coding Manuals
+
+MP/H Rules
+
+Download the Rules Manual
+
+Revision History
+
+Task Force Membership
+
+Grade Coding Instructions 2014-2017
+
+SEER Data Submission Requirements
+
+COVID-19 Abstraction Guidance
+
+COVID-19 Presentations
+
+COVID-19 Q&A
+
+Download the Solid Tumor Rules 2026 Update
+(PDF, 8.7 MB)
+(December 12, 2025)
+
+Purpose of Solid Tumor Rules
+
+The purpose of the Solid Tumor Rules is to determine the number of primaries to abstract and the histology to code.
+The most recent Solid Tumor Rules update should be used as soon as it is released
+and can be applied to 2018+ cases (see General Instructions for start years for each Site-group). If a specific code or instruction has an effective year later than 2018, it will be noted in the text.
+
+2026 Solid Tumor Rules Release Announcement
+
+The Solid Tumor Rules have been updated for 2026. In addition to the standard annual updates, the Solid Tumor Manual underwent a substantial reformatting to improve clarity and usability.
+
+Key updates include the following:
+
+Restructured general instructions
+
+Reformatted and restructured the histology tables
+
+Changed from 3 columns to 2 columns
+
+Histology corrections made in several site-group tables
+
+In-table notes moved to footnotes
+
+Malignant and Non-malignant CNS: Table 1: WHO Grades for Select CNS Neoplasms has been replaced by a link to the most current CAP Protocol for CNS.
+
+Updated list of ambiguous terms that can be used for determining histology
+
+Breast rules M10 and H28 deleted
+
+See the
+Revision History
+for a comprehensive description of changes.
+
+NOTE:
+For information on implementation of the 2026 update, see the
+Diagnosis Years for Which the Solid Tumor Rules Should Be Used
+section in the General Instructions (page 7).
+
+Educational Opportunities
+
+The 2026 updates to the Solid Tumor Manual will be discussed during the
+V26 Updates: Solid Tumor Rules, SSDIs, CPC and More
+informational webinar on January 14, 2026 at 2pm ET. Registration is free and participants are eligible for 2 continuing education (CE) credits.
+
+A more in-depth discussion of the changes will be included in the
+SEER 2025-2026 Advanced Topics for Registry Professionals on Demand Workshop
+.
+
+Where Should I Submit Questions?
+
+Questions concerning the Solid Tumor Rules Manual can be directed to the
+Ask A SEER Registrar Forum
+.
+
+Revision History
+
+Significant formatting changes were made to the histology tables
+. Please see the
+2026 Update Revisions
+. Changes for earlier versions are available in the
+Revision Archive
+.
+
+Suggested Citation
+
+Dickie, L., Adams, S., Harrison, D., Hofferkamp, J., Traverso-Ortiz, M., Van Dyke, A., Negoita, S. (December 2025). Solid Tumor Rules. National Cancer Institute, Rockville, MD 20850.
+Return to Top
+
+SEER is supported by the
+Surveillance Research Program (SRP)
+in NCI's
+Division of Cancer Control and Population Sciences (DCCPS)
+. SRP provides national leadership in the science of cancer surveillance as well as analytical tools and methodological expertise in collecting, analyzing, interpreting, and disseminating reliable population-based statistics.
+
+Follow SEER
+
+Sign up for email updates
+Sign Up
+
+Contact Information
+
+Contact SEER
+
+NCI LiveHelp Online Chat
+
+More Information
+
+Careers
+
+Sitemap
+
+Using This Website
+
+Policies
+
+Accessibility
+
+Disclaimer
+
+FOIA
+
+HHS Vulnerability Disclosure
+
+Privacy & Security
+
+Reuse of Graphics and Text
+
+Website Linking
+
+U.S. Department of Health and Human Services
+
+National Institutes of Health
+
+National Cancer Institute
+
+USA.gov
+
+NIH... Turning Discovery Into Health
+®
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125238734-1');
+var fb_page = window.location.href; //current page url var page_title = $("title").text(); //current page title fb_page = "https://www.facebook.com/sharer/sharer.php?u=" + fb_page + "&t=" + page_title; //insert url and title into the FB sharer $(".facebook-share-button").attr('href', fb_page); //add sharer url to link

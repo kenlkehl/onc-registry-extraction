@@ -1,0 +1,206 @@
+Schemas | SSDI Data |
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QW5FH8W0YN');
+Skip to Main Content
+
+SITE SPECIFIC DATA ITEMS (SSDI)/ GRADE
+
+SITE SPECIFIC DATA ITEMS (SSDI)/ GRADE
+Main Menu
+
+Home
+
+Schema List
+Version Selection:
+3.3
+3.2
+Data Last Updated: Dec. 17, 2025
+
+Cancer Schema List
+Displaying
+141
+Schemas
+Standard Search
+Site/Hist Search
+Search
+Search
+Site
+Histology
+Search
+
+Resources
+
+Version 3.3 (For use with cases diagnosed 2018 forward after registry software conversion to the NAACCR Data Standards and Data Dictionary, Version 26)
+
+SSDI Manual
+
+SSDI Manual Appendix A
+
+SSDI Manual Appendix B
+
+SSDI Manual Appendix C
+
+Grade Manual
+
+Change Log
+
+Comments or suggestions concerning the SSDI’s are welcome and can be posted at the American College of Surgeons
+CAnswer Forum
+.
+Adnexa Uterine Other
+Adrenal Gland
+Ampulla of Vater
+Anus [8th: 2018-2022]
+Anus [V9: 2023+]
+Appendix [8th: 2018-2022]
+Appendix [V9: 2023+]
+Bile Duct Distal
+Bile Ducts Intrahepatic
+Bile Ducts Perihilar
+Biliary Other
+Bladder
+Bone Appendicular Skeleton
+Bone Pelvis
+Bone Spine
+Brain [8th: 2018-2022]
+Brain [V9: 2023+]
+Breast
+Buccal Mucosa
+Cervical Lymph Nodes and Unknown Primary
+Cervix Sarcoma
+Cervix [8th: 2018-2020]
+Cervix [V9: 2021+]
+CNS Other [8th: 2018-2022]
+CNS Other [V9: 2023+]
+Colon and Rectum
+Conjunctiva
+Corpus Adenosarcoma
+Corpus Carcinoma and Carcinosarcoma
+Corpus Sarcoma
+Cutaneous Carcinoma of Head and Neck
+Cystic Duct
+Digestive Other
+Endocrine Other
+Esophagus (including GE junction) (excluding Squamous)
+Esophagus (including GE junction) Squamous
+Eye Other
+Fallopian Tube
+Floor of Mouth
+Gallbladder
+Genital Female Other
+Genital Male Other
+GIST
+Gum
+Heart, Mediastinum and Pleura
+HemeRetic
+Hypopharynx
+Ill-Defined Other
+Intracranial Gland [8th: 2018-2022]
+Intracranial Gland [V9: 2023+]
+Kaposi Sarcoma
+Kidney Parenchyma
+Kidney Renal Pelvis
+Lacrimal Gland
+Lacrimal Sac
+Larynx Glottic
+Larynx Other
+Larynx Subglottic
+Larynx Supraglottic
+Lip
+Liver
+Lung [8th: 2018-2024]
+Lung [V9: 2025+]
+Lymphoma
+Lymphoma Ocular Adnexa
+Lymphoma-CLL/SLL
+Major Salivary Glands [8th: 2018-2025]
+Major Salivary Glands [V9: 2026+]
+Maxillary Sinus
+Medulloblastoma [V9: 2023+]
+Melanoma Choroid and Ciliary Body
+Melanoma Conjunctiva
+Melanoma Head and Neck
+Melanoma Iris
+Melanoma Skin
+Merkel Cell Skin
+Middle Ear
+Mouth Other
+Mycosis Fungoides
+Nasal Cavity and Ethmoid Sinus
+Nasopharynx [8th: 2018-2024]
+Nasopharynx [V9: 2025+]
+NET Adrenal Gland
+NET Ampulla of Vater [8th: 2018-2023]
+NET Ampulla of Vater [V9: 2024+]
+NET Appendix [8th: 2018-2023]
+NET Appendix [V9: 2024+]
+NET Colon and Rectum [8th: 2018-2023]
+NET Colon and Rectum [V9: 2024+]
+NET Duodenum [8th: 2018-2023]
+NET Duodenum [V9: 2024+]
+NET Jejunum and Ileum [8th: 2018-2023]
+NET Jejunum and Ileum [V9: 2024+]
+NET Pancreas [8th: 2018-2023]
+NET Pancreas [V9: 2024+]
+NET Stomach [8th: 2018-2023]
+NET Stomach [V9: 2024+]
+Orbital Sarcoma
+Oropharynx HPV-Associated [8th: 2018-2025]
+Oropharynx HPV-Associated [V9: 2026+]
+Oropharynx HPV-Independent
+Ovary
+Palate Hard
+Pancreas
+Parathyroid
+Penis
+Pharynx Other
+Placenta
+Plasma Cell Disorders
+Plasma Cell Myeloma
+Pleural Mesothelioma [8th: 2018-2024]
+Pleural Mesothelioma [V9: 2025+]
+Primary Cutaneous Lymphoma (excluding MF and SS)
+Primary Peritoneal Carcinoma
+Prostate
+Respiratory Other
+Retinoblastoma
+Retroperitoneum
+Sinus Other
+Skin Eyelid
+Skin Other
+Small Intestine
+Soft Tissue Abdomen and Thoracic
+Soft Tissue Head and Neck
+Soft Tissue Other
+Soft Tissue Rare
+Soft Tissue Trunk and Extremities
+Stomach
+Testis
+Thymus [8th: 2018-2024]
+Thymus [V9: 2025+]
+Thyroid
+Thyroid Medullary
+Tongue Anterior
+Trachea
+Urethra
+Urethra-Prostatic
+Urinary Other
+Vagina
+Vulva [8th: 2018-2023]
+Vulva [V9: 2024+]
+Contact:
+
+(217) 698-0800
+
+(217) 698-0188
+
+NAACCR Staff & Contact
+
+Funding for this web site content was made possible in part by a contract with Federal funds from the National Cancer Institute, National Institutes of Health and Department of Health & Human Services under Contract number 75N91021D00018 / 75N91021F00001. Additionally, funding for this web site content was made possible in part by a cooperative agreement with Federal funds from the Centers for Disease Control and Prevention Cooperative Agreement number 1NU58DP007575. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the NCI and CDC.
+NAACCR Partners and Sponsors
+|
+Privacy Policy
+Copyright © 2026
+NAACCR
+, Inc. All Rights Reserved
+$(document).ready(function(){ window._md = window.markdownit({ breaks: true }); window.format_markdown = function(text) { return window._md.render(text); }; _.each($('.markdown-formatted'), function(markdown_el){ markdown_el.innerHTML = format_markdown(markdown_el.textContent); }); });
+$(document).ready(function() { $('#id_q').on('search', function() { $("#schema-search-form").submit(); }); function toggleSearches() { if ($("#id_search_type_0").prop("checked")) { $("#section2").hide(); $("#section1").show(); } else { $("#section1").hide(); $("#section2").show(); } } toggleSearches(); $("#id_search_type input").click(toggleSearches); });

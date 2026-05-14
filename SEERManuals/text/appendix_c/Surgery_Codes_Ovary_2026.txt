@@ -1,0 +1,104 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                                                Ovary
+                                                C569
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A170 Local tumor destruction, NOS
+No specimen sent to pathology from surgical event A170
+
+A250 Total removal of tumor or (single) ovary, NOS
+     A260 Resection of ovary (wedge, subtotal, or partial) ONLY, NOS; unknown if hysterectomy
+            done
+     A270 WITHOUT hysterectomy
+     A280 WITH hysterectomy
+            [SEER Note: Also use code A280 for current unilateral (salpingo-) oophorectomy with
+            previous history of hysterectomy.]
+
+A350 Unilateral (salpingo-) oophorectomy; unknown if hysterectomy done
+     A360 WITHOUT hysterectomy
+     A370 WITH hysterectomy
+           [SEER Note: Also use code A370 for current unilateral (salpingo-) oophorectomy with
+           previous history of hysterectomy.]
+
+A500 Bilateral (salpingo-) oophorectomy; unknown if hysterectomy done
+     A510 WITHOUT hysterectomy
+     A520 WITH hysterectomy
+            [SEER Note: Also use code A520 for current bilateral (salpingo-) oophorectomy with
+            previous history of hysterectomy.]
+
+A550 Unilateral or bilateral (salpingo-) oophorectomy WITH OMENTECTOMY, NOS; partial or total;
+     unknown if hysterectomy done
+     A560 WITHOUT hysterectomy
+     A570 WITH hysterectomy
+           [SEER Note: Also use code A570 for current unilateral (salpingo-) oophorectomy with
+           previous history of hysterectomy.]
+
+A600 Debulking; cytoreductive surgery, NOS
+        A610 WITH colon (including appendix) and/or small intestine resection (not incidental)
+        A620 WITH partial resection of urinary tract (not incidental)
+        A630 Combination of A610 and A620
+Debulking is a partial or total removal of the tumor mass and can involve the removal of multiple organ
+sites. It may include removal of ovaries and/or the uterus (a hysterectomy). The pathology report may or
+may not identify ovarian tissue. A debulking is usually followed by another treatment modality such as
+chemotherapy.
+
+
+
+
+                                      Appendix C: Surgery Codes                                            1
+                           SEER Program Coding and Staging Manual 2026
+
+
+[SEER Note: Debulking or cytoreductive surgery is implied by the following phrases in the operative
+report, pathology report, discharge summary, or consultation. (This is not intended to be a complete list.
+Other phrases may also imply debulking.)
+       Adjuvant treatment pending surgical reduction of tumor
+       Ovaries, tubes buried in tumor
+       Tumor burden
+       Tumor cakes
+       Very large tumor mass
+
+Do not code debulking or cytoreductive surgery based on: multiple biopsies alone, the mention of
+“multiple tissue fragments” or “removal of multiple implants.” Multiple biopsies and multiple specimens
+confirm the presence or absence of metastasis.]
+
+A700 Pelvic exenteration, NOS
+     A710 Anterior exenteration
+           Includes bladder, distal ureters, and genital organs WITH their ligamentous attachments and
+            pelvic lymph nodes
+           [SEER Note: Do not code removal of pelvic lymph nodes under Surgical Procedure of
+           Other Site (NAACCR #1294).]
+
+      A720 Posterior exenteration
+           Includes rectum and rectosigmoid WITH ligamentous attachments and pelvic lymph nodes
+           [SEER Note: Do not code removal of pelvic lymph nodes under Surgical Procedure of
+           Other Site (NAACCR #1294).]
+
+      A730 Total exenteration
+           Includes removal of all pelvic contents and pelvic lymph nodes
+           [SEER Note: Do not code removal of pelvic lymph nodes under Surgical Procedure of
+           Other Site (NAACCR #1294).]
+
+      A740 Extended exenteration
+           Includes pelvic blood vessels or bony pelvis
+
+A800 (Salpingo-) oophorectomy, NOS
+
+Specimen sent to pathology from surgical events A250-A800
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                      Appendix C: Surgery Codes                                              2
+

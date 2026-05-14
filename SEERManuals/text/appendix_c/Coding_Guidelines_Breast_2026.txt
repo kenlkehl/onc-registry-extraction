@@ -1,0 +1,90 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                               Breast
+                                             C500 -C509
+
+Primary Site
+
+See the Breast Solid Tumor Rules Equivalent Terms and Definitions for a list of terms used to describe
+location and their corresponding ICD-O-3 topography codes.
+
+Additional Subsite Descriptors
+
+The position of the tumor in the breast may be described as the positions on a clock
+
+
+
+
+Coding Subsites
+
+Use the information from reports in the following priority order to code a subsite when there is conflicting
+information:
+
+      1. Operative report
+      2. Pathology report
+      3. Mammogram, ultrasound (ultrasound becoming more frequently used)
+      4. Physical examination
+
+
+                                    Appendix C: Coding Guidelines                                         1
+                           SEER Program Coding and Staging Manual 2026
+
+
+Code the subsite with the invasive tumor when the pathology report identifies invasive tumor in one
+subsite and in situ tumor in a different subsite or subsites.
+
+Code the specific quadrant for multifocal tumors all within one quadrant
+
+      •      Do not code C509 (Breast, NOS) in this situation
+Code the primary site to C508 when
+
+      •      There is a single tumor in two or more subsites and the subsite in which the tumor originated
+             is unknown
+
+
+
+
+      •      There is a single tumor located at the 12, 3, 6, or 9 o’clock position on the breast
+
+
+
+
+Code the primary site to C509 when
+
+      •      There are multiple tumors (two or more) in at least two quadrants of the breast
+
+
+
+
+                                     Appendix C: Coding Guidelines                                       2
+                           SEER Program Coding and Staging Manual 2026
+
+
+
+
+      •      There are multiple tumors (two or more) located together at the 12, 3, 6, or 9-o’clock
+             position on the breast
+
+
+
+
+Generally, codes C502 - C505 are preferred over C501. C500 is preferred over C508. C501 is preferred
+over C508. Apply these general guidelines when there is no other way to determine the subsite using the
+available medical documentation.
+
+
+Laterality
+
+Laterality must be coded for all subsites.
+
+Breast primary with positive nodes and no breast mass found: Code laterality to the side with the positive
+nodes.
+
+
+
+
+                                     Appendix C: Coding Guidelines                                        3
+

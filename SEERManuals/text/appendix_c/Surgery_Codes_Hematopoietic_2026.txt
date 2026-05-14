@@ -1,0 +1,26 @@
+                         SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                        Hematopoietic/Reticuloendothelial/
+                   Immunoproliferative/Myeloproliferative Disease
+                    C420, C421, C423, C424 (with any histology)
+
+
+Codes
+
+A980 All hematopoietic/reticuloendothelial/immunoproliferative/myeloproliferative disease sites and/or
+     histologies, WITH or WITHOUT surgical treatment
+
+      Surgical procedures for hematopoietic, reticuloendothelial, immunoproliferative,
+      myeloproliferative primaries are to be recorded using the data item Surgical Procedure of Other
+      Site (NAACCR #1294).
+
+[SEER Note: A990 Death certificate only.]
+
+
+
+
+                                     Appendix C: Surgery Codes                                           1
+

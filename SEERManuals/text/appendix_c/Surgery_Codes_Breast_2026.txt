@@ -1,0 +1,114 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                            Surgery Codes
+
+                                                 Breast
+                                               C500–C509
+
+Code the surgical resection code for breast primaries performed with diagnosis date of 01/01/2024 or
+later.
+
+Do not record reconstruction in this data items. See Breast Reconstruction [NAACCR #1335].
+
+If contralateral breast reveals a second primary, each breast is abstracted separately.
+
+Codes
+
+B000 None; no surgery of primary site; autopsy ONLY
+
+B200 Partial mastectomy; less than total mastectomy; lumpectomy, segmental mastectomy,
+      quadrantectomy, tylectomy, with or without nipple resection
+Note: Use code B200 when there is a previous positive biopsy (either core or FNA).
+
+      B210 Excisional breast biopsy - Diagnostic excision, no pre-operative biopsy proven diagnosis of
+           cancer
+           Note: Use code B210 when a surgeon removes the (positive) mass and there was no biopsy
+           (either core or FNA) done prior to the mass being removed.
+           An excisional biopsy can occur when the nodule was previously not expected to be cancer.
+      B215 Excisional breast biopsy, for atypia
+           Note: Use code B215 when patient has biopsy that shows atypical ductal hyperplasia
+           (ADH), an excision is then performed, and pathology shows in situ or invasive cancer. The
+           excisional breast biopsy for ADH diagnosed the cancer, not the core biopsy.
+           An excisional breast biopsy removes the entire tumor and/or leaves only microscopic
+           margins.
+           This surgical code was added for situations when atypia tissue is excised and found to be
+           reportable. Approx. 10-15% of excised atypia are cancer and reportable.
+      B240 Re-excision of margins from primary tumor site for gross or microscopic residual disease
+           when less than total mastectomy performed
+      B290 Central lumpectomy, only performed for a prior diagnosis of cancer, which includes removal
+           of the nipple areolar complex
+           Note: Use code B290 when the nipple areolar complex needs to be removed for patients with
+           Paget disease or cancer directly involving the nipple areolar complex.
+           A central lumpectomy removes the nipple areolar complex, whereas a lumpectomy does not.
+           Central lumpectomy and central portion lumpectomy, central portion excision, central partial
+           mastectomy are interchangeable terms.
+
+B300 Skin-sparing mastectomy
+       B310 WITHOUT removal of uninvolved contralateral breast
+       B320 WITH removal of uninvolved contralateral breast
+Note: A skin-sparing mastectomy removes all breast tissue and the nipple areolar complex and preserves
+native breast skin. It is performed with and without sentinel node biopsy or axillary lymph node
+dissection (ALND).
+
+
+
+                                       Appendix C: Surgery Codes                                         1
+                          SEER Program Coding and Staging Manual 2026
+
+
+[SEER Note: Code Goldilocks mastectomy in Surgery of Primary Site 2023 (NAACCR #1291). Breast
+surgery codes B300, B310, and B320 are the best available choices for "Goldilocks" mastectomy. It is
+essentially a skin-sparing mastectomy with breast reconstruction. The choice between codes in the B300-
+B320 range and codes in the B400-B420 range depends on the extent of the breast removal and the
+contralateral breast removal. Review the operative report carefully and assign the code that best reflects
+the extent of the breast removal.]
+
+B400 Nipple-sparing mastectomy
+      B410 WITHOUT removal of uninvolved contralateral breast
+      B420 WITH removal of uninvolved contralateral breast
+Note: A nipple-sparing mastectomy removes all breast tissue but preserves the nipple areolar complex
+      and breast skin. It is performed with and without sentinel node biopsy or ALND.
+
+B500 Areolar-sparing mastectomy
+       B510 WITHOUT removal of uninvolved contralateral breast
+       B520 WITH removal of uninvolved contralateral breast
+Note: An areolar-sparing mastectomy removes all breast tissue and the nipple but preserves the areola and
+breast skin. It is performed with and without sentinel node biopsy or ALND.
+
+[SEER Note: Code the most invasive, extensive, or definitive surgery in Surgery of Primary Site 2023
+(NAACCR #1291).
+
+Assign code B510 or B520 if a patient has an excisional biopsy followed by an areolar-sparing
+mastectomy during the first course of therapy. Code the cumulative result of the surgeries, which is an
+areolar-sparing mastectomy in this case.]
+
+B600 Total (simple) mastectomy
+        B610 WITHOUT removal of uninvolved contralateral breast
+        B620 WITH removal of uninvolved contralateral breast
+Note: A total (simple) mastectomy removes all breast tissue, the nipple, areolar complex, and breast skin.
+It is performed with and without sentinel node biopsy or ALND.
+Use code B600, B610, B620 if patient had a modified radical mastectomy.
+
+B700 Radical mastectomy, NOS
+      B710 WITHOUT removal of uninvolved contralateral breast
+      B720 WITH removal of uninvolved contralateral breast
+      B760 Bilateral mastectomy for a single tumor involving both breasts, as for bilateral inflammatory
+              carcinoma
+A radical mastectomy removes all breast tissue, the nipple areolar complex, breast skin, and pectoralis
+muscle. It is performed with level l-III ALND.
+
+[SEER Note: Assign code B760 for a more extensive bilateral mastectomy for a single primary involving
+both breasts. Assign code 0 in Surgical Procedure of Other Site (NAACCR #1294).]
+
+B800 Mastectomy, NOS (including extended radical mastectomy)
+
+B900 Surgery, NOS
+
+B990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                      Appendix C: Surgery Codes                                           2
+

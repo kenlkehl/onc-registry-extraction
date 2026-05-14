@@ -1,0 +1,243 @@
+Appendix E.1 - 2026 SEER Program Coding and Staging Manual
+
+Reportable Examples
+As referenced in the Reportability instructions of the 2026 SEER Program Coding and Staging Manual
+Reportable Malignant Examples
+#       Diagnosis/Condition                                         Notes
+    1   Atypical fibroxanthoma (superficial malignant fibrous       The information in parentheses provides more detail and confirms a reportable malignancy.
+        histiocytoma)
+    2   Positive histology from needle biopsy followed by           This case is reportable based on positive needle biopsy.
+        negative resection
+    3   Biopsy-proven squamous cell carcinoma of the nipple         This case is reportable. The fact that no residual malignancy was found in the later specimen does not disprove the malignancy
+        with a subsequent areolar resection showing foreign         diagnosed by the biopsy.
+        body granulomatous reaction to suture material and no
+        evidence of residual malignancy in the nipple
+    4   Ulcerated histologically malignant spindle cell neoplasm,   Atypical fibroxanthoma is a superficial form of a malignant fibrous histiocytoma. This case is reportable. The pathologist has the
+        consistent with atypical fibroxanthoma; an exhaustive       final say on behavior for a particular case. In this case, the pathologist states that this tumor is malignant.
+        immunohistochemical work-up shows no melanocytic,
+        epithelial or vascular differentiation
+    5   Aggressive adult granulosa cell tumor with one of two       This case is reportable because malignant granulosa cell tumor is reportable. The lymph node metastases prove malignancy.
+        lymph nodes positive for malignant metastatic granulosa
+        cell tumor
+    6   Carcinoid of the appendix found on appendectomy             Carcinoid tumor, NOS is reportable (8240/3).
+    7   Microcarcinoid tumors of the stomach                        Microcarcinoid and carcinoid tumors are reportable. The ICD-O-3.2 histology code is 8240/3. Microcarcinoid is a designation for
+                                                                    neuroendocrine tumors of the stomach when they are less than 0.5 cm. in size. Neuroendocrine tumors of the stomach are
+                                                                    designated carcinoid when they are 0.5 cm or larger. The term microcarcinoid tumor is not equivalent to carcinoid tumorlet.
+
+
+    8 Ovarian mucinous borderline tumor with foci of                This case is reportable because there are foci of intraepithelial carcinoma (carcinoma in situ).
+      intraepithelial carcinoma
+    9 Squamous cell carcinoma of the anus, NOS                      Squamous cell carcinoma of the anus (C210) is reportable.
+                                                                    Note: Squamous cell carcinoma of the perianal skin (C445) is not reportable.
+10 Mature teratoma of the testis when diagnosed after               For testis: Mature teratoma in adults is malignant (9080/3).
+   puberty (malignant)                                              Note: Do not report when diagnosed in a child (benign). Do not report mature teratoma of the testis when it is not known
+                                                                    whether the patient is prepubescent or postpubescent. Pubescence can take place over a number of years; review physical
+                                                                    history and do not rely only on age.
+11 Well-differentiated neuroendocrine tumor (NET) of the            The WHO classification of digestive system tumors uses the term NET G1 (grade 1) as a synonym for carcinoid and well-
+   stomach                                                          differentiated NET, 8240/3.
+12 Cystic pancreatic endocrine neoplasm (CPEN)                      Assign 8150/3 unless specified as a neuroendocrine tumor, Grade 1 (8240/3) or neuroendocrine tumor, Grade 2 (8249/3).
+
+
+
+
+                                                                                    Appendix E1: Reportable Examples                                                                                E.1.1
+#   Diagnosis/Condition                                          Notes
+ 13 Solid pseudopapillary neoplasm of the pancreas               Assign 8452/3.
+ 14 Liver cases with an LI-RADS category LR-4, LR-5, or LR-M     Report based on the American College of Radiology Liver Imaging Reporting and Data System (LI-RADS) definitions.
+                                                                 Use the date of the LR-4 (Probably HCC) or LR-5 (Definitely HCC) scan as the date of diagnosis when it is the earliest
+                                                                 confirmation of the malignancy.
+                                                                 If there is no statement of the LI-RADS score but there is reference that a lesion is in the Organ Procurement and
+                                                                 Transplantation Network (OPTN) 5 category, report based on the OPTN class of 5. OPTN class 5 indicates that a nodule meets
+                                                                 radiologic criteria for hepatocellular carcinoma.
+
+
+ 15 Mammary analogue secretory carcinoma (MASC)               MASC is a tumor that predominantly arises in the parotid gland. If the primary site is submandibular gland, assign C080. Assign
+                                                              8502/3. Override any edits triggered by the combination of C080 and 8502/3.
+ 16   Malignant perivascular epithelioid cell tumor (PEComa) Assign 8714/3 to malignant PEComa. Some PEComas such as angiomyolipoma and lymphangiomyomatosis have specific ICD-O
+                                                              codes and their malignant counterparts may be coded to 8860/3 and 9174/3, respectively. There are no separate ICD-O codes
+                                                              for other specific PEComas, e.g., clear cell sugar tumor of lung, clear cell myomelanocytic tumor of the falciform ligament, and
+                                                              some unusual clear cell tumors occurring in other organs or for PEComa, NOS. These PEComas may therefore be coded to 8005
+                                                              as clear cell tumors NOS; in other words, clear cell tumors are not clear cell variants of carcinomas, sarcomas, or other specific
+                                                              tumor type.
+                                                              Note : PEComa is non-specific as to behavior. Unless the pathologist states that it is malignant, the default code is 8005/1 (non-
+                                                              reportable).
+ 17   Noninvasive mucinous cystic neoplasm (MCN) of the       For neoplasms of the pancreas, MCN with high grade dysplasia is the preferred term and mucinous cystadenocarcinoma,
+      pancreas with high grade dysplasia                      noninvasive is a related term (8470/2).
+ 18   Noninvasive low grade (micropapillary) serous carcinoma Assign code 8460/2, applying the ICD-O-3 matrix concept to this noninvasive carcinoma. Noninvasive can be used as a synonym
+      (MPSC) of the ovary                                     for in situ, ICD-O-3 behavior code /2. See page 66 in ICD-O-3.
+ 19   Prostate cancer cases with an PI-RADS category 4 or 5   Report based on the American College of Radiology Prostate Imaging Reporting and Data System (PI-RADS) definitions.
+                                                              PI-RADS categories 4 (high-clinically significant cancer is likely to be present) and 5 (very high-clinically significant cancer is
+                                                              highly likely to be present) are reportable, unless there is other information to the contrary.
+ 20   Early or evolving melanoma, in situ or invasive         As of 1/1/2021, early or evolving melanoma in situ, or any other early or evolving melanoma, is reportable.
+ 21   Low‐grade appendiceal mucinous neoplasm (LAMN)          Report LAMN beginning with January 1, 2022 diagnoses. LAMN is assigned a behavior of /2 or /3 making it reportable. LAMNs
+                                                              are slow-growing neoplasms that have the potential for peritoneal spread and can result in patient death. LAMNs demonstrate
+                                                              an interesting biology in that they do not have hematogenous dissemination risk, but risk for appendiceal perforation, which
+                                                              can result in peritoneal dissemination, repeated recurrences after surgery and even death.
+
+
+ 22 Clear cell papillary renal cell carcinoma                    Clear cell papillary renal cell carcinoma (8323/3) is reportable.
+
+
+
+
+                                                                                 Appendix E1: Reportable Examples                                                                              E.1.2
+#   Diagnosis/Condition                                           Notes
+ 23 Intraepithelial neoplasia examples (not an exhaustive         Exceptions (not reportable)
+    list)                                                         Squamous intraepithelial neoplasia (SIN) of cervix (C53_) and skin sites coded to C44_
+    • Squamous intraepithelial neoplasia, high grade, or          Carcinoma in situ (CIS) arising in cervix (C53_) and perianal skin (C445)
+    grade II, or grade III (with exceptions)                      Cervical intraepithelial neoplasia (CIN III) of cervix (C53_)
+    • High grade squamous intraepithelial lesion (HGSIL or        High grade squamous intraepithelial lesion (HGSIL or HSIL) arising in perianal skin (C445)
+    HSIL) (with exception)                                        AIN II and AIN III (8077) arising in perianal skin (C445)
+    • Intraepithelial neoplasia grade II/III; II-III              High grade prostatic intraepithelial neoplasia (PIN)
+    • Squamous dysplasia, high grade (for stomach, small          Squamous intraepithelial neoplasia, high grade of colon and rectum
+    intestine, and esophagus only)
+    • Anal intraepithelial neoplasia (AIN), grade II              See also the SEER manual, Reportability section, for additional reportable terms.
+    • Anal intraepithelial neoplasia (AIN), grade III
+    • Biliary intraepithelial neoplasia, high grade
+    • Conjunctival intraepithelial neoplasia grade III
+    • Penile intraepithelial neoplasia (PeIN), undifferentiated
+    • Vaginal intraepithelial neoplasia (VaIN), grade III
+    • Vulvar intraepithelial neoplasia (VIN), grade III
+ 24 8380/2 (C54_)
+    • Endometrioid intraepithelial neoplasia (EIN)
+    • Intraepithelial neoplasm of endometrium
+    • Atypical hyperplasia of endometrium
+ 25 Pancreatic intraepithelial neoplasia (PanIN III) 8148/2
+ 26 Differentiated penile intraepithelial neoplasia 8071/2
+ 27 Intracholecystic papillary neoplasm (ICPN) with high-
+    grade dysplasia 8503/2
+ 28 Bosniak IV cystic renal mass                              Bosniak Classification of cystic renal masses, version 2019, IV designation is reportable unless there is information to disprove
+                                                              the Bosniak designation
+ 29 Conjunctival melanocytic intraepithelial lesions (C-MIL); C-MIL represent a spectrum of morphological changes ranging from melanocytic hyperplasia through degrees of melanocytic
+    low-grade conjunctival melanocytic intraepithelial lesion atypia to melanoma in situ. Acceptable terms include conjunctival melanocytic intraepithelial neoplasia (C-MIN); Primary
+    (LG-CMIL) with focal high-grade features of the           acquired melanosis (PAM); Melanoma in situ.
+    conjunctiva (C690) (8720/2)
+
+Reportable Non-Malignant Examples
+#   Diagnosis/Condition                               Notes
+ 30 Hemangioma, NOS (9120/0) and cavernous hemangioma Report the CNS site in which the hemangioma originates. Cavernous angioma is a related term for cavernous hemangioma.
+    (9121/0)                                          Note: For cavernous sinus hemangioma, report the site as cerebral meninges C700.
+ 31 Dermoid cyst of the brain                                     This condition is reportable for cases diagnosed 2004 and later. Assign 9084/0.
+ 32 Tectal plate lipoma                                           This is a reportable brain tumor. It is a benign neoplasm (lipoma) of the mid brain (brain stem) as noted by the location "tectal
+                                                                  plate."
+ 33 Lhermitte-Duclos disease                                      The WHO classification for CNS tumors lists this entity as dysplastic gangliocytoma of the cerebellum (Lhermitte-Duclos disease)
+                                                                  signifying that the terms are used synonymously. Assign C716, 9493/0.
+ 34 Rathke pouch tumor (C751, 9350/1)                             Rathke pouch tumor is a reportable neoplasm for cases diagnosed 2004 and later. Rathke cleft cyst and Rathke pouch tumor are
+                                                                  different conditions.
+                                                                  Note: Rathke cleft cyst is not reportable.
+
+                                                                                  Appendix E1: Reportable Examples                                                                                E.1.3
+Appendix E.2 - 2026 SEER Program Coding and Staging Manual
+
+Non-Reportable Examples
+As referenced in the Reportability instructions of the 2026 SEER Program Coding and Staging Manual
+#      Diagnosis/Condition                                         Notes
+     1 Sclerosing pneumocytoma of the lung with multiple           Lymph node involvement with sclerosing pneumocytoma, formerly sclerosing hemangioma (an obsolete term), is non-
+       regional lymph nodes involved with sclerosing               malignant. According to the WHO Classification of Thoracic Tumors, 5th edition, “most sclerosing pneumocytomas behave in a
+       pneumocytoma                                                benign fashion. However, although cases with lymph node metastases and distant organ metastases have occasionally been
+                                                                   reported, these findings do not appear to adversely affect prognosis.”
+     2 High grade squamous intraepithelial lesion (HGSIL or        HGSIL or HSIL, CIS, and AIN III arising in perianal skin are not reportable. Refer to the Reportability Section of the main manual.
+       HSIL), carcinoma in situ (CIS), and AIN III (8077) arising in
+       perianal skin (C445)
+     3 Squamous cell carcinoma of the perianal skin (C445)           Squamous cell carcinoma of sites in C44 is not reportable. Squamous cell carcinoma of the anus (C210) is reportable.
+     4 Squamous cell carcinoma of the canthus (C441)                 Squamous cell carcinoma in sites coded to C44 is not reportable.
+     5 Breast cases designated BIRADS 4, 4A, 4B, 4C or BIRADS 5 The American College of Radiology defines Category 4 as “Suspicious.” The descriptions in categories 4, 4a, 4b, and 4c are not
+       without any additional information                            diagnostic of malignancy. They all represent a percentage of likelihood, the highest being 4c which is greater than 50% but less
+                                                                     than 95% likelihood of malignancy. The ACR states "This category is reserved for findings that do not have the classic
+                                                                     appearance of malignancy but are sufficiently suspicious to justify a recommendation for biopsy."
+                                                                     Category 5 is "Highly Suggestive of Malignancy." "Suggestive" is not reportable ambiguous terminology. ACR states that
+                                                                     Category 5 has a "very high probability" of malignancy, but again, it is not diagnostic.
+     6 Lung cases designated "Lung-RADS 4A," 4B, or 4X               Lung: Do not use the ACR Lung Imaging Reporting and Data System (Lung-RADS™) to determine reportability. Look for
+                                                                     reportable terminology from the managing physician or other sources.
+     7 Liver cases based only on an LI-RADS category of            Do not report liver cases based only on an LI-RADS category of LR-3.
+       LR-3
+     8 Diffuse idiopathic pulmonary neuroendocrine cell            DIPNECH is a generalized proliferation of scattered single cells, small nodules (neuroendocrine bodies) or linear proliferation of
+       hyperplasia (DIPNECH)                                       pulmonary neuroendocrine cells (PNCs) according to the WHO classification of lung tumors.
+     9 Basal cell carcinoma (BCC) with neuroendocrine              BCC in sites coded to C44 is not reportable to SEER.
+       differentiation of the skin
+    10 Lentiginous melanocytic lesion                              Not reportable.
+    11 Intraductal papillary mucinous neoplasms with low or        Not reportable.
+       moderate grade dysplasia (also called IPMN adenomas)
+    12 Noninvasive mucinous cystic neoplasm (MCN) of the           Not reportable.
+       pancreas with low or intermediate grade dysplasia
+    13 Subdural hygroma                                            Subdural hygroma is not a neoplasm; it is a collection of cerebrospinal fluid in the subdural space. It may be related to a head
+                                                                   injury.
+    14 Brain lesions associated with multiple sclerosis            These brain lesions are not neoplastic; they are part of the disease process of multiple sclerosis.
+    15 Mature teratoma of the testis when diagnosed before         Pubescence can take place over a number of years; review history and physical information and do not rely only on age. Do not
+       puberty (benign, 9084/0).                                   report mature teratoma when it is not known whether the patient is pre- or post-pubescent.
+    16 Mature teratoma of the ovary (9080/0)                       Not reportable.
+    17 Venous angiomas (9122/0)                                    The primary site for venous (hem)angioma arising in the brain is blood vessel (C490). The combination of 9122/0 and C490 is
+                                                                   not reportable. This is a venous abnormality. Previously called venous angiomas, these are currently referred to as
+                                                                   developmental venous anomalies (DVA).
+
+
+
+                                                                                Appendix E2: Non-Reportable Examples                                                                                  E.2.1
+#      Diagnosis/Condition                                        Notes
+    18 Multilocular cystic renal neoplasm of low malignant        Previously called multilocular cystic renal cell carcinoma, this diagnosis became non-reportable beginning with the new
+       potential                                                  designation in 2016. Refer to the Solid Tumor Tumor Coding Rules, Kidney Equivalent Terms and Definitions, for
+                                                                  histology/morphology information.
+    19 Lymphangioma of the brain or CNS                           Lymphangioma is a malformation of the lymphatic system. Even though it has an ICD-O code, do not report it.
+    20 Carcinoid heart disease based on clinical information      Carcinoid heart disease is not reportable but this diagnosis indicates that the patient likely has a carcinoid tumor which may be
+                                                                  reportable. Obtain further information.
+    21 Carcinoid tumorlet of the lung                             Not reportable.
+    22 Pulmonary benign metastasizing leiomyoma (BML)             According to WHO, this resembles a typical leiomyoma but it is found in the lungs of women with a history of typical uterine
+       (8898/1)                                                   leiomyomas. A recent article states that because of the hormone-sensitive characteristics of BML, treatments are based on
+                                                                  hormonal manipulation along with either surgical or medical oophorectomy. Tamoxifen treatment is in keeping with the BML
+                                                                  diagnosis.
+    23 Colloid cyst at the foramen of Monro                       Colloid cysts are endodermal congenital malformations and do not have an ICD-O-3 code. See the glossary for registrars at:
+                                                                  Colloid cyst
+    24 Mammary fibromatosis                                       Mammary fibromatosis is not reportable. The WHO classification for breast tumors assigns mammary fibromatosis a behavior
+                                                                  code of /1. According to WHO, mammary fibromatosis is a locally infiltrative lesion without metastatic potential.
+    25 Thalamic amyloidoma                                        Amyloidoma (tumoral amyloidosis, amyloid tumor) is a tumor-like deposit of amyloid. It is not neoplastic. Amyloid is a protein
+                                                                  derived substance deposited in various clinical settings.
+    26 Pseudotumor cerebri                                        Pseudotumor cerebri is not a neoplasm. The pressure inside the skull is increased and the brain is affected in a way that appears
+                                                                  to be a tumor, but it is not a tumor.
+    27 Conjunctival primary acquired melanosis (PAM) with         According to our expert pathologist consultant, there has been a lot of debate in the literature about the diagnostic criteria,
+       atypia                                                     terminology, and natural history of PAM. The main issue is whether PAM with atypia should be regarded as melanoma in situ. In
+                                                                  most studies it appears that PAM with no atypia or mild atypia does not progress to melanoma, and only a small percentage of
+                                                                  those with severe atypia do so. PAM, even with atypia, is not melanoma in situ, and should not be reported.
+                                                                  For further information, see this article for a review of a large number of patients: Shields, Jerry A, Shields, Carol L, et al. Primary
+                                                                  Acquired Melanosis of the Conjunctiva: Experience with 311 Eyes. Trans. Am Ophthalmol Soc 105:61-72, Dec 2007.
+    28 Neurofibromatosis type 1 (NF1) and Neurofibromatosis       Genetic disease that produces non-malignant tumors in skin, brain, CNS, and other sites. The brain and CNS tumors spawned by
+       type 2 (NF2)                                               NF1 or NF2 are reportable, the genetic disease is not.
+    29 Ovarian mucinous borderline tumor with microinvasion       For an ovarian mucinous borderline tumor, the term "microinvasion" is not an indication of malignancy. Low malignant
+                                                                  potential/borderline ovarian tumors are defined by the pathology of the primary tumor and are not affected by microinvasion
+                                                                  or invasion in implants. Though a case may be staged, this does not mean it is reportable.
+    30 Rathke cleft cyst                                          Rathke cleft cyst, also called pars intermedia cyst of the parotid gland, is not reportable; whereas, Rathke pouch tumor is
+                                                                  reportable.
+    31 Colon atypical hyperplasia                                 Not reportable.
+    32 High grade dysplasia (8148/2) in gastrointestinal sites    Not reportable.
+       other than stomach, small intestine, and esophageal
+       primary sites. The non-reportable gastrointestinal sites
+       include colorectal primaries (C180-C189, C199, and
+       C209).
+    33 Ecchordosis physaliphora                                   Ecchordosis physaliphora, a lesion within the prepontine cistern, is not reportable.
+
+
+
+
+                                                                                Appendix E2: Non-Reportable Examples                                                                                   E.2.2
+#      Diagnosis/Condition                                       Notes
+    34 Low to intermediate grade neuroendocrine neoplasm or      Not reportable.
+       middle ear adenomatoid tumor (MEANT)
+    35 Moderate squamous dysplasia and severe squamous           Not reportable.
+       dysplasia of lung
+    36 High grade prostatic intraepithelial neoplasia            PIN III is not reportable.
+    37 Atypical lentiginous melanocytic proliferation            Not reportable.
+    38 Malignant tumorlet, NOS in the lung                       Not reportable.
+    39 Conjunctival intraepithelial neoplasia, NOS               Not reportable.
+    40 Ductal intraepithelial neoplasia type 1a                  Not reportable.
+    41 Endometrial hyperplasia with focal atypia                 Not reportable.
+    42 Pancreatic intraepithelial neoplasia (PanIN) low grade    Not reportable.
+       (formerly PanIN-I, PanIN-2, PanIN grade II), PanIN, NOS
+    43 Pancreatic neuroendocrine microadenoma                    Not reportable.
+    44 Vaginal intraepithelial neoplasia (VaIN or VAIN), NOS     Not reportable.
+    45 Vulvar intraepithelial neoplasia (VIN), NOS               Not reportable.
+    46 Cavernous malformation                                    Not reportable.
+
+
+
+
+                                                                               Appendix E2: Non-Reportable Examples   E.2.3
+

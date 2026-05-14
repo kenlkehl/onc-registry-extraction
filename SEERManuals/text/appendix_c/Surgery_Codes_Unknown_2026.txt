@@ -1,0 +1,21 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                         Unknown and Ill-Defined Primary Sites
+                                  C760–C768, C809
+
+Codes
+
+A980 All unknown and ill-defined disease sites, WITH or WITHOUT surgical treatment
+     Surgical procedures for unknown and ill-defined primaries are to be recorded using the data item
+     Surgical Procedure of Other Site (NAACCR Item #1294)
+
+      [SEER Note: A990 Death certificate only.]
+
+
+
+
+                                     Appendix C: Surgery Codes                                          1
+

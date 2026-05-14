@@ -1,0 +1,147 @@
+Manuals | EOD Data SEER*RSA
+.login-link a { position:absolute; right:5px; top:5px; color:#767676; }
+Skip to Main Content
+Database Version:
+CS v02.05.50
+} } }
+EOD_PUBLIC v1.0
+} } }
+EOD_PUBLIC v1.1
+} } }
+EOD_PUBLIC v1.2
+} } }
+EOD_PUBLIC v1.3
+} } }
+EOD_PUBLIC v1.4
+} } }
+EOD_PUBLIC v1.5
+} } }
+EOD_PUBLIC v1.6
+} } }
+EOD_PUBLIC v1.7
+} } }
+EOD_PUBLIC v2.0
+} } }
+EOD_PUBLIC v2.1 (NAACCR 2022)
+} } }
+EOD_PUBLIC v3.0 (NAACCR 2023)
+} } }
+EOD_PUBLIC v3.1 (NAACCR 2024)
+} } }
+EOD_PUBLIC v3.2 (NAACCR 2025)
+} } }
+EOD_PUBLIC v3.3 (NAACCR 2026)
+} } }
+PEDIATRIC v1.0
+} } }
+PEDIATRIC v1.1
+} } }
+PEDIATRIC v1.2 (NAACCR 2025)
+} } }
+PEDIATRIC v1.3 (NAACCR 2026)
+} } }
+TNM v1.0
+} } }
+TNM v1.1
+} } }
+TNM v1.2
+} } }
+TNM v1.3
+} } }
+TNM v1.4
+} } }
+TNM v1.5
+} } }
+TNM v1.6
+} } }
+TNM v1.7
+} } }
+TNM v1.8
+} } }
+TNM v1.9
+} } }
+TNM v2.0
+} } }
+TNM v2.1
+} } }
+TORONTO (now PEDIATRIC) v0.5
+} } }
+Go
+Sign In
+
+EOD Data
+v3.3
+NAACCR 2026
+SEER*RSA
+
+Schema List
+
+Manuals
+
+Staging Calculator
+
+Software
+
+Contact
+Main Menu
+For use with cases diagnosed 2018 forward after registry software conversion to the NAACCR Data Standards and Data Dictionary, Version 26.
+EOD Home
+
+Manuals
+
+To download a specific manual, please go to the specified website:
+
+https://seer.cancer.gov/tools/staging/
+
+EOD 2018 General Instructions Manual and EOD 2018 Consolidation Manual
+
+Summary Stage 2018 Manual
+
+https://apps.naaccr.org/ssdi/list/
+- See Resources block on the upper right of this website
+
+Site Specific Data Items (SSDI) Manual and Appendices
+
+Grade Manual
+
+EOD Home
+
+Schema List
+
+EOD Manual
+
+Staging Calculator
+
+Software
+
+Contact
+Return to Top
+
+This website is a service of the National Cancer Institute's Surveillance, Epidemiology, and End Results program and one of several
+resources for Cancer Registrars
+.
+
+SEER*RSA Home
+
+Contact Us
+
+Disclaimer Policy
+
+Accessibility
+
+FOIA
+
+HHS Vulnerability Disclosure
+
+U.S. Department of Health and Human Services
+
+National Institutes of Health
+
+National Cancer Institute
+
+USA.gov
+
+NIH... Turning Discovery Into Health
+®
+$(function(){ window._md = window.markdownit({ breaks: true }); window.format_markdown = function(text) { return window._md.render(text); }; _.each($('.markdown-formatted'), function(markdown_el){ markdown_el.innerHTML = format_markdown(markdown_el.textContent); }); // external link indicators $('a:not(.not-external').filter( function() { if (!this.hostname) { return false; } var link_hostname = this.hostname; //chrome has a bug that returns the port in the hostname for a link, but not the location, awesome! if (link_hostname.indexOf(':') >= 0) { link_hostname = link_hostname.substring(0,link_hostname.indexOf(':')); } return !(link_hostname == location.hostname || /\.gov$/.test(link_hostname)); }).after(' <a href="' + "/external/" + '"><img class="extlink" src="/static/rsa/img/external.gif" alt="External Web Site Policy" title="External Web Site Policy"/></a> '); });
+_satellite.pageBottom();

@@ -1,0 +1,28 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                  Kaposi Sarcoma of All Sites
+                                           (M9140)
+
+Primary Site
+
+Kaposi sarcoma that is not AIDS-related is a rare condition. It usually presents as localized disease with
+an easily recognized primary site.
+
+AIDS-related Kaposi sarcoma usually presents as a disseminated disease with involvement of mucosal
+surfaces, visceral surfaces of organs, and skin. It is important to review consecutive records carefully to
+determine the extent of involvement at diagnosis. Review of a single record may reveal only the site being
+treated during that admission.
+
+      1.     Code the Kaposi sarcoma to the primary site in which it arises.
+      2.     If the Kaposi sarcoma is present in the skin and another site simultaneously, code to the
+             specified skin site (C44_).
+      3.     If the primary site is unknown or cannot be determined, code skin, NOS (C449).
+
+
+
+
+                                    Appendix C: Coding Guidelines                                            1
+

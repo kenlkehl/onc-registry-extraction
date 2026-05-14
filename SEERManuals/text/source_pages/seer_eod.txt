@@ -1,0 +1,281 @@
+Extent of Disease (EOD) 2018 - SEER
+Skip to Main Content
+An official website of the United States government
+Share
+on Facebook
+Tweet
+Print
+Search SEER:
+Main Menu
+
+Main Menu
+
+Home
+
+Cancer Statistics
+
+Cancer Statistics
+
+Reports on Cancer
+
+Annual Report to the Nation on the Status of Cancer
+
+Cancer Stat Facts
+
+Preliminary Cancer Incidence Rates and Trends
+
+SEER Publications
+
+Interactive Tools, Maps, & Graphs
+
+Cancer Statistics Explorer Network
+
+Understanding Statistics
+
+Did You Know? Video Series
+
+Defining Cancer Statistics
+
+Glossary of Statistical Terms
+
+SEER Data & Software
+
+SEER Data & Software
+
+SEER Incidence Database
+
+Comparison of Data Products
+
+How to Request the Data
+
+Documentation for Data
+
+SEER*Stat Database Details
+
+NCCR Databases in SEER*Stat
+
+Variable and Recode Definitions
+
+U.S. Datasets
+
+U.S. Mortality
+
+U.S. Populations
+
+Standard Populations
+
+SEER Linked Databases
+
+Statistical Software
+
+SEER*Stat
+
+SEER*Prep
+
+Health Drivers Calculator (HD*Calc)
+
+Methods & Tools for Population-based Cancer Statistics
+
+Registry Operations
+
+Registry Operations
+
+Reporting Guidelines
+
+SEER Program Coding Manual
+
+Hematopoietic Project
+
+Solid Tumor Rules
+
+Tools & Software
+
+Glossary for Registrars
+
+SEER*Rx - Drug Database
+
+SEER Abstracting Tool
+
+SEER Data Management System (SEER*DMS)
+
+Staging
+
+Registrar Staging Assistant (SEER*RSA)
+
+Summary Stage 2018
+
+Staging Resources
+
+Extent of Disease 2018
+
+Questions & Answers
+
+SEER Inquiry System
+
+Ask a SEER Registrar
+
+Data Collection Answers
+
+Cancer PathCHART
+
+Training
+
+News & Events
+
+About SEER
+
+About SEER
+
+Program Overview
+
+Goals of the SEER Program
+
+Fact Sheets & Brochures
+
+Collaborating Organizations
+
+SEER Registries
+
+What is a Cancer Registry?
+
+List of Registries
+
+Registry Groupings
+
+Population Characteristics
+
+Research Activities
+
+Residual Tissue Repository Program
+
+SEER-Linked Virtual Tissue Repository Program
+
+SEER Data Quality Initiatives
+Section Menu
+
+Home
+
+Registry Operations
+
+Staging
+
+Staging Resources
+
+Extent of Disease (EOD) 2018
+
+Extent of Disease (EOD) 2018
+Published December 11, 2025
+Staging
+
+Registrar Staging Assistant (SEER*RSA)
+
+Summary Stage 2018
+
+Summary Stage Manual 2000
+
+Staging Resources
+
+Extent of Disease (EOD) 2018
+
+Pediatric Data Collection System and Staging Manual
+
+Collaborative Stage
+
+Beginning with cancer cases diagnosed January 1, 2018 and forward, SEER registries in the United States collect Extent of Disease (EOD) information. The three main data items are EOD Primary Tumor, EOD Regional Nodes and EOD Mets. Using these three data items, an EOD TNM T, EOD TNM N and EOD TNM M are derived, along with an EOD TNM Stage Group based on the AJCC 8th edition. SEER developed a staging database referred to as the
+SEER*RSA
+that provides information about each cancer (primary site/histology/other factors defined).
+
+The EOD General Instructions provide guidance on how to code EOD.
+
+Extent of Disease 2018 General Instructions
+(PDF, 1.3 MB)
+(Updated December 11, 2025)
+
+EOD Change log (version 3.2 to version 3.3)
+(PDF, 243 KB)
+
+Refer to
+SEER*RSA
+for schema-specific codes and coding instructions.
+
+EOD 2018 Consolidation Manual
+
+Published December 11, 2025
+
+The EOD 2018 Consolidation Manual was developed to assist central registries with consolidation of EOD data items: EOD Extension, EOD Lymph Nodes, and EOD Mets. Each schema was reviewed by the EOD Consolidation workgroup, which was formed specifically for this purpose. Every EOD schema is covered.
+
+At this time, EOD consolidation is not automated.
+
+This manual can be used for cases diagnosed 2018 and forward. The current version of this manual is version 3.3 to align with the current EOD version.
+
+If you have any questions regarding the EOD Consolidation Manual, please submit the question to
+Ask a SEER Registrar
+and choose “EOD.”
+
+EOD Consolidation Manual
+(PDF, 12.3 MB)
+
+Suggested Citations
+
+Ruhl JL, Callaghan C, Schussler N (eds.)
+Extent of Disease (EOD) 2018 General Coding Instructions
+, National Cancer Institute, Bethesda, MD, 2025
+
+Adams, S., Ruhl, J., Schussler, N. (Dec 2025).
+Extent of Disease (EOD) Consolidation Manual
+. National Cancer Institute, Rockville, MD, 20850.
+Return to Top
+
+SEER is supported by the
+Surveillance Research Program (SRP)
+in NCI's
+Division of Cancer Control and Population Sciences (DCCPS)
+. SRP provides national leadership in the science of cancer surveillance as well as analytical tools and methodological expertise in collecting, analyzing, interpreting, and disseminating reliable population-based statistics.
+
+Follow SEER
+
+Sign up for email updates
+Sign Up
+
+Contact Information
+
+Contact SEER
+
+NCI LiveHelp Online Chat
+
+More Information
+
+Careers
+
+Sitemap
+
+Using This Website
+
+Policies
+
+Accessibility
+
+Disclaimer
+
+FOIA
+
+HHS Vulnerability Disclosure
+
+Privacy & Security
+
+Reuse of Graphics and Text
+
+Website Linking
+
+U.S. Department of Health and Human Services
+
+National Institutes of Health
+
+National Cancer Institute
+
+USA.gov
+
+NIH... Turning Discovery Into Health
+®
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125238734-1');
+var fb_page = window.location.href; //current page url var page_title = $("title").text(); //current page title fb_page = "https://www.facebook.com/sharer/sharer.php?u=" + fb_page + "&t=" + page_title; //insert url and title into the FB sharer $(".facebook-share-button").attr('href', fb_page); //add sharer url to link

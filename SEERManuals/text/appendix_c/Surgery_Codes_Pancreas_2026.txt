@@ -1,0 +1,40 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                                             Pancreas
+                                            C250–C259
+
+Codes
+
+B000 None; no surgery of primary site; autopsy ONLY
+
+B250 Local excision of tumor, NOS; example: Enucleation
+Note: Laser tumor destruction, thermal therapy, or ablation
+
+B300 Partial pancreatectomy, NOS; example: Distal pancreatectomy or subtotal pancreatectomy
+
+B350 Local or partial pancreatectomy and duodenectomy; example: Pancreaticoduodenectomy (Whipple
+      Procedure)
+      B351 WITHOUT distal/partial gastrectomy, pylorus preserving Whipple
+      B352 WITH partial gastrectomy, Classic Whipple
+Note: Use code B350 when it is not specified where the stomach was cut.
+
+B400 Total pancreatectomy
+
+B600 Total pancreatectomy and subtotal gastrectomy and/or duodenectomy, extended
+     pancreatoduodenectomy
+
+B800 Pancreatectomy, NOS
+
+B900 Surgery, NOS
+[SEER Note: Assign code B900 for NanoKnife, or irreversible electroporation (IRE).]
+
+B990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                     Appendix C: Surgery Codes                                 1
+

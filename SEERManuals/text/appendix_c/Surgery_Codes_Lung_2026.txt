@@ -1,0 +1,77 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                                              Lung
+                                            C340–C349
+
+Codes
+
+B000 None; no surgery of primary site; autopsy ONLY
+
+B150 Local tumor destruction, NOS
+     B120 Laser ablation or cryosurgery
+     B130 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+[SEER Note: Assign code B150 for radiofrequency ablation (RFA).]
+No specimen sent to pathology from surgical events B120, B130, and B150
+
+B190 Local tumor destruction or excision, NOS
+Unknown whether a specimen was sent to pathology for surgical events coded B190
+
+B200 Excision or resection of less than one lobe, NOS
+     B210 Wedge resection
+     B220 Segmental resection, including lingulectomy
+     B230 Excision, NOS
+     B240 Laser excision
+     B250 Bronchial sleeve resection ONLY
+[SEER Note: Assign code B200 for cryodebulking.]
+
+B300 Resection of lobe or bilobectomy, but less than the whole lung (partial pneumonectomy, NOS)
+        B320 Bronchial sleeve lobectomy/bilobectomy
+        B330 Lobectomy WITH mediastinal lymph node dissection
+        The lymph node dissection should also be coded under Scope of Regional Lymph Node Surgery
+        (NAACCR #1292).
+Note: A sleeve lobectomy/bilobectomy includes resection of the entire lobe(s) in addition to part of the
+bronchus. A sleeve lobectomy is distinct from a typical lobectomy or bilobectomy, in which the bronchus
+is not resected. The lymph node dissection should also be coded under Scope of Regional Lymph
+Node Surgery (NAACCR Item #1292).
+[SEER Note: Assign code B300 when lymph node dissection is not performed, but lymph nodes are
+obtained as part of the lobectomy specimen.]
+
+B450 Lobe or bilobectomy extended, NOS
+     B460 WITH chest wall
+     B470 WITH pericardium
+     B480 WITH diaphragm
+
+B550 Pneumonectomy, NOS
+[SEER Note: Code B550 includes the following procedures: complete pneumonectomy, sleeve
+pneumonectomy, standard pneumonectomy, total pneumonectomy, resection of whole lung.]
+     B560 WITH mediastinal lymph node dissection (radical pneumonectomy)
+     The lymph node dissection should also be coded under Scope of Regional Lymph Node
+     Surgery (NAACCR #1292).
+
+
+
+                                     Appendix C: Surgery Codes                                         1
+                          SEER Program Coding and Staging Manual 2026
+
+
+B650 Extended pneumonectomy, NOS
+      B660 Extended pneumonectomy plus pleura or diaphragm
+Note: An extended pneumonectomy is the resection of the entire lung in addition to one or more of the
+following structures: superior vena cava, carina, left atrium, aorta, or chest wall.
+
+B800 Resection of lung, NOS
+
+Specimen sent to pathology from surgical events B200–B800
+
+B900 Surgery, NOS
+
+B990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                     Appendix C: Surgery Codes                                          2
+

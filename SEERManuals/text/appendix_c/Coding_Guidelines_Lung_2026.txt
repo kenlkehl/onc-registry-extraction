@@ -1,0 +1,48 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                                Lung
+                                              C340–C349
+
+Primary Site
+
+C340 Main bronchus
+     Carina
+     Hilum
+     Bronchus intermedius
+
+C341 Upper lobe, lung
+     Lingula
+     Apex
+     Pancoast tumor
+
+C342 Middle lobe, lung (Right lung only)
+
+C343 Lower lobe, lung
+     Base
+
+C348 Overlapping lesion of lung
+
+C349 Lung, NOS
+     Bronchus, NOS
+     Infrahilar area of lung, NOS
+
+
+Laterality
+
+Laterality must be coded for all subsites except carina.
+
+
+Pancoast Tumor
+
+Pancoast tumor is a lung cancer in the upper-most segment of the lung that directly invades the brachial
+plexus (nerve bundles) of the neck, causing pain. It is by definition malignant. Code the date of diagnosis
+from the imaging report when a Pancoast tumor is identified on imaging prior to biopsy.
+
+
+
+
+                                     Appendix C: Coding Guidelines                                        1
+

@@ -1,0 +1,427 @@
+   SEER Program Coding and Staging Manual 2026
+
+
+
+
+               Appendix D
+
+Race and Nationality Descriptions
+
+
+
+
+   Appendix D: Race and Nationality Descriptions
+                             SEER Program Coding and Staging Manual 2026
+
+
+                             Race and Nationality Descriptions
+
+Note: Use these lists only when race is not stated but other information is provided in the medical
+record.
+
+References:
+
+1.    Centers for Disease Control and Prevention, National Center for Health Statistics, National Vital
+      Statistics Systems, https://www.cdc.gov/nchs/nvss/revisions-of-the-us-standard-certificates-and-
+      reports.htm, accessed May 14, 2025
+      a. Race Code List (2011)
+      b. Hispanic Origin (2011)
+      c. Decennial Census Technical Documentation
+2.    Instruction manual, part 4: Classification And Coding Instructions For Death Records, 1999-2001,
+      Division of Vital Statistics, National Center for Health Statistics, undated
+3.    Updates to OMB’s Race/Ethnicity Standards, accessed May 14, 2025
+      a. Updates to OMB’s Race/Ethnicity Standards (census.gov)
+      b. Detailed Race and Ethnicity Groups, Tribes and Villages (census.gov)
+
+Key
+
+† Use this code unless patient is stated to be Native American
+* Terms listed in Reference 2, above.
+‡ Description of religious affiliation rather than stated nationality or ethnicity; should be used with caution
+  when determining appropriate race code.
+
+
+Code 01 White
+Afghanistani
+Afrikaner
+Albanian
+Algerian*
+Amish*
+Anglo-Saxon*
+Arab, Arabian
+Argentinian*†
+Armenian
+Aryan*
+Assyrian
+Australian*
+Austrian*
+Azores*
+Basque*
+Bavarian*
+Blanc*
+Bolivian*†
+Bosnian
+
+
+                              Appendix D: Race and Nationality Descriptions                                  D-1
+                           SEER Program Coding and Staging Manual 2026
+
+Brava/Bravo*
+Brazilian†
+Bulgarian
+Cajun
+Californio
+Canadian*
+Caucasian*
+Central American†
+Chechnyan
+Chicano*
+Chilean†
+Colombian*
+Costa Rican*†
+Creole*
+Croatian
+Crucian*
+Cuban (unless specified as Black or African American)*
+Cypriot
+Czech
+Czechoslovakian
+Eastern European
+Ebian*
+Ecuadorian*†
+Egyptian
+English
+English-French*
+English-Irish*
+European
+Finnish*
+French
+French Canadian*
+Georgian*
+German
+Greek*
+Guatemalan*
+Gypsy*
+Hebrew*‡
+Hispanic*
+Honduran†
+Hungarian*
+Icelandic*
+Iranian
+Iraqi
+Irish
+Islamic*‡
+Israeli
+Italian
+Jew*‡
+Jordanian*
+Kosovian
+Kurd/Kurdish
+Kuwaitian*
+Ladina/Ladino*
+Latin American*†
+
+                            Appendix D: Race and Nationality Descriptions   D-2
+                           SEER Program Coding and Staging Manual 2026
+
+Latino
+Latvian*
+Lebanese
+Libyan*
+Lithuanian*
+Maltese*
+Marshenese*
+Mauritian
+Moroccan*
+Mediterranean*
+Mexican*
+Middle East
+Moroccan*
+Moslem/Muslim*‡
+Near Easterner
+Nicaraguan†
+Nordic*
+North African
+Norwegian*
+Occidental*
+Other Arab
+Palestinian
+Panamanian
+Paraguayan
+Parsi*
+Persian*
+Peruvian*†
+Polish
+Portuguese
+Puerto Rican* (unless specified as Black or African American)
+Romanian*/Rumanian
+Russian
+Salvadoran
+Saudi Arabian*
+Scandinavian*
+Scottish, Scotch
+Semitic*‡
+Serbian*
+Servian*
+Shi’ite
+Sicilian*
+Slavic, Slovakian*
+South American*†/ Sudamericano
+Spanish*
+Sunni*‡
+Swedish*
+Syrian
+Teutonic*
+Tunisian*
+Turk*
+Ukranian
+United Arab Emirates
+Uruguayan†
+Venezuelan*†
+
+                            Appendix D: Race and Nationality Descriptions   D-3
+                          SEER Program Coding and Staging Manual 2026
+
+Welsh*
+White
+White American (Wiam)*
+Yemenite*
+Yugoslavian*
+Zoroastrian*
+
+
+Code 02 Black or African American
+African
+African American
+AfroAmerican
+Bahamian
+Barbadian
+Bilalian
+Black
+Botswana
+Cape Verde
+Dominica Islander (unless specified as White)
+Dominican*/Dominican Republic (unless specified as White)
+Eritrean
+Ethiopian
+Ghanaian
+Haitian
+Hamitic
+Jamaican
+Kenyan
+Liberian
+Malawian
+Mugandan
+Namibian
+Nassau
+Nigerian
+Nigritian
+Nubian
+Octaroon*
+Other African
+Quadroon*
+Santo Domingo
+Seychelloise
+Somalian
+Sudanese
+Tanzanian
+Tobago
+Togolese
+Trinidad
+West Indies
+Zaire
+
+
+
+
+                           Appendix D: Race and Nationality Descriptions   D-4
+                            SEER Program Coding and Staging Manual 2026
+
+Code 03 American Indian and Alaska Native
+For the most updated list of American Indian, Alaska Indian, Aleut, and Eskimo and tribes, refer to the Race
+Code List on the National Center for Health Statistics website (Reference 1.a). More general terms for
+American Indian and Alaska Native include:
+
+Alaska Native
+Alaska Indian
+Aleut
+American Indian
+Central American Indian
+Eskimo
+Meso American Indian
+Mexican American Indian
+South American Indian
+Spanish American Indian
+
+
+Asian Race Codes
+ Code        Definition
+ 96          Amerasian*
+ 16          Asian Indian (Effective with 1/1/2010 dx.)
+ 96          Asian (NOS)
+ 96          Asiatic*
+ 96          Bangladeshi
+ 96          Bhutanese
+ 96          Bornean
+ 96          Bruneian
+ 96          Burmese
+ 13          Cambodian
+ 96          Celebesian
+ 96          Ceram
+ 96          Ceylonese*
+ 04          Chinese
+ 96          Eurasian*
+ 06          Filipino
+ 12          Hmong
+ 16          Indian (from India) (Effective with 1/1/2010 dx.)
+ 96          Indo Chinese
+ 96          Indonesian
+ 05          Iwo Jiman
+ 05          Japanese
+ 96          Java*
+ 13          Kampuchean
+ 08          Korean
+ 11          Laotian
+ 96          Madagascar
+ 96          Malaysian
+ 96          Maldivian
+ 96          Mien
+ 96          Mongolian
+ 96          Montagnard
+
+
+                             Appendix D: Race and Nationality Descriptions                               D-5
+                       SEER Program Coding and Staging Manual 2026
+
+Code     Definition
+96       Nepalese
+05       Okinawan
+96       Other Asian
+17       Pakistani (Effective with 1/1/2010 dx.)
+96       Sikkimese
+96       Singaporean
+96       Sri Lankan
+96       Sumatran
+04       Taiwanese
+14       Thai
+96       Tibetan
+10       Vietnamese
+96       Whello
+96       Yello
+
+
+Native Hawaiian and Other Pacific Islander Codes
+Code     Definition
+20       Bikinian
+20       Carolinian
+21       Chamorro
+20       Chuukese
+25       Cook Islander
+20       Eniwetok, Enewetak
+31       Fijian
+22       Guamanian
+07       Hawaiian
+20       Kirabati
+20       Kosraean
+20       Kwajalein
+97       Maori*
+20       Mariana Islander
+20       Marshallese
+30       Melanesian
+20       Micronesian
+07       Native Hawaiian
+97       Nauruan
+30       New Caledonian
+30       New Hebrides
+97       Other Pacific Islander
+97       Pacific Islander
+20       Palauan
+32       Papua New Guinean
+07       Part Hawaiian
+20       Pohnpeian
+25       Polynesian
+20       Ponapean
+20       Saipanese
+27       Samoan
+30       Solomon Islander
+26       Tahitian
+20       Tarawan
+
+                        Appendix D: Race and Nationality Descriptions   D-6
+                           SEER Program Coding and Staging Manual 2026
+
+ Code        Definition
+ 20          Tinian
+ 25          Tokelauan
+ 28          Tongan
+ 20          Trukese
+ 25          Tuvaluan
+ 30          Vanuatuan
+ 20          Yapese
+
+
+98 Other Race, Not Elsewhere Classified
+Do not use this code for Hispanic, Latino, or Spanish, NOS. Refer to the Race Code List on the National
+Center for Health Statistics website (Reference 1) when not assigned to a code above. See the Other Race
+Descriptions section below.
+
+
+99 Unknown
+See Note in the Other Race Descriptions below.
+
+
+Other Race Descriptions
+Note: The following descriptions of ethnic origin cannot be coded to a specific race code. Look for
+other descriptions of race in the medical record. If no further information is available, code as 99
+Unknown.
+
+American
+Aruba Islander
+Azerbaijani
+Belizean
+Bermudan
+Biracial
+Brown
+Cayenne
+Cayman Islander
+Coe Clan
+French Canadian
+Guyanese
+Iberian
+Indian (not specified as Native American, Eastern Indian, Northern, Central, or South American Indian)
+Interracial
+Jackson White
+Malada
+Melungeon
+Mestizo
+Mexican
+Mixed
+Moor
+Morena
+Mulatto
+Multiethnic
+
+
+                            Appendix D: Race and Nationality Descriptions                                  D-7
+                          SEER Program Coding and Staging Manual 2026
+
+Multinational
+Multiple (some Other Race responses)
+Multiracial
+Octoroon
+Other Race, NEC
+Other Spanish
+Quadroon
+Ramp
+South African
+Spaniard
+Surinam
+Tejano
+Trigueno
+Wesort
+
+
+
+
+                           Appendix D: Race and Nationality Descriptions   D-8
+

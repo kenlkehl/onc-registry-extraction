@@ -1,0 +1,1230 @@
+SEER Program Coding and Staging Manual 2026
+
+
+
+
+            Appendix B
+
+ Country and State Codes
+
+
+
+
+    Appendix B: Country and State Codes
+                                     SEER Program Coding and Staging Manual 2026
+
+                                                        Table of Contents
+Appendix B1: Alphabetic Code List by Country/State .................................................................................. B-1
+Appendix B2: Alphabetic List by Code ....................................................................................................... B-10
+Appendix B3: Geographic Code List ........................................................................................................... B-17
+Appendix B4: Custom Codes for Historic Use Only.................................................................................... B-24
+
+
+Source:
+International Organization for Standardization (ISO), https://www.iso.org/iso-3166-country-codes.html,
+accessed March 28, 2025 (See Online Browsing Platform.)
+
+United States Postal Service. Publication 28 – Postal Addressing Standards. Appendix B
+Two–Letter State and Possession Abbreviations, Appendix B Two-Letter State and Possession
+Abbreviations, https://pe.usps.com/text/pub28/28apb.htm, accessed March 28, 2025
+
+Statistics Canada. Abbreviations and codes for provinces and territories, 2021 Census.
+https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/tab/index-eng.cfm?ID=t1_8, accessed March
+28, 2025
+
+
+
+There are three sets of ISO 3166 codes. This document contains the list of ISO 3166-1 codes for
+countries. The codes for subdivisions (3166-2) and formerly used codes (3166-3) ,codes that were
+once used to describe countries but are no longer used, can be found on the ISO website listed above.
+
+
+
+
+                                             Appendix B: Country and State Codes
+                        SEER Program Coding and Staging Manual 2026
+
+                                    Appendix B1
+                        Alphabetic Code List by Country/State
+                    Name of Country/State                        ISO Country     USPS State
+                                                                    Code           Code
+Afghanistan                                                     AFG            XX
+Africa, NOS1                                                    ZZF            YY
+Alabama                                                         USA            AL
+Aland Islands                                                   ALA            XX
+Alaska                                                          USA            AK
+Albania                                                         ALB            XX
+Alberta                                                         CAN            AB
+Algeria                                                         DZA            XX
+American Samoa                                                  ASM            AS
+Andorra                                                         AND            XX
+Angola                                                          AGO            XX
+Anguilla                                                        AIA            XX
+Antarctica                                                      ATA            XX
+Antigua and Barbuda                                             ATG            XX
+Argentina                                                       ARG            XX
+Arizona                                                         USA            AZ
+Arkansas                                                        USA            AR
+Armed Forces Americas (except Canada)                           USA            AA
+Armed Forces Europe, the Middle East, and Canada                USA            AE
+Armed Forces Pacific                                            USA            AP
+Armenia                                                         ARM            XX
+Aruba                                                           ABW            XX
+Asia, NOS1                                                      ZZA            YY
+Australia                                                       AUS            XX
+Austria                                                         AUT            XX
+Azerbaijan                                                      AZE            XX
+Bahamas (the)                                                   BHS            XX
+Bahrain                                                         BHR            XX
+Bangladesh                                                      BGD            XX
+Barbados                                                        BRB            XX
+Belarus                                                         BLR            XX
+Belgium                                                         BEL            XX
+Belize                                                          BLZ            XX
+Benin                                                           BEN            XX
+Bermuda                                                         BMU            XX
+Bhutan                                                          BTN            XX
+Bolivia (Plurinational State of)                                BOL            XX
+Bonaire, Sint Eustatius and Saba                                BES            XX
+Bosnia and Herzegovina                                          BIH            XX
+Botswana                                                        BWA            XX
+Bouvet Island                                                   BVT            XX
+Brazil                                                          BRA            XX
+British Columbia                                                CAN            BC
+British Indian Ocean Territory (the)                            IOT            XX
+Brunei Darussalam                                               BRN            XX
+Bulgaria                                                        BGR            XX
+Burkina Faso                                                    BFA            XX
+Burundi                                                         BDI            XX
+
+
+                       Appendix B1: Alphabetic Code List by Country/State                 B-3
+                         SEER Program Coding and Staging Manual 2026
+
+                     Name of Country/State                      ISO Country     USPS State
+                                                                    Code          Code
+California                                                      USA           CA
+Cabo Verde                                                      CPV           XX
+Cambodia                                                        KHM           XX
+Cameroon                                                        CMR           XX
+Canada                                                          CAN           CD
+Cayman Islands (the)                                            CYM           XX
+Central African Republic (the)                                  CAF           XX
+Central America, NOS1                                           ZZC           YY
+Chad                                                            TCD           XX
+Chile                                                           CHL           XX
+China                                                           CHN           XX
+Christmas Island                                                CXR           XX
+Cocos (Keeling) Islands (the)                                   CCK           XX
+Colombia                                                        COL           XX
+Colorado                                                        USA           CO
+Comoros (the)                                                   COM           XX
+Congo (the)                                                     COG           XX
+Congo (the Democratic Republic of)                              COD           XX
+Connecticut                                                     USA           CT
+Cook Islands (the)                                              COK           XX
+Costa Rica                                                      CRI           XX
+Côte d'Ivoire                                                   CIV           XX
+Croatia                                                         HRV           XX
+Cuba                                                            CUB           XX
+Curaçao                                                         CUW           XX
+Cyprus                                                          CYP           XX
+Czechia                                                         CZE           XX
+Czechoslovakia1                                                 CSK           YY
+Delaware                                                        USA           DE
+Denmark                                                         DNK           XX
+District of Columbia                                            USA           DC
+Djibouti                                                        DJI           XX
+Dominica                                                        DMA           XX
+Dominican Republic (the)                                        DOM           XX
+Ecuador                                                         ECU           XX
+Egypt                                                           EGY           XX
+El Salvador                                                     SLV           XX
+Equatorial Guinea                                               GNQ           XX
+Eritrea                                                         ERI           XX
+Estonia                                                         EST           XX
+Eswatini                                                        SWZ           XX
+Ethiopia                                                        ETH           XX
+Europe, NOS1                                                    ZZE           YY
+Falkland Islands (the) [Malvinas]                               FLK           XX
+Faroe Islands (the)                                             FRO           XX
+Fiji                                                            FJI           XX
+Finland                                                         FIN           XX
+Florida                                                         USA           FL
+France                                                          FRA           XX
+French Guiana                                                   GUF           XX
+French Polynesia                                                PYF           XX
+
+
+                       Appendix B1: Alphabetic Code List by Country/State                B-4
+                         SEER Program Coding and Staging Manual 2026
+
+                     Name of Country/State                            ISO Country      USPS State
+                                                                         Code            Code
+French Southern Territories (the)                                    ATF            XX
+Gabon                                                                GAB            XX
+Gambia (the)                                                         GMB            XX
+Georgia                                                              USA            GA
+Georgia                                                              GEO            XX
+Germany                                                              DEU            XX
+Ghana                                                                GHA            XX
+Gibraltar                                                            GIB            XX
+Greece                                                               GRC            XX
+Greenland                                                            GRL            XX
+Grenada                                                              GRD            XX
+Guadeloupe                                                           GLP            XX
+Guam                                                                 GUM            GU
+Guatemala                                                            GTM            XX
+Guernsey                                                             GGY            XX
+Guinea                                                               GIN            XX
+Guinea-Bissau                                                        GNB            XX
+Guyana                                                               GUY            XX
+Haiti                                                                HTI            XX
+Hawaii                                                               USA            HI
+Heard Island and McDonald Islands                                    HMD            XX
+Holy See (the) (Vatican City)                                        VAT            XX
+Honduras                                                             HND            XX
+Hong Kong                                                            HKG            XX
+Hungary                                                              HUN            XX
+Iceland                                                              ISL            XX
+Idaho                                                                USA            ID
+Illinois                                                             USA            IL
+India                                                                IND            XX
+Indiana                                                              USA            IN
+Indonesia                                                            IDN            XX
+Iowa                                                                 USA            IA
+Iran (Islamic Republic of)                                           IRN            XX
+Iraq                                                                 IRQ            XX
+Ireland                                                              IRL            XX
+Isle of Man                                                          IMN            XX
+Israel                                                               ISR            XX
+Italy                                                                ITA            XX
+Jamaica                                                              JAM            XX
+Japan                                                                JPN            XX
+Jersey                                                               JEY            XX
+Jordan                                                               JOR            XX
+Kansas                                                               USA            KS
+Kazakhstan                                                           KAZ            XX
+Kentucky                                                             USA            KY
+Kenya                                                                KEN            XX
+Kiribati                                                             KIR            XX
+Korea (the Democratic People’s Republic of) (used for North Korea)   PRK            XX
+Korea (the Republic of) (used for South Korea)                       KOR            XX
+Kuwait                                                               KWT            XX
+Kyrgyzstan                                                           KGZ            XX
+
+
+                       Appendix B1: Alphabetic Code List by Country/State                       B-5
+                         SEER Program Coding and Staging Manual 2026
+
+                     Name of Country/State                      ISO Country     USPS State
+                                                                    Code          Code
+Lao People’s Democratic Republic (the)                          LAO           XX
+Latvia                                                          LVA           XX
+Lebanon                                                         LBN           XX
+Lesotho                                                         LSO           XX
+Liberia                                                         LBR           XX
+Libya                                                           LBY           XX
+Liechtenstein                                                   LIE           XX
+Lithuania                                                       LTU           XX
+Louisiana                                                       USA           LA
+Luxembourg                                                      LUX           XX
+Macao                                                           MAC           XX
+Madagascar                                                      MDG           XX
+Maine                                                           USA           ME
+Malawi                                                          MWI           XX
+Malaysia                                                        MYS           XX
+Maldives                                                        MDV           XX
+Mali                                                            MLI           XX
+Malta                                                           MLT           XX
+Manitoba                                                        CAN           MB
+Marshall Islands (the)                                          MHL           MH
+Martinique                                                      MTQ           XX
+Maryland                                                        USA           MD
+Massachusetts                                                   USA           MA
+Mauritania                                                      MRT           XX
+Mauritius                                                       MUS           XX
+Mayotte                                                         MYT           XX
+Mexico                                                          MEX           XX
+Michigan                                                        USA           MI
+Micronesia (Federated States of)                                FSM           FM
+Minnesota                                                       USA           MN
+Mississippi                                                     USA           MS
+Missouri                                                        USA           MO
+Moldova (the Republic of)                                       MDA           XX
+Monaco                                                          MCO           XX
+Mongolia                                                        MNG           XX
+Montana                                                         USA           MT
+Montenegro                                                      MNE           XX
+Montserrat                                                      MSR           XX
+Morocco                                                         MAR           XX
+Mozambique                                                      MOZ           XX
+Myanmar                                                         MMR           XX
+Namibia                                                         NAM           XX
+Nauru                                                           NRU           XX
+Nebraska                                                        USA           NE
+Nepal                                                           NPL           XX
+Netherlands (Kingdom of the)                                    NLD           XX
+Nevada                                                          USA           NV
+New Brunswick                                                   CAN           NB
+New Caledonia                                                   NCL           XX
+New Hampshire                                                   USA           NH
+New Jersey                                                      USA           NJ
+
+
+                       Appendix B1: Alphabetic Code List by Country/State                B-6
+                         SEER Program Coding and Staging Manual 2026
+
+                     Name of Country/State                      ISO Country      USPS State
+                                                                    Code           Code
+New Mexico                                                      USA           NM
+New York                                                        USA           NY
+New Zealand                                                     NZL           XX
+Newfoundland and Labrador                                       CAN           NL
+Nicaragua                                                       NIC           XX
+Niger (the)                                                     NER           XX
+Nigeria                                                         NGA           XX
+Niue                                                            NIU           XX
+Non-US/Canada NOS1                                              ZZX           YY
+Norfolk Island                                                  NFK           XX
+North America, NOS1                                             ZZN           YY
+North Carolina                                                  USA           NC
+North Dakota                                                    USA           ND
+North Korea (see Korea (the Democratic People’s Republic of))   PRK           XX
+North Macedonia                                                 MKD           XX
+Northern Mariana Islands (the)                                  MNP           MP
+Northwest Territories                                           CAN           NT
+Norway                                                          NOR           XX
+Nova Scotia                                                     CAN           NS
+Nunavut                                                         CAN           NU
+Ohio                                                            USA           OH
+Oklahoma                                                        USA           OK
+Oman                                                            OMN           XX
+Ontario                                                         CAN           ON
+Oregon                                                          USA           OR
+Pacific, NOS1                                                   ZZP           YY
+Pakistan                                                        PAK           XX
+Palau                                                           PLW           PW
+Palestine, State of                                             PSE           XX
+Panama                                                          PAN           XX
+Papua New Guinea                                                PNG           XX
+Paraguay                                                        PRY           XX
+Pennsylvania                                                    USA           PA
+Peru                                                            PER           XX
+Philippines (the)                                               PHL           XX
+Pitcairn                                                        PCN           XX
+Poland                                                          POL           XX
+Portugal                                                        PRT           XX
+Prince Edward Island                                            CAN           PE
+Puerto Rico                                                     PRI           PR
+Qatar                                                           QAT           XX
+Quebec                                                          CAN           QC
+Réunion                                                         REU           XX
+Rhode Island                                                    USA           RI
+Romania                                                         ROU           XX
+Russian Federation (the)                                        RUS           XX
+Rwanda                                                          RWA           XX
+Saint Barthélemy                                                BLM           XX
+Saint Helena, Ascension and Tristan da Cunha                    SHN           XX
+Saint Kitts and Nevis                                           KNA           XX
+Saint Lucia                                                     LCA           XX
+
+
+                       Appendix B1: Alphabetic Code List by Country/State                 B-7
+                         SEER Program Coding and Staging Manual 2026
+
+                     Name of Country/State                      ISO Country     USPS State
+                                                                    Code          Code
+Saint Martin (French part)                                      MAF           XX
+Saint Pierre and Miquelon                                       SPM           XX
+Saint Vincent and the Grenadines                                VCT           XX
+Samoa                                                           WSM           XX
+San Marino                                                      SMR           XX
+Sao Tome and Principe                                           STP           XX
+Saskatchewan                                                    CAN           SK
+Saudi Arabia                                                    SAU           XX
+Senegal                                                         SEN           XX
+Serbia                                                          SRB           XX
+Seychelles                                                      SYC           XX
+Sierra Leone                                                    SLE           XX
+Singapore                                                       SGP           XX
+Sint Maarten (Dutch part)                                       SXM           XX
+Slovakia                                                        SVK           XX
+Slovenia                                                        SVN           XX
+Solomon Islands                                                 SLB           XX
+Somalia                                                         SOM           XX
+South Africa                                                    ZAF           XX
+South America, NOS1                                             ZZS           YY
+South Carolina                                                  USA           SC
+South Dakota                                                    USA           SD
+South Georgia and the South Sandwich Islands                    SGS           XX
+South Korea (see Korea (the Republic of))                       KOR           XX
+South Sudan                                                     SSD           XX
+Spain                                                           ESP           XX
+Sri Lanka                                                       LKA           XX
+Sudan (the)                                                     SDN           XX
+Suriname                                                        SUR           XX
+Svalbard and Jan Mayen                                          SJM           XX
+Sweden                                                          SWE           XX
+Switzerland                                                     CHE           XX
+Syrian Arab Republic (the)                                      SYR           XX
+Taiwan (Province of China)                                      TWN           XX
+Tajikistan                                                      TJK           XX
+Tanzania, the United Republic of                                TZA           XX
+Tennessee                                                       USA           TN
+Texas                                                           USA           TX
+Thailand                                                        THA           XX
+Timor-Leste                                                     TLS           XX
+Togo                                                            TGO           XX
+Tokelau                                                         TKL           XX
+Tonga                                                           TON           XX
+Trinidad and Tobago                                             TTO           XX
+Tunisia                                                         TUN           XX
+Türkiye                                                         TUR           XX
+Turkmenistan                                                    TKM           XX
+Turks and Caicos Islands (the)                                  TCA           XX
+Tuvalu                                                          TUV           XX
+Uganda                                                          UGA           XX
+Ukraine                                                         UKR           XX
+
+
+                       Appendix B1: Alphabetic Code List by Country/State                B-8
+                                                   SEER Program Coding and Staging Manual 2026
+
+                                            Name of Country/State                          ISO Country     USPS State
+                                                                                               Code          Code
+  United Arab Emirates (the)                                                               ARE           XX
+  United Kingdom of Great Britain and Northern Ireland (the)                               GBR           XX
+  United States Minor Outlying Islands (the)                                               UMI           XX
+  United States of America (the)                                                           USA           US
+  Unknown1                                                                                 ZZU           ZZ
+  Uruguay                                                                                  URY           XX
+  Utah                                                                                     USA           UT
+  Uzbekistan                                                                               UZB           XX
+  Vanuatu                                                                                  VUT           XX
+  Venezuela (Bolivarian Republic of)                                                       VEN           XX
+  Vermont                                                                                  USA           VT
+  Viet Nam                                                                                 VNM           XX
+  Virgin Islands (British)                                                                 VGB           XX
+  Virgin Islands (U.S.)                                                                    VIR           VI
+  Virginia                                                                                 USA           VA
+  Wallis and Futuna                                                                        WLF           XX
+  Washington                                                                               USA           WA
+  West Virginia                                                                            USA           WV
+  Western Sahara                                                                           ESH           XX
+  Wisconsin                                                                                USA           WI
+  Wyoming                                                                                  USA           WY
+  Yemen                                                                                    YEM           XX
+  Yukon                                                                                    CAN           YT
+  Zambia                                                                                   ZMB           XX
+  Zimbabwe                                                                                 ZWE           XX
+1 Custom codes for both historic and future use
+
+
+
+
+                                                  Appendix B1: Alphabetic Code List by Country/State                B-9
+                    SEER Program Coding and Staging Manual 2026
+
+                                    Appendix B2
+                               Alphabetic List by Code
+  ISO Country     USPS State                          Name of Country/State
+     Code           Code
+ABW             XX                Aruba
+AFG             XX                Afghanistan
+AGO             XX                Angola
+AIA             XX                Anguilla
+ALA             XX                Aland Islands
+ALB             XX                Albania
+AND             XX                Andorra
+ARE             XX                United Arab Emirates (the)
+ARG             XX                Argentina
+ARM             XX                Armenia
+ASM             AS                American Samoa
+ATA             XX                Antarctica
+ATF             XX                French Southern Territories (the)
+ATG             XX                Antigua and Barbuda
+AUS             XX                Australia
+AUT             XX                Austria
+AZE             XX                Azerbaijan
+BDI             XX                Burundi
+BEL             XX                Belgium
+BEN             XX                Benin
+BES             XX                Bonaire, Sint Eustatius and Saba
+BFA             XX                Burkina Faso
+BGD             XX                Bangladesh
+BGR             XX                Bulgaria
+BHR             XX                Bahrain
+BHS             XX                Bahamas (the)
+BIH             XX                Bosnia and Herzogovina
+BLM             XX                Saint Barthélemy
+BLR             XX                Belarus
+BLZ             XX                Belize
+BMU             XX                Bermuda
+BOL             XX                Bolivia (Plurination State of)
+BRA             XX                Brazil
+BRB             XX                Barbados
+BRN             XX                Brunei Darussalam
+BTN             XX                Bhutan
+BVT             XX                Bouvet Island
+BWA             XX                Botswana
+CAF             XX                Central African Republic (the)
+CAN             AB                Alberta
+CAN             BC                British Columbia
+CAN             CD                Canada
+CAN             MB                Manitoba
+CAN             NB                New Brunswick
+CAN             NL                Newfoundland and Labrador
+CAN             NS                Nova Scotia
+CAN             NT                Northwest Territories
+CAN             NU                Nunavut
+
+
+                         Appendix B2: Alphabetic List by Code                 B-10
+                    SEER Program Coding and Staging Manual 2026
+
+  ISO Country     USPS State                       Name of Country/State
+     Code           Code
+CAN             ON              Ontario
+CAN             PE              Prince Edward Island
+CAN             QC              Quebec
+CAN             SK              Saskatchewan
+CAN             YT              Yukon
+CCK             XX              Cocos (Keeling) Islands (the)
+CHE             XX              Switzerland
+CHL             XX              Chile
+CHN             XX              China
+CIV             XX              Côte d'Ivoire
+CMR             XX              Cameroon
+COD             XX              Congo (the Democratic Republic of)
+COG             XX              Congo (the)
+COK             XX              Cook Islands (the)
+COL             XX              Colombia
+COM             XX              Comoros (the)
+CPV             XX              Cabo Verde
+CRI             XX              Costa Rica
+CSK1            YY              Czechoslovakia
+CUB             XX              Cuba
+CUW             XX              Curaçao
+CXR             XX              Christmas Island
+CYM             XX              Cayman Islands (the)
+CYP             XX              Cyprus
+CZE             XX              Czechia
+DEU             XX              Germany
+DJI             XX              Djibouti
+DMA             XX              Dominica
+DNK             XX              Denmark
+DOM             XX              Dominican Republic (the)
+DZA             XX              Algeria
+ECU             XX              Ecuador
+EGY             XX              Egypt
+ERI             XX              Eritrea
+ESH             XX              Western Sahara
+ESP             XX              Spain
+EST             XX              Estonia
+ETH             XX              Ethiopia
+FIN             XX              Finland
+FJI             XX              Fiji
+FLK             XX              Falkland Islands (the) [Malvinas]
+FRA             XX              France
+FRO             XX              Faroe Islands (the)
+FSM             FM              Micronesia (Federated States of)
+GAB             XX              Gabon
+GBR             XX              United Kingdom of Great Britain and Northern Ireland (the)
+GEO             XX              Georgia
+GGY             XX              Guernsey
+GHA             XX              Ghana
+GIB             XX              Gibraltar
+GIN             XX              Guinea
+
+
+                         Appendix B2: Alphabetic List by Code                                B-11
+                    SEER Program Coding and Staging Manual 2026
+
+  ISO Country    USPS State                       Name of Country/State
+     Code          Code
+GLP             XX             Guadeloupe
+GMB             XX             Gambia (the)
+GNB             XX             Guinea Bissau
+GNQ             XX             Equatorial Guinea
+GRC             XX             Greece
+GRD             XX             Grenada
+GRL             XX             Greenland
+GTM             XX             Guatemala
+GUF             XX             French Guiana
+GUM             GU             Guam
+GUY             XX             Guyana
+HKG             XX             Hong Kong
+HMD             XX             Heard Island and McDonald Islands
+HND             XX             Honduras
+HRV             XX             Croatia
+HTI             XX             Haiti
+HUN             XX             Hungary
+IDN             XX             Indonesia
+IMN             XX             Isle of Man
+IND             XX             India
+IOT             XX             British Indian Ocean Territory (the)
+IRL             XX             Ireland
+IRN             XX             Iran (Islamic Republic of)
+IRQ             XX             Iraq
+ISL             XX             Iceland
+ISR             XX             Israel
+ITA             XX             Italy
+JAM             XX             Jamaica
+JEY             XX             Jersey
+JOR             XX             Jordan
+JPN             XX             Japan
+KAZ             XX             Kazakhstan
+KEN             XX             Kenya
+KGZ             XX             Kyrgyzstan
+KHM             XX             Cambodia
+KIR             XX             Kiribati
+KNA             XX             Saint Kitts and Nevis
+KOR             XX             Korea (the Republic of) (used for South Korea)
+KWT             XX             Kuwait
+LAO             XX             Lao People’s Democratic Republic (the)
+LBN             XX             Lebanon
+LBR             XX             Liberia
+LBY             XX             Libya
+LCA             XX             Saint Lucia
+LIE             XX             Liechtenstein
+LKA             XX             Sri Lanka
+LSO             XX             Lesotho
+LTU             XX             Lithuania
+LUX             XX             Luxembourg
+LVA             XX             Latvia
+MAC             XX             Macao
+
+
+                        Appendix B2: Alphabetic List by Code                    B-12
+                     SEER Program Coding and Staging Manual 2026
+
+  ISO Country     USPS State                       Name of Country/State
+     Code           Code
+MAF             XX              Saint Martin (French part)
+MAR             XX              Morocco
+MCO             XX              Monaco
+MDA             XX              Moldova (the Republic of)
+MDG             XX              Madagascar
+MDV             XX              Maldives
+MEX             XX              Mexico
+MHL             MH              Marshall Islands (the)
+MKD             XX              North Macedonia
+MLI             XX              Mali
+MLT             XX              Malta
+MMR             XX              Myanmar
+MNE             XX              Montenegro
+MNG             XX              Mongolia
+MNP             MP              Northern Mariana Islands (the)
+MOZ             XX              Mozambique
+MRT             XX              Mauritania
+MSR             XX              Montserrat
+MTQ             XX              Martinique
+MUS             XX              Mauritius
+MWI             XX              Malawi
+MYS             XX              Malaysia
+MYT             XX              Mayotte
+NAM             XX              Namibia
+NCL             XX              New Caledonia
+NER             XX              Niger
+NFK             XX              Norfolk Island
+NGA             XX              Nigeria
+NIC             XX              Nicaragua
+NIU             XX              Niue
+NLD             XX              Netherlands (Kingdom of the)
+NOR             XX              Norway
+NPL             XX              Nepal
+NRU             XX              Nauru
+NZL             XX              New Zealand
+OMN             XX              Oman
+PAK             XX              Pakistan
+PAN             XX              Panama
+PCN             XX              Pitcairn Islands
+PER             XX              Peru
+PHL             XX              Philippines (the)
+PLW             PW              Palau
+PNG             XX              Papua New Guinea
+POL             XX              Poland
+PRI             PR              Puerto Rico
+PRK             XX              Korea (the Democratic People’s Republic of) (used for North
+                                Korea)
+PRT             XX              Portugal
+PRY             XX              Paraguay
+PSE             XX              Palestine, State of
+PYF             XX              French Polynesia
+
+
+                         Appendix B2: Alphabetic List by Code                                 B-13
+                    SEER Program Coding and Staging Manual 2026
+
+  ISO Country     USPS State                      Name of Country/State
+     Code           Code
+QAT             XX              Qatar
+REU             XX              Réunion
+ROU             XX              Romania
+RUS             XX              Russian Federation (the)
+RWA             XX              Rwanda
+SAU             XX              Saudi Arabia
+SDN             XX              Sudan
+SEN             XX              Senegal
+SGP             XX              Singapore
+SGS             XX              South Georgia and the South Sandwich Islands
+SHN             XX              Saint Helena, Ascension and Tristan da Cunha
+SJM             XX              Svalbard and Jan Mayen
+SLB             XX              Solomon Islands
+SLE             XX              Sierra Leone
+SLV             XX              El Salvador
+SMR             XX              San Marino
+SOM             XX              Somalia
+SPM             XX              Saint Pierre and Miquelon
+SRB             XX              Serbia
+SSD             XX              South Sudan
+STP             XX              Sao Tome and Principe
+SUR             XX              Suriname
+SVK             XX              Slovakia
+SVN             XX              Slovenia
+SWE             XX              Sweden
+SWZ             XX              Eswatini)
+SXM             XX              Sint Maarten (Dutch part)
+SYC             XX              Seychelles
+SYR             XX              Syrian Arab Republic (the)
+TCA             XX              Turks and Caicos Islands (the)
+TCD             XX              Chad
+TGO             XX              Togo
+THA             XX              Thailand
+TJK             XX              Tajikistan
+TKL             XX              Tokelau Islands
+TKM             XX              Turkmenistan
+TLS             XX              Timor-Leste
+TON             XX              Tonga
+TTO             XX              Trinidad and Tobago
+TUN             XX              Tunisia
+TUR             XX              Türkiye
+TUV             XX              Tuvalu
+TWN             XX              Taiwan
+TZA             XX              Tanzania
+UGA             XX              Uganda
+UKR             XX              Ukraine
+UMI             UM              United States Minor Outlying Islands (the)
+URY             XX              Uruguay
+USA             AA              Armed Forces Americas (except Canada)
+USA             AE              Armed Forces Europe, the Middle East, and Canada
+USA             AK              Alaska
+
+
+                         Appendix B2: Alphabetic List by Code                      B-14
+                    SEER Program Coding and Staging Manual 2026
+
+  ISO Country      USPS State                       Name of Country/State
+     Code            Code
+USA             AL              Alabama
+USA             AP              Armed Forces Pacific
+USA             AR              Arkansas
+USA             AZ              Arizona
+USA             CA              California
+USA             CO              Colorado
+USA             CT              Connecticut
+USA             DC              District of Columbia
+USA             DE              Delaware
+USA             FL              Florida
+USA             GA              Georgia
+USA             HI              Hawaii
+USA             IA              Iowa
+USA             ID              Idaho
+USA             IL              Illinois
+USA             IN              Indiana
+USA             KS              Kansas
+USA             KY              Kentucky
+USA             LA              Louisiana
+USA             MA              Massachusetts
+USA             MD              Maryland
+USA             ME              Maine
+USA             MI              Michigan
+USA             MN              Minnesota
+USA             MO              Missouri
+USA             MS              Mississippi
+USA             MT              Montana
+USA             NC              North Carolina
+USA             ND              North Dakota
+USA             NE              Nebraska
+USA             NH              New Hampshire
+USA             NJ              New Jersey
+USA             NM              New Mexico
+USA             NV              Nevada
+USA             NY              New York
+USA             OH              Ohio
+USA             OK              Oklahoma
+USA             OR              Oregon
+USA             PA              Pennsylvania
+USA             RI              Rhode Island
+USA             SC              South Carolina
+USA             SD              South Dakota
+USA             TN              Tennessee
+USA             TX              Texas
+USA             US              United States of America (the)
+USA             UT              Utah
+USA             VA              Virginia
+USA             VT              Vermont
+USA             WA              Washington
+USA             WI              Wisconsin
+USA             WV              West Virginia
+
+
+                         Appendix B2: Alphabetic List by Code               B-15
+                                  SEER Program Coding and Staging Manual 2026
+
+   ISO Country                USPS State                             Name of Country/State
+      Code                      Code
+ USA                       WY                     Wyoming
+ UZB                       XX                     Uzbekistan
+ VAT                       XX                     Holy See (the) (Vatican City)
+ VCT                       XX                     Saint Vincent and the Grenadines
+ VEN                       XX                     Venezuela (Bolivarian Republic of)
+ VGB                       XX                     Virgin Islands (British)
+ VIR                       VI                     Virgin Islands (U.S.)
+ VNM                       XX                     Viet Nam
+ VUT                       XX                     Vanuatu
+ WLF                       XX                     Wallis and Futuna
+ WSM                       XX                     Samoa
+ YEM                       XX                     Yemen
+ ZAF                       XX                     South Africa
+ ZMB                       XX                     Zambia
+ ZWE                       XX                     Zimbabwe
+ ZZA1                      YY                     Asia, NOS
+ ZZC1                      YY                     Central America, NOS
+ ZZE1                      YY                     Europe, NOS
+ ZZF1                      YY                     Africa, NOS
+ ZZN1                      YY                     North America, NOS
+ ZZP1                      YY                     Pacific, NOS
+ ZZS1                      YY                     South America, NOS
+ ZZU1                      ZZ                     Unknown
+ ZZX1                      YY                     Non-US/Canada NOS
+
+1 Custom codes for both historic and future use
+
+
+
+
+                                         Appendix B2: Alphabetic List by Code                B-16
+                         SEER Program Coding and Staging Manual 2026
+
+                                         Appendix B3
+                                      Geographic Code List
+                   Name of Country/State                          ISO Country      USPS State
+                                                                     Code            Code
+North America, NOS1                                             ZZN             YY
+  United States of America (the)                                USA             US
+      Maine                                                     USA             ME
+      New Hampshire                                             USA             NH
+      Vermont                                                   USA             VT
+      Massachusetts                                             USA             MA
+      Rhode Island                                              USA             RI
+      Connecticut                                               USA             CT
+      New Jersey                                                USA             NJ
+      New York                                                  USA             NY
+      Pennsylvania                                              USA             PA
+      Delaware                                                  USA             DE
+      Maryland                                                  USA             MD
+      District of Columbia                                      USA             DC
+      Virginia                                                  USA             VA
+      West Virginia                                             USA             WV
+      North Carolina                                            USA             NC
+      South Carolina                                            USA             SC
+      Tennessee                                                 USA             TN
+      Georgia                                                   USA             GA
+      Florida                                                   USA             FL
+      Alabama                                                   USA             AL
+      Mississippi                                               USA             MS
+      Michigan                                                  USA             MI
+      Ohio                                                      USA             OH
+      Indiana                                                   USA             IN
+      Kentucky                                                  USA             KY
+      Wisconsin                                                 USA             WI
+      Minnesota                                                 USA             MN
+      Iowa                                                      USA             IA
+      North Dakota                                              USA             ND
+      South Dakota                                              USA             SD
+      Montana                                                   USA             MT
+      Illinois                                                  USA             IL
+      Missouri                                                  USA             MO
+      Kansas                                                    USA             KS
+      Nebraska                                                  USA             NE
+      Arkansas                                                  USA             AR
+      Louisiana                                                 USA             LA
+      Oklahoma                                                  USA             OK
+      Texas                                                     USA             TX
+      Idaho                                                     USA             ID
+      Wyoming                                                   USA             WY
+      Colorado                                                  USA             CO
+      Utah                                                      USA             UT
+      Nevada                                                    USA             NV
+      New Mexico                                                USA             NM
+      Arizona                                                   USA             AZ
+
+
+                                   Appendix B3: Geographic Code List                       B-17
+                     SEER Program Coding and Staging Manual 2026
+
+                Name of Country/State                      ISO Country     USPS State
+                                                              Code           Code
+   Alaska                                                USA             AK
+   Washington                                            USA             WA
+   Oregon                                                USA             OR
+   California                                            USA             CA
+   Hawaii                                                USA             HI
+   Armed Forces Americas (except Canada)                 USA             AA
+   Armed Forces Europe, Middle East, and Canada          USA             AE
+   Armed Forces Pacific                                  USA             AP
+Greenland                                                GRL             XX
+Canada                                                   CAN             CD
+   New Brunswick                                         CAN             NB
+   Newfoundland and Labrador                             CAN             NL
+   Nova Scotia                                           CAN             NS
+   Prince Edward Island                                  CAN             PE
+   Quebec                                                CAN             QC
+   Ontario                                               CAN             ON
+   Alberta                                               CAN             AB
+   Manitoba                                              CAN             MB
+   Saskatchewan                                          CAN             SK
+   Northwest Territories                                 CAN             NT
+   Yukon                                                 CAN             YT
+   British Columbia                                      CAN             BC
+   Nunavut                                               CAN             NU
+Mexico                                                   MEX             XX
+Puerto Rico                                              PRI             PR
+Virgin Islands (U.S.)                                    VIR             VI
+Cuba                                                     CUB             XX
+Haiti                                                    HTI             XX
+Dominican Republic (the)                                 DOM             XX
+Jamaica                                                  JAM             XX
+Anguilla                                                 AIA             XX
+Antigua and Barbuda                                      ATG             XX
+Aruba                                                    ABW             XX
+Barbados                                                 BRB             XX
+Bonaire, Sint Eustatius and Saba                         BES             XX
+Virgin Islands (British)                                 VGB             XX
+Cayman Islands (the)                                     CYM             XX
+Curaçao                                                  CUW             XX
+Dominica                                                 DMA             XX
+Grenada                                                  GRD             XX
+Guadeloupe                                               GLP             XX
+Martinique                                               MTQ             XX
+Montserrat                                               MSR             XX
+Saint Barthélemy                                         BLM             XX
+Saint Kitts and Nevis                                    KNA             XX
+Saint Lucia                                              LCA             XX
+Sint Maarten (Dutch part)                                SXM             XX
+Saint Martin (French part)                               MAF             XX
+Saint Vincent and the Grenadines                         VCT             XX
+Trinidad and Tobago                                      TTO             XX
+Turks and Caicos Islands (the)                           TCA             XX
+
+
+                            Appendix B3: Geographic Code List                      B-18
+                         SEER Program Coding and Staging Manual 2026
+
+                    Name of Country/State                         ISO Country    USPS State
+                                                                     Code          Code
+   Bermuda                                                      BMU             XX
+   Bahamas (the)                                                BHS             XX
+   Saint Pierre and Miquelon                                    SPM             XX
+Central America, NOS1                                           ZZC             YY
+   Guatemala                                                    GTM             XX
+   Belize                                                       BLZ             XX
+   Honduras                                                     HND             XX
+   El Salvador                                                  SLV             XX
+   Nicaragua                                                    NIC             XX
+   Costa Rica                                                   CRI             XX
+   Panama                                                       PAN             XX
+South America, NOS1                                             ZZS             YY
+   Colombia                                                     COL             XX
+   Venezuela (Bolivarian Republic of)                           VEN             XX
+   Guyana                                                       GUY             XX
+   Suriname                                                     SUR             XX
+   French Guiana                                                GUF             XX
+   Brazil                                                       BRA             XX
+   Ecuador                                                      ECU             XX
+   Peru                                                         PER             XX
+   Bolivia (Plurinational State of)                             BOL             XX
+   Chile                                                        CHL             XX
+   Argentina                                                    ARG             XX
+   Paraguay                                                     PRY             XX
+   Uruguay                                                      URY             XX
+   Falkland Islands (the) [Malvinas]                            FLK             XX
+Europe, NOS1                                                    ZZE             YY
+   United Kingdom of Great Britain and Northern Ireland (the)   GBR             XX
+       Guernsey                                                 GGY             XX
+       Isle of Man                                              IMN             XX
+       Jersey                                                   JEY             XX
+   Ireland                                                      IRL             XX
+   Iceland                                                      ISL             XX
+   Norway                                                       NOR             XX
+   Svalbard and Jan Mayen                                       SJM             XX
+   Denmark                                                      DNK             XX
+   Faroe Islands (the)                                          FRO             XX
+   Sweden                                                       SWE             XX
+   Finland                                                      FIN             XX
+   Aland Islands                                                ALA             XX
+   Germany                                                      DEU             XX
+   Netherlands (Kingdom of the)                                 NLD             XX
+   Belgium                                                      BEL             XX
+   Luxembourg                                                   LUX             XX
+   Switzerland                                                  CHE             XX
+   Austria                                                      AUT             XX
+   Liechtenstein                                                LIE             XX
+   France                                                       FRA             XX
+   Monaco                                                       MCO             XX
+   Spain                                                        ESP             XX
+   Andorra                                                      AND             XX
+
+
+                                Appendix B3: Geographic Code List                        B-19
+                          SEER Program Coding and Staging Manual 2026
+
+                    Name of Country/State                          ISO Country    USPS State
+                                                                      Code          Code
+   Portugal                                                      PRT             XX
+   Italy                                                         ITA             XX
+   San Marino                                                    SMR             XX
+   Holy See (the) (Vatican City)                                 VAT             XX
+   Romania                                                       ROU             XX
+   Poland                                                        POL             XX
+   Czechia)                                                      CZE             XX
+   Czechoslovakia1                                               CSK             YY
+   Slovakia                                                      SVK             XX
+   Bosnia and Herzegovina                                        BIH             XX
+   Croatia                                                       HRV             XX
+   North Macedonia                                               MKD             XX
+   Montenegro                                                    MNE             XX
+   Serbia                                                        SRB             XX
+   Slovenia                                                      SVN             XX
+   Bulgaria                                                      BGR             XX
+   Russian Federation (the)                                      RUS             XX
+   Ukraine                                                       UKR             XX
+   Moldova (the Republic of)                                     MDA             XX
+   Belarus                                                       BLR             XX
+   Estonia                                                       EST             XX
+   Latvia                                                        LVA             XX
+   Lithuania                                                     LTU             XX
+   Greece                                                        GRC             XX
+   Hungary                                                       HUN             XX
+   Albania                                                       ALB             XX
+   Gibraltar                                                     GIB             XX
+   Malta                                                         MLT             XX
+   Cyprus                                                        CYP             XX
+Africa, NOS1                                                     ZZF             YY
+   Morocco                                                       MAR             XX
+   Algeria                                                       DZA             XX
+   Tunisia                                                       TUN             XX
+   Libya                                                         LBY             XX
+   Egypt                                                         EGY             XX
+   Burkina Faso                                                  BFA             XX
+   Chad                                                          TCD             XX
+   Mali                                                          MLI             XX
+   Mauritania                                                    MRT             XX
+   Niger (the)                                                   NER             XX
+   Sudan (the)                                                   SDN             XX
+   South Sudan                                                   SSD             XX
+   Western Sahara                                                ESH             XX
+   Nigeria                                                       NGA             XX
+   Benin                                                         BEN             XX
+   Cameroon                                                      CMR             XX
+   Cabo Verde                                                    CPV             XX
+   Central African Republic (the)                                CAF             XX
+   Côte d’Ivoire                                                 CIV             XX
+   Congo (the)                                                   COG             XX
+   Equatorial Guinea                                             GNQ             XX
+
+
+                                    Appendix B3: Geographic Code List                     B-20
+                         SEER Program Coding and Staging Manual 2026
+
+                   Name of Country/State                       ISO Country    USPS State
+                                                                  Code          Code
+   Gambia (the)                                              GMB             XX
+   Gabon                                                     GAB             XX
+   Ghana                                                     GHA             XX
+   Guinea                                                    GIN             XX
+   Guinea Bissau                                             GNB             XX
+   Liberia                                                   LBR             XX
+   Senegal                                                   SEN             XX
+   Sierra Leone                                              SLE             XX
+   Togo                                                      TGO             XX
+   Congo (the Democratic Republic of)                        COD             XX
+   Angola                                                    AGO             XX
+   Sao Tome and Principe                                     STP             XX
+   South Africa                                              ZAF             XX
+   Botswana                                                  BWA             XX
+   Lesotho                                                   LSO             XX
+   Namibia                                                   NAM             XX
+   Eswatini                                                  SWZ             XX
+   Zimbabwe                                                  ZWE             XX
+   Zambia                                                    ZMB             XX
+   Malawi                                                    MWI             XX
+   Mozambique                                                MOZ             XX
+   Madagascar                                                MDG             XX
+   Tanzania                                                  TZA             XX
+   Uganda                                                    UGA             XX
+   Kenya                                                     KEN             XX
+   Rwanda                                                    RWA             XX
+   Burundi                                                   BDI             XX
+   Somalia                                                   SOM             XX
+   Djibouti                                                  DJI             XX
+   Ethiopia                                                  ETH             XX
+   Eritrea                                                   ERI             XX
+   Comoros (the)                                             COM             XX
+   Mauritius                                                 MUS             XX
+   Mayotte                                                   MYT             XX
+   Réunion                                                   REU             XX
+   Saint Helena, Ascension and Tristan da Cunha              SHN             XX
+   Seychelles                                                SYC             XX
+Asia, NOS1                                                   ZZA             YY
+   Türkiye                                                   TUR             XX
+   Syrian Arab Republic (the)                                SYR             XX
+   Lebanon                                                   LBN             XX
+   Jordan                                                    JOR             XX
+   Iraq                                                      IRQ             XX
+   Bahrain                                                   BHR             XX
+   Kuwait                                                    KWT             XX
+   Oman                                                      OMN             XX
+   Qatar                                                     QAT             XX
+   Saudi Arabia                                              SAU             XX
+   United Arab Emirates (the)                                ARE             XX
+   Yemen                                                     YEM             XX
+   Israel                                                    ISR             XX
+
+
+                                Appendix B3: Geographic Code List                     B-21
+                         SEER Program Coding and Staging Manual 2026
+
+                    Name of Country/State                          ISO Country    USPS State
+                                                                      Code          Code
+   Palestine, State of                                           PSE             XX
+   Armenia                                                       ARM             XX
+   Azerbaijan                                                    AZE             XX
+   Georgia                                                       GEO             XX
+   Kazakhstan                                                    KAZ             XX
+   Kyrgyzstan                                                    KGZ             XX
+   Tajikistan                                                    TJK             XX
+   Turkmenistan                                                  TKM             XX
+   Uzbekistan                                                    UZB             XX
+   Iran (Islamic Republic of)                                    IRN             XX
+   Afghanistan                                                   AFG             XX
+   Pakistan                                                      PAK             XX
+   Maldives                                                      MDV             XX
+   British Indian Ocean Territory (the)                          IOT             XX
+   India                                                         IND             XX
+   Nepal                                                         NPL             XX
+   Bhutan                                                        BTN             XX
+   Bangladesh                                                    BGD             XX
+   Sri Lanka                                                     LKA             XX
+   Myanmar                                                       MMR             XX
+   Thailand                                                      THA             XX
+   Lao People’s Democratic Republic (the)                        LAO             XX
+   Cambodia                                                      KHM             XX
+   Viet Nam                                                      VNM             XX
+   Malaysia                                                      MYS             XX
+   Singapore                                                     SGP             XX
+   Brunei Darussalam                                             BRN             XX
+   Indonesia                                                     IDN             XX
+   Timor-Leste                                                   TLS             XX
+   Philippines (the)                                             PHL             XX
+   China                                                         CHN             XX
+   Hong Kong                                                     HKG             XX
+   Taiwan                                                        TWN             XX
+   Macao                                                         MAC             XX
+   Mongolia                                                      MNG             XX
+   Japan                                                         JPN             XX
+   Korea (the Republic of) (used for South Korea)                KOR             XX
+   Korea (the Democratic People’s Republic of) (used for North   PRK             XX
+    Korea)
+Christmas Island                                                 CXR             XX
+Cocos (Keeling) Islands (the)                                    CCK             XX
+Pacific, NOS1                                                    ZZP             YY
+   Australia                                                     AUS             XX
+   New Zealand                                                   NZL             XX
+   United States Minor Outlying Islands (the)                    UMI             UM
+   Fiji                                                          FJI             XX
+   New Caledonia                                                 NCL             XX
+   Papua New Guinea                                              PNG             XX
+   Solomon Islands                                               SLB             XX
+   Vanuatu                                                       VUT             XX
+   Wallis and Futuna                                             WLF             XX
+
+
+                                Appendix B3: Geographic Code List                         B-22
+                                  SEER Program Coding and Staging Manual 2026
+
+                           Name of Country/State                          ISO Country     USPS State
+                                                                             Code           Code
+    Micronesia (Federated States of)                                    FSM             FM
+    Guam                                                                GUM             GU
+    Kiribati                                                            KIR             XX
+    Marshall Islands (the)                                              MHL             MH
+    Northern Mariana Islands (the)                                      MNP             MP
+    Nauru                                                               NRU             XX
+    Palau                                                               PLW             PW
+    American Samoa                                                      ASM             AS
+    Cook Islands (the)                                                  COK             XX
+    Norfolk Island                                                      NFK             XX
+    Niue                                                                NIU             XX
+    Pitcairn Islands                                                    PCN             XX
+    French Polynesia                                                    PYF             XX
+    Tokelau Islands                                                     TKL             XX
+    Tonga                                                               TON             XX
+    Tuvalu                                                              TUV             XX
+    Samoa                                                               WSM             XX
+ Bouvet Island                                                          BVT             XX
+ French Southern Territories (the)                                      ATF             XX
+ Heard Island and McDonald Islands                                      HMD             XX
+ South Georgia and the South Sandwich Islands                           SGS             XX
+ Antarctica                                                             ATA             XX
+ Non-US/Canada NOS1                                                     ZZX             YY
+ Unknown1                                                               ZZU             ZZ
+
+1 Custom codes for both historic and future use
+
+
+
+
+                                           Appendix B3: Geographic Code List                      B-23
+                        SEER Program Coding and Staging Manual 2026
+
+                                   Appendix B4
+                          Custom Codes for Historic Use Only
+                   Name of Country/State                      ISO Country    USPS State
+                                                                 Code          Code
+Maritime Provinces (New Bruns, Newfound, Nova Scotia, PE)   CAN             MM
+Prairie Provinces (Alberta, Manitoba, Saskatchewan)         CAN             PP
+Northwest Territories, Yukon Territory                      CAN             YN
+New England and New Jersey                                  USA             NN
+Arabian Peninsula                                           XAP             YY
+Other Caribbean Islands                                     XCB             YY
+China, NOS                                                  XCH             YY
+Caucasian Republics of the USSR                             XCR             YY
+East Africa                                                 XEF             YY
+England, Channel Islands, Isle of Man                       XEN             XX
+Ethiopia (Abyssinia), Eritrea                               XET             YY
+Germanic Countries                                          XGR             YY
+African Coastal Islands (previously in South Africa, NOS)   XIF             YY
+Israel and former Jewish Palestine                          XIS             YY
+Micronesian Islands                                         XMC             YY
+Melanesian Islands, Solomon Islands                         XML             YY
+Malaysia, Singapore, Brunei Darussalam                      XMS             YY
+North Africa                                                XNF             YY
+North American Islands                                      XNI             YY
+Other Asian Republics of the USSR                           XOR             YY
+Polynesian Islands                                          XPL             YY
+Scandinavia                                                 XSC             YY
+Sudanese Countries                                          XSD             YY
+Southeast Asia                                              XSE             YY
+South Africa, NOS                                           XSF             YY
+Slavic Countries                                            XSL             YY
+Ukraine and Moldavia                                        XUM             YY
+West Africa, NOS (French Africa, NOS)                       XWF             YY
+
+
+
+
+                       Appendix B4: Custom Codes for Historic Use Only               B-24
+

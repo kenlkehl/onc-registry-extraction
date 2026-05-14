@@ -1,0 +1,70 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                           Surgery Codes
+
+                                                Skin
+                                             C440–C449
+
+The priority order for sources used to assign surgery codes is
+   • Operative report
+   • Statement from a physician
+   • Description of the surgical procedure on a pathology report
+   • Results of the pathology report
+
+Code based on the description of the procedure.
+
+Do not code based on margin status documented in the pathology report.
+
+Codes
+
+B000 None; no surgery of primary site; autopsy ONLY
+
+B100 Local tumor destruction, NOS
+     B110 Photodynamic therapy (PDT)
+     B120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+     B130 Cryosurgery
+     B140 Laser
+[SEER Note: No specimen sent to pathology from surgical events B100–B140.]
+
+B200 Local tumor excision, NOS; Excisional biopsy, NOS
+      B220 Shave biopsy, NOS
+      B230 Punch biopsy, NOS
+      B240 Elliptical biopsy (aka fusiform)
+Note: Elliptical/fusiform excisions are eye shape excisions around the circle outlining the amount
+of normal skin to take during the excision and are performed to allow for a better-looking scar.
+
+B300 Mohs surgery, NOS
+     B310 Mohs surgery performed on the same day (all Mohs procedures performed during the same
+          day)
+     B320 Mohs surgery performed on different days (slow Mohs)(each Mohs procedure performed on
+          different day)
+
+B500 Biopsy (NOS) of primary tumor followed by wide excision of the lesion; Wide Excision NOS,
+      Re-excision
+      B510 Incisional biopsy followed by wide excision
+      B520 Shave biopsy followed by wide excision
+      B530 Punch biopsy followed by wide excision
+      B540 Elliptical biopsy (aka fusiform) followed by wide excision
+Note: An incisional biopsy would be a needle or core biopsy of the primary tumor. An incisional biopsy
+would be coded as a Surgical Diagnostic and Staging Procedure (NAACCR #1350).
+
+B600 Major amputation
+
+
+
+                                      Appendix C: Surgery Codes                                          1
+                        SEER Program Coding and Staging Manual 2026
+
+
+[SEER Note: Specimen sent to pathology from surgical events B200-B600.]
+
+B900 Surgery, NOS
+
+B990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                  Appendix C: Surgery Codes               2
+

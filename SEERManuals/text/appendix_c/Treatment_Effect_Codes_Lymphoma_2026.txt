@@ -1,0 +1,38 @@
+                         SEER Program Coding and Staging Manual 2026
+
+
+           Site-Specific Codes for Neoadjuvant Therapy Treatment Effect
+
+ Schemas: Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary
+Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma
+             Cell Disorders, HemeRetic, Ill-Defined Other
+
+Neoadjuvant Therapy--Treatment Effect data item [NAACCR #1634] is related to the Neoadjuvant
+Therapy data item [NAACCR #1632]. This data item records the findings from the post neoadjuvant
+therapy surgical pathology report ONLY when surgery is performed after neoadjuvant therapy. This set
+of codes applies to the schemas: Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary
+Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders,
+HemeRetic, and Ill-Defined Other.
+
+Coding Instructions
+
+      1.    ALWAYS code to 0, no neoadjuvant therapy (not applicable), for the following schemas,
+            except for death certificate only cases (DCO) (see Coding Instruction #3 below)
+            a.    HemeRetic 00830
+            b.    Ill-Defined Other 99999
+            c.    Lymphoma (excluding CLL/SLL) 00790
+            d.    Lymphoma CLL/SLL 00795
+            e.    Mycosis Fungoides 00811
+            f.    Plasma Cell Disorders 00822
+            g.    Plasma Cell Myeloma 00821
+            h.    Primary Cutaneous Lymphoma (excluding MF and SS) 00812
+      2.    Assign the appropriate code using the set of Site-Specific Codes for Neoadjuvant Therapy--
+            Treatment Effect (Appendix C) that corresponds to the primary site when an organ is the
+            primary site for a lymphoma
+      3.    Assign code 9 for DCOs
+
+
+
+
+            Appendix C: Site-Specific Codes for Neoadjuvant Therapy Treatment Effect                     1
+

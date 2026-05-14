@@ -1,0 +1,55 @@
+                             SEER Program Coding and Staging Manual 2026
+
+
+                                            Coding Guidelines
+
+                                         Rectosigmoid Junction
+                                                 C199
+
+Primary Site
+
+A tumor is classified as rectosigmoid when differentiation between rectum and sigmoid is not possible.
+
+A tumor is classified as rectal when
+
+       •      Lower margin lies less than 16 cm from the anal verge or
+       •      Any part of the tumor is located at least partly within the supply of the superior rectal artery
+
+
+
+Anatomic Transition from Sigmoid to Rectum
+
+In the sigmoid colon, approximately 12 to 15 cm from the dentate line, the tenia coli fuse to form the
+circumferential longitudinal muscle of the rectal wall.
+
+The rectum is defined clinically as the distal large intestine commencing opposite the sacral promontory
+and ending at the anorectal ring, which corresponds to the proximal border of the puborectalis muscle
+palpable on digital rectal examination. It extends 16 cm from the anal verge. 1
+
+
+Glossary
+
+Anal verge: The lower (distal) end of the anal canal, junction between the skin of the anal canal and the
+perianal skin.
+
+Anorectal ring: Top (proximal end) of the anal canal.
+
+Dentate line: An anatomic landmark located between the anal verge and the anorectal ring indicating
+where the rectum changes to the anal canal. Also called the pectinate line.
+
+Tenia coli: (Plural: teniae coli). Any one of three longitudinal bands of smooth muscle in the colon. They
+extend from the cecum to the sigmoid colon. Each band is approximately 8 mm wide throughout most of
+the colon. The widths of the teniae increase in the sigmoid colon and eventually fuse into a covering of
+longitudinal muscle in the rectum.
+
+
+
+
+1 Wittekind C, Henson DE, Hutter RVP, Sobin LH, eds. TNM Supplement: A Commentary on Uniform Use. 2nd ed. New York,
+
+ NY: Wiley-Liss; 2001.
+
+
+
+                                       Appendix C: Coding Guidelines                                              1
+

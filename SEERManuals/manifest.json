@@ -1,0 +1,875 @@
+[
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Other_Schemas_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Other_Schemas_2026.txt",
+    "title": "All Other Schemas",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Other_Schemas_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Other_Sites_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Other_Sites_2026.txt",
+    "title": "All Other Sites - (C142-C148)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Other_Sites_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Anus_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Anus_2026.txt",
+    "title": "Anus - (C210-C218)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Anus_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Bladder_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Bladder_2026.txt",
+    "title": "Bladder",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Bladder_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Bladder_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Bladder_2026.txt",
+    "title": "Bladder - (C670-C679)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Bladder_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Bone_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Bone_2026.txt",
+    "title": "Bone Appendicular, Bone Pelvis, Bone Spine",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Bone_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Bones_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Bones_2026.txt",
+    "title": "Bones, Joints, and Articular Cartilage; Peripheral Nerves and Autonomic Nervous System; Connective, Subcutaneous, and Other Soft Tissues - (C400-C419)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Bones_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Brain_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Brain_2026.txt",
+    "title": "Brain - (C700-C709, C710-C719, C720-C729)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Brain_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Breast_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Breast_2026.txt",
+    "title": "Breast",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Breast_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Breast_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Breast_2026.txt",
+    "title": "Breast - (C500-C509)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Breast_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Cervix_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Cervix_2026.txt",
+    "title": "Cervix Uteri - (C530-C539)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Cervix_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Anus_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Anus_2026.txt",
+    "title": "Coding Guidelines: Anus",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Anus_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Bladder_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Bladder_2026.txt",
+    "title": "Coding Guidelines: Bladder",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Bladder_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Bones_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Bones_2026.txt",
+    "title": "Coding Guidelines: Bones, Joints, Cartilage",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Bones_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Brain_Benign_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Brain_Benign_2026.txt",
+    "title": "Coding Guidelines: Brain, Central Nervous System, Benign and Borderline",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Brain_Benign_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Brain_Malig_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Brain_Malig_2026.txt",
+    "title": "Coding Guidelines: Brain, Central Nervous System, Malignant",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Brain_Malig_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Breast_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Breast_2026.txt",
+    "title": "Coding Guidelines: Breast",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Breast_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Colon_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Colon_2026.txt",
+    "title": "Coding Guidelines: Colon",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Colon_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Esophagus_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Esophagus_2026.txt",
+    "title": "Coding Guidelines: Esophagus",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Esophagus_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_IntracranialGlands_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_IntracranialGlands_2026.txt",
+    "title": "Coding Guidelines: Intracranial Glands",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_IntracranialGlands_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Kaposi_Sarcoma_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Kaposi_Sarcoma_2026.txt",
+    "title": "Coding Guidelines: Kaposi Sarcoma of All Sites",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Kaposi_Sarcoma_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Kidney_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Kidney_2026.txt",
+    "title": "Coding Guidelines: Kidney",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Kidney_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Lung_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Lung_2026.txt",
+    "title": "Coding Guidelines: Lung",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Lung_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Lymphoma_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Lymphoma_2026.txt",
+    "title": "Coding Guidelines: Lymphoma",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Lymphoma_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Melanoma_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Melanoma_2026.txt",
+    "title": "Coding Guidelines: Melanoma",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Melanoma_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Pancreas_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Pancreas_2026.txt",
+    "title": "Coding Guidelines: Pancreas",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Pancreas_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Rectosigmoid_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Rectosigmoid_2026.txt",
+    "title": "Coding Guidelines: Rectosigmoid, Rectum",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Rectosigmoid_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Renal_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Renal_2026.txt",
+    "title": "Coding Guidelines: Renal Pelvis and Ureter",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Renal_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Thyroid_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Thyroid_2026.txt",
+    "title": "Coding Guidelines: Thyroid Gland",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Thyroid_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Tongue_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Tongue_2026.txt",
+    "title": "Coding Guidelines: Tongue",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Tongue_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Coding_Guidelines_Urethra_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Coding_Guidelines_Urethra_2026.txt",
+    "title": "Coding Guidelines: Urethra",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Coding_Guidelines_Urethra_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Colon_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Colon_2026.txt",
+    "title": "Colon - (C180-C189)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Colon_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Colon_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Colon_2026.txt",
+    "title": "Colon and Rectum, Esophagus, Stomach, Anus, Pancreas",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Colon_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Corpus_Uteri_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Corpus_Uteri_2026.txt",
+    "title": "Corpus Uteri - (C540-C559)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Corpus_Uteri_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Esophagus_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Esophagus_2026.txt",
+    "title": "Esophagus - (C150-C159)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Esophagus_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Hematopoietic_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Hematopoietic_2026.txt",
+    "title": "Hematopoietic/Reticuloendothelial/Immunoproliferative/Myeloproliferative Disease - (C420, C421, C423, C424)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Hematopoietic_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Kidney_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Kidney_2026.txt",
+    "title": "Kidney, Renal Pelvis, and Ureter - (C649, C659, C669)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Kidney_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Larynx_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Larynx_2026.txt",
+    "title": "Larynx - (C320-C329)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Larynx_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Liver_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Liver_2026.txt",
+    "title": "Liver and Intrahepatic Bile Ducts - (C220-C221)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Liver_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Lung_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Lung_2026.txt",
+    "title": "Lung",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Lung_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Lung_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Lung_2026.txt",
+    "title": "Lung - (C340-C349)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Lung_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Lymph_Nodes_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Lymph_Nodes_2026.txt",
+    "title": "Lymph Nodes - (C770-C779)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Lymph_Nodes_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Lymphoma_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Lymphoma_2026.txt",
+    "title": "Lymphoma, Lymphoma CLL/SLL, Mycosis Fungoides, Primary Cutaneous Lymphoma (excluding MF and SS), Plasma Cell Myeloma, Plasma Cell Disorders, HemeRetic, Ill-Defined Other",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Lymphoma_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Oral_Cavity_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Oral_Cavity_2026.txt",
+    "title": "Oral Cavity - (C000-C009, C019, C020-C029, C030-C039, C040-C049, C050-C059, C060-C069)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Oral_Cavity_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Ovary_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Ovary_2026.txt",
+    "title": "Ovary (C569)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Ovary_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Ovary_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Ovary_2026.txt",
+    "title": "Ovary, Fallopian Tube, Primary Peritoneal Carcinoma",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Ovary_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Pancreas_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Pancreas_2026.txt",
+    "title": "Pancreas - (C250-C259)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Pancreas_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Parotid_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Parotid_2026.txt",
+    "title": "Parotid and Other Unspecified Glands - (C079, C080-C089)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Parotid_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Pharynx_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Pharynx_2026.txt",
+    "title": "Pharynx - (C090-C099, C100-C109, C110-C119, C129, C130-C139, C140)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Pharynx_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Pleural_Mesothelioma_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Pleural_Mesothelioma_2026.txt",
+    "title": "Pleural Mesothelioma",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Pleural_Mesothelioma_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Prostate_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Prostate_2026.txt",
+    "title": "Prostate",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Prostate_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Prostate_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Prostate_2026.txt",
+    "title": "Prostate - (C619)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Prostate_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Rectosigmoid_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Rectosigmoid_2026.txt",
+    "title": "Rectosigmoid - (C199)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Rectosigmoid_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Rectum_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Rectum_2026.txt",
+    "title": "Rectum - (C209)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Rectum_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Skin_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Skin_2026.txt",
+    "title": "Skin - (C440-C449)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Skin_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Spleen_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Spleen_2026.txt",
+    "title": "Spleen - (C422)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Spleen_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Stomach_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Stomach_2026.txt",
+    "title": "Stomach - (C160-C169)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Stomach_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Testis_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Testis_2026.txt",
+    "title": "Testis - (C620-C629)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Testis_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Treatment_Effect_Codes_Thymus_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Treatment_Effect_Codes_Thymus_2026.txt",
+    "title": "Thymus, Heart and Mediastinum, Retroperitoneum, Soft Tissue Abdomen and Thoracic, Soft Tissue Head and Neck, Soft Tissue Other, Soft Tissue Trunk and Extremities, GIST",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Treatment_Effect_Codes_Thymus_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Thyroid_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Thyroid_2026.txt",
+    "title": "Thyroid Gland - (C739)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Thyroid_2026.pdf"
+  },
+  {
+    "category": "appendix_c",
+    "local_path": "appendix_c/Surgery_Codes_Unknown_2026.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/appendix_c/Surgery_Codes_Unknown_2026.txt",
+    "title": "Unknown and Ill-Defined Primary Sites - (C760-C768, C809)",
+    "url": "https://seer.cancer.gov/manuals/2026/AppendixC/Surgery_Codes_Unknown_2026.pdf"
+  },
+  {
+    "category": "hematopoietic",
+    "local_path": "hematopoietic/Hematopoietic_Instructions_and_Rules.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/hematopoietic/Hematopoietic_Instructions_and_Rules.txt",
+    "title": "Hematopoietic and Lymphoid Neoplasm Coding Manual",
+    "url": "https://seer.cancer.gov/tools/heme/Hematopoietic_Instructions_and_Rules.pdf"
+  },
+  {
+    "category": "seer_coding_manual",
+    "local_path": "seer_coding_manual/SPSCM_2026_Appendix_A.pdf",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "text/seer_coding_manual/SPSCM_2026_Appendix_A.txt",
+    "title": "Appendix A - County Codes",
+    "url": "https://seer.cancer.gov/manuals/2026/SPSCM_2026_Appendix_A.pdf"
+  },
+  {
+    "category": "seer_coding_manual",
+    "local_path": "seer_coding_manual/SPCSM_2026_Appendix_B.pdf",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "text/seer_coding_manual/SPCSM_2026_Appendix_B.txt",
+    "title": "Appendix B - Country and State Codes",
+    "url": "https://seer.cancer.gov/manuals/2026/SPCSM_2026_Appendix_B.pdf"
+  },
+  {
+    "category": "seer_coding_manual",
+    "local_path": "seer_coding_manual/SPCSM_2026_Appendix_D.pdf",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "text/seer_coding_manual/SPCSM_2026_Appendix_D.txt",
+    "title": "Appendix D - Race and Nationality Descriptions",
+    "url": "https://seer.cancer.gov/manuals/2026/SPCSM_2026_Appendix_D.pdf"
+  },
+  {
+    "category": "seer_coding_manual",
+    "local_path": "seer_coding_manual/SPCSM_2026_Appendix_E.xlsx",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "",
+    "title": "Excel",
+    "url": "https://seer.cancer.gov/manuals/2026/SPCSM_2026_Appendix_E.xlsx"
+  },
+  {
+    "category": "seer_coding_manual",
+    "local_path": "seer_coding_manual/SPCSM_2026_Appendix_E.pdf",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "text/seer_coding_manual/SPCSM_2026_Appendix_E.txt",
+    "title": "PDF",
+    "url": "https://seer.cancer.gov/manuals/2026/SPCSM_2026_Appendix_E.pdf"
+  },
+  {
+    "category": "seer_coding_manual",
+    "local_path": "seer_coding_manual/SPCSM_2026_MainDoc.pdf",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "text/seer_coding_manual/SPCSM_2026_MainDoc.txt",
+    "title": "SEER Program Coding and Staging Manual 2026",
+    "url": "https://seer.cancer.gov/manuals/2026/SPCSM_2026_MainDoc.pdf"
+  },
+  {
+    "category": "seer_coding_manual",
+    "local_path": "seer_coding_manual/SPCSM_2026_Changelog.pdf",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "text/seer_coding_manual/SPCSM_2026_Changelog.txt",
+    "title": "Summary of Changes (September 2025)",
+    "url": "https://seer.cancer.gov/manuals/2026/SPCSM_2026_Changelog.pdf"
+  },
+  {
+    "category": "solid_tumor_rules",
+    "local_path": "solid_tumor_rules/STM_Combined.pdf",
+    "source_pages": [
+      "seer_appendix_c_2026",
+      "seer_solid_tumor_rules"
+    ],
+    "text_path": "text/solid_tumor_rules/STM_Combined.txt",
+    "title": "Solid Tumor Rules: Head and Neck",
+    "url": "https://seer.cancer.gov/tools/solidtumor/current/STM_Combined.pdf"
+  },
+  {
+    "category": "source_page",
+    "local_path": "source_pages/naaccr_ssdi_grade.html",
+    "source_pages": [
+      "naaccr_ssdi_grade"
+    ],
+    "text_path": "text/source_pages/naaccr_ssdi_grade.txt",
+    "title": "Naaccr Ssdi Grade",
+    "url": "https://apps.naaccr.org/ssdi/list/"
+  },
+  {
+    "category": "source_page",
+    "local_path": "source_pages/seer_appendix_c_2026.html",
+    "source_pages": [
+      "seer_appendix_c_2026"
+    ],
+    "text_path": "text/source_pages/seer_appendix_c_2026.txt",
+    "title": "Seer Appendix C 2026",
+    "url": "https://seer.cancer.gov/manuals/2026/appendixc.html"
+  },
+  {
+    "category": "source_page",
+    "local_path": "source_pages/seer_coding_manuals.html",
+    "source_pages": [
+      "seer_coding_manuals"
+    ],
+    "text_path": "text/source_pages/seer_coding_manuals.txt",
+    "title": "Seer Coding Manuals",
+    "url": "https://seer.cancer.gov/tools/codingmanuals/index.html"
+  },
+  {
+    "category": "source_page",
+    "local_path": "source_pages/seer_eod.html",
+    "source_pages": [
+      "seer_eod"
+    ],
+    "text_path": "text/source_pages/seer_eod.txt",
+    "title": "Seer Eod",
+    "url": "https://seer.cancer.gov/tools/staging/eod/"
+  },
+  {
+    "category": "source_page",
+    "local_path": "source_pages/seer_eod_manuals.html",
+    "source_pages": [
+      "seer_eod_manuals"
+    ],
+    "text_path": "text/source_pages/seer_eod_manuals.txt",
+    "title": "Seer Eod Manuals",
+    "url": "https://staging.seer.cancer.gov/eod_public/manuals/3.3/"
+  },
+  {
+    "category": "source_page",
+    "local_path": "source_pages/seer_solid_tumor_rules.html",
+    "source_pages": [
+      "seer_solid_tumor_rules"
+    ],
+    "text_path": "text/source_pages/seer_solid_tumor_rules.txt",
+    "title": "Seer Solid Tumor Rules",
+    "url": "https://seer.cancer.gov/tools/solidtumor/"
+  },
+  {
+    "category": "source_page",
+    "local_path": "source_pages/seer_summary_stage.html",
+    "source_pages": [
+      "seer_summary_stage"
+    ],
+    "text_path": "text/source_pages/seer_summary_stage.txt",
+    "title": "Seer Summary Stage",
+    "url": "https://seer.cancer.gov/tools/ssm/"
+  },
+  {
+    "category": "ssdi_grade",
+    "local_path": "ssdi_grade/Version-3.3-Changes-for-SSDI-and-Grade_printed.pdf",
+    "source_pages": [
+      "naaccr_ssdi_grade"
+    ],
+    "text_path": "text/ssdi_grade/Version-3.3-Changes-for-SSDI-and-Grade_printed.txt",
+    "title": "Change Log",
+    "url": "https://www.naaccr.org/wp-content/uploads/2025/12/Version-3.3-Changes-for-SSDI-and-Grade_printed.pdf?v=1778767317"
+  },
+  {
+    "category": "ssdi_grade",
+    "local_path": "ssdi_grade/Version-3.3.Grade-Manual.pdf",
+    "source_pages": [
+      "naaccr_ssdi_grade"
+    ],
+    "text_path": "text/ssdi_grade/Version-3.3.Grade-Manual.txt",
+    "title": "Grade Manual",
+    "url": "https://www.naaccr.org/wp-content/uploads/2025/12/Version-3.3.Grade-Manual.pdf?v=1778767317"
+  },
+  {
+    "category": "ssdi_grade",
+    "local_path": "ssdi_grade/SSDI-Manual-v3.3_printed.pdf",
+    "source_pages": [
+      "naaccr_ssdi_grade"
+    ],
+    "text_path": "text/ssdi_grade/SSDI-Manual-v3.3_printed.txt",
+    "title": "SSDI Manual",
+    "url": "https://www.naaccr.org/wp-content/uploads/2025/12/SSDI-Manual-v3.3_printed.pdf?v=1778767317"
+  },
+  {
+    "category": "ssdi_grade",
+    "local_path": "ssdi_grade/Version-3.3.SSDI-Manual.Appendix-A_printed.pdf",
+    "source_pages": [
+      "naaccr_ssdi_grade"
+    ],
+    "text_path": "text/ssdi_grade/Version-3.3.SSDI-Manual.Appendix-A_printed.txt",
+    "title": "SSDI Manual Appendix A",
+    "url": "https://www.naaccr.org/wp-content/uploads/2026/01/Version-3.3.SSDI-Manual.Appendix-A_printed.pdf?v=1778767317"
+  },
+  {
+    "category": "ssdi_grade",
+    "local_path": "ssdi_grade/Version-3.3-SSDI-Manual.Appendices-B.xlsx",
+    "source_pages": [
+      "naaccr_ssdi_grade"
+    ],
+    "text_path": "",
+    "title": "SSDI Manual Appendix B",
+    "url": "https://www.naaccr.org/wp-content/uploads/2025/12/Version-3.3-SSDI-Manual.Appendices-B.xlsx?v=1778767317"
+  },
+  {
+    "category": "ssdi_grade",
+    "local_path": "ssdi_grade/Appendix-C_printed.pdf",
+    "source_pages": [
+      "naaccr_ssdi_grade"
+    ],
+    "text_path": "text/ssdi_grade/Appendix-C_printed.txt",
+    "title": "SSDI Manual Appendix C",
+    "url": "https://www.naaccr.org/wp-content/uploads/2025/12/Appendix-C_printed.pdf?v=1778767317"
+  },
+  {
+    "category": "staging",
+    "local_path": "staging/EOD.General_20Instructions.Version3.3.pdf",
+    "source_pages": [
+      "explicit",
+      "seer_eod"
+    ],
+    "text_path": "text/staging/EOD.General_20Instructions.Version3.3.txt",
+    "title": "EOD 2018 General Instructions",
+    "url": "https://seer.cancer.gov/tools/staging/eod/EOD.General%20Instructions.Version3.3.pdf"
+  },
+  {
+    "category": "staging",
+    "local_path": "staging/Version-3.3-Changes-for-EOD-and-Summary-Stage.pdf",
+    "source_pages": [
+      "seer_eod"
+    ],
+    "text_path": "text/staging/Version-3.3-Changes-for-EOD-and-Summary-Stage.txt",
+    "title": "EOD Change log (version 3.2 to version 3.3)",
+    "url": "https://seer.cancer.gov/tools/staging/eod/Version-3.3-Changes-for-EOD-and-Summary-Stage.pdf"
+  },
+  {
+    "category": "staging",
+    "local_path": "staging/EOD_consolidation_manual_v3.3.pdf",
+    "source_pages": [
+      "explicit",
+      "seer_eod"
+    ],
+    "text_path": "text/staging/EOD_consolidation_manual_v3.3.txt",
+    "title": "EOD Consolidation Manual v3.3",
+    "url": "https://seer.cancer.gov/tools/staging/eod/EOD_consolidation_manual_v3.3.pdf"
+  },
+  {
+    "category": "staging",
+    "local_path": "staging/Summary-Stage_v3.3.pdf",
+    "source_pages": [
+      "explicit"
+    ],
+    "text_path": "text/staging/Summary-Stage_v3.3.txt",
+    "title": "Summary Stage 2018 Manual v3.3",
+    "url": "https://seer.cancer.gov/tools/ssm/Summary-Stage_v3.3.pdf"
+  }
+]

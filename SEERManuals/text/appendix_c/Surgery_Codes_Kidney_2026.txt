@@ -1,0 +1,70 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                           Surgery Codes
+
+                           Kidney, Renal Pelvis, and Ureter
+                      Kidney C649, Renal Pelvis C659, Ureter C669
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A100 Local tumor destruction, NOS
+     A110 Photodynamic therapy (PDT)
+     A120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+     A130 Cryosurgery
+     A140 Laser
+     A150 Thermal ablation
+No specimen sent to pathology from this surgical event A100–A150
+
+A200 Local tumor excision, NOS
+     A260 Polypectomy
+     A270 Excisional biopsy
+
+      Any combination of A200, A260, or A270 WITH
+           A210 Photodynamic therapy (PDT)
+           A220 Electrocautery
+           A230 Cryosurgery
+           A240 Laser ablation
+      A250 Laser excision
+
+A300 Partial or subtotal nephrectomy (kidney or renal pelvis) or partial ureterectomy (ureter)
+     Procedures coded A300 include, but are not limited to:
+            Segmental resection
+            Wedge resection
+
+A400 Complete/total/simple nephrectomy—for kidney parenchyma
+     Nephroureterectomy
+     Includes bladder cuff for renal pelvis or ureter
+
+A500 Radical nephrectomy
+     May include removal of a portion of vena cava, adrenal gland(s), Gerota’s fascia, perinephric
+     fat, or partial/total ureter
+
+A700 Any nephrectomy (simple, subtotal, complete, partial, total, radical) in continuity with the resection
+     of other organ(s) (colon, bladder)
+     The other organs, such as colon or bladder, may be partially or totally removed
+     [SEER Note: “In continuity with” or “en bloc” means that all of the tissues were removed during
+     the same procedure, but not necessarily in a single specimen.]
+
+A800 Nephrectomy, NOS
+     Ureterectomy, NOS
+
+
+
+                                      Appendix C: Surgery Codes                                          1
+                        SEER Program Coding and Staging Manual 2026
+
+
+Specimen sent to pathology from surgical events A200-A800
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                  Appendix C: Surgery Codes           2
+

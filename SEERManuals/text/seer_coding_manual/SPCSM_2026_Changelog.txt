@@ -1,0 +1,411 @@
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+
+ Page    Section          Data Item        Change             Notes/Comments
+ Cover   Cover page                                           Updated cover information.
+
+
+ 9       Preface          Summary of       Listing of major   Revised the section with the list of major changes including additions, deletions, and
+                          Changes          changes            modifications made to the 2026 manual and appendices. See manual.
+                                           updated
+ 10      Preface          2026 Changes     Listing of         Revised the list of 2026 cancer coding and staging changes made to the SEER manual.
+                                           additional 2026    See manual.
+                                           changes
+                                           updated
+ 13      Reportability    Reportable       Item 1.a.vi        Added text to an existing bullet:
+                          Diagnosis List   revised            Conjunctival intraepithelial neoplasia with severe dysplasia, Grade III, squamous
+                                                              intraepithelial neoplasia Grade II of conjunctiva, or conjunctival intraepithelial lesion
+                                                              (C-MIL).
+ 23      Changing                          Dates in           Updated the dates in the example under #4.
+         Information                       example revised
+         on the
+         Abstract
+ 24      Determining      Hematopoietic    Text revised       Updates were made to the Hematopoietic and Lymphoid Neoplasm Coding Manual and
+         Multiple         and Lymphoid                        Database for 2026 cases.
+         Primaries        Neoplasms
+         Section I:       Record Type      Data item          Removed the data item, Record Type.
+         Basic Record                      deleted
+         Identification
+ 30      Section I:       NAACCR Record    Code and           Added code 260 and description, 2026 Version 26.
+         Basic Record     Version          description
+         Identification                    added
+
+
+
+                                                                                                                                                      1
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section        Data Item         Change            Notes/Comments
+ 32      Section II:    Type of           Definition        Revised the definition of stand-alone medical record:
+         Information    Reporting         revised           An independent health care facility’s record where the facility is not a part of a hospital
+         Source         Source                              or managed care system
+ 34      Section II:    Type of           Example           Moved the example under the code table to the section, Priority Order for Assigning
+         Information    Reporting         relocated         Type of Reporting Source as Example 1; the existing example was numbered as
+         Source         Source                              Example 2.
+ 40      Section III:   Birth Surname     Coding            Revised Coding Instruction 2 to reflect the new data item name:
+         Demographic                      Instruction 2     Record when known regardless of value in the Sex Assigned at Birth data item
+         Information                      revised
+ 61      Section III:   Census Tract      Text edited       Revised the first sentence:
+         Demographic    2010                                Census Tract 2010 is a derived variable.
+         Information
+ 62      Section III:   Census Tract      NAACCR Item #     Corrected the NAACCR Item # to 125.
+         Demographic    2020              revised
+         Information
+         Section III:   Sex               Data Item         Deleted Sex data item from the manual.
+         Demographic                      deleted
+         Information
+ 90      Section III:   Sex Assigned at   Data Item added   Added Sex Assigned at Birth data item to the manual. See manual.
+         Demographic    Birth
+         Information
+ 99      Section IV:    Date of           Coding            Updated dates in the examples used in several Coding Instructions. See manual.
+         Description    Diagnosis         Instructions
+         of this                          examples--dates
+         Neoplasm                         revised
+ 101     Section IV:    Date of           Cases Diagnosed   Updated dates in the example.
+         Description    Diagnosis         Before Birth
+         of this                          examples--dates
+         Neoplasm                         revised
+
+
+
+
+                                                                                                                                                   2
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section       Data Item         Change            Notes/Comments
+ 105     Section IV:   Sequence          Coding            Non-Malignant Coding Instruction 6: Updated the date in the example.
+         Description   Number--          Instruction 6
+         of this       Central           examples--date
+         Neoplasm                        revised
+ 109     Section IV:   Primary Site      Coding            Revised Coding Instruction 15:
+         Description                     Instruction for   When the choice is between ovary, fallopian tube, or primary peritoneal without
+         of this                         Solid Tumors 15   designation of the site of origin, any indication of fallopian tube involvement indicates
+         Neoplasm                        revised           the primary tumor is a tubal primary. Fallopian tube primary carcinomas can be
+                                                           confirmed by reviewing the fallopian tube sections as described on the pathology
+                                                           report to document the presence of either serous tubal intraepithelial carcinoma (STIC)
+                                                           and/or tubal mucosal high-grade serous carcinoma (HGSC). In the absence of fallopian
+                                                           tube involvement, refer to the histology and look at the treatment plans for the
+                                                           patient. If all else fails, assign C579 as a last resort. For additional information, see the
+                                                           CAP Gynecologic protocol, Ovary, Fallopian Tube, or Peritoneum, Table 1: Criteria for
+                                                           Assignment of Primary Site in High-Grade Serous Carcinoma (HGSC).
+ 113     Section IV:   Laterality        Coding            Revised Coding Instruction 2:
+         Description                     Instruction 2     Code Laterality using codes 1-5, 9 for all sites listed in the table: Sites for Which
+         of this                         revised           Laterality Codes Must Be Recorded
+         Neoplasm
+ 119     Section IV:   Histologic Type   ICD-O-3.2         The 2026 ICD-O-3.2 Update Guidelines provides the changes to ICD-O-3.2 including
+         Description   ICD-O-3           Update section    new terminology and reportability changes effective for cases diagnosed 01/01/2026
+         of this                         updated           forward.
+         Neoplasm
+                                                           Standard setters have agreed to implement new histology terms and codes for ICD-O-3
+                                                           based on the current versions of the World Health Organization Classification of
+                                                           Tumors. The update, referred to as ICD-O-3.2, includes comprehensive tables listing
+                                                           histology codes and behavior codes in effect beginning with cases diagnosed in 2021,
+                                                           or as designated. The new codes, new terms, and codes with changes to behavior are
+                                                           available at the NAACCR website.
+
+
+
+
+                                                                                                                                                    3
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section         Data Item         Change            Notes/Comments
+ 120     Section IV:     Histologic Type   Histology         Sentence deleted:
+         Description     ICD-O-3           Coding for        See also the NAACCR 2015 Implementation Guidelines and Recommendations: The
+         of this                           Hematopoietic     Hematopoietic Conversion Documentation.
+         Neoplasm                          and Lymphatic
+                                           Primaries
+                                           section updated
+ 124     Section IV:     Cancer            Section revised   Updated information in this section. See manual.
+         Description     PathCHART Site
+         of this         - Morphology
+         Neoplasm        Combination
+                         Standards
+ 135     Section IV:     Tumor Size        Coding            Deleted from Coding Instruction 14.a.ii HemeRetic 00830:
+         Description     Summary           Instruction       Excluding Spleen (C422)
+         of this                           14.a.ii revised
+         Neoplasm
+ 136     Section IV:     Tumor Size        Schema IDs        Revised schema names and/or IDs in Table. Schemas for which Tumor Size Affects
+         Description     Summary           updated           Staging:
+         of this                                              Anus 0921
+         Neoplasm                                             Cervix V9 09520
+                                                              Lung V9 09360
+                                                              Major Salivary Glands V9 09081
+                                                              NET Appendix V9 09320
+                                                              NET Colon and Rectum V9 09330
+                                                              NET Pancreas V9 09340
+                                                              NET Stomach V9 09290
+                                                              Oropharynx HPV-Associated V9 09100
+                                                              Oropharynx HPV-Independent 00111
+                                                              Vulva V9 09500
+ 148     Section VI:     Lymphovascular    Coding            Added language to Coding Instruction 5:
+         Stage-related   Invasion          Instruction 5     Code as present/identified when lymphovascular invasion is identified in any primary
+         Data Items                        revised           tumor specimen except as noted in Coding Instruction 2
+
+
+
+
+                                                                                                                                                4
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section         Data Item           Change               Notes/Comments
+ 149     Section VI:     Lymphovascular      Coding               Corrected schema name in Coding Instruction 9.a:
+         Stage-related   Invasion            Instruction 9.a      Plasma Cell Disorders 00822
+         Data Items                          revised
+ 164     Section VI:     SEER Site-          Introductory         Revised schemas in the introductory bullet list:
+         Stage-related   specific Factor 1   text revised         Oropharynx HPV-Associated (2018-2025): C019, C024, C051-C052, C090-C091, C098-
+         Data Items                                               C099, C100, C102-C104, C108-C109, C111
+                                                                      o Primary site C111 for 2018-2024 only
+                                                                  Oropharynx HPV-Associated (2026): C019, C024, C051-C052, C090-C091, C098-C099,
+                                                                  C100, C102-C104, C108-C109
+                                                                  Oropharynx HPV-Independent: C019, C024, C051-C052, C090-C091, C098-C099, C100,
+                                                                  C102-C104, C108-C109, C111
+                                                                      o Primary site C111 for 2018-2024 only
+
+                                                                  Moved text below the list to the introductory paragraph.
+ 165     Section VI:     SEER Site-          Coding               Revised the following:
+         Stage-related   specific Factor 1   Instructions 4, 5,   Coding Instruction 4:
+         Data Items                          and 6 revised        Codes 10-51 are hierarchical; use the highest code that applies (10 is lowest, 51 is
+                                                                  highest). (Note removed also)
+
+                                                                  Coding Instruction 5:
+                                                                  For cases in the Oropharynx HPV-Associated schema
+
+                                                                  Coding Instruction 6
+                                                                  For cases in the Oropharynx HPV-Independent schema
+ 166     Section VI:     Additional          Section updated      Revised introductory paragraphs.
+         Stage-related   Stage-related       including            Removed Tables formerly 1-7. See manual.
+         Data Items      Data                removed tables       Added:
+                         Items/SSDIs                              Table 1: Site-specific Data Items Implemented in 2026
+                                                                   Spread Through Air Spaces (STAS) Lung, 1176
+                                                                   Residual Cancer Burden (RCB) Breast, 1178
+                                                                   Residual Cancer Burden (RCB) Class Breast, 1179
+                                                                   Microsatellite Instability (MSI), Corpus Uteri Carcinoma and Carcinosarcoma, 3890
+
+
+
+                                                                                                                                                         5
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section         Data Item          Change            Notes/Comments
+ 166     Section VI:     Additional         Section updated   Table 2: Schemas Added and Modified for 2026
+         Stage-related   Stage-related      including         Added:
+         Data Items      Data               removed tables     Oropharynx HPV-Associated [V9: 2026+]
+                         Items/SSDIs        (Continued)        Major Salivary Glands [V9: 2026+]
+                                                              Modified:
+                                                               Oropharynx HPV-Associated [8th: 2018-2025] (renamed)
+                                                               Oropharynx HPV-Independent (renamed)
+                                                               Nasopharynx [V9: 2025+] (see Note)
+                                                              Note: C111 was removed from Schema Discriminator 1 [3926] for
+                                                              Nasopharynx/Pharyngeal Tonsil; C111 is included in Nasopharynx [V9: 2025+]
+                                                              retroactive to 2025.
+
+                                                              Deleted former Table 8: Additional Site-specific Data Items Required for Transmission
+                                                              (See NAACCR Vol II Required Status Table for more information.)
+ 174     Section VII:    Date Therapy       Coding            See manual.
+         First Course    Initiated          Instruction 4
+         of Therapy                         dates in
+                                            example revised
+ 174     Section VII:    Date Therapy       Coding            Added text to Coding Instruction 5:
+         First Course    Initiated          Instruction 5     Code the date unproven therapy (cancer treatments administered by nonmedical
+         of Therapy                         revised           personnel) was initiated as the date therapy initiated
+ 177     Section VII:    Date of Most       Text revised      Revised first introductory paragraph:
+         First Course    Definitive                           Date of Most Definitive Surgical Resection of the Primary Site, effective 01/01/2018,
+         of Therapy      Surgical                             captures the date of the most definitive (most invasive) surgical procedure of the
+                         Resection of the                     primary site performed as part of the first course of therapy.
+                         Primary Site
+ 179     Section VII:    Surgery of         Coding            Revised Coding Instruction 12:
+         First Course    Primary Site       Instruction 12    Code A980 for the following primary sites unless the case is death certificate only (see
+         of Therapy      2023               example revised   #13 and #14 below)
+ 182     Section VII:    Breast             Coding            Added text to Coding Instruction 5:
+         First Course    Reconstruction     Instruction 5     Do not record reconstruction performed on a different day than the breast primary
+         of Therapy                         revised           definitive (most invasive) resection
+
+
+
+
+                                                                                                                                                      6
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section        Data Item        Change            Notes/Comments
+ 194     Section VII:   Regional Nodes   Coding            Revised Coding Instruction 3, second sentence, codes that are not allowed:
+         First Course   Positive         Instruction 3     True in situ cases cannot have positive lymph nodes, so the only allowable codes are 00
+         of Therapy                      revised           (negative) or 98 (not examined). Codes 01-90, 95, 97, and 99 are not allowed.
+ 200     Section VII:   Surgical         Text revised      Added a sentence to the introductory paragraph:
+         First Course   Procedure of                       This data item is useful in evaluating the extent of metastatic involvement and in
+         of Therapy     Other Site                         documenting whether surgery was performed for tumors having unknown or ill-
+                                                           defined primary sites or hematolymphoid malignancies.
+ 204     Section VII:   Reason for No    Coding            Revised the note in Coding Instruction 3.e:
+         First Course   Surgery of       Instruction 3.e   Note: Cases coded 8 should be followed and updated to a more specific code as
+         of Therapy     Primary Site     note revised      appropriate.
+ 212     Section VII:   Reason for No    Coding            Updated the note in Coding Instruction 4:
+         First Course   Radiation        Instruction 4     Note: Cases coded 8 should be followed and updated to a more specific code as
+         of Therapy                      note revised      appropriate.
+
+ 216     Section VII:   Chemotherapy     Dates in          Updated dates in Example 1 following the note under Important update effective for
+         First Course                    Example 1         diagnosis date January 1, 2013 forward. See manual.
+         of Therapy                      updated
+ 216     Section VII:   Chemotherapy     Coding            Updated Coding Instruction 2 including 2.a – c and added an example:
+         First Course                    Instruction 2     2.      The physician may change a chemotherapy agent or one of the agents in a
+         of Therapy                      revised;          combination regimen, to an agent belonging to a different subcategory
+                                         example added     (chemotherapeutic agents are grouped as alkylating agents, antimetabolites, natural
+                                                           products, or other miscellaneous) due to reasons other than disease progression (e.g.,
+                                                           patient cannot tolerate the original agent)
+                                                           a.      This is a continuation of the first course of therapy and does not automatically
+                                                           represent subsequent therapy
+                                                           b.      Use SEER*Rx to determine whether the drugs used are classified as
+                                                           chemotherapeutic agents
+
+
+
+
+                                                                                                                                                7
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section        Data Item        Change            Notes/Comments
+ 216     Section VII:   Chemotherapy     Coding            c.      Code a chemotherapeutic agent listed in SEER*Rx as Chemotherapy regardless
+         First Course                    Instruction 2     of the primary site(s) listed in SEER*Rx for that agent. Use SEER*Rx to determine
+         of Therapy                      revised;          whether the drugs used are classified as chemotherapeutic agents.
+                                         example added     Example: Patient is diagnosed with a sarcoma. Neoadjuvant chemotherapy is
+                                         (Continued)       administered (Alectinib). Alectinib is listed in SEER*Rx as a chemotherapeutic agent for
+                                                           Lung and Lymphoma. Code the chemotherapeutic agent under Chemotherapy
+                                                           [NAACCR #1390] regardless of the primary site(s) listed for that agent in SEER*Rx.
+ 219     Section VII:   Chemotherapy     Chemotherapeu     Deleted a bullet under Chemotherapeutic Agents, Natural Products:
+         First Course                    tic Agents        Taxanes: paclitaxel and docetaxel
+         of Therapy                      edited
+ 220     Section VII:   Chemotherapy     Coding            Added a coding instruction under Coding for Tumor Embolization:
+         First Course                    Instruction       A drug administered to a patient for treatment, listed in SEER*Rx as a
+         of Therapy                      added             chemotherapeutic agent should be coded as chemotherapy regardless of primary sites
+                                                           listed in SEER*Rx for that agent. Do not code under Other Therapy [NAACCR #1420].
+ 222     Section VII:   Hormone          Coding            Added Coding Instruction 1:
+         First Course   Therapy          Instruction 1     Refer to SEER*Rx to determine whether the drugs used are classified as hormonal
+         of Therapy                      added             agents. A drug administered to a patient for treatment, listed in SEER*Rx as a
+                                                           hormonal agent should be coded as hormone therapy regardless of the primary site(s)
+                                                           listed in SEER*Rx for that agent. Do not code under the data item, Other Therapy
+                                                           [NAACCR #1420].
+ 222     Section VII:   Hormone          Coding            Removed Coding Instruction 2.a (formerly 1.a):
+         First Course   Therapy          Instruction 2.a   Check SEER*Rx to determine if a hormone agent is part of a combination
+         of Therapy                      deleted           chemotherapy regimen
+ 227     Section VII:   Immunotherapy    Dates in          Updated dates in Example 1 following the note under Important update effective for
+         First Course                    example           diagnosis date January 1, 2013 forward. See manual.
+         of Therapy                      updated
+ 228     Section VII:   Immunotherapy    Coding            Added Coding Instruction 1:
+         First Course                    Instruction 1     Refer to SEER*Rx to determine whether the drugs used are classified as
+         of Therapy                      added             immunotherapeutic agents. A drug administered to a patient for treatment, listed in
+                                                           SEER*Rx as an immunotherapeutic agent should be coded as immunotherapy
+                                                           regardless of the primary site(s) listed in SEER*Rx for that agent. Do not code under
+                                                           Other Therapy [NAACCR #1420].
+
+
+
+                                                                                                                                                8
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section         Data Item        Change           Notes/Comments
+ 235     Section VII:    Neoadjuvant      Definition       Surgical resection: For purposes of this data item, surgical resection is defined as the
+         First Course    Therapy          revised          most definitive (most invasive) surgical procedure that removes some or all of the
+         of Therapy                                        primary tumor or site. For many sites, this would be Surgical Codes A300-A800 or
+                                                           B300-B800; however, there are some sites where surgical codes less than A300 or B300
+                                                           could be used, for example, code B290 for Breast (central lumpectomy).
+ 243     Section VII:    Neoadjuvant      Definition       Surgical resection: For purposes of this data item, surgical resection is defined as the
+         First Course    Therapy--        revised          most definitive (most invasive) surgical procedure that removes some or all of the
+         of Therapy      Treatment                         primary tumor or site. For many sites, this would be Surgical Codes A300-A800 or
+                         Effect                            B300-B800; however, there are some sites where surgical codes less than A300 or B300
+                                                           could be used, for example, code B290 for Breast (central lumpectomy).
+ 247     Section VII:    Other Therapy    Coding           Added note to Coding Instruction 2:
+         First Course                     Instruction 2,   Do not code Other Therapy [#1420] when a chemotherapeutic agent listed in SEER*Rx
+         of Therapy                       Note added       was administered to a patient for treatment but not for the primary site listed for that
+                                                           agent in SEER*Rx. Code treatment as Chemotherapy [#1390]."
+ 253     Section VIII:   Cancer Status    Coding           Updated Coding Instruction 2:
+         Follow Up                        Instruction 2    Assign code 2 when there is an indication of this tumor, for example, patient died or is
+                                          revised          continuing active treatment for this tumor
+ 253     Section VIII:   Cancer Status    Coding           Added Coding Instruction 3:
+         Follow Up                        Instruction 3    Use information from an official source such as a health care provider, the patient’s
+                                          and examples     physician, or other information such as a death certificate
+                                          added            Example 1: Margin status along with additional information that determine cancer
+                                                           status.
+                                                           Example 2: Stage and outcome of neoadjuvant or other therapy.
+ 280     Section IX:     Over-ride Flag    Item Name       Revised data item name:
+         Administrativ   for Name/Sex      changed         Over-ride Flag for Name/Sex Assigned at Birth
+         e Codes         Assigned at Birth
+         Appendix A      County Codes     References       Updated references and dates references accessed.
+                                          information
+                                          updated
+         Appendix B      Country and      Edits made       Edited references and updated dates references accessed.
+                         State Codes                       Corrected USPS State Code for Saint Lucia in Appendix B1: Alphabetic Code List by
+                                                           Country/State.
+
+
+
+                                                                                                                                                   9
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section         Data Item         Change           Notes/Comments
+         Appendix C:     Neoadjuvant       Site-specific    Added a new site-specific coding document for Bladder. See manual.
+         Site Specific   Therapy--         codes for
+         Coding          Treatment         Bladder added
+         Modules         Effect: Bladder
+         Appendix C:     Surgery Codes:    Notes and text   Added notes associated with A200 codes:
+         Site Specific   Prostate          revised          [SEER Note: Assign code A220 for a tumor destruction procedure or other minimally
+         Coding                                             invasive procedure when cancer is an incidental finding during surgery/procedure for
+         Modules                                            benign disease (such as ablation [aqua, cold, heat, laser], Holmium laser enucleation of
+                                                            the prostate (HoLEP), or TURP). Use text fields to document the details.]
+
+                                                            Any combination of A200, A210, or A230 WITH (excludes incidental findings)
+                                                            A240 Cryosurgery
+                                                            A250 Laser
+                                                            A260 Hyperthermia
+                                                            [SEER Note: Assign code A250 for HoLEP when a specimen is sent to pathology and
+                                                            patient has suspected/known cancer.]
+         Appendix C:     Surgery Codes:    Note added       Added note associated with B200 codes:
+         Site Specific   Skin                               Note: Elliptical/fusiform excisions are eye shape excisions around the circle outlining
+         Coding                                             the amount of normal skin to take during the excision and are performed to allow for a
+         Modules                                            better-looking scar.
+         Appendix D      Race and          References and   Updated list of references and links.
+                         Nationality       list updated     Removed from Other Race Descriptions:
+                         Descriptions                       Bushwalker
+                                                            Chocolate
+                                                            Coffee
+                                                            Cosmopolitan
+                                                            Half Breed
+                                                            Issues
+                                                            Remove one Multinational (listed twice)
+                                                            Remove one Multiethnic (listed twice)
+                                                            Rainbow
+
+                                                            Moved North African from Other Race Descriptions (Code 99) to White (Code 01)
+
+
+
+                                                                                                                                               10
+SEER Program Coding and Staging Manual 2026 - Summary of Changes
+This table lists the changes in the 2026 manual by page number.
+
+ Page    Section       Data Item         Change           Notes/Comments
+         Appendix E    E.1 Reportable    Reportable       Updated Example #14 and link:
+                       Examples          example #14      Liver cases with an LI-RADS category LR-4, LR-5, or LR-M
+                                         revised
+
+         Appendix E    E.1 Reportable    Reportable       Added Example #29:
+                       Examples          example #29      Conjunctival melanocytic intraepithelial lesions (C-MIL); low-grade conjunctival
+                                         added            melanocytic intraepithelial lesion (LG-CMIL) with focal high-grade features of the
+                                                          conjunctiva (C690) (8720/2)
+         Appendix E    E.2 Non-          Non-reportable   Added Example #46:
+                       Reportable        example #46      Cavernous malformation
+                       Examples          added
+
+
+
+
+                                                                                                                                               11
+

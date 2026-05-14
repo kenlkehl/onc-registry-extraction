@@ -1,0 +1,57 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+               Bones, Joints, And Articular Cartilage C400–C419
+         Peripheral Nerves And Autonomic Nervous System C470–C479
+         Connective, Subcutaneous, And Other Soft Tissues C490–C499
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A190 Local tumor destruction or excision, NOS
+Unknown whether a specimen was sent to pathology for surgical events coded A190 (principally for
+cases diagnosed prior to January 1, 2003)
+
+A150 Local tumor destruction
+No specimen sent to pathology from surgical event A150
+
+A250 Local excision
+
+[SEER Note: According to the CoC, "excision" in the surgery codes refers to the lesion and "partial
+resection" refers to the organ.]
+
+A260 Partial resection
+
+[SEER Note: According to the CoC, "excision" in the surgery codes refers to the lesion and "partial
+resection" refers to the organ.]
+
+A300 Radical excision or resection of lesion WITH limb salvage
+
+[SEER Note: Assign code A300 when the tumor was excised and the limb was saved (salvaged).
+     Example: Six cm sarcoma excised from soft tissue near the distal humerus. Able to obtain 2 cm
+     pathologic margins. Plastic team intercepted to perform graph with muscle taken from abdomen.]
+
+A400 Amputation of limb
+     A410 Partial amputation of limb
+     A420 Total amputation of limb
+
+A500 Major amputation, NOS
+     A510 Forequarter, including scapula
+     A520 Hindquarter, including ilium/hip bone
+     A530 Hemipelvectomy, NOS
+     A540 Internal hemipelvectomy
+
+Specimen sent to pathology from surgical events A250-A540
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                     Appendix C: Surgery Codes                                        1
+

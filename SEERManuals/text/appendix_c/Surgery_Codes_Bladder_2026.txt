@@ -1,0 +1,101 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                                             Bladder
+                                            C670–C679
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A100 Local tumor destruction, NOS
+     A110 Photodynamic therapy (PDT)
+     A120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+     A130 Cryosurgery
+     A140 Laser
+     A150 Intravesical therapy
+     A160 Bacillus Calmette-Guerin (BCG) or other immunotherapy
+           [SEER Note: Code BCG as both surgery and immunotherapy.]
+     Also code the introduction of immunotherapy in the immunotherapy items. If immunotherapy is
+     followed by surgery of the type coded A200-A800, code that surgery instead and code the
+     immunotherapy only as immunotherapy.
+No specimen sent to pathology from surgical events A100–A160
+
+A200 Local tumor excision, NOS
+     A260 Polypectomy
+     A270 Excisional biopsy
+           [SEER Note: Code TURB as A270.]
+
+      Any combination of A200, A260, or A270 WITH
+           A210 Photodynamic therapy (PDT)
+           A220 Electrocautery
+           A230 Cryosurgery
+           A240 Laser ablation
+      A250 Laser excision
+
+A300 Partial cystectomy
+
+A500 Simple/total/complete cystectomy
+
+A600 Complete cystectomy with reconstruction
+
+      [SEER Note: Use code A710 for cystoprostatectomy. Use code A710 for cystectomy with
+      hysterectomy.]
+
+      A610 Radical cystectomy PLUS ileal conduit
+      A620 Radical cystectomy PLUS continent reservoir or pouch, NOS
+      A630 Radical cystectomy PLUS abdominal pouch (cutaneous)
+      A640 Radical cystectomy PLUS in situ pouch (orthotopic)
+      When the procedure is described as a pelvic exenteration for males, but the prostate is not removed,
+      the surgery should be coded as a cystectomy (code A600-A640).
+
+
+
+                                     Appendix C: Surgery Codes                                          1
+                          SEER Program Coding and Staging Manual 2026
+
+
+A700 Pelvic exenteration, NOS
+     A710 Radical cystectomy including anterior exenteration
+           [SEER Note: Use code A710 for cystoprostatectomy. Use code A710 for cystectomy with
+           hysterectomy.]
+           [SEER Note: If a cystectomy is done and the prostatectomy/hysterectomy is not done, any
+           organs other than the bladder removed during the procedure should be coded in Surgical
+           Procedure of Other Site (NAACCR #1294).
+           If cystectomy is done along with prostatectomy/hysterectomy, all pelvic organs removed
+           during the procedure are included in codes A700-A740.
+           Any non-pelvic organs or tissues removed during the procedure should be coded to Surgical
+           Procedure of Other Site (NAACCR #1294).]
+     For females, includes removal of bladder, uterus, ovaries, entire vaginal wall, and entire urethra.
+     For males, includes removal of the prostate. When a procedure is described as a pelvic exenteration
+     for males, but the prostate is not removed, the surgery should be coded as a cystectomy (code
+     A600-A640).
+
+      A720 Posterior exenteration
+      For females, also includes removal of vagina, rectum and anus. For males, also includes prostate,
+      rectum and anus.
+
+      A730 Total exenteration
+      Includes all tissue and organs removed for an anterior and posterior exenteration
+            [SEER Note: Includes removal of all pelvic contents and pelvic lymph nodes. The lymph
+            node dissection should also be coded under Scope of Regional Lymph Node Surgery
+            (NAACCR item #1292).]
+
+      A740 Extended exenteration
+      Includes pelvic blood vessels and/or bony pelvis
+
+A800 Cystectomy, NOS
+
+Specimen sent to pathology from surgical events A200-A800
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                     Appendix C: Surgery Codes                                            2
+

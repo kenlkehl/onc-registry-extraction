@@ -1,0 +1,371 @@
+SEER Program Coding and Staging Manual
+Skip to Main Content
+An official website of the United States government
+Share
+on Facebook
+Tweet
+Print
+Search SEER:
+Main Menu
+
+Main Menu
+
+Home
+
+Cancer Statistics
+
+Cancer Statistics
+
+Reports on Cancer
+
+Annual Report to the Nation on the Status of Cancer
+
+Cancer Stat Facts
+
+Preliminary Cancer Incidence Rates and Trends
+
+SEER Publications
+
+Interactive Tools, Maps, & Graphs
+
+Cancer Statistics Explorer Network
+
+Understanding Statistics
+
+Did You Know? Video Series
+
+Defining Cancer Statistics
+
+Glossary of Statistical Terms
+
+SEER Data & Software
+
+SEER Data & Software
+
+SEER Incidence Database
+
+Comparison of Data Products
+
+How to Request the Data
+
+Documentation for Data
+
+SEER*Stat Database Details
+
+NCCR Databases in SEER*Stat
+
+Variable and Recode Definitions
+
+U.S. Datasets
+
+U.S. Mortality
+
+U.S. Populations
+
+Standard Populations
+
+SEER Linked Databases
+
+Statistical Software
+
+SEER*Stat
+
+SEER*Prep
+
+Health Drivers Calculator (HD*Calc)
+
+Methods & Tools for Population-based Cancer Statistics
+
+Registry Operations
+
+Registry Operations
+
+Reporting Guidelines
+
+SEER Program Coding Manual
+
+Hematopoietic Project
+
+Solid Tumor Rules
+
+Tools & Software
+
+Glossary for Registrars
+
+SEER*Rx - Drug Database
+
+SEER Abstracting Tool
+
+SEER Data Management System (SEER*DMS)
+
+Staging
+
+Registrar Staging Assistant (SEER*RSA)
+
+Summary Stage 2018
+
+Staging Resources
+
+Extent of Disease 2018
+
+Questions & Answers
+
+SEER Inquiry System
+
+Ask a SEER Registrar
+
+Data Collection Answers
+
+Cancer PathCHART
+
+Training
+
+News & Events
+
+About SEER
+
+About SEER
+
+Program Overview
+
+Goals of the SEER Program
+
+Fact Sheets & Brochures
+
+Collaborating Organizations
+
+SEER Registries
+
+What is a Cancer Registry?
+
+List of Registries
+
+Registry Groupings
+
+Population Characteristics
+
+Research Activities
+
+Residual Tissue Repository Program
+
+SEER-Linked Virtual Tissue Repository Program
+
+SEER Data Quality Initiatives
+Section Menu
+
+Home
+
+Registry Operations
+
+Reporting Guidelines
+
+SEER Coding and Staging Manual
+
+SEER Program Coding and Staging Manual 2025 and 2026
+
+Updated September 2025
+Reporting Guidelines
+
+Casefinding Lists
+
+SEER Coding and Staging Manual
+
+Appendix C for 2025 Manual
+
+Appendix C for 2026 Manual
+
+Hematopoietic Project
+
+Hematopoietic and Lymphoid Database
+
+Revision History
+
+Online Training
+
+ICD-O-3 Coding Materials
+
+Solid Tumor Rules
+
+2026 Update Revisions
+
+Revision Archive
+
+Histology Coding Clarifications
+
+Historical Staging and Coding Manuals
+
+MP/H Rules
+
+Download the Rules Manual
+
+Revision History
+
+Task Force Membership
+
+Grade Coding Instructions 2014-2017
+
+SEER Data Submission Requirements
+
+COVID-19 Abstraction Guidance
+
+COVID-19 Presentations
+
+COVID-19 Q&A
+
+On behalf of SEER, we would like to formally (and officially) announce an update to our coding instructions regarding PI-RADS and LI-RADS. NCI SEER has decided to adopt the same instructions regarding PI-RADS and LI-RADS as the STORE manual (CoC) putting both standard setters back in alignment.
+
+This is applicable as of
+NOW
+(your next prostate or liver case). Per the 2026 STORE Manual: PI-RADS and/or LI-RADS results alone are not reportable to CoC. PI-RADS and/or LI-RADS confirmed with biopsy or physician statement are reportable to CoC. The date of the biopsy or definitive statement from the physician is the Date of Diagnosis.
+
+Please note:
+
+There is no recommendation to review cases already abstracted for 2018+. You do not need to review any older cases. Start applying this rule to the next Prostate or Liver case you abstract.
+
+Please note that any previous versions of the SEER Manual/appendices, including the 2026 SEER manual and the 2026 Appendix E will NOT be updated. This update will be included in the 2027 SEER manual and appendices.
+
+Relevant SINQ questions will be updated within the next month.
+
+Previously, SEER changed their rules regarding PI-RADS and LI-RADS in 2018 to
+
+When the only information was available was PI-RADS or LI-RADS report with a 4 or 5, that case was considered reportable.
+
+If a report had a PI-RADS or LI-RADS with a 4 or 5 with a subsequent biopsy, the date of diagnosis was the date of the PI-RADS or LI-RADs.
+
+Note: These instructions only apply to PI-RADS and LI-RADS. SEER coding instructions regarding remaining RADS were always in alignment with the STORE manual.
+
+Prior to 2021, SEER followed the same instructions as CoC.
+
+The decision to change reportability for PI-RADS and LI-RADS was based on the terminology that was used in these reports; however, this decision caused great confusion amongst the SEER community. After NCI SEER discussed this both internally and with the SEER Central Registries, we have decided to remove this instruction.
+
+We hope this change will make abstracting prostate and liver cases slightly easier for you.
+
+Please send any questions to
+Ask a SEER Registrar
+and choose category
+SEER Manual
+.
+
+SEER Program Coding and Staging Manual 2025
+
+SEER Program Coding and Staging Manual 2025
+(PDF, 1.8 MB)
+(updated January 2025)
+
+Appendix A - County Codes
+(PDF, 491 KB)
+
+Appendix B - Country and State Codes
+(PDF, 442 KB)
+
+Appendix C - Site-Specific Coding Modules
+
+Appendix D - Race and Nationality Descriptions
+(PDF, 206 KB)
+(updated January 2025)
+
+Appendix E - Reportable and Non-reportable Examples:
+PDF
+(PDF, 281 KB)
+or
+Excel
+(XLSX, 27 KB)
+
+Summary of Changes (January 2025)
+(PDF, 452 KB)
+- provides the list of changes included in this release.
+
+SEER Program Coding and Staging Manual 2026
+
+The 2026 manual is to be used for cases diagnosed January 1, 2026 and forward.
+
+SEER Program Coding and Staging Manual 2026
+(PDF, 1.8 MB)
+(released September 2025)
+
+Appendix A - County Codes
+(PDF, 500 KB)
+
+Appendix B - Country and State Codes
+(PDF, 459 KB)
+
+Appendix C - Site-Specific Coding Modules
+
+Appendix D - Race and Nationality Descriptions
+(PDF, 228 KB)
+
+Appendix E - Reportable and Non-reportable Examples:
+PDF
+(PDF, 176 KB)
+or
+Excel
+(XLSX, 26 KB)
+
+Summary of Changes (September 2025)
+(PDF, 330 KB)
+- provides the list of changes included in this release.
+
+Other Manuals
+
+Staging Resources
+
+Historical Staging and Coding Manuals
+
+See the
+SEER Research Data
+pages to find out how to access the SEER data.
+Return to Top
+
+SEER is supported by the
+Surveillance Research Program (SRP)
+in NCI's
+Division of Cancer Control and Population Sciences (DCCPS)
+. SRP provides national leadership in the science of cancer surveillance as well as analytical tools and methodological expertise in collecting, analyzing, interpreting, and disseminating reliable population-based statistics.
+
+Follow SEER
+
+Sign up for email updates
+Sign Up
+
+Contact Information
+
+Contact SEER
+
+NCI LiveHelp Online Chat
+
+More Information
+
+Careers
+
+Sitemap
+
+Using This Website
+
+Policies
+
+Accessibility
+
+Disclaimer
+
+FOIA
+
+HHS Vulnerability Disclosure
+
+Privacy & Security
+
+Reuse of Graphics and Text
+
+Website Linking
+
+U.S. Department of Health and Human Services
+
+National Institutes of Health
+
+National Cancer Institute
+
+USA.gov
+
+NIH... Turning Discovery Into Health
+®
+window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125238734-1');
+var fb_page = window.location.href; //current page url var page_title = $("title").text(); //current page title fb_page = "https://www.facebook.com/sharer/sharer.php?u=" + fb_page + "&t=" + page_title; //insert url and title into the FB sharer $(".facebook-share-button").attr('href', fb_page); //add sharer url to link

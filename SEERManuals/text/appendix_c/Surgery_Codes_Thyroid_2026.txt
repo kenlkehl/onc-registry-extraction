@@ -1,0 +1,43 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                            Surgery Codes
+
+                                            Thyroid Gland
+                                                C739
+
+Codes
+
+B000 None; no surgery of primary site; autopsy ONLY
+
+B130 Local tumor destruction, NOS
+No specimen sent to pathology from surgical event B130
+
+B200 Removal of less than a lobe, NOS
+     B210 Local surgical excision
+     B220 Removal of a partial lobe ONLY
+
+B250 Lobectomy and/or isthmectomy
+     B251 Lobectomy ONLY (right or left)
+     B252 Isthmectomy ONLY
+     B253 Lobectomy WITH isthmus
+
+B300 Removal of a lobe and partial removal of the contralateral lobe
+
+B400 Subtotal or near total thyroidectomy
+
+B500 Total thyroidectomy
+
+B800 Thyroidectomy, NOS
+
+Specimen sent to pathology from surgical events B200-B800
+
+B900 Surgery, NOS
+
+B990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                     Appendix C: Surgery Codes          1
+

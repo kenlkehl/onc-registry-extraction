@@ -1,0 +1,141 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                           Surgery Codes
+
+                                               Colon
+                                             C180–C189
+
+Code removal/surgical ablation of single or multiple liver metastases under the data item Surgical
+Procedure of Other Site (NAACCR #1294).
+
+[SEER Note: Do not code a colostomy, with no colon tissue removed, as surgery. If colostomy is the only
+procedure performed, assign surgery code B000.]
+
+[SEER Note: Code Circumferential Resection Margin (CRM) (NAACCR #3823) when assigning surgery
+codes B300-B800. CRM is not applicable for other surgery codes for this site.]
+
+Codes
+
+B000 None; no surgery of primary site; autopsy ONLY
+
+B100 Local tumor destruction, NOS, any form of local tumor destruction, includes electrocautery, and/or
+      fulguration
+Note: B100 includes electrocautery; fulguration (includes use of hot forceps for tumor destruction).
+
+No specimen sent to pathology from surgical event B100
+
+B200 Local tumor excision, NOS
+     B260 Polypectomy, NOS
+     B270 Excisional biopsy
+     B280 Polypectomy-endoscopic
+           Note: Code B280 includes a polypectomy during an initial colonoscopy for screening or
+           symptoms without knowledge of whether the polyp is benign or malignant.
+     B281 Polypectomy-endoscopic mucosal resection or dissection
+           Note: Code B281 includes a more complicated polypectomy performed during a
+           colonoscopy. Usually, the polyp is known to be a superficial malignancy.
+     B290 Polypectomy-open approach surgical excision, or laparoscopic
+
+       Any combination of B200, B260, B270, B280, B281, or B290 WITH
+              B220 Electrocautery
+              Note: Code B220 should be used when electrocautery is used to destroy the tumor but there
+              is still tumor sent to pathology.
+[SEER Note: Code B220 above combines B200 Local tumor excision, NOS, B260 Polypectomy, NOS,
+B270 Excisional biopsy, B280 Polypectomy-endoscopic, B281 Polypectomy-endoscopic mucosal
+resection or dissection, or B290 Polypectomy-surgical excision WITH B220 Electrocautery.]
+
+      B291 Wide Local Excision with Tumor
+           Note: Code B291 includes procedures focused on just removing the primary tumor and not
+           removing a portion of colon or rectum. In these local procedures the adjacent colon, rectum
+           and lymph nodes are not removed, just the tumor with a bit of margin. Procedures are
+           typically reserved for removal of early tumors that are superficial and not known to be
+
+
+
+
+                                      Appendix C: Surgery Codes                                           1
+                          SEER Program Coding and Staging Manual 2026
+
+
+             associated with lymph node involvement. Alternate names for B291 include: Wide local
+             excision, Wide excision, Local tumor resection, or Transanal resection.
+
+B300 Partial colectomy, removal of one or more segments with colon resection but less than half of colon
+       is removed
+Note: Code B300 includes removal of one or more colon segments, but less than half of the colon.
+Segments include cecum, ascending colon, hepatic flexure, transverse colon, splenic flexure, sigmoid
+colon, and/or the descending colon.
+    • Transverse colectomy includes transverse colon
+    • Splenic flexure colectomy includes transverse colon and the splenic flexure
+    • Sigmoidectomy includes removal of sigmoid colon and descending colon
+[SEER Note: Code B300 includes but is not limited to the following procedures: enterocolectomy,
+ileocolectomy, partial colectomy, NOS, partial resection of transverse colon and flexures, and segmental
+resection (such as cecectomy or sigmoidectomy).]
+
+      B320 Plus resection of contiguous organ; example: small bowel, bladder
+      B330 Appendectomy for an appendix primary only, includes incidental findings
+           Note: When an appendix primary is found incidentally during resection for a colon primary,
+            code the extent of the surgical resection for the colon primary. Assign B330 for the appendix
+            primary site.
+      [SEER Note: Removal of a short portion of the distal ileum is not “removal of a contiguous
+      organ.”]
+
+B400 Hemicolectomy (total right or left colon and a portion of the transverse colon)
+B401 Subtotal colectomy (total right or left colon and entire/all of transverse colon)
+Note: Code B400 includes removal of the total right or left colon with a portion of the transverse colon.
+   • A total left hemicolectomy includes removal of the splenic flexure, descending colon, and the
+       sigmoid colon
+   • A total right hemicolectomy includes removal of the cecum (with appendix, if present), ascending
+       colon and the hepatic flexure
+
+      B410 Plus resection of contiguous organ; example: small bowel, bladder
+Note: Assign code B400 for extended left/right hemicolectomy.
+[SEER Note: Code B400 includes extended (but less than total) right or left colectomy. Note that the
+removal of a short portion of the distal ileum is not “removal of a contiguous organ.”]
+
+B500 Total colectomy (removal of colon from cecum to the rectosigmoid junction; may include a
+      portion of the rectum)
+Note: Code B500 includes removal of all segments of colon, not including the entire rectum.
+
+       B510 Plus resection of contiguous organ; example: small bowel, bladder
+      [SEER Note: Removal of a short portion of the distal ileum is not “removal of a contiguous
+      organ.”]
+
+B600 Total proctocolectomy (removal of colon from cecum to the rectosigmoid junction, including the
+      entire rectum)
+Note: Code B600 includes removal of the entire colon, including the entire rectum
+[SEER Note: Commonly used for familial polyposis or polyposis coli.]
+
+      B610 Plus resection of contiguous organ; example: small bowel, bladder
+
+
+
+                                     Appendix C: Surgery Codes                                         2
+                          SEER Program Coding and Staging Manual 2026
+
+
+      [SEER Note: Removal of a short portion of the distal ileum is not “removal of a contiguous
+      organ.”]
+
+B700 Colectomy or proctocolectomy with resection of contiguous organ(s), NOS
+Note: Use code B700 when there is not enough information to assign code B320, B410, B510, or B610.
+Code B700 includes any colectomy (partial, hemicolectomy, or total) WITH a resection of any other
+organs in continuity with the primary site (en bloc resection). Other organs may be partially or totally
+removed. Other organs may include, but are not limited to, oophorectomy, partial proctectomy, rectal
+mucosectomy, or pelvic exenteration.
+[SEER Note: “In continuity with” or “en bloc” means that all of the tissues were removed during the
+same procedure, but not necessarily in a single specimen.]
+
+B800 Colectomy, NOS
+
+Specimen sent to pathology from surgical events B200-B800
+
+B900 Surgery, NOS
+
+B990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                      Appendix C: Surgery Codes                                            3
+

@@ -1,0 +1,69 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                              Oral Cavity
+  Lip C000–C009, Base of Tongue C019, Other Parts of Tongue C020–C029,
+      Gum C030–C039, Floor of Mouth C040–C049, Palate C050–C059,
+                    Other Parts of Mouth C060–C069
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A100 Local tumor destruction, NOS
+     A110 Photodynamic therapy (PDT)
+     A120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+     A130 Cryosurgery
+     A140 Laser
+No specimen sent to pathology from surgical events A100–A140
+
+A200 Local tumor excision, NOS
+     A260 Polypectomy
+     A270 Excisional biopsy
+
+     Any combination of A200, A260, or A270 WITH
+          A210 Photodynamic therapy (PDT)
+          A220 Electrocautery
+          A230 Cryosurgery
+          A240 Laser ablation
+     A250 Laser excision
+[SEER Note: Codes A200-A270 include shave and wedge resection.]
+
+A300 Wide excision, NOS
+     Code A300 includes:
+          Hemiglossectomy
+          Partial glossectomy
+
+A400 Radical excision of tumor, NOS
+     A410 Radical excision of tumor ONLY
+     A420 Combination of A410 WITH resection in continuity with mandible (marginal, segmental,
+           hemi-, or total resection)
+     A430 Combination of A410 WITH resection in continuity with maxilla (partial, subtotal, or total
+           resection)
+     [SEER Note: “In continuity with” or “en bloc” means that all of the tissues were removed during
+     the same procedure, but not necessarily in a single specimen.]
+
+      Codes A400–A430 include:
+           Total glossectomy
+           Radical glossectomy
+
+
+
+
+                                     Appendix C: Surgery Codes                                         1
+                        SEER Program Coding and Staging Manual 2026
+
+
+Specimen sent to pathology from surgical events A200-A430
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                  Appendix C: Surgery Codes           2
+

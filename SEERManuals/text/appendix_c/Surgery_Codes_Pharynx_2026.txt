@@ -1,0 +1,72 @@
+                          SEER Program Coding and Staging Manual 2026
+
+
+                                          Surgery Codes
+
+                                Pharynx
+    Tonsil C090–C099, Oropharynx C100–C109, Nasopharynx C110–C119
+       Pyriform Sinus C129, Hypopharynx C130–C139, Pharynx C140
+
+Codes
+
+A000 None; no surgery of primary site; autopsy ONLY
+
+A100 Local tumor destruction, NOS
+     A110 Photodynamic therapy (PDT)
+     A120 Electrocautery; fulguration (includes use of hot forceps for tumor destruction)
+     A130 Cryosurgery
+     A140 Laser
+     A150 Stripping
+No specimen sent to pathology from surgical events A100–A150
+
+A200 Local tumor excision, NOS
+     A260 Polypectomy
+     A270 Excisional biopsy
+
+      Any combination of A200, A260, or A270 WITH
+           A210 Photodynamic therapy (PDT)
+           A220 Electrocautery
+           A230 Cryosurgery
+           A240 Laser ablation
+           A250 Laser excision
+           A280 Stripping
+
+A300 Pharyngectomy, NOS
+     A310 Limited/partial pharyngectomy; tonsillectomy, bilateral tonsillectomy
+     A320 Total pharyngectomy
+
+A400 Pharyngectomy WITH laryngectomy OR removal of contiguous bone tissue, NOS
+       (does NOT include total mandibular resection)
+[SEER Note: Code A400 includes mandibulectomy (marginal, segmental, hemi-, and/or laryngectomy)
+NOS. Contiguous bone tissue refers to the mandible.]
+       A410 WITH laryngectomy (laryngopharyngectomy)
+       A420 WITH bone [mandibulectomy]
+       A430 WITH both A410 and A420
+[SEER Note: Use code A400 when the patient had a pharyngectomy and maybe some sort of
+mandibulectomy and/or maybe a laryngectomy, but the exact procedures are not clear. Use code A410
+when the patient had pharyngectomy and laryngectomy but no mandibulectomy. Use code A420 when
+the patient had pharyngectomy and mandibulectomy but no laryngectomy. Use code A430 when it is
+known that the patient had both a mandibulectomy and laryngectomy in addition to the pharyngectomy.]
+
+A500 Radical pharyngectomy (includes total mandibular resection), NOS
+     A510 WITHOUT laryngectomy
+
+
+
+                                     Appendix C: Surgery Codes                                         1
+                        SEER Program Coding and Staging Manual 2026
+
+
+     A520 WITH laryngectomy
+
+Specimen sent to pathology from surgical events A200-A520
+
+A900 Surgery, NOS
+
+A990 Unknown if surgery performed; death certificate ONLY
+
+
+
+
+                                  Appendix C: Surgery Codes           2
+

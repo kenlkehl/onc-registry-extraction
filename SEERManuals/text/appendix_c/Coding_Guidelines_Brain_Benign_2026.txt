@@ -1,0 +1,135 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                        Coding Guidelines
+
+            Brain [and Other Parts of Central Nervous System]
+  Meninges C700-C709, Brain C710–C719, Spinal Cord, Cranial Nerves and
+            Other Parts of Central Nervous System C720–C729
+
+Reportability
+
+      •   Report high-grade astrocytoma with piloid features (HGAP) (9421/3) as of 01/01/2023
+      •   Report pilocytic astrocytoma/juvenile pilocytic astrocytoma as 9421/1 for all CNS sites as of
+          01/01/2023
+
+Benign and Borderline Spinal Cord Tumors
+
+Reportable when they arise within the spinal dura or the spinal nerve roots, or when they are stated to be
+“intradural” or “of the nerve root.” These tumors are not reportable when they arise on the portion of the
+nerve extending outside the dura. Intradural extramedullary benign and borderline spinal cord tumors are
+reportable. They are located outside the spinal cord but within the dura. A reportable intradural tumor
+may be intramedullary or extramedullary.
+
+Primary Site
+
+Brain and Associated Structures with Topography Codes
+
+
+                           C711                                                        C710
+                                                                                       C713
+                  C718
+                                                                                                   C710
+                                                                                            C714
+      C710                                                                                  C753
+                                                                                               C717
+                            C751                                                                 C715
+                             C712                                                             C717
+                    C717                                                               C716
+
+
+
+                                         C720
+
+
+Extra-axial: Outside the brain parenchyma
+
+Intra-axial: Within the brain
+
+
+
+
+                                    Appendix C: Coding Guidelines                                            1
+                          SEER Program Coding and Staging Manual 2026
+
+
+Tentorium C700
+
+A fold of the dura mater which separates the cerebellum from the cerebrum, divides the cranial cavity into
+supratentorial and infratentorial spaces.
+
+
+
+
+                                                                         C710
+                         C700
+
+
+
+
+                       C717
+                    Brain stem
+
+
+Supratentorial, NOS C710
+
+Supratentorial subsites
+   • All subsites coded C711-C715
+   • Primary site C710 (excluding hypothalamus, pallium, thalamus)
+   • Anterior cranial fossa (C719)
+   • Corpus callosum (C718)
+   • Middle cranial fossa (C719)
+   • Tapetum (C718)
+   • Suprasellar (C719)
+
+Infratentorial, NOS C717
+
+Infratentorial subsites
+    • All subsites coded C716-C717
+    • Hypothalamus (C710)
+    • Pallium (C710)
+    • Posterior cranial fossa (C719)
+    • Thalamus (C710)
+
+Supratentorial and Infratentorial subsites are based on Summary Stage 2018.
+
+
+
+
+                                    Appendix C: Coding Guidelines                                       2
+                          SEER Program Coding and Staging Manual 2026
+
+
+Spinal Meninges C701 and Nerve Roots C720
+
+
+
+
+Intradural: Within the dura, within the meninges
+Extradural: Outside the dura, outside the meninges
+Intramedullary: Within the spinal cord
+Extramedullary: Outside the spinal cord
+
+
+Histology
+
+Code low grade neuroepithelial neoplasm to 9413/0 (Dysembryoplastic neuroepithelial tumor).
+
+
+Laterality
+
+Meningioma
+Assign code 4 (Bilateral involvement, lateral origin unknown; stated to be single primary) when
+
+      •   One meningioma extends to both right and left sides
+             AND
+      •   It is not possible to determine whether the meningioma originated on the left or the right
+Assign code 5 (Midline tumor) when
+
+      •   The meningioma originates in the midline
+
+
+
+
+                                   Appendix C: Coding Guidelines                                       3
+

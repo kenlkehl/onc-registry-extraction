@@ -1,0 +1,54 @@
+                           SEER Program Coding and Staging Manual 2026
+
+
+                                         Coding Guidelines
+
+                                               Pancreas
+                                              C250–C259
+Primary Site
+
+Assign the code for the point of origin, i.e., where the primary tumor arose. This applies to all pancreas
+tumors including NETs.
+
+C250 Head of pancreas
+     Genu of pancreas
+     Uncinate of pancreas
+
+C251 Body of pancreas
+
+C252 Tail of pancreas
+
+C253 Pancreatic duct
+     Duct of Santorini
+     Duct of Wirsung
+
+C254 Islets of Langerhans*
+     Endocrine pancreas
+     Islands of Langerhans
+
+C257 Other specified parts of pancreas
+     Neck of pancreas^
+
+C258 Overlapping lesion of pancreas
+     A tumor that overlaps the boundaries of two or more subcategories and whose point of origin
+     cannot be determined.
+
+C259 Pancreas, NOS
+
+
+*For tumors of the islet cells, determine which subsite of the pancreas is involved and use that primary
+site code. Use the general code for Islets of Langerhans, C254, when the subsite cannot be determined.
+
+^Pancreas body vs. neck: the neck is a thin section of the pancreas located between the head and the body.
+
+
+
+
+                                     Appendix C: Coding Guidelines                                           1
+SEER Program Coding and Staging Manual 2026
+
+
+
+
+       Appendix C: Coding Guidelines          2
+
