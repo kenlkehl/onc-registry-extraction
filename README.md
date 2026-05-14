@@ -51,7 +51,7 @@ pip install -e .
 Start a vLLM server with your preferred model:
 
 ```bash
-# Example 
+# Example  (won't parse out reasoning text)
 vllm serve google/gemma-4-31b-it 
 
 
@@ -62,13 +62,13 @@ pipeline receives final JSON separately from reasoning text:
 
 ```bash
 # Qwen3 / Qwen3.5 / Qwen3.6 variants
-vllm serve Qwen/Qwen3.6-27B --enable-reasoning --reasoning-parser qwen3
+vllm serve Qwen/Qwen3.6-27B  --reasoning-parser qwen3
 
 # Gemma 4 variants
-vllm serve google/gemma-4-31b-it --enable-reasoning --reasoning-parser gemma4
+vllm serve google/gemma-4-31b-it --reasoning-parser gemma4
 
 # GPT-OSS
-vllm serve openai/gpt-oss-120b --enable-reasoning --reasoning-parser openai_gptoss
+vllm serve openai/gpt-oss-120b --reasoning-parser openai_gptoss
 ```
 
 ### Optional: use cloud model endpoints
