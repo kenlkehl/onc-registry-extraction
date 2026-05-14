@@ -6,6 +6,7 @@ Sequential chunking with round-based parallel extraction.
 import asyncio
 import argparse
 import logging
+import os
 import sys
 import time
 from pathlib import Path
@@ -84,12 +85,23 @@ class OncRegistryExtractionPipeline:
             max_chars=config.seer_context_max_chars,
         )
         self.llm_client = VLLMClient(
-            base_url=config.vllm_base_url,
+            base_url=self._resolve_llm_base_url(config),
+            provider=config.llm_provider,
+            model=config.llm_model or config.vllm_model,
             temperature=config.vllm_temperature,
             max_tokens=config.vllm_max_tokens,
             timeout=config.vllm_timeout,
             max_retries=config.max_retries,
             reasoning_parser=config.vllm_reasoning_parser,
+            azure_api_key_env=config.azure_openai_api_key_env,
+            azure_auth_mode=config.azure_openai_auth_mode,
+            azure_token_refresh_command=config.azure_openai_token_refresh_command,
+            anthropic_vertex_project_id=config.anthropic_vertex_project_id,
+            anthropic_vertex_region=config.anthropic_vertex_region,
+            anthropic_vertex_token_env=config.anthropic_vertex_token_env,
+            anthropic_vertex_token_refresh_command=(
+                config.anthropic_vertex_token_refresh_command
+            ),
         )
         self.chunker = SequentialChunker(
             chunk_target_tokens=config.chunk_target_tokens,
@@ -106,15 +118,16 @@ class OncRegistryExtractionPipeline:
     # ------------------------------------------------------------------
 
     async def initialize(self) -> None:
-        """Load dictionary, discover the vLLM model."""
+        """Load dictionary and initialize the configured LLM endpoint."""
         logger.info("Loading NAACCR v26 data dictionary...")
         self.dictionary.load()
         self.code_resolver = CodeResolver(self.dictionary)
 
-        logger.info("Discovering vLLM model...")
+        logger.info("Initializing %s model endpoint...", self.config.llm_provider)
         model_profile = await self.llm_client.initialize()
         logger.info(
-            "Model: %s, Size: %s, Context: %d, Reasoning parser: %s",
+            "Provider: %s, Model: %s, Size: %s, Context: %d, Reasoning parser: %s",
+            model_profile.provider,
             model_profile.model_name,
             model_profile.model_size_class,
             model_profile.context_window,
@@ -263,6 +276,15 @@ class OncRegistryExtractionPipeline:
     # Helpers
     # ------------------------------------------------------------------
 
+    @staticmethod
+    def _resolve_llm_base_url(config: PipelineConfig) -> str:
+        """Resolve the provider-specific base URL from config/env/defaults."""
+        if config.llm_base_url:
+            return config.llm_base_url
+        if config.llm_provider == "azure-openai":
+            return config.azure_openai_endpoint or ""
+        return config.vllm_base_url
+
     def _build_structured_prior(
         self, patient_set: PatientDocumentSet
     ) -> dict[int, ExtractionResult]:
@@ -392,8 +414,82 @@ def main() -> None:
     parser.add_argument("input", help="Path to input CSV/TSV/Parquet file")
     parser.add_argument("output", help="Path to output directory")
     parser.add_argument(
+        "--provider",
+        choices=["vllm", "azure-openai", "anthropic-vertex"],
+        default="vllm",
+        help="LLM endpoint provider (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--endpoint",
+        default=None,
+        help=(
+            "Provider endpoint base URL. For Azure, defaults to "
+            "$AZURE_OPENAI_ENDPOINT. vLLM still supports --vllm-url."
+        ),
+    )
+    parser.add_argument(
+        "--model",
+        default=None,
+        help=(
+            "Model/deployment id. Defaults to provider env vars "
+            "($LLM_MODEL, $AZURE_OPENAI_MODEL, $ANTHROPIC_VERTEX_MODEL) "
+            "or auto when supported."
+        ),
+    )
+    parser.add_argument(
         "--vllm-url", default="http://localhost:8000/v1",
         help="vLLM server base URL (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--azure-auth-mode",
+        choices=["bearer", "api-key"],
+        default="bearer",
+        help=(
+            "Azure OpenAI auth header mode. Use bearer for Entra tokens "
+            "from az account get-access-token; use api-key for resource keys "
+            "(default: %(default)s)"
+        ),
+    )
+    parser.add_argument(
+        "--azure-api-key-env",
+        default="AZURE_OPENAI_API_KEY",
+        help="Env var holding the Azure OpenAI token/key (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--azure-token-refresh-command",
+        default=None,
+        help=(
+            "Command that prints a fresh Azure bearer token. Defaults to "
+            "az account get-access-token for cognitiveservices. Pass an "
+            "empty string to disable refresh."
+        ),
+    )
+    parser.add_argument(
+        "--anthropic-vertex-project-id",
+        default=None,
+        help=(
+            "Google Cloud project id for Anthropic Vertex. Defaults to "
+            "$ANTHROPIC_VERTEX_PROJECT_ID."
+        ),
+    )
+    parser.add_argument(
+        "--anthropic-vertex-region",
+        default=None,
+        help="Vertex region/multi-region/global. Defaults to $CLOUD_ML_REGION.",
+    )
+    parser.add_argument(
+        "--anthropic-vertex-token-env",
+        default="ANTHROPIC_VERTEX_ACCESS_TOKEN",
+        help="Env var holding a Vertex bearer token (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--anthropic-vertex-token-refresh-command",
+        default=None,
+        help=(
+            "Command that prints a fresh Vertex bearer token. Defaults to "
+            "gcloud auth application-default print-access-token. Pass an "
+            "empty string to disable refresh."
+        ),
     )
     parser.add_argument(
         "--max-concurrent", type=int, default=16,
@@ -467,11 +563,73 @@ def main() -> None:
     )
 
     dict_dir = Path(args.data_dict)
+    default_config = PipelineConfig()
+    provider_model_env = {
+        "vllm": os.getenv("VLLM_MODEL"),
+        "azure-openai": os.getenv("AZURE_OPENAI_MODEL"),
+        "anthropic-vertex": os.getenv("ANTHROPIC_VERTEX_MODEL"),
+    }
+    llm_model = (
+        args.model
+        or os.getenv("LLM_MODEL")
+        or provider_model_env.get(args.provider)
+        or "auto"
+    )
+    azure_endpoint = args.endpoint or os.getenv("AZURE_OPENAI_ENDPOINT")
+    vertex_project_id = (
+        args.anthropic_vertex_project_id
+        or os.getenv("ANTHROPIC_VERTEX_PROJECT_ID")
+    )
+    vertex_region = args.anthropic_vertex_region or os.getenv("CLOUD_ML_REGION")
+    azure_token_refresh_command = (
+        args.azure_token_refresh_command
+        if args.azure_token_refresh_command is not None
+        else default_config.azure_openai_token_refresh_command
+    )
+    vertex_token_refresh_command = (
+        args.anthropic_vertex_token_refresh_command
+        if args.anthropic_vertex_token_refresh_command is not None
+        else default_config.anthropic_vertex_token_refresh_command
+    )
+
+    if args.provider == "azure-openai" and not azure_endpoint:
+        parser.error(
+            "--provider azure-openai requires --endpoint or $AZURE_OPENAI_ENDPOINT"
+        )
+    if args.provider == "anthropic-vertex":
+        if not vertex_project_id:
+            parser.error(
+                "--provider anthropic-vertex requires "
+                "--anthropic-vertex-project-id or $ANTHROPIC_VERTEX_PROJECT_ID"
+            )
+        if not vertex_region:
+            parser.error(
+                "--provider anthropic-vertex requires "
+                "--anthropic-vertex-region or $CLOUD_ML_REGION"
+            )
+        if llm_model == "auto":
+            parser.error(
+                "--provider anthropic-vertex requires --model, $LLM_MODEL, "
+                "or $ANTHROPIC_VERTEX_MODEL"
+            )
+
     config = PipelineConfig(
+        llm_provider=args.provider,
+        llm_model=llm_model,
+        llm_base_url=args.endpoint,
         vllm_base_url=args.vllm_url,
+        vllm_model=llm_model,
         vllm_temperature=args.temperature,
         vllm_max_tokens=args.max_tokens,
         vllm_reasoning_parser=args.reasoning_parser,
+        azure_openai_endpoint=azure_endpoint,
+        azure_openai_api_key_env=args.azure_api_key_env,
+        azure_openai_auth_mode=args.azure_auth_mode,
+        azure_openai_token_refresh_command=azure_token_refresh_command,
+        anthropic_vertex_project_id=vertex_project_id,
+        anthropic_vertex_region=vertex_region,
+        anthropic_vertex_token_env=args.anthropic_vertex_token_env,
+        anthropic_vertex_token_refresh_command=vertex_token_refresh_command,
         max_retries=args.max_retries,
         max_concurrent_patients=args.max_concurrent,
         output_format=args.format,

@@ -19,7 +19,9 @@ Given a dataset of patient clinical documents (pathology reports, operative note
 7. **Scores confidence** and generates a prioritized human review queue
 8. **Outputs** NAACCR v26 XML, fixed-width flat file, or CSV with full audit trail
 
-All LLM inference runs locally via [vLLM](https://docs.vllm.ai/) -- no data leaves the machine.
+By default, LLM inference runs locally via [vLLM](https://docs.vllm.ai/).
+The same pipeline can also target configured Azure OpenAI v1 or Anthropic
+Claude on Vertex AI endpoints.
 
 ## Quick start
 
@@ -27,7 +29,8 @@ All LLM inference runs locally via [vLLM](https://docs.vllm.ai/) -- no data leav
 
 - Python 3.9+
 - [uv](https://docs.astral.sh/uv/) (recommended) or pip
-- A running [vLLM](https://docs.vllm.ai/) server with a local LLM loaded
+- A running [vLLM](https://docs.vllm.ai/) server with a local LLM loaded, or
+  credentials for Azure OpenAI / Anthropic Claude on Vertex AI
 
 ### Install
 
@@ -69,6 +72,48 @@ vllm serve google/gemma-4-31b-it --enable-reasoning --reasoning-parser gemma4
 vllm serve openai/gpt-oss-120b --enable-reasoning --reasoning-parser openai_gptoss
 ```
 
+### Optional: use cloud model endpoints
+
+Azure OpenAI v1 endpoints use the OpenAI-compatible chat completions route.
+For Entra bearer-token auth, set your endpoint and token as usual:
+
+```bash
+export AZURE_OPENAI_ENDPOINT="https://<resource>.openai.azure.com/openai/v1"
+export AZURE_OPENAI_API_KEY="$(az account get-access-token \
+    --resource=https://cognitiveservices.azure.com/ \
+    --query accessToken --output tsv)"
+
+uv run onc-registry-pipeline input.parquet output/ \
+    --provider azure-openai \
+    --model <azure-model-or-deployment>
+```
+
+If an Azure inference call receives a 401/403, the pipeline refreshes the
+bearer token by running:
+
+```bash
+az account get-access-token --resource=https://cognitiveservices.azure.com/ --query accessToken --output tsv
+```
+
+For static Azure resource keys, use `--azure-auth-mode api-key` and pass an
+empty `--azure-token-refresh-command ""`.
+
+Anthropic Claude on Vertex AI uses `ANTHROPIC_VERTEX_PROJECT_ID` and
+`CLOUD_ML_REGION`:
+
+```bash
+export CLOUD_ML_REGION=global
+export ANTHROPIC_VERTEX_PROJECT_ID=<project-id>
+
+uv run onc-registry-pipeline input.parquet output/ \
+    --provider anthropic-vertex \
+    --model claude-sonnet-4-5@20250929
+```
+
+Vertex auth uses `ANTHROPIC_VERTEX_ACCESS_TOKEN` when present, otherwise it
+runs `gcloud auth application-default print-access-token` and refreshes on
+401/403.
+
 ### Prepare your input data
 
 The input is a CSV or Parquet file with **one row per document**, multiple rows per patient:
@@ -97,6 +142,7 @@ uv run onc-registry-pipeline input.csv output/
 
 # With options
 uv run onc-registry-pipeline input.parquet output/ \
+    --provider vllm \
     --vllm-url http://localhost:8000/v1 \
     --format naaccr_xml \
     --chunk-size 50000 \
@@ -150,14 +196,24 @@ The `--readable-names` flag replaces XML IDs (e.g., `primarySite`) with full NAA
 ## CLI reference
 
 ```
-usage: onc-registry-pipeline [-h] [--vllm-url URL] [--max-concurrent N]
+usage: onc-registry-pipeline [-h]
+                       [--provider {vllm,azure-openai,anthropic-vertex}]
+                       [--endpoint URL] [--model MODEL] [--vllm-url URL]
+                       [--azure-auth-mode {bearer,api-key}]
+                       [--azure-api-key-env ENV]
+                       [--azure-token-refresh-command CMD]
+                       [--anthropic-vertex-project-id PROJECT]
+                       [--anthropic-vertex-region REGION]
+                       [--anthropic-vertex-token-env ENV]
+                       [--anthropic-vertex-token-refresh-command CMD]
+                       [--max-concurrent N]
                        [--format {naaccr_xml,naaccr_flat,csv}]
                        [--confidence-threshold FLOAT] [--data-dict DIR]
                        [--temperature FLOAT] [--max-tokens N]
-                       [--max-retries N] [--reasoning-parser NAME] [--chunk-size N]
-                       [--items-per-call N] [--seer-manuals-dir DIR]
-                       [--seer-context-max-chars N] [--checkpoint-dir DIR]
-                       [--verbose]
+                       [--max-retries N] [--reasoning-parser NAME]
+                       [--chunk-size N] [--items-per-call N]
+                       [--seer-manuals-dir DIR] [--seer-context-max-chars N]
+                       [--checkpoint-dir DIR] [--verbose]
                        input output
 
 positional arguments:
@@ -165,7 +221,24 @@ positional arguments:
   output                   Path to output directory
 
 options:
+  --provider              LLM endpoint provider (default: vllm)
+  --endpoint URL          Provider endpoint base URL (Azure defaults to
+                          $AZURE_OPENAI_ENDPOINT)
+  --model MODEL           Model/deployment id (or $LLM_MODEL /
+                          provider-specific env var)
   --vllm-url URL           vLLM server base URL (default: http://localhost:8000/v1)
+  --azure-auth-mode        bearer for Entra tokens, api-key for resource keys
+  --azure-api-key-env ENV  Env var holding Azure token/key
+  --azure-token-refresh-command CMD
+                           Command that prints a fresh Azure bearer token
+  --anthropic-vertex-project-id PROJECT
+                           Defaults to $ANTHROPIC_VERTEX_PROJECT_ID
+  --anthropic-vertex-region REGION
+                           Defaults to $CLOUD_ML_REGION
+  --anthropic-vertex-token-env ENV
+                           Env var holding a Vertex bearer token
+  --anthropic-vertex-token-refresh-command CMD
+                           Command that prints a fresh Vertex bearer token
   --max-concurrent N       Max concurrent diagnosis work units per round (default: 16)
   --format FORMAT          Output format (default: naaccr_xml)
   --confidence-threshold   Confidence threshold for review flagging (default: 0.7)

@@ -9,13 +9,36 @@ from pydantic import BaseModel
 class PipelineConfig(BaseModel):
     """Configuration for the NAACCR extraction pipeline."""
 
-    # vLLM server settings
+    # LLM endpoint settings
+    llm_provider: Literal["vllm", "azure-openai", "anthropic-vertex"] = "vllm"
+    llm_model: str = "auto"
+    llm_base_url: Optional[str] = None
+
+    # vLLM server settings (kept for backwards-compatible CLI/config names)
     vllm_base_url: str = "http://localhost:8000/v1"
     vllm_model: str = "auto"  # discovered at runtime
     vllm_max_tokens: int = 16384
     vllm_temperature: float = 0.0
     vllm_timeout: int = 300
     vllm_reasoning_parser: Optional[str] = "auto"
+
+    # Azure OpenAI v1 settings
+    azure_openai_endpoint: Optional[str] = None
+    azure_openai_api_key_env: str = "AZURE_OPENAI_API_KEY"
+    azure_openai_auth_mode: Literal["bearer", "api-key"] = "bearer"
+    azure_openai_token_refresh_command: Optional[str] = (
+        "az account get-access-token "
+        "--resource=https://cognitiveservices.azure.com/ "
+        "--query accessToken --output tsv"
+    )
+
+    # Anthropic Claude on Vertex AI settings
+    anthropic_vertex_project_id: Optional[str] = None
+    anthropic_vertex_region: Optional[str] = None
+    anthropic_vertex_token_env: str = "ANTHROPIC_VERTEX_ACCESS_TOKEN"
+    anthropic_vertex_token_refresh_command: Optional[str] = (
+        "gcloud auth application-default print-access-token"
+    )
 
     # Context / chunking settings
     model_context_window: int = 131072  # discovered at runtime
