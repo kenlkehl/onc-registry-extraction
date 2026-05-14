@@ -1,10 +1,10 @@
 """Fully async LLM client for registry extraction model endpoints.
 
-Supports local vLLM, Azure OpenAI v1 chat completions, and Anthropic Claude
-on Vertex AI.  Handles model discovery where available, auth-token refresh,
-size classification, and retry logic for robust JSON extraction. JSON output
-is requested via the prompt text (no guided_json). On parse failure, retries
-with error feedback.
+Supports local vLLM chat completions, Azure OpenAI v1 Responses API, and
+Anthropic Claude on Vertex AI.  Handles model discovery where available,
+auth-token refresh, size classification, and retry logic for robust JSON
+extraction. JSON output is requested via the prompt text (no guided_json).
+On parse failure, retries with error feedback.
 """
 
 import asyncio
@@ -309,7 +309,7 @@ class VLLMClient:
         system_prompt: str,
         user_prompt: str,
     ) -> LLMResponse:
-        """Send a chat completion request and return the full LLM response.
+        """Send a model request and return the full LLM response.
 
         JSON output is requested via the prompt text (no guided_json).
         On JSON parse failure, the prompt is re-submitted with the error
@@ -585,6 +585,18 @@ class VLLMClient:
                 "stream": False,
             }
 
+        if self._provider == "azure-openai":
+            body = {
+                "model": model_name,
+                "instructions": system_prompt,
+                "input": user_prompt,
+                "max_output_tokens": self._max_tokens,
+                "store": False,
+            }
+            if _azure_responses_supports_sampling(model_name):
+                body["temperature"] = self._temperature
+            return body
+
         return {
             "model": model_name,
             "messages": [
@@ -611,11 +623,17 @@ class VLLMClient:
                 f"/publishers/anthropic/models/{model}:rawPredict"
             )
 
+        if self._provider == "azure-openai":
+            return f"{self._base_url}/responses"
+
         return f"{self._base_url}/chat/completions"
 
     def _parse_completion_data(self, data: dict) -> tuple[str, str, str]:
         if self._provider == "anthropic-vertex":
             return _parse_anthropic_message(data)
+
+        if self._provider == "azure-openai":
+            return _parse_azure_responses_data(data)
 
         message = data["choices"][0]["message"]
         final_content = message_content_to_text(message.get("content"))
@@ -795,6 +813,103 @@ def _coerce_to_dict(parsed: object) -> dict:
         str(parsed)[:200],
         0,
     )
+
+
+def _azure_responses_supports_sampling(model_name: str) -> bool:
+    """Return False for Azure reasoning models that reject temperature."""
+    normalized = model_name.lower().replace("_", "-")
+    reasoning_prefixes = ("o1", "o3", "o4", "gpt-5")
+    for prefix in reasoning_prefixes:
+        if (
+            normalized.startswith(prefix)
+            or f"/{prefix}" in normalized
+            or f"-{prefix}" in normalized
+        ):
+            return False
+    return True
+
+
+def _parse_azure_responses_data(data: dict) -> tuple[str, str, str]:
+    """Return raw text, final text, and reasoning summary from Responses API."""
+    final_content = data.get("output_text")
+    if not isinstance(final_content, str) or not final_content:
+        final_content = _collect_responses_output_text(data)
+
+    reasoning = _collect_responses_reasoning(data)
+    raw_content = _combine_reasoning_and_content(reasoning, final_content)
+    return raw_content, final_content, reasoning
+
+
+def _collect_responses_output_text(data: dict) -> str:
+    output = data.get("output", [])
+    if not isinstance(output, list):
+        return ""
+
+    text_parts: list[str] = []
+    for item in output:
+        if not isinstance(item, dict):
+            continue
+        item_type = item.get("type")
+        if (
+            item_type not in {"message", "output_message"}
+            and item.get("role") != "assistant"
+        ):
+            continue
+        text_parts.extend(_responses_content_text_parts(item.get("content")))
+    return "".join(text_parts)
+
+
+def _responses_content_text_parts(content: object) -> list[str]:
+    if isinstance(content, str):
+        return [content]
+    if not isinstance(content, list):
+        return []
+
+    text_parts: list[str] = []
+    for part in content:
+        if isinstance(part, str):
+            text_parts.append(part)
+            continue
+        if not isinstance(part, dict):
+            continue
+
+        part_type = part.get("type")
+        if part_type in {"output_text", "text"} and isinstance(part.get("text"), str):
+            text_parts.append(part["text"])
+        elif part_type == "refusal" and isinstance(part.get("refusal"), str):
+            text_parts.append(part["refusal"])
+        elif isinstance(part.get("content"), str):
+            text_parts.append(part["content"])
+    return text_parts
+
+
+def _collect_responses_reasoning(data: dict) -> str:
+    output = data.get("output", [])
+    if not isinstance(output, list):
+        return ""
+
+    reasoning_parts: list[str] = []
+    for item in output:
+        if not isinstance(item, dict) or item.get("type") != "reasoning":
+            continue
+
+        for key in ("summary", "content"):
+            values = item.get(key)
+            if not isinstance(values, list):
+                continue
+            for value in values:
+                if isinstance(value, str):
+                    reasoning_parts.append(value)
+                elif isinstance(value, dict):
+                    text = (
+                        value.get("text")
+                        or value.get("summary_text")
+                        or value.get("content")
+                    )
+                    if text is not None:
+                        reasoning_parts.append(str(text))
+
+    return "\n".join(reasoning_parts).strip()
 
 
 def _parse_anthropic_message(data: dict) -> tuple[str, str, str]:

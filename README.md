@@ -73,7 +73,7 @@ vllm serve openai/gpt-oss-120b --reasoning-parser openai_gptoss
 
 ### Optional: use cloud model endpoints
 
-Azure OpenAI v1 endpoints use the OpenAI-compatible chat completions route.
+Azure OpenAI v1 endpoints use the Responses API route.
 For Entra bearer-token auth, set your endpoint and token as usual:
 
 ```bash
@@ -86,6 +86,11 @@ uv run onc-registry-pipeline input.parquet output/ \
     --provider azure-openai \
     --model <azure-model-or-deployment>
 ```
+
+The Azure provider posts stateless requests to `/openai/v1/responses` with
+`store=false`, using the configured model/deployment as the Responses `model`.
+For Azure reasoning models such as GPT-5 and o-series deployments, unsupported
+sampling parameters are omitted.
 
 If an Azure inference call receives a 401/403, the pipeline refreshes the
 bearer token by running:
