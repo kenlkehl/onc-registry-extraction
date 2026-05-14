@@ -71,6 +71,10 @@ try:
     from onc_registry_pipeline.output.llm_log import LLMLog
 except ImportError:
     LLMLog = None
+try:
+    from onc_registry_pipeline.diagnosis_summary import write_diagnosis_summary_csv
+except ImportError:
+    write_diagnosis_summary_csv = None
 
 logger = logging.getLogger(__name__)
 
@@ -397,7 +401,7 @@ class OncRegistryExtractionPipeline:
 
         # 5. Write outputs
         all_records = [
-            (wu.patient_id, wu.tumor_index, wu.current_extraction)
+            (wu.patient_id, wu.tumor_index, wu.tumor, wu.current_extraction)
             for wu in all_work_units
         ]
         await self._write_outputs(all_records, output_path)
@@ -539,7 +543,9 @@ class OncRegistryExtractionPipeline:
 
     async def _write_outputs(
         self,
-        all_records: list[tuple[str, int, dict[int, ExtractionResult]]],
+        all_records: list[
+            tuple[str, int, TumorCandidate, dict[int, ExtractionResult]]
+        ],
         output_path: Path,
     ) -> None:
         """Write all output files."""
@@ -550,7 +556,7 @@ class OncRegistryExtractionPipeline:
         value_records: list[dict[int, str]] = []
         patient_groups: dict[str, list[int]] = {}
 
-        for patient_id, _tumor_index, record in all_records:
+        for patient_id, _tumor_index, _tumor, record in all_records:
             value_dict: dict[int, str] = {}
             for item_num, result in record.items():
                 if isinstance(result, ExtractionResult):
@@ -582,6 +588,11 @@ class OncRegistryExtractionPipeline:
                 csv_path = str(output_path / "naaccr_output.csv")
                 writer.write_csv(value_records, csv_path)
                 logger.info("CSV written to %s", csv_path)
+
+        if write_diagnosis_summary_csv is not None:
+            summary_path = output_path / "diagnosis_summary.csv"
+            write_diagnosis_summary_csv(all_records, summary_path, self.dictionary)
+            logger.info("Diagnosis summary CSV written to %s", summary_path)
 
         if self.audit:
             audit_path = str(output_path / "audit_trail.csv")

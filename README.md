@@ -54,7 +54,7 @@ Start a vLLM server with your preferred model:
 # Example  (won't parse out reasoning text)
 vllm serve google/gemma-4-31b-it 
 
-
+<azure-model-or-deployment>
 ```
 
 For reasoning models, start vLLM with its built-in reasoning parser so the
@@ -84,7 +84,7 @@ export AZURE_OPENAI_API_KEY="$(az account get-access-token \
 
 uv run onc-registry-pipeline input.parquet output/ \
     --provider azure-openai \
-    --model <azure-model-or-deployment>
+    --model gpt-5.4
 ```
 
 The Azure provider posts stateless requests to `/openai/v1/responses` with
@@ -172,6 +172,7 @@ The pipeline writes to the output directory:
 | `naaccr_output.xml` | NAACCR v26 XML (NaaccrData > Patient > Tumor hierarchy) |
 | `naaccr_output.dat` | NAACCR v26 fixed-width flat file |
 | `naaccr_output.csv` | Flat CSV with one column per NAACCR item |
+| `diagnosis_summary.csv` | High-level one-row-per-diagnosis CSV with site, histology, SEER summary stage, and AJCC stage fields |
 | `audit_trail.csv` | Per-item provenance: source chunk, evidence text, confidence, round |
 | `review_queue.csv` | Prioritized worklist for human review (CRITICAL/HIGH/MEDIUM/LOW) |
 | `llm_calls.jsonl` | Full log of all LLM interactions (prompts, responses, reasoning) |
