@@ -14,6 +14,8 @@ import os
 import re
 import shlex
 from dataclasses import dataclass
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from typing import Literal, Optional
 from urllib.parse import quote
 
@@ -42,6 +44,7 @@ _DEFAULT_VERTEX_TOKEN_REFRESH_COMMAND = (
 )
 _ANTHROPIC_VERTEX_VERSION = "vertex-2023-10-16"
 _AUTH_ERROR_STATUSES = {401, 403}
+_MAX_BACKOFF_SECONDS = 60.0
 _EXPORT_COMMAND_RE = re.compile(
     r"^\s*export\s+[A-Za-z_][A-Za-z0-9_]*\s*=\s*[\"']?\$\((.*)\)[\"']?\s*$",
     re.DOTALL,
@@ -132,7 +135,7 @@ class _ServerError(Exception):
 
 
 class _RateLimited(Exception):
-    """Raised on HTTP 429 so tenacity can apply a longer back-off."""
+    """Raised on HTTP 429 so caller retry loops can back off."""
 
     def __init__(self, retry_after: Optional[float] = None) -> None:
         self.retry_after = retry_after
@@ -351,7 +354,10 @@ class VLLMClient:
                 llm_resp = await self._post_completion(body, attempt)
                 return llm_resp
             except _RateLimited as exc:
-                wait = exc.retry_after or (2 ** attempt)
+                last_error = str(exc)
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt, retry_after=exc.retry_after)
                 logger.warning(
                     "Rate limited (attempt %d/%d). Waiting %.1fs.",
                     attempt,
@@ -359,9 +365,11 @@ class VLLMClient:
                     wait,
                 )
                 await asyncio.sleep(wait)
-                last_error = str(exc)
             except _ServerError as exc:
-                wait = 2 ** attempt
+                last_error = str(exc)
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt)
                 logger.warning(
                     "Server error %d (attempt %d/%d). Waiting %.1fs.",
                     exc.status_code,
@@ -370,7 +378,6 @@ class VLLMClient:
                     wait,
                 )
                 await asyncio.sleep(wait)
-                last_error = str(exc)
             except _AuthenticationError as exc:
                 logger.warning(
                     "Authentication failure (HTTP %d, attempt %d/%d). "
@@ -381,13 +388,16 @@ class VLLMClient:
                 )
                 stale_token = self._auth_token or self._read_auth_token_from_env()
                 refreshed = await self._refresh_auth_token(stale_token=stale_token)
-                if refreshed:
+                last_error = str(exc)
+                if refreshed and self._can_retry(attempt):
                     last_error = str(exc)
                     continue
-                last_error = str(exc)
                 break
             except (httpx.TimeoutException, httpx.ConnectError) as exc:
-                wait = 2 ** attempt
+                last_error = str(exc)
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt)
                 logger.warning(
                     "Connection issue (attempt %d/%d): %s. Waiting %.1fs.",
                     attempt,
@@ -396,7 +406,6 @@ class VLLMClient:
                     wait,
                 )
                 await asyncio.sleep(wait)
-                last_error = str(exc)
             except _JSONParseError as exc:
                 logger.warning(
                     "JSON parse failure (attempt %d/%d): %s",
@@ -477,22 +486,13 @@ class VLLMClient:
 
         resp = await self._post_json(self._completion_url(), body)
 
-        # Handle error status codes before reading JSON body.
-        if resp.status_code == 429:
-            retry_after = resp.headers.get("retry-after")
-            raise _RateLimited(
-                retry_after=float(retry_after) if retry_after else None
-            )
         if resp.status_code in _AUTH_ERROR_STATUSES:
             stale_token = self._auth_token or self._read_auth_token_from_env()
             refreshed = await self._refresh_auth_token(stale_token=stale_token)
             if refreshed:
                 resp = await self._post_json(self._completion_url(), body)
-            if resp.status_code in _AUTH_ERROR_STATUSES:
-                raise _AuthenticationError(resp.status_code, resp.text)
-        if resp.status_code >= 500:
-            raise _ServerError(resp.status_code, resp.text)
-        resp.raise_for_status()
+
+        self._raise_for_retryable_status(resp)
 
         # Parse the API response envelope.
         data = resp.json()
@@ -551,21 +551,99 @@ class VLLMClient:
         return model_name, int(context_window)
 
     async def _get_models_with_auth_retry(self) -> dict:
+        last_error: Optional[Exception] = None
+        for attempt in range(1, self._max_retries + 1):
+            try:
+                resp = await self._get_models_response_with_auth_refresh(attempt)
+                self._raise_for_retryable_status(resp)
+                return resp.json()
+            except _RateLimited as exc:
+                last_error = exc
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt, retry_after=exc.retry_after)
+                logger.warning(
+                    "Rate limited during model discovery "
+                    "(attempt %d/%d). Waiting %.1fs.",
+                    attempt,
+                    self._max_retries,
+                    wait,
+                )
+                await asyncio.sleep(wait)
+            except _ServerError as exc:
+                last_error = exc
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt)
+                logger.warning(
+                    "Server error %d during model discovery "
+                    "(attempt %d/%d). Waiting %.1fs.",
+                    exc.status_code,
+                    attempt,
+                    self._max_retries,
+                    wait,
+                )
+                await asyncio.sleep(wait)
+            except (httpx.TimeoutException, httpx.ConnectError) as exc:
+                last_error = exc
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt)
+                logger.warning(
+                    "Connection issue during model discovery "
+                    "(attempt %d/%d): %s. Waiting %.1fs.",
+                    attempt,
+                    self._max_retries,
+                    exc,
+                    wait,
+                )
+                await asyncio.sleep(wait)
+
+        if last_error is not None:
+            raise last_error
+        raise RuntimeError("Model discovery failed for an unknown reason.")
+
+    async def _get_models_response_with_auth_refresh(
+        self,
+        attempt: int,
+    ) -> httpx.Response:
         try:
-            resp = await self._get_json(f"{self._base_url}/models")
-        except _AuthenticationError:
+            return await self._get_json(f"{self._base_url}/models")
+        except _AuthenticationError as exc:
+            logger.warning(
+                "Authentication failure during model discovery "
+                "(HTTP %d, attempt %d/%d). Refreshing credentials.",
+                exc.status_code,
+                attempt,
+                self._max_retries,
+            )
             stale_token = self._auth_token or self._read_auth_token_from_env()
             refreshed = await self._refresh_auth_token(stale_token=stale_token)
             if not refreshed:
                 raise
-            resp = await self._get_json(f"{self._base_url}/models")
+            return await self._get_json(f"{self._base_url}/models")
 
+    def _raise_for_retryable_status(self, resp: httpx.Response) -> None:
         if resp.status_code == 429:
-            raise _RateLimited()
+            raise _RateLimited(_parse_retry_after(resp.headers.get("retry-after")))
+        if resp.status_code in _AUTH_ERROR_STATUSES:
+            raise _AuthenticationError(resp.status_code, resp.text)
         if resp.status_code >= 500:
             raise _ServerError(resp.status_code, resp.text)
         resp.raise_for_status()
-        return resp.json()
+
+    def _can_retry(self, attempt: int) -> bool:
+        return attempt < self._max_retries
+
+    @staticmethod
+    def _retry_delay(
+        attempt: int,
+        retry_after: Optional[float] = None,
+    ) -> float:
+        backoff = min(_MAX_BACKOFF_SECONDS, 2 ** max(0, attempt - 1))
+        if retry_after is None:
+            return float(backoff)
+        return max(float(retry_after), float(backoff))
 
     def _build_completion_body(
         self,
@@ -780,6 +858,27 @@ def _combine_reasoning_and_content(reasoning: str, content: str) -> str:
     if reasoning:
         return reasoning
     return content
+
+
+def _parse_retry_after(value: Optional[str]) -> Optional[float]:
+    """Parse Retry-After seconds or HTTP-date headers."""
+    if not value:
+        return None
+
+    stripped = value.strip()
+    try:
+        return max(0.0, float(stripped))
+    except ValueError:
+        pass
+
+    try:
+        retry_at = parsedate_to_datetime(stripped)
+    except (TypeError, ValueError):
+        return None
+
+    if retry_at.tzinfo is None:
+        retry_at = retry_at.replace(tzinfo=timezone.utc)
+    return max(0.0, (retry_at - datetime.now(timezone.utc)).total_seconds())
 
 
 def _strip_code_fences(text: str) -> str:

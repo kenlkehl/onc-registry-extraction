@@ -8,13 +8,13 @@ inference. Supports checkpointing for resume after interruption.
 from __future__ import annotations
 
 import asyncio
-import json
 import logging
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from onc_registry_pipeline.checkpoint import atomic_write_json, read_json
 from onc_registry_pipeline.config import PipelineConfig
 from onc_registry_pipeline.dictionary.loader import NAACCRDictionary
 from onc_registry_pipeline.dictionary.code_resolver import CodeResolver
@@ -45,6 +45,7 @@ class TumorWorkUnit:
     tumor: TumorCandidate
     chunks: list[Any]  # list[SequentialChunk]
     current_extraction: dict[int, ExtractionResult] = field(default_factory=dict)
+    completed_chunks: set[int] = field(default_factory=set)
 
 
 # ---------------------------------------------------------------------------
@@ -73,6 +74,7 @@ class RoundOrchestrator:
         self._schema_reg = schema_registry
         self._manual_context_provider = manual_context_provider
         self._llm_log = llm_log
+        self._checkpoint_lock = asyncio.Lock()
 
     # ------------------------------------------------------------------
     # Round preparation
@@ -127,17 +129,28 @@ class RoundOrchestrator:
             logger.warning("No rounds to process.")
             return
 
-        # Resume from checkpoint if available
         start_round = 0
         if checkpoint_dir is not None:
-            start_round = self._load_checkpoints(work_units, checkpoint_dir)
+            start_round = self._load_checkpoints(work_units, checkpoint_dir, rounds)
             if start_round > 0:
                 logger.info("Resuming from round %d (of %d)", start_round, len(rounds))
 
         semaphore = asyncio.Semaphore(self._config.max_concurrent_patients)
 
         for round_idx in range(start_round, len(rounds)):
-            round_items = rounds[round_idx]
+            round_items = [
+                (wu, chunk_idx)
+                for wu, chunk_idx in rounds[round_idx]
+                if chunk_idx not in wu.completed_chunks
+            ]
+            if not round_items:
+                logger.info(
+                    "Round %d/%d already complete; skipping.",
+                    round_idx + 1,
+                    len(rounds),
+                )
+                continue
+
             round_start = time.time()
 
             logger.info(
@@ -147,7 +160,14 @@ class RoundOrchestrator:
                 len(round_items),
             )
 
-            await self._process_round(round_items, semaphore)
+            await self._process_round(
+                round_items,
+                semaphore,
+                checkpoint_dir=checkpoint_dir,
+                work_units=work_units,
+                rounds=rounds,
+                round_idx=round_idx,
+            )
 
             elapsed = time.time() - round_start
             logger.info(
@@ -157,19 +177,26 @@ class RoundOrchestrator:
                 elapsed,
             )
 
-            # Checkpoint
             if checkpoint_dir is not None:
-                self._save_checkpoint(round_idx, work_units, checkpoint_dir)
+                self._save_checkpoint(round_idx, work_units, checkpoint_dir, rounds)
 
     async def _process_round(
         self,
         round_items: list[tuple[TumorWorkUnit, int]],
         semaphore: asyncio.Semaphore,
+        *,
+        checkpoint_dir: Path | None,
+        work_units: list[TumorWorkUnit],
+        rounds: list[list[tuple[TumorWorkUnit, int]]],
+        round_idx: int,
     ) -> None:
         """Process all items in a round concurrently."""
 
         async def _process_one(wu: TumorWorkUnit, chunk_idx: int) -> None:
             async with semaphore:
+                if chunk_idx in wu.completed_chunks:
+                    return
+
                 tumor_context = (
                     f"{wu.tumor.cancer_type} at {wu.tumor.primary_site_hint}, "
                     f"diagnosed approximately {wu.tumor.approximate_date}"
@@ -189,11 +216,21 @@ class RoundOrchestrator:
                 chunk = wu.chunks[chunk_idx]
                 updated = await extractor.extract(chunk, wu.current_extraction)
                 wu.current_extraction = updated
+                wu.completed_chunks.add(chunk_idx)
+
+                if checkpoint_dir is not None:
+                    async with self._checkpoint_lock:
+                        self._save_checkpoint(
+                            round_idx,
+                            work_units,
+                            checkpoint_dir,
+                            rounds,
+                        )
 
         tasks = [_process_one(wu, ci) for wu, ci in round_items]
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        # Log any failures
+        failures: list[Exception] = []
         for i, result in enumerate(results):
             if isinstance(result, Exception):
                 wu, ci = round_items[i]
@@ -204,6 +241,12 @@ class RoundOrchestrator:
                     ci,
                     result,
                 )
+                failures.append(result)
+
+        if failures:
+            raise RuntimeError(
+                f"{len(failures)} work unit(s) failed in round {round_idx}"
+            ) from failures[0]
 
     # ------------------------------------------------------------------
     # Checkpointing
@@ -214,29 +257,31 @@ class RoundOrchestrator:
         round_idx: int,
         work_units: list[TumorWorkUnit],
         checkpoint_dir: Path,
+        rounds: list[list[tuple[TumorWorkUnit, int]]],
     ) -> None:
-        """Save extraction state after a completed round."""
+        """Save extraction state and per-work-unit completion progress."""
         checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
-        # Save per-work-unit extraction state
         state_data: list[dict] = []
         for wu in work_units:
             state_data.append({
                 "patient_id": wu.patient_id,
                 "tumor_index": wu.tumor_index,
+                "completed_chunks": sorted(wu.completed_chunks),
                 "extraction_state": serialize_extraction_state(wu.current_extraction),
             })
 
         round_file = checkpoint_dir / f"round_{round_idx:04d}.json"
-        round_file.write_text(json.dumps(state_data, indent=2))
+        atomic_write_json(round_file, state_data)
 
-        # Update metadata
         metadata = {
-            "completed_rounds": round_idx + 1,
+            "schema_version": 2,
+            "latest_round": round_idx,
+            "completed_rounds": self._completed_round_count(rounds),
             "total_work_units": len(work_units),
         }
         meta_file = checkpoint_dir / "metadata.json"
-        meta_file.write_text(json.dumps(metadata, indent=2))
+        atomic_write_json(meta_file, metadata)
 
         logger.info("Checkpoint saved: %s", round_file)
 
@@ -244,6 +289,7 @@ class RoundOrchestrator:
         self,
         work_units: list[TumorWorkUnit],
         checkpoint_dir: Path,
+        rounds: list[list[tuple[TumorWorkUnit, int]]],
     ) -> int:
         """Load checkpoints and return the round to resume from.
 
@@ -253,26 +299,35 @@ class RoundOrchestrator:
         if not meta_file.exists():
             return 0
 
-        metadata = json.loads(meta_file.read_text())
-        completed_rounds = metadata.get("completed_rounds", 0)
-
-        if completed_rounds <= 0:
+        try:
+            metadata = read_json(meta_file)
+        except Exception as exc:
+            logger.warning("Could not read checkpoint metadata %s: %s", meta_file, exc)
             return 0
 
-        # Load the latest round checkpoint
-        latest_round = completed_rounds - 1
+        completed_rounds = metadata.get("completed_rounds", 0)
+        latest_round = metadata.get("latest_round")
+
+        if completed_rounds <= 0 and latest_round is None:
+            return 0
+
+        if latest_round is None:
+            latest_round = completed_rounds - 1
         round_file = checkpoint_dir / f"round_{latest_round:04d}.json"
         if not round_file.exists():
             logger.warning(
-                "Metadata says %d rounds completed but %s not found",
-                completed_rounds,
+                "Checkpoint metadata points to round %d but %s was not found",
+                latest_round,
                 round_file,
             )
             return 0
 
-        state_data = json.loads(round_file.read_text())
+        try:
+            state_data = read_json(round_file)
+        except Exception as exc:
+            logger.warning("Could not read checkpoint %s: %s", round_file, exc)
+            return 0
 
-        # Build lookup for work units
         wu_map: dict[tuple[str, int], TumorWorkUnit] = {
             (wu.patient_id, wu.tumor_index): wu for wu in work_units
         }
@@ -285,6 +340,21 @@ class RoundOrchestrator:
                 wu.current_extraction = deserialize_extraction_state(
                     entry["extraction_state"]
                 )
+                if "completed_chunks" in entry:
+                    completed_chunks: set[int] = set()
+                    for chunk_idx in entry.get("completed_chunks", []):
+                        try:
+                            parsed_idx = int(chunk_idx)
+                        except (TypeError, ValueError):
+                            continue
+                        if 0 <= parsed_idx < len(wu.chunks):
+                            completed_chunks.add(parsed_idx)
+                    wu.completed_chunks = completed_chunks
+                else:
+                    wu.completed_chunks = {
+                        chunk_idx
+                        for chunk_idx in range(min(completed_rounds, len(wu.chunks)))
+                    }
                 restored += 1
 
         logger.info(
@@ -292,4 +362,30 @@ class RoundOrchestrator:
             restored,
             latest_round,
         )
-        return completed_rounds
+        return self._first_incomplete_round(rounds)
+
+    @staticmethod
+    def _completed_round_count(
+        rounds: list[list[tuple[TumorWorkUnit, int]]],
+    ) -> int:
+        """Return contiguous fully completed rounds from the beginning."""
+        count = 0
+        for round_items in rounds:
+            if all(chunk_idx in wu.completed_chunks for wu, chunk_idx in round_items):
+                count += 1
+                continue
+            break
+        return count
+
+    @staticmethod
+    def _first_incomplete_round(
+        rounds: list[list[tuple[TumorWorkUnit, int]]],
+    ) -> int:
+        """Return the first round that still has pending work."""
+        for round_idx, round_items in enumerate(rounds):
+            if any(
+                chunk_idx not in wu.completed_chunks
+                for wu, chunk_idx in round_items
+            ):
+                return round_idx
+        return len(rounds)

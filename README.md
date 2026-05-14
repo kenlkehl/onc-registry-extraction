@@ -256,7 +256,7 @@ options:
   --items-per-call N       NAACCR items per LLM call (default: 50)
   --seer-manuals-dir DIR   Vendored SEER/NAACCR manuals directory (default: SEERManuals)
   --seer-context-max-chars Max registry manual context per prompt (default: 12000)
-  --checkpoint-dir DIR     Directory for round checkpoints (enables resume)
+  --checkpoint-dir DIR     Directory for resumable checkpoints
   -v, --verbose            Enable debug logging
 ```
 
@@ -317,7 +317,7 @@ Pass 0 sends every patient chunk to the LLM to identify primary cancer diagnoses
 - **Round N** = Nth chunk from each diagnosis work unit
 - All work units' chunk N processed in parallel via `asyncio.Semaphore`
 - Within a chunk, domain extraction is sequential (demographics before staging, since staging items depend on primary site)
-- After each round, extraction state is checkpointed (if `--checkpoint-dir` is set)
+- Progress is checkpointed for completed tumor-detection patients and extraction chunks (if `--checkpoint-dir` is set)
 
 ### Running updates across chunks
 
@@ -381,16 +381,21 @@ The LLM never sees a raw schema or unconstrained output space. Every prompt incl
 
 ### Checkpointing and resume
 
-With `--checkpoint-dir`, the pipeline saves state after each round:
+With `--checkpoint-dir`, the pipeline saves pass-0 and extraction progress:
 ```
 checkpoint_dir/
-├── metadata.json           # Completed rounds, work unit count
-├── round_0000.json         # Extraction state after round 0
-├── round_0001.json         # Extraction state after round 1
+├── pass0/
+│   └── patient_<hash>.json # Cached tumor detection for completed patients
+├── metadata.json           # Latest round, completed rounds, work unit count
+├── round_0000.json         # Extraction state/progress for round 0
+├── round_0001.json         # Extraction state/progress for round 1
 └── ...
 ```
 
-On restart with the same checkpoint directory, the pipeline automatically resumes from the last completed round.
+On restart with the same checkpoint directory, the pipeline reuses completed
+tumor-detection results and skips extraction chunks already marked complete.
+Checkpoint files are written atomically so an interruption cannot leave a
+partially written JSON file as the active checkpoint.
 
 ## NAACCR data dictionary
 

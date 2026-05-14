@@ -8,17 +8,20 @@ from __future__ import annotations
 import asyncio
 import argparse
 import calendar
+import hashlib
 import logging
 import os
 import re
 import sys
 import time
+from dataclasses import asdict, fields
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Optional
 
 import pandas as pd
 
+from onc_registry_pipeline.checkpoint import atomic_write_json, read_json
 from onc_registry_pipeline.config import PipelineConfig
 from onc_registry_pipeline.dictionary.loader import NAACCRDictionary
 from onc_registry_pipeline.dictionary.code_resolver import CodeResolver
@@ -29,6 +32,7 @@ from onc_registry_pipeline.llm.client import VLLMClient
 from onc_registry_pipeline.llm.structured_output import SchemaBuilder
 from onc_registry_pipeline.manuals.seer import SEERManualContextProvider
 from onc_registry_pipeline.extraction.pass0_tumor_detection import TumorDetector
+from onc_registry_pipeline.extraction.pass0_tumor_detection import TumorCandidate
 from onc_registry_pipeline.extraction.base import ExtractionResult
 from onc_registry_pipeline.convert import parse_naaccr_xml, write_json
 from onc_registry_pipeline.extraction.round_orchestrator import (
@@ -71,6 +75,7 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 _DIAGNOSIS_DOCUMENT_WINDOW_MONTHS = 6
+_TUMOR_CANDIDATE_FIELDS = {field.name for field in fields(TumorCandidate)}
 
 
 def _add_months(value: date, months: int) -> date:
@@ -151,6 +156,18 @@ def _documents_overlapping_window(
         if doc_start <= window_end and doc_end >= window_start:
             selected.append(doc)
     return selected
+
+
+def _patient_tumor_checkpoint_path(checkpoint_dir: Path, patient_id: str) -> Path:
+    """Return a stable pass-0 checkpoint path for a patient id."""
+    digest = hashlib.sha256(patient_id.encode("utf-8")).hexdigest()[:20]
+    return checkpoint_dir / "pass0" / f"patient_{digest}.json"
+
+
+def _tumor_candidate_from_dict(data: dict[str, Any]) -> TumorCandidate:
+    """Build a TumorCandidate while ignoring unknown future fields."""
+    kwargs = {k: v for k, v in data.items() if k in _TUMOR_CANDIDATE_FIELDS}
+    return TumorCandidate(**kwargs)
 
 
 class OncRegistryExtractionPipeline:
@@ -279,8 +296,17 @@ class OncRegistryExtractionPipeline:
                 logger.warning("Patient %s: no chunks produced", patient_set.patient_id)
                 continue
 
-            # Detect tumors
-            tumors = await detector.detect(chunks)
+            tumors = self._load_patient_tumor_checkpoint(patient_set.patient_id)
+            if tumors is None:
+                tumors = await detector.detect(chunks)
+                self._save_patient_tumor_checkpoint(patient_set.patient_id, tumors)
+            else:
+                logger.info(
+                    "Patient %s: loaded %d tumor(s) from pass-0 checkpoint",
+                    patient_set.patient_id,
+                    len(tumors),
+                )
+
             logger.info(
                 "Patient %s: %d chunk(s), %d tumor(s)",
                 patient_set.patient_id,
@@ -426,6 +452,51 @@ class OncRegistryExtractionPipeline:
                     pass_number=0,
                 )
         return prior
+
+    def _load_patient_tumor_checkpoint(
+        self,
+        patient_id: str,
+    ) -> list[TumorCandidate] | None:
+        """Load cached pass-0 tumor detection results for one patient."""
+        if self.config.checkpoint_dir is None:
+            return None
+
+        path = _patient_tumor_checkpoint_path(self.config.checkpoint_dir, patient_id)
+        if not path.exists():
+            return None
+
+        try:
+            payload = read_json(path)
+            tumors = payload.get("tumors", [])
+            if not isinstance(tumors, list):
+                raise ValueError("pass-0 checkpoint tumors field is not a list")
+            return [_tumor_candidate_from_dict(tumor) for tumor in tumors]
+        except Exception as exc:
+            logger.warning(
+                "Could not load pass-0 checkpoint for patient %s from %s: %s",
+                patient_id,
+                path,
+                exc,
+            )
+            return None
+
+    def _save_patient_tumor_checkpoint(
+        self,
+        patient_id: str,
+        tumors: list[TumorCandidate],
+    ) -> None:
+        """Persist pass-0 tumor detection results for one patient."""
+        if self.config.checkpoint_dir is None:
+            return
+
+        path = _patient_tumor_checkpoint_path(self.config.checkpoint_dir, patient_id)
+        payload = {
+            "schema_version": 1,
+            "patient_id": patient_id,
+            "tumors": [asdict(tumor) for tumor in tumors],
+        }
+        atomic_write_json(path, payload)
+        logger.info("Pass-0 checkpoint saved: %s", path)
 
     # ------------------------------------------------------------------
     # Validation
