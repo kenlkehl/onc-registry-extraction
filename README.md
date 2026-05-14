@@ -55,6 +55,20 @@ vllm serve meta-llama/Llama-3.3-70B-Instruct
 vllm serve Qwen/Qwen2.5-14B-Instruct
 ```
 
+For reasoning models, start vLLM with its built-in reasoning parser so the
+pipeline receives final JSON separately from reasoning text:
+
+```bash
+# Qwen3 / Qwen3.5 / Qwen3.6 variants
+vllm serve Qwen/Qwen3.6-27B --enable-reasoning --reasoning-parser qwen3
+
+# Gemma 4 variants
+vllm serve google/gemma-4-31b-it --enable-reasoning --reasoning-parser gemma4
+
+# GPT-OSS
+vllm serve openai/gpt-oss-120b --enable-reasoning --reasoning-parser openai_gptoss
+```
+
 ### Prepare your input data
 
 The input is a CSV or Parquet file with **one row per document**, multiple rows per patient:
@@ -140,7 +154,7 @@ usage: onc-registry-pipeline [-h] [--vllm-url URL] [--max-concurrent N]
                        [--format {naaccr_xml,naaccr_flat,csv}]
                        [--confidence-threshold FLOAT] [--data-dict DIR]
                        [--temperature FLOAT] [--max-tokens N]
-                       [--max-retries N] [--chunk-size N]
+                       [--max-retries N] [--reasoning-parser NAME] [--chunk-size N]
                        [--items-per-call N] [--seer-manuals-dir DIR]
                        [--seer-context-max-chars N] [--checkpoint-dir DIR]
                        [--verbose]
@@ -159,6 +173,8 @@ options:
   --temperature FLOAT      LLM sampling temperature (default: 0.0)
   --max-tokens N           Max tokens per LLM response (default: 16384)
   --max-retries N          Max LLM call retries (default: 3)
+  --reasoning-parser NAME  vLLM reasoning parser name: auto, none, qwen3,
+                           gemma4, openai_gptoss, etc. (default: auto)
   --chunk-size N           Chunk size in tokens (default: 50000)
   --items-per-call N       NAACCR items per LLM call (default: 50)
   --seer-manuals-dir DIR   Vendored SEER/NAACCR manuals directory (default: SEERManuals)

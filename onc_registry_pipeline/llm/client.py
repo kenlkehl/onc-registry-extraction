@@ -14,6 +14,14 @@ from typing import Optional
 
 import httpx
 
+from onc_registry_pipeline.llm.reasoning import (
+    AUTO_REASONING_PARSER,
+    VLLMReasoningOutputProcessor,
+    extract_server_reasoning,
+    message_content_to_text,
+    resolve_reasoning_parser,
+)
+
 logger = logging.getLogger(__name__)
 
 
@@ -24,6 +32,7 @@ class ModelProfile:
     model_name: str
     context_window: int
     model_size_class: str  # "small" (<15B), "medium" (15-40B), "large" (40B+)
+    reasoning_parser: Optional[str] = None
 
 
 @dataclass
@@ -33,11 +42,12 @@ class LLMResponse:
     Attributes
     ----------
     raw_content : str
-        The complete text returned by the model, including any
-        chain-of-thought / reasoning tokens.
+        Best-effort complete model text.  When vLLM returns reasoning in
+        a separate response field, this combines reasoning and final text
+        for logging/audit visibility.
     final_content : str
-        The text *after* stripping reasoning tokens (``</think>``,
-        ``assistantfinal``, etc.).  This is what gets parsed as JSON.
+        The text after vLLM reasoning parsing.  This is what gets parsed
+        as JSON.
     parsed : dict
         The JSON-parsed result from *final_content*.
     reasoning : str
@@ -142,12 +152,15 @@ class VLLMClient:
         max_tokens: int = 4096,
         timeout: int = 120,
         max_retries: int = 3,
+        reasoning_parser: Optional[str] = AUTO_REASONING_PARSER,
     ) -> None:
         self._base_url = base_url.rstrip("/")
         self._temperature = temperature
         self._max_tokens = max_tokens
         self._timeout = timeout
         self._max_retries = max_retries
+        self._configured_reasoning_parser = reasoning_parser
+        self._reasoning_output_processor = VLLMReasoningOutputProcessor(None)
         self._client: Optional[httpx.AsyncClient] = None
         self._model_profile: Optional[ModelProfile] = None
 
@@ -201,16 +214,27 @@ class VLLMClient:
 
         # 3. Size classification ------------------------------------------
         size_class = _classify_model(model_name)
+        reasoning_parser = resolve_reasoning_parser(
+            model_name,
+            self._configured_reasoning_parser,
+        )
+        self._reasoning_output_processor = VLLMReasoningOutputProcessor(
+            reasoning_parser,
+        )
         logger.info(
-            "Model profile: size_class=%s, context_window=%d",
+            "Model profile: size_class=%s, context_window=%d, "
+            "reasoning_parser=%s, local_reasoning_parser=%s",
             size_class,
             context_window,
+            reasoning_parser or "none",
+            self._reasoning_output_processor.local_parser_available,
         )
 
         self._model_profile = ModelProfile(
             model_name=model_name,
             context_window=context_window,
             model_size_class=size_class,
+            reasoning_parser=reasoning_parser,
         )
         return self._model_profile
 
@@ -258,10 +282,10 @@ class VLLMClient:
         Returns
         -------
         LLMResponse
-            Contains the raw output (with reasoning), the final output
-            (after stripping reasoning tokens), the parsed JSON, and the
-            reasoning text separately.  On unrecoverable failure the
-            ``parsed`` dict contains ``{"_error": True, "_message": "..."}``.
+            Contains the best-effort raw output, the final output after
+            vLLM reasoning parsing, the parsed JSON, and the reasoning
+            text separately.  On unrecoverable failure the ``parsed`` dict
+            contains ``{"_error": True, "_message": "..."}``.
         """
         if self._client is None:
             raise RuntimeError(
@@ -412,10 +436,18 @@ class VLLMClient:
 
         # Parse the API response envelope.
         data = resp.json()
-        raw_content: str = data["choices"][0]["message"]["content"]
+        message = data["choices"][0]["message"]
+        final_content = message_content_to_text(message.get("content"))
 
-        # Split reasoning from final output.
-        reasoning, final_content = _split_reasoning(raw_content)
+        server_reasoning = extract_server_reasoning(message)
+        if server_reasoning is not None:
+            reasoning = server_reasoning.strip()
+            raw_content = _combine_reasoning_and_content(reasoning, final_content)
+        else:
+            raw_content = final_content
+            split = self._reasoning_output_processor.split(raw_content)
+            reasoning = split.reasoning
+            final_content = split.final_content
 
         # Strip markdown code fences from the final output.
         final_content = _strip_code_fences(final_content)
@@ -444,66 +476,19 @@ class VLLMClient:
 # Utilities
 # ---------------------------------------------------------------------------
 
-# Patterns that mark the transition from reasoning/thinking to final output.
-# Order matters: we try each pattern and take the first match.
-_REASONING_END_PATTERNS = [
-    # DeepSeek-R1, QwQ, and other models using <think>...</think>
-    re.compile(r"</think>\s*", re.IGNORECASE),
-    # Some models emit this token to signal final output
-    re.compile(r"assistantfinal\s*", re.IGNORECASE),
-    # Variant spelling
-    re.compile(r"assistant_final\s*", re.IGNORECASE),
-    # <output> ... </output> wrappers (some fine-tunes)
-    re.compile(r"</reasoning>\s*", re.IGNORECASE),
-    # Generic [END_THINKING] marker
-    re.compile(r"\[END[_\s]?THINKING\]\s*", re.IGNORECASE),
-]
-
-
-def _split_reasoning(text: str) -> tuple[str, str]:
-    """Split raw LLM output into (reasoning, final_output).
-
-    Many reasoning/thinking models emit a chain-of-thought block followed
-    by a delimiter token, then the structured answer.  This function
-    detects common delimiter patterns and splits accordingly.
-
-    Returns
-    -------
-    tuple[str, str]
-        ``(reasoning, final_output)``.  If no reasoning delimiter is
-        found, *reasoning* is empty and *final_output* is the full text.
-    """
-    for pattern in _REASONING_END_PATTERNS:
-        m = pattern.search(text)
-        if m:
-            reasoning = text[: m.start()].strip()
-            final = text[m.end() :].strip()
-            # Guard against empty final (model might end with the token)
-            if final:
-                return reasoning, final
-            # If the "final" part is empty, the whole text is probably
-            # the answer with a stray token -- fall through to next pattern.
-
-    # No reasoning delimiter found.  Check for <think> opening tag without
-    # a closing tag (model may have been cut off).  In that case, try to
-    # find JSON after the thinking content.
-    think_open = re.search(r"<think>", text, re.IGNORECASE)
-    if think_open:
-        # Look for the first '{' after the <think> tag as a heuristic
-        # for where JSON output begins (in case the closing tag was omitted).
-        brace = text.rfind("{")
-        if brace > think_open.end():
-            reasoning = text[: brace].strip()
-            final = text[brace:].strip()
-            return reasoning, final
-
-    return "", text.strip()
-
-
 _FENCE_RE = re.compile(
     r"^```(?:json)?\s*\n?(.*?)\n?\s*```$",
     re.DOTALL,
 )
+
+
+def _combine_reasoning_and_content(reasoning: str, content: str) -> str:
+    """Combine separately parsed response fields for legacy raw-output logs."""
+    if reasoning and content:
+        return f"{reasoning}\n{content}"
+    if reasoning:
+        return reasoning
+    return content
 
 
 def _strip_code_fences(text: str) -> str:

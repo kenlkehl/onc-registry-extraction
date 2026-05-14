@@ -15,6 +15,7 @@ class PipelineConfig(BaseModel):
     vllm_max_tokens: int = 16384
     vllm_temperature: float = 0.0
     vllm_timeout: int = 300
+    vllm_reasoning_parser: Optional[str] = "auto"
 
     # Context / chunking settings
     model_context_window: int = 131072  # discovered at runtime

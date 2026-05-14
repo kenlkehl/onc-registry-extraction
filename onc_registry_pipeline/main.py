@@ -89,6 +89,7 @@ class OncRegistryExtractionPipeline:
             max_tokens=config.vllm_max_tokens,
             timeout=config.vllm_timeout,
             max_retries=config.max_retries,
+            reasoning_parser=config.vllm_reasoning_parser,
         )
         self.chunker = SequentialChunker(
             chunk_target_tokens=config.chunk_target_tokens,
@@ -113,10 +114,11 @@ class OncRegistryExtractionPipeline:
         logger.info("Discovering vLLM model...")
         model_profile = await self.llm_client.initialize()
         logger.info(
-            "Model: %s, Size: %s, Context: %d",
+            "Model: %s, Size: %s, Context: %d, Reasoning parser: %s",
             model_profile.model_name,
             model_profile.model_size_class,
             model_profile.context_window,
+            model_profile.reasoning_parser or "none",
         )
 
         # Adjust chunk size if model context is small
@@ -431,6 +433,15 @@ def main() -> None:
         help="Max LLM call retries (default: %(default)s)",
     )
     parser.add_argument(
+        "--reasoning-parser",
+        default="auto",
+        help=(
+            "vLLM reasoning parser name for client-side fallback parsing. "
+            "Use 'auto' for model-name defaults, or 'none' to disable "
+            "(default: %(default)s)"
+        ),
+    )
+    parser.add_argument(
         "--chunk-size", type=int, default=50000,
         help="Chunk size in tokens (default: %(default)s)",
     )
@@ -460,6 +471,7 @@ def main() -> None:
         vllm_base_url=args.vllm_url,
         vllm_temperature=args.temperature,
         vllm_max_tokens=args.max_tokens,
+        vllm_reasoning_parser=args.reasoning_parser,
         max_retries=args.max_retries,
         max_concurrent_patients=args.max_concurrent,
         output_format=args.format,
