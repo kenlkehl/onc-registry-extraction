@@ -5,7 +5,12 @@ from pathlib import Path
 
 from onc_registry_pipeline.extraction.chunk_extractor import ChunkExtractor
 from onc_registry_pipeline.extraction.pass0_tumor_detection import TumorDetector
+from onc_registry_pipeline.ingest.reader import Document
 from onc_registry_pipeline.llm.client import LLMResponse
+from onc_registry_pipeline.main import (
+    _diagnosis_document_window,
+    _documents_overlapping_window,
+)
 from onc_registry_pipeline.manuals.seer import SEERManualContextProvider
 
 
@@ -54,6 +59,46 @@ class FakeDictionary:
 class FakeSchemaBuilder:
     def build_json_format_instructions(self, items, resolver) -> str:
         return "Return valid JSON."
+
+
+def test_diagnosis_document_window_filters_exact_diagnosis_date() -> None:
+    docs = [
+        Document(0, "2023-07-14", "too early"),
+        Document(1, "2023-07-15", "window start"),
+        Document(2, "2024-01-15", "diagnosis"),
+        Document(3, "2024-07-15", "window end"),
+        Document(4, "2024-07-16", "too late"),
+    ]
+
+    window = _diagnosis_document_window("2024-01-15")
+
+    assert window is not None
+    selected = _documents_overlapping_window(docs, *window)
+    assert [doc.text for doc in selected] == [
+        "window start",
+        "diagnosis",
+        "window end",
+    ]
+
+
+def test_diagnosis_document_window_handles_month_precision() -> None:
+    docs = [
+        Document(0, "2023-06-30", "too early"),
+        Document(1, "2023-07-01", "window start"),
+        Document(2, "2024-01-31", "diagnosis month"),
+        Document(3, "2024-07-31", "window end"),
+        Document(4, "2024-08-01", "too late"),
+    ]
+
+    window = _diagnosis_document_window("2024-01")
+
+    assert window is not None
+    selected = _documents_overlapping_window(docs, *window)
+    assert [doc.text for doc in selected] == [
+        "window start",
+        "diagnosis month",
+        "window end",
+    ]
 
 
 def test_tumor_deduplication_uses_site_histology_laterality_and_date() -> None:

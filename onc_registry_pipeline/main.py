@@ -3,14 +3,21 @@
 Sequential chunking with round-based parallel extraction.
 """
 
+from __future__ import annotations
+
 import asyncio
 import argparse
+import calendar
 import logging
 import os
+import re
 import sys
 import time
+from datetime import date, datetime
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
+
+import pandas as pd
 
 from onc_registry_pipeline.config import PipelineConfig
 from onc_registry_pipeline.dictionary.loader import NAACCRDictionary
@@ -62,6 +69,88 @@ except ImportError:
     LLMLog = None
 
 logger = logging.getLogger(__name__)
+
+_DIAGNOSIS_DOCUMENT_WINDOW_MONTHS = 6
+
+
+def _add_months(value: date, months: int) -> date:
+    """Add calendar months while clamping to the destination month length."""
+    month_index = value.month - 1 + months
+    year = value.year + month_index // 12
+    month = month_index % 12 + 1
+    day = min(value.day, calendar.monthrange(year, month)[1])
+    return date(year, month, day)
+
+
+def _parse_date_interval(value: Any) -> tuple[date, date] | None:
+    """Parse exact or partial dates into an inclusive date interval."""
+    text = str(value).strip()
+    if not text or text.lower() in {"nan", "none", "null", "unknown"}:
+        return None
+
+    match = re.match(
+        r"^(\d{4})(?:[-/]?(\d{1,2}))?(?:[-/]?(\d{1,2}))?$",
+        text,
+    )
+    if match:
+        year = int(match.group(1))
+        month_text = match.group(2)
+        day_text = match.group(3)
+        if month_text is None:
+            return date(year, 1, 1), date(year, 12, 31)
+        month = int(month_text)
+        if not 1 <= month <= 12:
+            return None
+        if day_text is None:
+            last_day = calendar.monthrange(year, month)[1]
+            return date(year, month, 1), date(year, month, last_day)
+        day = int(day_text)
+        try:
+            parsed = date(year, month, day)
+        except ValueError:
+            return None
+        return parsed, parsed
+
+    parsed_timestamp = pd.to_datetime(text, errors="coerce")
+    if pd.isna(parsed_timestamp):
+        return None
+    if isinstance(parsed_timestamp, datetime):
+        parsed_date = parsed_timestamp.date()
+    else:
+        parsed_date = parsed_timestamp.to_pydatetime().date()
+    return parsed_date, parsed_date
+
+
+def _diagnosis_document_window(
+    diagnosis_date: str,
+    months: int = _DIAGNOSIS_DOCUMENT_WINDOW_MONTHS,
+) -> tuple[date, date] | None:
+    """Return the inclusive extraction document window around a diagnosis date."""
+    diagnosis_interval = _parse_date_interval(diagnosis_date)
+    if diagnosis_interval is None:
+        return None
+
+    diagnosis_start, diagnosis_end = diagnosis_interval
+    return _add_months(diagnosis_start, -months), _add_months(
+        diagnosis_end, months
+    )
+
+
+def _documents_overlapping_window(
+    documents: list[Any],
+    window_start: date,
+    window_end: date,
+) -> list[Any]:
+    """Keep documents whose document date interval overlaps the window."""
+    selected: list[Any] = []
+    for doc in documents:
+        doc_interval = _parse_date_interval(getattr(doc, "date", ""))
+        if doc_interval is None:
+            continue
+        doc_start, doc_end = doc_interval
+        if doc_start <= window_end and doc_end >= window_start:
+            selected.append(doc)
+    return selected
 
 
 class OncRegistryExtractionPipeline:
@@ -202,11 +291,43 @@ class OncRegistryExtractionPipeline:
             # Build work units
             for tumor in tumors:
                 prior = self._build_structured_prior(patient_set)
+                diagnosis_window = _diagnosis_document_window(tumor.approximate_date)
+                if diagnosis_window is None:
+                    scoped_chunks = chunks
+                    if tumor.approximate_date:
+                        logger.warning(
+                            "Patient %s tumor %d: could not parse diagnosis date %r; "
+                            "using all %d document chunk(s) for extraction",
+                            patient_set.patient_id,
+                            tumor.tumor_index,
+                            tumor.approximate_date,
+                            len(scoped_chunks),
+                        )
+                else:
+                    window_start, window_end = diagnosis_window
+                    scoped_documents = _documents_overlapping_window(
+                        patient_set.documents,
+                        window_start,
+                        window_end,
+                    )
+                    scoped_chunks = self.chunker.chunk_documents(scoped_documents)
+                    logger.info(
+                        "Patient %s tumor %d: extraction scoped to %d/%d "
+                        "document(s) from %s through %s (%d chunk(s))",
+                        patient_set.patient_id,
+                        tumor.tumor_index,
+                        len(scoped_documents),
+                        len(patient_set.documents),
+                        window_start.isoformat(),
+                        window_end.isoformat(),
+                        len(scoped_chunks),
+                    )
+
                 wu = TumorWorkUnit(
                     patient_id=patient_set.patient_id,
                     tumor_index=tumor.tumor_index,
                     tumor=tumor,
-                    chunks=chunks,
+                    chunks=scoped_chunks,
                     current_extraction=prior,
                 )
                 all_work_units.append(wu)

@@ -51,11 +51,10 @@ pip install -e .
 Start a vLLM server with your preferred model:
 
 ```bash
-# Example with a large model (recommended for best accuracy)
-vllm serve meta-llama/Llama-3.3-70B-Instruct
+# Example 
+vllm serve google/gemma-4-31b-it 
 
-# Example with a smaller model (faster, lower accuracy)
-vllm serve Qwen/Qwen2.5-14B-Instruct
+
 ```
 
 For reasoning models, start vLLM with its built-in reasoning parser so the
