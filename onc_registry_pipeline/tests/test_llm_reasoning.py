@@ -179,6 +179,102 @@ async def test_client_uses_local_vllm_parser_adapter_when_needed() -> None:
     assert response.parsed == {"ok": True}
 
 
+async def test_generate_text_supports_vllm_plain_text_and_usage() -> None:
+    http_client = RecordingHTTPClient(
+        [
+            FakeHTTPResponse(
+                {
+                    "choices": [{"message": {"content": "Short clinical summary."}}],
+                    "usage": {"prompt_tokens": 11, "completion_tokens": 4},
+                }
+            )
+        ]
+    )
+    client = VLLMClient()
+    client._client = http_client  # type: ignore[assignment]
+    client._model_profile = ModelProfile(
+        model_name="Llama-3.3-70B",
+        context_window=131_072,
+        model_size_class="large",
+    )
+
+    response = await client.generate_text(
+        "system",
+        "user",
+        max_tokens=128,
+        temperature=0.2,
+    )
+
+    assert response.final_content == "Short clinical summary."
+    assert response.usage == {"prompt_tokens": 11, "completion_tokens": 4}
+    assert http_client.requests[0]["json"]["max_tokens"] == 128
+    assert http_client.requests[0]["json"]["temperature"] == 0.2
+
+
+async def test_generate_text_supports_azure_responses_text() -> None:
+    http_client = RecordingHTTPClient(
+        [
+            FakeHTTPResponse(
+                {
+                    "output_text": "Azure summary.",
+                    "usage": {"input_tokens": 12, "output_tokens": 3},
+                }
+            )
+        ]
+    )
+    client = VLLMClient(
+        provider="azure-openai",
+        base_url="https://example.openai.azure.com/openai/v1",
+        model="gpt-4o",
+    )
+    client._client = http_client  # type: ignore[assignment]
+    client._model_profile = ModelProfile(
+        model_name="gpt-4o",
+        context_window=131_072,
+        model_size_class="medium",
+        provider="azure-openai",
+    )
+
+    response = await client.generate_text("system", "user", max_tokens=64)
+
+    assert response.final_content == "Azure summary."
+    assert response.usage == {"input_tokens": 12, "output_tokens": 3}
+    assert http_client.requests[0]["json"]["max_output_tokens"] == 64
+    assert http_client.requests[0]["json"]["store"] is False
+
+
+async def test_generate_text_supports_anthropic_vertex_text() -> None:
+    http_client = RecordingHTTPClient(
+        [
+            FakeHTTPResponse(
+                {
+                    "content": [{"type": "text", "text": "Claude summary."}],
+                    "usage": {"input_tokens": 14, "output_tokens": 4},
+                }
+            )
+        ]
+    )
+    client = VLLMClient(
+        provider="anthropic-vertex",
+        model="claude-sonnet-4-5@20250929",
+        anthropic_vertex_project_id="project-id",
+        anthropic_vertex_region="global",
+    )
+    client._client = http_client  # type: ignore[assignment]
+    client._model_profile = ModelProfile(
+        model_name="claude-sonnet-4-5@20250929",
+        context_window=200_000,
+        model_size_class="medium",
+        provider="anthropic-vertex",
+    )
+
+    response = await client.generate_text("system", "user", max_tokens=64)
+
+    assert response.final_content == "Claude summary."
+    assert response.usage == {"input_tokens": 14, "output_tokens": 4}
+    assert http_client.requests[0]["json"]["max_tokens"] == 64
+
+
 async def test_azure_client_refreshes_bearer_token_on_auth_failure(
     tmp_path,
     monkeypatch,

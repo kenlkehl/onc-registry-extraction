@@ -25,6 +25,7 @@ dev = [
 [project.scripts]
 onc-registry-pipeline = "onc_registry_pipeline.main:main"
 onc-registry-convert = "onc_registry_pipeline.convert:main"
+onc-registry-compress-notes = "onc_registry_pipeline.compress_notes:main"
 
 [build-system]
 requires = ["hatchling"]

@@ -163,6 +163,31 @@ Or without uv:
 python -m onc_registry_pipeline.main input.csv output/
 ```
 
+### Optional: compress notes before extraction
+
+For long patient timelines, you can first summarize each input document into a
+short oncology-focused blurb, then run the registry extractor over those
+summaries. Compression uses the same LLM providers as extraction and does not
+concatenate notes by patient.
+
+```bash
+uv run onc-registry-compress-notes input.csv compressed/ \
+    --provider vllm \
+    --vllm-url http://localhost:8000/v1 \
+    --max-concurrent 4
+
+uv run onc-registry-pipeline compressed/compressed_notes.csv output/ \
+    --provider vllm \
+    --vllm-url http://localhost:8000/v1
+```
+
+The compressor writes `compressed_notes.csv`, a normal pipeline-compatible
+notes file with `patient_id`, `date`, and compressed `text`, plus
+`compressed_notes.jsonl`, an audit trail with source row, document id, summary,
+errors, fallback status, and token usage when available. If a single note fails
+compression, that row falls back to the original full note text and records the
+error in the audit file.
+
 ### Output files
 
 The pipeline writes to the output directory:
@@ -197,6 +222,29 @@ uv run onc-registry-convert output/naaccr_output.xml output/data.csv \
 ```
 
 The `--readable-names` flag replaces XML IDs (e.g., `primarySite`) with full NAACCR item names (e.g., `Primary Site`) using the data dictionary. Each tumor is one row/object, with patient-level and root-level items merged in so every record is self-contained.
+
+### Compress notes CLI
+
+```
+usage: onc-registry-compress-notes [-h]
+                       [--provider {vllm,azure-openai,anthropic-vertex}]
+                       [--endpoint URL] [--model MODEL] [--vllm-url URL]
+                       [--azure-auth-mode {bearer,api-key}]
+                       [--azure-api-key-env ENV]
+                       [--azure-token-refresh-command CMD]
+                       [--anthropic-vertex-project-id PROJECT]
+                       [--anthropic-vertex-region REGION]
+                       [--anthropic-vertex-token-env ENV]
+                       [--anthropic-vertex-token-refresh-command CMD]
+                       [--reasoning-parser NAME] [--timeout N]
+                       [--max-retries N] [--temperature FLOAT]
+                       [--compression-max-tokens N] [--max-concurrent N]
+                       [--patient-id-column COL] [--date-column COL]
+                       [--text-column COL] [--note-type-column COL]
+                       [--document-id-column COL] [--output-prefix PREFIX]
+                       [--verbose]
+                       input output
+```
 
 ## CLI reference
 

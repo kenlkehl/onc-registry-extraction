@@ -88,6 +88,16 @@ class LLMResponse:
     reasoning: str
 
 
+@dataclass
+class LLMTextResponse:
+    """Plain-text LLM response preserving reasoning and token usage."""
+
+    raw_content: str
+    final_content: str
+    reasoning: str
+    usage: dict[str, int] | None = None
+
+
 # ---------------------------------------------------------------------------
 # Size-classification helpers
 # ---------------------------------------------------------------------------
@@ -464,6 +474,96 @@ class VLLMClient:
         ]
         return list(await asyncio.gather(*tasks))
 
+    async def generate_text(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        *,
+        max_tokens: Optional[int] = None,
+        temperature: Optional[float] = None,
+    ) -> LLMTextResponse:
+        """Send a model request and return plain text.
+
+        This uses the same provider endpoints, authentication, reasoning
+        parsing, and retry behavior as :meth:`extract`, but does not require
+        the model response to be JSON.
+        """
+        if self._client is None:
+            raise RuntimeError(
+                "Client not initialized. Call initialize() first."
+            )
+
+        profile = self.model_profile
+        body = self._build_completion_body(
+            profile.model_name,
+            system_prompt,
+            user_prompt,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+
+        last_error: Optional[str] = None
+        for attempt in range(1, self._max_retries + 1):
+            try:
+                return await self._post_text_completion(body, attempt)
+            except _RateLimited as exc:
+                last_error = str(exc)
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt, retry_after=exc.retry_after)
+                logger.warning(
+                    "Rate limited (attempt %d/%d). Waiting %.1fs.",
+                    attempt,
+                    self._max_retries,
+                    wait,
+                )
+                await asyncio.sleep(wait)
+            except _ServerError as exc:
+                last_error = str(exc)
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt)
+                logger.warning(
+                    "Server error %d (attempt %d/%d). Waiting %.1fs.",
+                    exc.status_code,
+                    attempt,
+                    self._max_retries,
+                    wait,
+                )
+                await asyncio.sleep(wait)
+            except _AuthenticationError as exc:
+                logger.warning(
+                    "Authentication failure (HTTP %d, attempt %d/%d). "
+                    "Refreshing credentials before retry.",
+                    exc.status_code,
+                    attempt,
+                    self._max_retries,
+                )
+                stale_token = self._auth_token or self._read_auth_token_from_env()
+                refreshed = await self._refresh_auth_token(stale_token=stale_token)
+                last_error = str(exc)
+                if refreshed and self._can_retry(attempt):
+                    continue
+                break
+            except (httpx.TimeoutException, httpx.ConnectError) as exc:
+                last_error = str(exc)
+                if not self._can_retry(attempt):
+                    break
+                wait = self._retry_delay(attempt)
+                logger.warning(
+                    "Connection issue (attempt %d/%d): %s. Waiting %.1fs.",
+                    attempt,
+                    self._max_retries,
+                    exc,
+                    wait,
+                )
+                await asyncio.sleep(wait)
+
+        raise RuntimeError(
+            f"All {self._max_retries} text-generation attempts exhausted. "
+            f"Last error: {last_error or 'unknown error'}"
+        )
+
     # -- internal helpers ------------------------------------------------
 
     async def _post_completion(self, body: dict, attempt: int) -> LLMResponse:
@@ -482,6 +582,34 @@ class VLLMClient:
         _JSONParseError
             When the final content (after reasoning strip) is not valid JSON.
         """
+        text_response = await self._post_text_completion(body, attempt)
+        final_content = _strip_code_fences(text_response.final_content)
+
+        try:
+            parsed = json.loads(final_content)
+            parsed = _coerce_to_dict(parsed)
+        except json.JSONDecodeError as exc:
+            raise _JSONParseError(str(exc), final_content) from exc
+
+        logger.debug(
+            "Attempt %d succeeded. Keys: %s (reasoning: %d chars)",
+            attempt,
+            list(parsed.keys()),
+            len(text_response.reasoning),
+        )
+        return LLMResponse(
+            raw_content=text_response.raw_content,
+            final_content=final_content,
+            parsed=parsed,
+            reasoning=text_response.reasoning,
+        )
+
+    async def _post_text_completion(
+        self,
+        body: dict,
+        attempt: int,
+    ) -> LLMTextResponse:
+        """POST a model request and return text without JSON parsing."""
         assert self._client is not None  # noqa: S101
 
         resp = await self._post_json(self._completion_url(), body)
@@ -494,30 +622,19 @@ class VLLMClient:
 
         self._raise_for_retryable_status(resp)
 
-        # Parse the API response envelope.
         data = resp.json()
         raw_content, final_content, reasoning = self._parse_completion_data(data)
-
-        # Strip markdown code fences from the final output.
-        final_content = _strip_code_fences(final_content)
-
-        try:
-            parsed = json.loads(final_content)
-            parsed = _coerce_to_dict(parsed)
-        except json.JSONDecodeError as exc:
-            raise _JSONParseError(str(exc), final_content) from exc
-
         logger.debug(
-            "Attempt %d succeeded. Keys: %s (reasoning: %d chars)",
+            "Text-generation attempt %d succeeded (%d chars, reasoning: %d chars)",
             attempt,
-            list(parsed.keys()),
+            len(final_content),
             len(reasoning),
         )
-        return LLMResponse(
+        return LLMTextResponse(
             raw_content=raw_content,
-            final_content=final_content,
-            parsed=parsed,
+            final_content=final_content.strip(),
             reasoning=reasoning,
+            usage=_parse_usage(data),
         )
 
     async def _resolve_model_profile(self) -> tuple[str, int]:
@@ -650,7 +767,14 @@ class VLLMClient:
         model_name: str,
         system_prompt: str,
         user_prompt: str,
+        *,
+        max_tokens: Optional[int] = None,
+        temperature: Optional[float] = None,
     ) -> dict:
+        resolved_max_tokens = self._max_tokens if max_tokens is None else max_tokens
+        resolved_temperature = (
+            self._temperature if temperature is None else temperature
+        )
         if self._provider == "anthropic-vertex":
             return {
                 "anthropic_version": _ANTHROPIC_VERTEX_VERSION,
@@ -658,8 +782,8 @@ class VLLMClient:
                 "messages": [
                     {"role": "user", "content": user_prompt},
                 ],
-                "temperature": self._temperature,
-                "max_tokens": self._max_tokens,
+                "temperature": resolved_temperature,
+                "max_tokens": resolved_max_tokens,
                 "stream": False,
             }
 
@@ -668,11 +792,11 @@ class VLLMClient:
                 "model": model_name,
                 "instructions": system_prompt,
                 "input": user_prompt,
-                "max_output_tokens": self._max_tokens,
+                "max_output_tokens": resolved_max_tokens,
                 "store": False,
             }
             if _azure_responses_supports_sampling(model_name):
-                body["temperature"] = self._temperature
+                body["temperature"] = resolved_temperature
             return body
 
         return {
@@ -681,8 +805,8 @@ class VLLMClient:
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
             ],
-            "temperature": self._temperature,
-            "max_tokens": self._max_tokens,
+            "temperature": resolved_temperature,
+            "max_tokens": resolved_max_tokens,
         }
 
     def _completion_url(self) -> str:
@@ -858,6 +982,21 @@ def _combine_reasoning_and_content(reasoning: str, content: str) -> str:
     if reasoning:
         return reasoning
     return content
+
+
+def _parse_usage(data: dict) -> dict[str, int] | None:
+    """Extract flat numeric token usage from provider response envelopes."""
+    usage = data.get("usage")
+    if not isinstance(usage, dict):
+        return None
+
+    parsed: dict[str, int] = {}
+    for key, value in usage.items():
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            continue
+        parsed[key] = int(value)
+
+    return parsed or None
 
 
 def _parse_retry_after(value: Optional[str]) -> Optional[float]:
