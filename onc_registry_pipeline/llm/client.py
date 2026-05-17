@@ -44,7 +44,8 @@ _DEFAULT_VERTEX_TOKEN_REFRESH_COMMAND = (
 )
 _ANTHROPIC_VERTEX_VERSION = "vertex-2023-10-16"
 _AUTH_ERROR_STATUSES = {401, 403}
-_MAX_BACKOFF_SECONDS = 60.0
+_BASE_BACKOFF_SECONDS = 2.0
+_MAX_BACKOFF_SECONDS = 120.0
 _EXPORT_COMMAND_RE = re.compile(
     r"^\s*export\s+[A-Za-z_][A-Za-z0-9_]*\s*=\s*[\"']?\$\((.*)\)[\"']?\s*$",
     re.DOTALL,
@@ -203,7 +204,7 @@ class VLLMClient:
         temperature: float = 0.0,
         max_tokens: int = 4096,
         timeout: int = 120,
-        max_retries: int = 3,
+        max_retries: int = 10,
         reasoning_parser: Optional[str] = AUTO_REASONING_PARSER,
         azure_api_key_env: str = "AZURE_OPENAI_API_KEY",
         azure_auth_mode: AzureAuthMode = "bearer",
@@ -757,7 +758,10 @@ class VLLMClient:
         attempt: int,
         retry_after: Optional[float] = None,
     ) -> float:
-        backoff = min(_MAX_BACKOFF_SECONDS, 2 ** max(0, attempt - 1))
+        backoff = min(
+            _MAX_BACKOFF_SECONDS,
+            _BASE_BACKOFF_SECONDS * (2 ** max(0, attempt - 1)),
+        )
         if retry_after is None:
             return float(backoff)
         return max(float(retry_after), float(backoff))

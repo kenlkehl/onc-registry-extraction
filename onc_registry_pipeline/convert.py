@@ -25,6 +25,8 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+from onc_registry_pipeline.paths import default_data_dict_dir, resolve_reference_path
+
 logger = logging.getLogger(__name__)
 
 # Namespace used in NAACCR v26 XML
@@ -115,13 +117,17 @@ def _collect_items(element) -> dict[str, str]:
 def load_name_map(data_dict_dir: Optional[str] = None) -> dict[str, str]:
     """Build a mapping from xmlNaaccrId -> human-readable item name.
 
-    Tries to load from ``NAACCRDataItems/DataItems.csv`` relative to the
-    working directory, or from the explicit *data_dict_dir* path.
+    Tries the explicit *data_dict_dir* path first, then a working-directory
+    ``NAACCRDataItems`` directory, then the vendored package/repo copy.
     """
     candidates = []
     if data_dict_dir:
-        candidates.append(Path(data_dict_dir) / "DataItems.csv")
-    candidates.append(Path("NAACCRDataItems") / "DataItems.csv")
+        candidates.append(
+            resolve_reference_path(data_dict_dir, "NAACCRDataItems") / "DataItems.csv"
+        )
+    else:
+        candidates.append(Path("NAACCRDataItems") / "DataItems.csv")
+    candidates.append(default_data_dict_dir() / "DataItems.csv")
 
     for path in candidates:
         if path.exists():

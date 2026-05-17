@@ -802,7 +802,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         help="vLLM reasoning parser name, auto, or none (default: %(default)s)",
     )
     parser.add_argument("--timeout", type=int, default=300)
-    parser.add_argument("--max-retries", type=int, default=3)
+    parser.add_argument("--max-retries", type=int, default=10)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument(
         "--compression-max-tokens",

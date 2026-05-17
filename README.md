@@ -300,15 +300,15 @@ options:
   --max-concurrent N       Max concurrent diagnosis work units per round (default: 16)
   --format FORMAT          Output format (default: naaccr_xml)
   --confidence-threshold   Confidence threshold for review flagging (default: 0.7)
-  --data-dict DIR          Path to NAACCRDataItems directory (default: NAACCRDataItems)
+  --data-dict DIR          Path to NAACCRDataItems directory (default: vendored copy)
   --temperature FLOAT      LLM sampling temperature (default: 0.0)
   --max-tokens N           Max tokens per LLM response (default: 16384)
-  --max-retries N          Max LLM call retries (default: 3)
+  --max-retries N          Max LLM call attempts (default: 10)
   --reasoning-parser NAME  vLLM reasoning parser name: auto, none, qwen3,
                            gemma4, openai_gptoss, etc. (default: auto)
   --chunk-size N           Chunk size in tokens (default: 50000)
   --items-per-call N       NAACCR items per LLM call (default: 50)
-  --seer-manuals-dir DIR   Vendored SEER/NAACCR manuals directory (default: SEERManuals)
+  --seer-manuals-dir DIR   Vendored SEER/NAACCR manuals directory (default: vendored copy)
   --seer-context-max-chars Max registry manual context per prompt (default: 12000)
   --checkpoint-dir DIR     Directory for resumable checkpoints (default:
                            OUTPUT/checkpoints)

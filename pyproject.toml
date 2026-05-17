@@ -34,6 +34,11 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["onc_registry_pipeline"]
 
+[tool.hatch.build.targets.wheel.force-include]
+"NAACCRDataItems" = "onc_registry_pipeline/resources/NAACCRDataItems"
+"SEERManuals/manifest.json" = "onc_registry_pipeline/resources/SEERManuals/manifest.json"
+"SEERManuals/text" = "onc_registry_pipeline/resources/SEERManuals/text"
+
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["onc_registry_pipeline/tests"]

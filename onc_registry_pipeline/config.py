@@ -3,7 +3,15 @@
 from pathlib import Path
 from typing import Literal, Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, model_validator
+
+from onc_registry_pipeline.paths import (
+    default_alternate_names_csv,
+    default_code_list_csv,
+    default_data_items_csv,
+    default_seer_manuals_dir,
+    resolve_reference_path,
+)
 
 
 class PipelineConfig(BaseModel):
@@ -49,16 +57,16 @@ class PipelineConfig(BaseModel):
     items_per_call: int = 50  # NAACCR items per LLM call
 
     # NAACCR data-dictionary CSV paths
-    data_items_csv: Path = Path("NAACCRDataItems/DataItems.csv")
-    code_list_csv: Path = Path("NAACCRDataItems/CodeList.csv")
-    alternate_names_csv: Path = Path("NAACCRDataItems/AlternateNames.csv")
+    data_items_csv: Path = Field(default_factory=default_data_items_csv)
+    code_list_csv: Path = Field(default_factory=default_code_list_csv)
+    alternate_names_csv: Path = Field(default_factory=default_alternate_names_csv)
 
     # Vendored SEER/NAACCR registry manuals for prompt retrieval
-    seer_manuals_dir: Path = Path("SEERManuals")
+    seer_manuals_dir: Path = Field(default_factory=default_seer_manuals_dir)
     seer_context_max_chars: int = 12000
 
     # Retry / concurrency
-    max_retries: int = 3
+    max_retries: int = 10
     max_concurrent_patients: int = 16
 
     # Validation
@@ -69,3 +77,23 @@ class PipelineConfig(BaseModel):
 
     # Checkpointing
     checkpoint_dir: Optional[Path] = None
+
+    @model_validator(mode="after")
+    def _resolve_vendored_reference_paths(self) -> "PipelineConfig":
+        self.data_items_csv = resolve_reference_path(
+            self.data_items_csv,
+            "NAACCRDataItems",
+        )
+        self.code_list_csv = resolve_reference_path(
+            self.code_list_csv,
+            "NAACCRDataItems",
+        )
+        self.alternate_names_csv = resolve_reference_path(
+            self.alternate_names_csv,
+            "NAACCRDataItems",
+        )
+        self.seer_manuals_dir = resolve_reference_path(
+            self.seer_manuals_dir,
+            "SEERManuals",
+        )
+        return self

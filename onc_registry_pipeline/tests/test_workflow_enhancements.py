@@ -415,5 +415,22 @@ async def test_model_discovery_rate_limit_retries_with_backoff(monkeypatch) -> N
     response = await client._get_models_with_auth_retry()
 
     assert response == {"data": [{"id": "Llama-3.3-70B"}]}
-    assert sleeps == [1.0]
+    assert sleeps == [2.0]
     assert [request["method"] for request in http_client.requests] == ["GET", "GET"]
+
+
+def test_retry_defaults_and_backoff_schedule() -> None:
+    client = VLLMClient()
+
+    assert PipelineConfig().max_retries == 10
+    assert client._max_retries == 10
+    assert [client._retry_delay(attempt) for attempt in range(1, 7)] == [
+        2.0,
+        4.0,
+        8.0,
+        16.0,
+        32.0,
+        64.0,
+    ]
+    assert client._retry_delay(7) == 120.0
+    assert client._retry_delay(1, retry_after=1.0) == 2.0

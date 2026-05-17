@@ -31,6 +31,11 @@ from onc_registry_pipeline.ingest.sequential_chunker import SequentialChunker
 from onc_registry_pipeline.llm.client import VLLMClient
 from onc_registry_pipeline.llm.structured_output import SchemaBuilder
 from onc_registry_pipeline.manuals.seer import SEERManualContextProvider
+from onc_registry_pipeline.paths import (
+    default_data_dict_dir,
+    default_seer_manuals_dir,
+    resolve_reference_path,
+)
 from onc_registry_pipeline.extraction.pass0_tumor_detection import TumorDetector
 from onc_registry_pipeline.extraction.pass0_tumor_detection import TumorCandidate
 from onc_registry_pipeline.extraction.base import ExtractionResult
@@ -713,12 +718,18 @@ def main() -> None:
         help="Confidence threshold for human review (default: %(default)s)",
     )
     parser.add_argument(
-        "--data-dict", default="NAACCRDataItems",
-        help="Path to NAACCR data dictionary directory (default: %(default)s)",
+        "--data-dict", default=None,
+        help=(
+            "Path to NAACCR data dictionary directory "
+            "(default: vendored NAACCRDataItems)"
+        ),
     )
     parser.add_argument(
-        "--seer-manuals-dir", default="SEERManuals",
-        help="Path to vendored SEER/NAACCR manuals directory (default: %(default)s)",
+        "--seer-manuals-dir", default=None,
+        help=(
+            "Path to vendored SEER/NAACCR manuals directory "
+            "(default: vendored SEERManuals)"
+        ),
     )
     parser.add_argument(
         "--seer-context-max-chars", type=int, default=12000,
@@ -733,8 +744,8 @@ def main() -> None:
         help="Max tokens per LLM response (default: %(default)s)",
     )
     parser.add_argument(
-        "--max-retries", type=int, default=3,
-        help="Max LLM call retries (default: %(default)s)",
+        "--max-retries", type=int, default=10,
+        help="Max LLM call attempts (default: %(default)s)",
     )
     parser.add_argument(
         "--reasoning-parser",
@@ -773,7 +784,16 @@ def main() -> None:
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    dict_dir = Path(args.data_dict)
+    dict_dir = (
+        resolve_reference_path(args.data_dict, "NAACCRDataItems")
+        if args.data_dict
+        else default_data_dict_dir()
+    )
+    seer_manuals_dir = (
+        resolve_reference_path(args.seer_manuals_dir, "SEERManuals")
+        if args.seer_manuals_dir
+        else default_seer_manuals_dir()
+    )
     default_config = PipelineConfig()
     provider_model_env = {
         "vllm": os.getenv("VLLM_MODEL"),
@@ -850,7 +870,7 @@ def main() -> None:
         data_items_csv=dict_dir / "DataItems.csv",
         code_list_csv=dict_dir / "CodeList.csv",
         alternate_names_csv=dict_dir / "AlternateNames.csv",
-        seer_manuals_dir=Path(args.seer_manuals_dir),
+        seer_manuals_dir=seer_manuals_dir,
         seer_context_max_chars=args.seer_context_max_chars,
         checkpoint_dir=Path(args.checkpoint_dir) if args.checkpoint_dir else None,
     )
