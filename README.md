@@ -186,7 +186,10 @@ notes file with `patient_id`, `date`, and compressed `text`, plus
 `compressed_notes.jsonl`, an audit trail with source row, document id, summary,
 errors, fallback status, and token usage when available. If a single note fails
 compression, that row falls back to the original full note text and records the
-error in the audit file.
+error in the audit file. During long runs, these files are refreshed
+periodically with completed rows. The compressor also writes per-row resume
+checkpoints under `compressed/.compressed_notes_checkpoints/` by default, so
+rerunning the same command skips rows that already completed.
 
 ### Output files
 
@@ -242,6 +245,8 @@ usage: onc-registry-compress-notes [-h]
                        [--patient-id-column COL] [--date-column COL]
                        [--text-column COL] [--note-type-column COL]
                        [--document-id-column COL] [--output-prefix PREFIX]
+                       [--checkpoint-dir DIR] [--progress-every N]
+                       [--progress-interval SECONDS] [--flush-every N]
                        [--verbose]
                        input output
 ```
@@ -305,7 +310,8 @@ options:
   --items-per-call N       NAACCR items per LLM call (default: 50)
   --seer-manuals-dir DIR   Vendored SEER/NAACCR manuals directory (default: SEERManuals)
   --seer-context-max-chars Max registry manual context per prompt (default: 12000)
-  --checkpoint-dir DIR     Directory for resumable checkpoints
+  --checkpoint-dir DIR     Directory for resumable checkpoints (default:
+                           OUTPUT/checkpoints)
   -v, --verbose            Enable debug logging
 ```
 
@@ -366,7 +372,7 @@ Pass 0 sends every patient chunk to the LLM to identify primary cancer diagnoses
 - **Round N** = Nth chunk from each diagnosis work unit
 - All work units' chunk N processed in parallel via `asyncio.Semaphore`
 - Within a chunk, domain extraction is sequential (demographics before staging, since staging items depend on primary site)
-- Progress is checkpointed for completed tumor-detection patients and extraction chunks (if `--checkpoint-dir` is set)
+- Progress is checkpointed for completed tumor-detection patients and extraction chunks
 
 ### Running updates across chunks
 
@@ -430,7 +436,8 @@ The LLM never sees a raw schema or unconstrained output space. Every prompt incl
 
 ### Checkpointing and resume
 
-With `--checkpoint-dir`, the pipeline saves pass-0 and extraction progress:
+The extraction pipeline saves pass-0 and extraction progress by default under
+`OUTPUT/checkpoints`. Use `--checkpoint-dir` to choose a different location:
 ```
 checkpoint_dir/
 ├── pass0/

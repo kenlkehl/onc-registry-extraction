@@ -12,7 +12,7 @@ def atomic_write_json(path: Path, payload: Any) -> None:
     """Write JSON through a same-directory temporary file, then replace."""
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = path.with_name(f".{path.name}.tmp.{os.getpid()}")
-    tmp_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    tmp_path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
     tmp_path.replace(path)
 
 

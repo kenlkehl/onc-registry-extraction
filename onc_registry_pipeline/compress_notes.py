@@ -4,21 +4,27 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import hashlib
 import json
 import logging
 import os
+import time
 from pathlib import Path
 from typing import Any, Optional
 
 import pandas as pd
 
 from onc_registry_pipeline.config import PipelineConfig
+from onc_registry_pipeline.checkpoint import atomic_write_json, read_json
 from onc_registry_pipeline.llm.client import (
     LLMTextResponse,
     VLLMClient,
 )
 
 logger = logging.getLogger(__name__)
+
+
+COMPRESSION_CHECKPOINT_SCHEMA_VERSION = 1
 
 
 COMPRESSION_SYSTEM_PROMPT = """\
@@ -157,11 +163,19 @@ async def compress_notes_dataframe(
     max_concurrent: int = 4,
     max_tokens: int = 1024,
     temperature: float = 0.0,
+    checkpoint_dir: Optional[str | Path] = None,
+    output_dir: Optional[str | Path] = None,
+    output_prefix: str = "compressed_notes",
+    progress_every: int = 10,
+    progress_interval: float = 30.0,
+    flush_every: int = 10,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Compress each row independently.
 
     Returns a pipeline-compatible compressed notes DataFrame and a separate
     audit DataFrame. Failed compressions fall back to the original note text.
+    If checkpoint_dir is provided, each completed row is durably checkpointed
+    and skipped on a later run with the same input rows.
     """
     _validate_columns(
         notes_df,
@@ -170,29 +184,226 @@ async def compress_notes_dataframe(
         text_column=text_column,
     )
 
-    semaphore = asyncio.Semaphore(max(1, max_concurrent))
+    checkpoint_path = Path(checkpoint_dir) if checkpoint_dir is not None else None
+    output_path = Path(output_dir) if output_dir is not None else None
+    progress_every = max(1, progress_every)
+    flush_every = max(1, flush_every)
+    progress_interval = max(1.0, progress_interval)
 
-    async def process_row(row_index: Any, row: pd.Series) -> tuple[dict, dict]:
-        async with semaphore:
-            return await _compress_row(
-                row_index,
-                row,
-                client,
-                patient_id_column=patient_id_column,
-                date_column=date_column,
-                text_column=text_column,
-                note_type_column=note_type_column,
-                document_id_column=document_id_column,
-                source_file=source_file,
-                max_tokens=max_tokens,
-                temperature=temperature,
+    row_items = list(enumerate(notes_df.iterrows()))
+    expected_fingerprints = {
+        row_ordinal: _row_fingerprint(
+            row_index,
+            row,
+            patient_id_column=patient_id_column,
+            date_column=date_column,
+            text_column=text_column,
+            document_id_column=document_id_column,
+        )
+        for row_ordinal, (row_index, row) in row_items
+    }
+    completed: dict[int, tuple[dict, dict]] = {}
+    if checkpoint_path is not None:
+        completed = _load_compression_checkpoints(
+            checkpoint_path,
+            expected_fingerprints=expected_fingerprints,
+            total_rows=len(notes_df),
+        )
+        if completed:
+            logger.info(
+                "Compression resume: loaded %d/%d completed row(s) from %s",
+                len(completed),
+                len(notes_df),
+                checkpoint_path,
             )
 
-    tasks = [process_row(row_index, row) for row_index, row in notes_df.iterrows()]
-    results = await asyncio.gather(*tasks)
-    compressed_rows = [row for row, _audit in results]
-    audit_rows = [audit for _row, audit in results]
-    return pd.DataFrame(compressed_rows), pd.DataFrame(audit_rows)
+    pending_items = [
+        (row_ordinal, row_index, row)
+        for row_ordinal, (row_index, row) in row_items
+        if row_ordinal not in completed
+    ]
+
+    if checkpoint_path is not None:
+        _save_compression_metadata(
+            checkpoint_path,
+            total_rows=len(notes_df),
+            completed_rows=len(completed),
+            source_file=source_file,
+            output_prefix=output_prefix,
+        )
+
+    if output_path is not None and completed:
+        _write_completed_outputs(completed, output_path, output_prefix)
+
+    if not pending_items:
+        if output_path is not None:
+            _write_completed_outputs(completed, output_path, output_prefix)
+        logger.info(
+            "Compression already complete: %d/%d row(s)",
+            len(completed),
+            len(notes_df),
+        )
+        return _completed_to_dataframes(completed)
+
+    logger.info(
+        "Compressing %d pending note row(s) with max_concurrent=%d",
+        len(pending_items),
+        max(1, max_concurrent),
+    )
+    if checkpoint_path is not None:
+        logger.info("Compression checkpoints: %s", checkpoint_path)
+    if output_path is not None:
+        logger.info(
+            "Partial outputs will be refreshed every %d completed row(s): %s",
+            flush_every,
+            output_path,
+        )
+
+    queue: asyncio.Queue[tuple[int, Any, pd.Series]] = asyncio.Queue()
+    for item in pending_items:
+        queue.put_nowait(item)
+
+    lock = asyncio.Lock()
+    run_started = time.monotonic()
+    run_completed = 0
+    active = 0
+
+    async def _flush_locked() -> None:
+        if output_path is not None:
+            _write_completed_outputs(completed, output_path, output_prefix)
+        if checkpoint_path is not None:
+            _save_compression_metadata(
+                checkpoint_path,
+                total_rows=len(notes_df),
+                completed_rows=len(completed),
+                source_file=source_file,
+                output_prefix=output_prefix,
+            )
+
+    async def _worker() -> None:
+        nonlocal active, run_completed
+        while True:
+            try:
+                row_ordinal, row_index, row = queue.get_nowait()
+            except asyncio.QueueEmpty:
+                return
+
+            async with lock:
+                active += 1
+            try:
+                compressed_row, audit_row = await _compress_row(
+                    row_index,
+                    row,
+                    client,
+                    patient_id_column=patient_id_column,
+                    date_column=date_column,
+                    text_column=text_column,
+                    note_type_column=note_type_column,
+                    document_id_column=document_id_column,
+                    source_file=source_file,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                )
+                if checkpoint_path is not None:
+                    _save_compression_checkpoint(
+                        checkpoint_path,
+                        row_ordinal=row_ordinal,
+                        row_fingerprint=expected_fingerprints[row_ordinal],
+                        compressed_row=compressed_row,
+                        audit_row=audit_row,
+                    )
+
+                async with lock:
+                    completed[row_ordinal] = (compressed_row, audit_row)
+                    run_completed += 1
+                    active -= 1
+                    completed_count = len(completed)
+                    should_report = (
+                        run_completed % progress_every == 0
+                        or completed_count == len(notes_df)
+                    )
+                    should_flush = (
+                        output_path is not None
+                        and (
+                            run_completed % flush_every == 0
+                            or completed_count == len(notes_df)
+                        )
+                    )
+                    if should_flush:
+                        await _flush_locked()
+                    if should_report:
+                        errors, fallbacks = _compression_error_counts(completed)
+                        elapsed = time.monotonic() - run_started
+                        logger.info(
+                            "Compression progress: %d/%d complete "
+                            "(%d new this run, %d active, %d errors, "
+                            "%d fallback(s), %.1fs elapsed)",
+                            completed_count,
+                            len(notes_df),
+                            run_completed,
+                            active,
+                            errors,
+                            fallbacks,
+                            elapsed,
+                        )
+            finally:
+                queue.task_done()
+                async with lock:
+                    if active > 0 and row_ordinal not in completed:
+                        active -= 1
+
+    stop_heartbeat = asyncio.Event()
+
+    async def _heartbeat() -> None:
+        while not stop_heartbeat.is_set():
+            try:
+                await asyncio.wait_for(
+                    stop_heartbeat.wait(),
+                    timeout=progress_interval,
+                )
+            except asyncio.TimeoutError:
+                pass
+            if stop_heartbeat.is_set():
+                return
+            async with lock:
+                errors, fallbacks = _compression_error_counts(completed)
+                logger.info(
+                    "Compression still running: %d/%d complete "
+                    "(%d active, %d queued, %d errors, %d fallback(s))",
+                    len(completed),
+                    len(notes_df),
+                    active,
+                    queue.qsize(),
+                    errors,
+                    fallbacks,
+                )
+
+    worker_count = min(max(1, max_concurrent), len(pending_items))
+    workers = [asyncio.create_task(_worker()) for _ in range(worker_count)]
+    heartbeat = asyncio.create_task(_heartbeat())
+    try:
+        worker_results = await asyncio.gather(*workers, return_exceptions=True)
+    finally:
+        stop_heartbeat.set()
+        await heartbeat
+    failures = [result for result in worker_results if isinstance(result, Exception)]
+    if failures:
+        raise RuntimeError(
+            f"{len(failures)} compression worker(s) failed"
+        ) from failures[0]
+
+    if output_path is not None:
+        _write_completed_outputs(completed, output_path, output_prefix)
+    if checkpoint_path is not None:
+        _save_compression_metadata(
+            checkpoint_path,
+            total_rows=len(notes_df),
+            completed_rows=len(completed),
+            source_file=source_file,
+            output_prefix=output_prefix,
+        )
+
+    return _completed_to_dataframes(completed)
 
 
 async def compress_notes_file(
@@ -223,12 +434,160 @@ def write_outputs(
     csv_path = output_dir / f"{prefix}.csv"
     jsonl_path = output_dir / f"{prefix}.jsonl"
 
-    compressed_df.to_csv(csv_path, index=False)
-    with jsonl_path.open("w", encoding="utf-8") as fh:
+    tmp_csv = csv_path.with_name(f".{csv_path.name}.tmp.{os.getpid()}")
+    compressed_df.to_csv(tmp_csv, index=False)
+    tmp_csv.replace(csv_path)
+
+    tmp_jsonl = jsonl_path.with_name(f".{jsonl_path.name}.tmp.{os.getpid()}")
+    with tmp_jsonl.open("w", encoding="utf-8") as fh:
         for record in audit_df.to_dict(orient="records"):
             fh.write(json.dumps(record, default=str, ensure_ascii=False) + "\n")
+    tmp_jsonl.replace(jsonl_path)
 
     return csv_path, jsonl_path
+
+
+def default_compression_checkpoint_dir(
+    output_dir: str | Path,
+    prefix: str = "compressed_notes",
+) -> Path:
+    """Return the default per-row checkpoint directory for a compression run."""
+    return Path(output_dir) / f".{prefix}_checkpoints"
+
+
+def _compression_checkpoint_row_path(checkpoint_dir: Path, row_ordinal: int) -> Path:
+    return checkpoint_dir / "rows" / f"row_{row_ordinal:08d}.json"
+
+
+def _row_fingerprint(
+    row_index: Any,
+    row: pd.Series,
+    *,
+    patient_id_column: str,
+    date_column: str,
+    text_column: str,
+    document_id_column: Optional[str],
+) -> str:
+    text_value = _clean_scalar(row.get(text_column))
+    text = "" if text_value is None else str(text_value)
+    payload = {
+        "row_index": str(row_index),
+        "patient_id": _string_or_empty(row.get(patient_id_column)),
+        "date": _string_or_empty(row.get(date_column)),
+        "document_id": (
+            _string_or_empty(row.get(document_id_column))
+            if document_id_column
+            else ""
+        ),
+        "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
+    }
+    encoded = json.dumps(payload, sort_keys=True, ensure_ascii=True)
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def _save_compression_checkpoint(
+    checkpoint_dir: Path,
+    *,
+    row_ordinal: int,
+    row_fingerprint: str,
+    compressed_row: dict,
+    audit_row: dict,
+) -> None:
+    payload = {
+        "schema_version": COMPRESSION_CHECKPOINT_SCHEMA_VERSION,
+        "row_ordinal": row_ordinal,
+        "row_fingerprint": row_fingerprint,
+        "compressed_row": compressed_row,
+        "audit_row": audit_row,
+    }
+    atomic_write_json(
+        _compression_checkpoint_row_path(checkpoint_dir, row_ordinal),
+        payload,
+    )
+
+
+def _load_compression_checkpoints(
+    checkpoint_dir: Path,
+    *,
+    expected_fingerprints: dict[int, str],
+    total_rows: int,
+) -> dict[int, tuple[dict, dict]]:
+    rows_dir = checkpoint_dir / "rows"
+    if not rows_dir.exists():
+        return {}
+
+    completed: dict[int, tuple[dict, dict]] = {}
+    for path in sorted(rows_dir.glob("row_*.json")):
+        try:
+            payload = read_json(path)
+            row_ordinal = int(payload["row_ordinal"])
+            if row_ordinal < 0 or row_ordinal >= total_rows:
+                continue
+            expected = expected_fingerprints.get(row_ordinal)
+            if payload.get("row_fingerprint") != expected:
+                logger.warning(
+                    "Ignoring stale compression checkpoint with mismatched row "
+                    "fingerprint: %s",
+                    path,
+                )
+                continue
+            compressed_row = payload["compressed_row"]
+            audit_row = payload["audit_row"]
+            if not isinstance(compressed_row, dict) or not isinstance(audit_row, dict):
+                raise ValueError("checkpoint row payload is malformed")
+            completed[row_ordinal] = (compressed_row, audit_row)
+        except Exception as exc:
+            logger.warning("Could not load compression checkpoint %s: %s", path, exc)
+    return completed
+
+
+def _save_compression_metadata(
+    checkpoint_dir: Path,
+    *,
+    total_rows: int,
+    completed_rows: int,
+    source_file: Optional[str],
+    output_prefix: str,
+) -> None:
+    payload = {
+        "schema_version": COMPRESSION_CHECKPOINT_SCHEMA_VERSION,
+        "source_file": source_file,
+        "output_prefix": output_prefix,
+        "total_rows": total_rows,
+        "completed_rows": completed_rows,
+        "updated_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    }
+    atomic_write_json(checkpoint_dir / "metadata.json", payload)
+
+
+def _completed_to_dataframes(
+    completed: dict[int, tuple[dict, dict]],
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    compressed_rows = [completed[idx][0] for idx in sorted(completed)]
+    audit_rows = [completed[idx][1] for idx in sorted(completed)]
+    return pd.DataFrame(compressed_rows), pd.DataFrame(audit_rows)
+
+
+def _write_completed_outputs(
+    completed: dict[int, tuple[dict, dict]],
+    output_dir: str | Path,
+    prefix: str,
+) -> tuple[Path, Path]:
+    compressed_df, audit_df = _completed_to_dataframes(completed)
+    return write_outputs(compressed_df, audit_df, output_dir, prefix)
+
+
+def _compression_error_counts(
+    completed: dict[int, tuple[dict, dict]],
+) -> tuple[int, int]:
+    errors = 0
+    fallbacks = 0
+    for _compressed_row, audit_row in completed.values():
+        if audit_row.get("error"):
+            errors += 1
+        if audit_row.get("compression_used_fallback"):
+            fallbacks += 1
+    return errors, fallbacks
 
 
 async def _compress_row(
@@ -383,6 +742,11 @@ def _clean_scalar(value: Any) -> Optional[Any]:
     return value
 
 
+def _string_or_empty(value: Any) -> str:
+    cleaned = _clean_scalar(value)
+    return "" if cleaned is None else str(cleaned)
+
+
 def _build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Compress individual clinical notes before registry extraction.",
@@ -458,6 +822,32 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--note-type-column", default="note_type")
     parser.add_argument("--document-id-column", default=None)
     parser.add_argument("--output-prefix", default="compressed_notes")
+    parser.add_argument(
+        "--checkpoint-dir",
+        default=None,
+        help=(
+            "Directory for resumable per-row compression checkpoints "
+            "(default: OUTPUT/.OUTPUT_PREFIX_checkpoints)"
+        ),
+    )
+    parser.add_argument(
+        "--progress-every",
+        type=int,
+        default=10,
+        help="Log progress after this many newly completed rows (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--progress-interval",
+        type=float,
+        default=30.0,
+        help="Heartbeat log interval in seconds while rows are running (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--flush-every",
+        type=int,
+        default=10,
+        help="Refresh partial CSV/JSONL outputs after this many rows (default: %(default)s)",
+    )
     parser.add_argument("--verbose", "-v", action="store_true")
     return parser
 
@@ -539,6 +929,13 @@ def _build_client_from_args(args: argparse.Namespace) -> VLLMClient:
 async def _run(args: argparse.Namespace) -> dict[str, Any]:
     notes_df = load_notes_table(args.input)
     logger.info("Loaded %d note row(s) from %s", len(notes_df), args.input)
+    output_dir = Path(args.output)
+    checkpoint_dir = (
+        Path(args.checkpoint_dir)
+        if args.checkpoint_dir
+        else default_compression_checkpoint_dir(output_dir, args.output_prefix)
+    )
+    logger.info("Using compression checkpoint directory: %s", checkpoint_dir)
 
     client = _build_client_from_args(args)
     await client.initialize()
@@ -555,6 +952,12 @@ async def _run(args: argparse.Namespace) -> dict[str, Any]:
             max_concurrent=args.max_concurrent,
             max_tokens=args.compression_max_tokens,
             temperature=args.temperature,
+            checkpoint_dir=checkpoint_dir,
+            output_dir=output_dir,
+            output_prefix=args.output_prefix,
+            progress_every=args.progress_every,
+            progress_interval=args.progress_interval,
+            flush_every=args.flush_every,
         )
     finally:
         await client.close()
@@ -562,7 +965,7 @@ async def _run(args: argparse.Namespace) -> dict[str, Any]:
     csv_path, jsonl_path = write_outputs(
         compressed_df,
         audit_df,
-        args.output,
+        output_dir,
         args.output_prefix,
     )
     errors = int(audit_df["error"].notna().sum()) if "error" in audit_df else 0

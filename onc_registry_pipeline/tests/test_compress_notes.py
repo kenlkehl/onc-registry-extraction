@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 import pandas as pd
 
 from onc_registry_pipeline.compress_notes import (
@@ -172,3 +174,89 @@ async def test_compress_notes_dataframe_uses_custom_columns() -> None:
     assert compressed.loc[0, "document_id"] == "doc-1"
     assert compressed.loc[0, "mrn"] == "MRN123"
     assert audit.loc[0, "document_id"] == "doc-1"
+
+
+async def test_compress_notes_dataframe_writes_resumable_outputs(tmp_path) -> None:
+    client = FakeTextClient(["Summary for document 1.", "Summary for document 2."])
+    df = pd.DataFrame(
+        {
+            "patient_id": ["p1", "p2"],
+            "date": ["2025-01-01", "2025-02-01"],
+            "text": ["Document one text.", "Document two text."],
+        }
+    )
+    output_dir = tmp_path / "compressed"
+    checkpoint_dir = tmp_path / "checkpoints"
+
+    compressed, audit = await compress_notes_dataframe(
+        df,
+        client,
+        max_concurrent=1,
+        checkpoint_dir=checkpoint_dir,
+        output_dir=output_dir,
+        flush_every=1,
+        progress_every=1,
+    )
+
+    assert compressed["text"].tolist() == [
+        "Summary for document 1.",
+        "Summary for document 2.",
+    ]
+    assert audit["summary"].tolist() == [
+        "Summary for document 1.",
+        "Summary for document 2.",
+    ]
+    assert (checkpoint_dir / "metadata.json").exists()
+    assert (checkpoint_dir / "rows" / "row_00000000.json").exists()
+    assert (checkpoint_dir / "rows" / "row_00000001.json").exists()
+    assert pd.read_csv(output_dir / "compressed_notes.csv")["text"].tolist() == [
+        "Summary for document 1.",
+        "Summary for document 2.",
+    ]
+    audit_records = [
+        json.loads(line)
+        for line in (output_dir / "compressed_notes.jsonl").read_text().splitlines()
+    ]
+    assert [record["summary"] for record in audit_records] == [
+        "Summary for document 1.",
+        "Summary for document 2.",
+    ]
+
+
+async def test_compress_notes_dataframe_resumes_from_checkpoints(tmp_path) -> None:
+    df = pd.DataFrame(
+        {
+            "patient_id": ["p1", "p2"],
+            "date": ["2025-01-01", "2025-02-01"],
+            "text": ["Document one text.", "Document two text."],
+        }
+    )
+    checkpoint_dir = tmp_path / "checkpoints"
+
+    first_client = FakeTextClient(["Summary for document 1."])
+    await compress_notes_dataframe(
+        df.iloc[[0]],
+        first_client,
+        max_concurrent=1,
+        checkpoint_dir=checkpoint_dir,
+    )
+
+    second_client = FakeTextClient(["Summary for document 2."])
+    compressed, audit = await compress_notes_dataframe(
+        df,
+        second_client,
+        max_concurrent=1,
+        checkpoint_dir=checkpoint_dir,
+    )
+
+    assert len(second_client.prompts) == 1
+    assert "Document one text." not in second_client.prompts[0]["user_prompt"]
+    assert "Document two text." in second_client.prompts[0]["user_prompt"]
+    assert compressed["text"].tolist() == [
+        "Summary for document 1.",
+        "Summary for document 2.",
+    ]
+    assert audit["summary"].tolist() == [
+        "Summary for document 1.",
+        "Summary for document 2.",
+    ]

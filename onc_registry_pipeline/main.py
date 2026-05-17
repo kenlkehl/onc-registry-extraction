@@ -270,6 +270,8 @@ class OncRegistryExtractionPipeline:
 
         output_path = Path(output_dir)
         output_path.mkdir(parents=True, exist_ok=True)
+        checkpoint_dir = self.config.checkpoint_dir or (output_path / "checkpoints")
+        logger.info("Using checkpoint directory: %s", checkpoint_dir)
 
         # Initialize LLM log
         if LLMLog:
@@ -300,10 +302,17 @@ class OncRegistryExtractionPipeline:
                 logger.warning("Patient %s: no chunks produced", patient_set.patient_id)
                 continue
 
-            tumors = self._load_patient_tumor_checkpoint(patient_set.patient_id)
+            tumors = self._load_patient_tumor_checkpoint(
+                patient_set.patient_id,
+                checkpoint_dir,
+            )
             if tumors is None:
                 tumors = await detector.detect(chunks)
-                self._save_patient_tumor_checkpoint(patient_set.patient_id, tumors)
+                self._save_patient_tumor_checkpoint(
+                    patient_set.patient_id,
+                    tumors,
+                    checkpoint_dir,
+                )
             else:
                 logger.info(
                     "Patient %s: loaded %d tumor(s) from pass-0 checkpoint",
@@ -382,7 +391,7 @@ class OncRegistryExtractionPipeline:
 
         await orchestrator.run_all_rounds(
             all_work_units,
-            checkpoint_dir=self.config.checkpoint_dir,
+            checkpoint_dir=checkpoint_dir,
         )
 
         # 4. Validate
@@ -460,12 +469,10 @@ class OncRegistryExtractionPipeline:
     def _load_patient_tumor_checkpoint(
         self,
         patient_id: str,
+        checkpoint_dir: Path,
     ) -> list[TumorCandidate] | None:
         """Load cached pass-0 tumor detection results for one patient."""
-        if self.config.checkpoint_dir is None:
-            return None
-
-        path = _patient_tumor_checkpoint_path(self.config.checkpoint_dir, patient_id)
+        path = _patient_tumor_checkpoint_path(checkpoint_dir, patient_id)
         if not path.exists():
             return None
 
@@ -488,12 +495,10 @@ class OncRegistryExtractionPipeline:
         self,
         patient_id: str,
         tumors: list[TumorCandidate],
+        checkpoint_dir: Path,
     ) -> None:
         """Persist pass-0 tumor detection results for one patient."""
-        if self.config.checkpoint_dir is None:
-            return
-
-        path = _patient_tumor_checkpoint_path(self.config.checkpoint_dir, patient_id)
+        path = _patient_tumor_checkpoint_path(checkpoint_dir, patient_id)
         payload = {
             "schema_version": 1,
             "patient_id": patient_id,
@@ -750,7 +755,10 @@ def main() -> None:
     )
     parser.add_argument(
         "--checkpoint-dir", default=None,
-        help="Directory for round checkpoints (enables resume)",
+        help=(
+            "Directory for resumable checkpoints "
+            "(default: OUTPUT/checkpoints)"
+        ),
     )
     parser.add_argument(
         "--verbose", "-v", action="store_true",
