@@ -2,7 +2,7 @@
 
 ## What this project does
 
-Automated extraction of NAACCR v26 cancer registry data from patient EHR documents using a configured LLM endpoint: local vLLM, Azure OpenAI v1, or Anthropic Claude on Vertex AI. Produces registry-grade output (NAACCR XML, flat file, or CSV) with audit trail and human review queue.
+Automated extraction of NAACCR v26 cancer registry data from patient EHR documents using a configured LLM endpoint: local vLLM, Azure OpenAI v1, Anthropic Claude on Vertex AI, or Google Gemini on Vertex AI. Produces registry-grade output (NAACCR XML, flat file, or CSV) with audit trail and human review queue.
 
 ## Architecture
 
@@ -31,7 +31,7 @@ Input (CSV/Parquet) -> Ingest -> Concatenate & Chunk (50K tokens) -> Tumor Detec
 | `dictionary/schema_registry.py` | Maps ICD-O-3 site+histology to ~15 cancer schemas. Each schema has 10-30 site-specific data items (SSDIs). Curated dict, not dynamically parsed. |
 | `ingest/reader.py` | Loads CSV/Parquet, groups by `patient_id`, auto-detects structured demographic columns (maps column names to NAACCR item numbers). |
 | `ingest/sequential_chunker.py` | Concatenates all patient notes chronologically with date headers, chunks by token count (default 50K) with overlap. No document classification. |
-| `llm/client.py` | Fully async `httpx.AsyncClient`. Supports vLLM, Azure OpenAI v1, and Anthropic Vertex endpoints. Discovers model metadata where available, refreshes cloud bearer tokens on auth failures, and retries with prompt-level JSON error feedback. |
+| `llm/client.py` | Fully async `httpx.AsyncClient`. Supports vLLM, Azure OpenAI v1, Anthropic Vertex, and Google Vertex (Gemini) endpoints. Discovers model metadata where available, refreshes cloud bearer tokens on auth failures, and retries with prompt-level JSON error feedback. Enables Gemini's native `application/json` response mode on the extract path. |
 | `llm/structured_output.py` | Builds prompt-level JSON format instructions from NAACCR data items. Describes expected fields, valid codes, and format expectations in prompt text. |
 | `manuals/seer.py` | Retrieves bounded, cancer-type-specific excerpts from vendored SEER/NAACCR manuals for prompt context. |
 | `extraction/base.py` | `ExtractionResult` dataclass, `merge_results()` (higher confidence wins), `split_items_into_batches()`, serialization helpers for checkpointing. |
@@ -86,22 +86,24 @@ After all chunks: Validate -> Score confidence -> Flag for review
 uv run onc-registry-pipeline input.parquet output/ --vllm-url http://localhost:8000/v1
 uv run onc-registry-pipeline input.parquet output/ --provider azure-openai --model <azure-model-or-deployment>
 uv run onc-registry-pipeline input.parquet output/ --provider anthropic-vertex --model claude-sonnet-4-5@20250929
+uv run onc-registry-pipeline input.parquet output/ --provider google-vertex --model gemini-3.5-flash
 ```
 
 Key options:
 - `--chunk-size 50000` — tokens per chunk (default 50K)
 - `--items-per-call 50` — NAACCR items per LLM call (default 50)
-- `--max-tokens 16384` — max output tokens per LLM call
+- `--max-tokens 50000` — max output tokens per LLM call
 - `--checkpoint-dir ./checkpoints` — enable round checkpointing for resume
 - `--max-concurrent 16` — max parallel diagnosis work-unit extractions
 - `--seer-manuals-dir SEERManuals` — local vendored manuals used for prompt context
 - `--seer-context-max-chars 12000` — cap for retrieved manual excerpts per prompt
-- `--provider {vllm,azure-openai,anthropic-vertex}` — model endpoint provider
-- `--model MODEL` — required for Anthropic Vertex and usually required for Azure
+- `--provider {vllm,azure-openai,anthropic-vertex,google-vertex}` — model endpoint provider
+- `--model MODEL` — required for Anthropic Vertex and Google Vertex; usually required for Azure
 - Azure env: `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_API_KEY`; bearer tokens refresh via `az account get-access-token --resource=https://cognitiveservices.azure.com/ --query accessToken --output tsv` on 401/403
 - Anthropic Vertex env: `CLOUD_ML_REGION`, `ANTHROPIC_VERTEX_PROJECT_ID`, optional `ANTHROPIC_VERTEX_ACCESS_TOKEN`; tokens refresh via `gcloud auth application-default print-access-token` on 401/403
+- Google Vertex (Gemini) env: `GOOGLE_VERTEX_PROJECT_ID`, `GOOGLE_VERTEX_REGION` (or shared `CLOUD_ML_REGION`), optional `GOOGLE_VERTEX_ACCESS_TOKEN`, optional `GOOGLE_VERTEX_MODEL`; tokens refresh via `gcloud auth application-default print-access-token` on 401/403
 
-Runtime network access depends on the selected provider: local vLLM stays local, while Azure OpenAI and Anthropic Vertex send prompts to those configured cloud endpoints.
+Runtime network access depends on the selected provider: local vLLM stays local, while Azure OpenAI, Anthropic Vertex, and Google Vertex send prompts to those configured cloud endpoints.
 
 ## Converting output
 

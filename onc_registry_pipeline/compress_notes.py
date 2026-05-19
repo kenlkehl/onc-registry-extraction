@@ -755,7 +755,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("output", help="Directory for compressed output files")
     parser.add_argument(
         "--provider",
-        choices=["vllm", "azure-openai", "anthropic-vertex"],
+        choices=["vllm", "azure-openai", "anthropic-vertex", "google-vertex"],
         default="vllm",
         help="LLM endpoint provider (default: %(default)s)",
     )
@@ -796,6 +796,13 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         default="ANTHROPIC_VERTEX_ACCESS_TOKEN",
     )
     parser.add_argument("--anthropic-vertex-token-refresh-command", default=None)
+    parser.add_argument("--google-vertex-project-id", default=None)
+    parser.add_argument("--google-vertex-region", default=None)
+    parser.add_argument(
+        "--google-vertex-token-env",
+        default="GOOGLE_VERTEX_ACCESS_TOKEN",
+    )
+    parser.add_argument("--google-vertex-token-refresh-command", default=None)
     parser.add_argument(
         "--reasoning-parser",
         default="auto",
@@ -807,7 +814,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--compression-max-tokens",
         type=int,
-        default=1024,
+        default=10000,
         help="Max output tokens for each note summary (default: %(default)s)",
     )
     parser.add_argument(
@@ -858,6 +865,7 @@ def _build_client_from_args(args: argparse.Namespace) -> VLLMClient:
         "vllm": os.getenv("VLLM_MODEL"),
         "azure-openai": os.getenv("AZURE_OPENAI_MODEL"),
         "anthropic-vertex": os.getenv("ANTHROPIC_VERTEX_MODEL"),
+        "google-vertex": os.getenv("GOOGLE_VERTEX_MODEL"),
     }
     llm_model = (
         args.model
@@ -881,6 +889,20 @@ def _build_client_from_args(args: argparse.Namespace) -> VLLMClient:
         if args.anthropic_vertex_token_refresh_command is not None
         else default_config.anthropic_vertex_token_refresh_command
     )
+    google_vertex_project_id = (
+        args.google_vertex_project_id
+        or os.getenv("GOOGLE_VERTEX_PROJECT_ID")
+    )
+    google_vertex_region = (
+        args.google_vertex_region
+        or os.getenv("GOOGLE_VERTEX_REGION")
+        or os.getenv("CLOUD_ML_REGION")
+    )
+    google_vertex_token_refresh_command = (
+        args.google_vertex_token_refresh_command
+        if args.google_vertex_token_refresh_command is not None
+        else default_config.google_vertex_token_refresh_command
+    )
 
     if args.provider == "azure-openai" and not azure_endpoint:
         raise ValueError(
@@ -901,6 +923,22 @@ def _build_client_from_args(args: argparse.Namespace) -> VLLMClient:
             raise ValueError(
                 "--provider anthropic-vertex requires --model, $LLM_MODEL, "
                 "or $ANTHROPIC_VERTEX_MODEL"
+            )
+    if args.provider == "google-vertex":
+        if not google_vertex_project_id:
+            raise ValueError(
+                "--provider google-vertex requires "
+                "--google-vertex-project-id or $GOOGLE_VERTEX_PROJECT_ID"
+            )
+        if not google_vertex_region:
+            raise ValueError(
+                "--provider google-vertex requires "
+                "--google-vertex-region, $GOOGLE_VERTEX_REGION, or $CLOUD_ML_REGION"
+            )
+        if llm_model == "auto":
+            raise ValueError(
+                "--provider google-vertex requires --model, $LLM_MODEL, "
+                "or $GOOGLE_VERTEX_MODEL"
             )
 
     base_url = azure_endpoint if args.provider == "azure-openai" else args.vllm_url
@@ -923,6 +961,10 @@ def _build_client_from_args(args: argparse.Namespace) -> VLLMClient:
         anthropic_vertex_region=vertex_region,
         anthropic_vertex_token_env=args.anthropic_vertex_token_env,
         anthropic_vertex_token_refresh_command=vertex_token_refresh_command,
+        google_vertex_project_id=google_vertex_project_id,
+        google_vertex_region=google_vertex_region,
+        google_vertex_token_env=args.google_vertex_token_env,
+        google_vertex_token_refresh_command=google_vertex_token_refresh_command,
     )
 
 

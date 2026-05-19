@@ -20,8 +20,8 @@ Given a dataset of patient clinical documents (pathology reports, operative note
 8. **Outputs** NAACCR v26 XML, fixed-width flat file, or CSV with full audit trail
 
 By default, LLM inference runs locally via [vLLM](https://docs.vllm.ai/).
-The same pipeline can also target configured Azure OpenAI v1 or Anthropic
-Claude on Vertex AI endpoints.
+The same pipeline can also target configured Azure OpenAI v1, Anthropic
+Claude on Vertex AI, or Google Gemini on Vertex AI endpoints.
 
 ## Quick start
 
@@ -30,7 +30,8 @@ Claude on Vertex AI endpoints.
 - Python 3.9+
 - [uv](https://docs.astral.sh/uv/) (recommended) or pip
 - A running [vLLM](https://docs.vllm.ai/) server with a local LLM loaded, or
-  credentials for Azure OpenAI / Anthropic Claude on Vertex AI
+  credentials for Azure OpenAI, Anthropic Claude on Vertex AI, or Google
+  Gemini on Vertex AI
 
 ### Install
 
@@ -117,6 +118,35 @@ uv run onc-registry-pipeline input.parquet output/ \
 Vertex auth uses `ANTHROPIC_VERTEX_ACCESS_TOKEN` when present, otherwise it
 runs `gcloud auth application-default print-access-token` and refreshes on
 401/403.
+
+Google Gemini on Vertex AI uses `GOOGLE_VERTEX_PROJECT_ID` and either
+`GOOGLE_VERTEX_REGION` or the shared `CLOUD_ML_REGION`:
+
+```bash
+export CLOUD_ML_REGION=global
+export GOOGLE_VERTEX_PROJECT_ID=<project-id>
+
+uv run onc-registry-pipeline input.parquet output/ \
+    --provider google-vertex \
+    --model gemini-3.5-flash
+```
+
+The Google Vertex provider posts to
+`/v1/projects/<project>/locations/<region>/publishers/google/models/<model>:generateContent`
+with Gemini's `systemInstruction` / `contents` / `generationConfig` body
+shape. On the extraction path the pipeline sets
+`generationConfig.responseMimeType = "application/json"` to use Gemini's
+native JSON-output mode; note compression leaves it unset so summaries can be
+plain text.
+
+Vertex auth uses `GOOGLE_VERTEX_ACCESS_TOKEN` when present, otherwise it runs
+`gcloud auth application-default print-access-token` and refreshes on 401/403
+(same mechanism as the Anthropic Vertex provider, just a separate env var).
+
+Gemini 2.5/3.x Flash and Pro are thinking models — a non-trivial share of
+each response budget is spent on internal reasoning tokens. The pipeline's
+default `--max-tokens 50000` leaves ample room, but if you lower it,
+allow well past the visible-output budget you actually need.
 
 ### Prepare your input data
 
@@ -230,7 +260,7 @@ The `--readable-names` flag replaces XML IDs (e.g., `primarySite`) with full NAA
 
 ```
 usage: onc-registry-compress-notes [-h]
-                       [--provider {vllm,azure-openai,anthropic-vertex}]
+                       [--provider {vllm,azure-openai,anthropic-vertex,google-vertex}]
                        [--endpoint URL] [--model MODEL] [--vllm-url URL]
                        [--azure-auth-mode {bearer,api-key}]
                        [--azure-api-key-env ENV]
@@ -239,6 +269,10 @@ usage: onc-registry-compress-notes [-h]
                        [--anthropic-vertex-region REGION]
                        [--anthropic-vertex-token-env ENV]
                        [--anthropic-vertex-token-refresh-command CMD]
+                       [--google-vertex-project-id PROJECT]
+                       [--google-vertex-region REGION]
+                       [--google-vertex-token-env ENV]
+                       [--google-vertex-token-refresh-command CMD]
                        [--reasoning-parser NAME] [--timeout N]
                        [--max-retries N] [--temperature FLOAT]
                        [--compression-max-tokens N] [--max-concurrent N]
@@ -255,7 +289,7 @@ usage: onc-registry-compress-notes [-h]
 
 ```
 usage: onc-registry-pipeline [-h]
-                       [--provider {vllm,azure-openai,anthropic-vertex}]
+                       [--provider {vllm,azure-openai,anthropic-vertex,google-vertex}]
                        [--endpoint URL] [--model MODEL] [--vllm-url URL]
                        [--azure-auth-mode {bearer,api-key}]
                        [--azure-api-key-env ENV]
@@ -264,6 +298,10 @@ usage: onc-registry-pipeline [-h]
                        [--anthropic-vertex-region REGION]
                        [--anthropic-vertex-token-env ENV]
                        [--anthropic-vertex-token-refresh-command CMD]
+                       [--google-vertex-project-id PROJECT]
+                       [--google-vertex-region REGION]
+                       [--google-vertex-token-env ENV]
+                       [--google-vertex-token-refresh-command CMD]
                        [--max-concurrent N]
                        [--format {naaccr_xml,naaccr_flat,csv}]
                        [--confidence-threshold FLOAT] [--data-dict DIR]
@@ -297,12 +335,20 @@ options:
                            Env var holding a Vertex bearer token
   --anthropic-vertex-token-refresh-command CMD
                            Command that prints a fresh Vertex bearer token
+  --google-vertex-project-id PROJECT
+                           Defaults to $GOOGLE_VERTEX_PROJECT_ID
+  --google-vertex-region REGION
+                           Defaults to $GOOGLE_VERTEX_REGION, then $CLOUD_ML_REGION
+  --google-vertex-token-env ENV
+                           Env var holding a Vertex bearer token for Gemini
+  --google-vertex-token-refresh-command CMD
+                           Command that prints a fresh Vertex bearer token
   --max-concurrent N       Max concurrent diagnosis work units per round (default: 16)
   --format FORMAT          Output format (default: naaccr_xml)
   --confidence-threshold   Confidence threshold for review flagging (default: 0.7)
   --data-dict DIR          Path to NAACCRDataItems directory (default: vendored copy)
   --temperature FLOAT      LLM sampling temperature (default: 0.0)
-  --max-tokens N           Max tokens per LLM response (default: 16384)
+  --max-tokens N           Max tokens per LLM response (default: 50000)
   --max-retries N          Max LLM call attempts (default: 10)
   --reasoning-parser NAME  vLLM reasoning parser name: auto, none, qwen3,
                            gemma4, openai_gptoss, etc. (default: auto)

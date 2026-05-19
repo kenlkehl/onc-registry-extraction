@@ -31,7 +31,7 @@ from onc_registry_pipeline.llm.reasoning import (
 
 logger = logging.getLogger(__name__)
 
-LLMProvider = Literal["vllm", "azure-openai", "anthropic-vertex"]
+LLMProvider = Literal["vllm", "azure-openai", "anthropic-vertex", "google-vertex"]
 AzureAuthMode = Literal["bearer", "api-key"]
 
 _DEFAULT_AZURE_TOKEN_REFRESH_COMMAND = (
@@ -217,6 +217,12 @@ class VLLMClient:
         anthropic_vertex_token_refresh_command: Optional[str] = (
             _DEFAULT_VERTEX_TOKEN_REFRESH_COMMAND
         ),
+        google_vertex_project_id: Optional[str] = None,
+        google_vertex_region: Optional[str] = None,
+        google_vertex_token_env: str = "GOOGLE_VERTEX_ACCESS_TOKEN",
+        google_vertex_token_refresh_command: Optional[str] = (
+            _DEFAULT_VERTEX_TOKEN_REFRESH_COMMAND
+        ),
     ) -> None:
         self._provider = provider
         self._configured_model = model
@@ -234,6 +240,12 @@ class VLLMClient:
         self._anthropic_vertex_token_env = anthropic_vertex_token_env
         self._anthropic_vertex_token_refresh_command = (
             anthropic_vertex_token_refresh_command
+        )
+        self._google_vertex_project_id = google_vertex_project_id
+        self._google_vertex_region = google_vertex_region
+        self._google_vertex_token_env = google_vertex_token_env
+        self._google_vertex_token_refresh_command = (
+            google_vertex_token_refresh_command
         )
         self._auth_token: Optional[str] = None
         self._auth_refresh_lock = asyncio.Lock()
@@ -356,6 +368,7 @@ class VLLMClient:
             profile.model_name,
             system_prompt,
             user_prompt,
+            json_mode=True,
         )
 
         last_error: Optional[str] = None
@@ -438,6 +451,7 @@ class VLLMClient:
                     profile.model_name,
                     system_prompt,
                     user_prompt + error_feedback,
+                    json_mode=True,
                 )
                 last_error = f"JSON parse error: {exc.parse_error}"
 
@@ -643,6 +657,10 @@ class VLLMClient:
             model_name = self._require_configured_model("Anthropic Vertex")
             return model_name, _infer_anthropic_vertex_context_window(model_name)
 
+        if self._provider == "google-vertex":
+            model_name = self._require_configured_model("Google Vertex")
+            return model_name, _infer_google_vertex_context_window(model_name)
+
         if self._provider == "azure-openai" and self._configured_model != "auto":
             return self._configured_model, 131_072
 
@@ -774,6 +792,7 @@ class VLLMClient:
         *,
         max_tokens: Optional[int] = None,
         temperature: Optional[float] = None,
+        json_mode: bool = False,
     ) -> dict:
         resolved_max_tokens = self._max_tokens if max_tokens is None else max_tokens
         resolved_temperature = (
@@ -789,6 +808,21 @@ class VLLMClient:
                 "temperature": resolved_temperature,
                 "max_tokens": resolved_max_tokens,
                 "stream": False,
+            }
+
+        if self._provider == "google-vertex":
+            generation_config: dict[str, object] = {
+                "temperature": resolved_temperature,
+                "maxOutputTokens": resolved_max_tokens,
+            }
+            if json_mode:
+                generation_config["responseMimeType"] = "application/json"
+            return {
+                "systemInstruction": {"parts": [{"text": system_prompt}]},
+                "contents": [
+                    {"role": "user", "parts": [{"text": user_prompt}]},
+                ],
+                "generationConfig": generation_config,
             }
 
         if self._provider == "azure-openai":
@@ -829,6 +863,21 @@ class VLLMClient:
                 f"/publishers/anthropic/models/{model}:rawPredict"
             )
 
+        if self._provider == "google-vertex":
+            project_id = self._google_vertex_project_id
+            region = self._google_vertex_region
+            if not project_id or not region:
+                raise RuntimeError(
+                    "Google Vertex requires GOOGLE_VERTEX_PROJECT_ID "
+                    "and GOOGLE_VERTEX_REGION (or CLOUD_ML_REGION)."
+                )
+            model = quote(self._require_configured_model("Google Vertex"), safe="")
+            host = _anthropic_vertex_host(region)
+            return (
+                f"https://{host}/v1/projects/{project_id}/locations/{region}"
+                f"/publishers/google/models/{model}:generateContent"
+            )
+
         if self._provider == "azure-openai":
             return f"{self._base_url}/responses"
 
@@ -837,6 +886,9 @@ class VLLMClient:
     def _parse_completion_data(self, data: dict) -> tuple[str, str, str]:
         if self._provider == "anthropic-vertex":
             return _parse_anthropic_message(data)
+
+        if self._provider == "google-vertex":
+            return _parse_gemini_response(data)
 
         if self._provider == "azure-openai":
             return _parse_azure_responses_data(data)
@@ -885,11 +937,7 @@ class VLLMClient:
 
         refreshed = await self._refresh_auth_token()
         if not refreshed:
-            env_name = (
-                self._azure_api_key_env
-                if self._provider == "azure-openai"
-                else self._anthropic_vertex_token_env
-            )
+            env_name = self._auth_token_env_name()
             raise RuntimeError(
                 f"{self._provider} requires credentials in ${env_name} "
                 "or a configured token refresh command."
@@ -912,11 +960,7 @@ class VLLMClient:
 
             token = await _run_token_command(command)
             self._auth_token = token
-            env_name = (
-                self._azure_api_key_env
-                if self._provider == "azure-openai"
-                else self._anthropic_vertex_token_env
-            )
+            env_name = self._auth_token_env_name()
             os.environ[env_name] = token
             logger.info("Refreshed %s credentials into $%s", self._provider, env_name)
             return True
@@ -926,6 +970,8 @@ class VLLMClient:
             return os.getenv(self._azure_api_key_env)
         if self._provider == "anthropic-vertex":
             return os.getenv(self._anthropic_vertex_token_env)
+        if self._provider == "google-vertex":
+            return os.getenv(self._google_vertex_token_env)
         return None
 
     def _token_refresh_command(self) -> Optional[str]:
@@ -933,7 +979,18 @@ class VLLMClient:
             return self._azure_token_refresh_command
         if self._provider == "anthropic-vertex":
             return self._anthropic_vertex_token_refresh_command
+        if self._provider == "google-vertex":
+            return self._google_vertex_token_refresh_command
         return None
+
+    def _auth_token_env_name(self) -> str:
+        if self._provider == "azure-openai":
+            return self._azure_api_key_env
+        if self._provider == "anthropic-vertex":
+            return self._anthropic_vertex_token_env
+        if self._provider == "google-vertex":
+            return self._google_vertex_token_env
+        return ""
 
     def _auth_headers(self) -> dict[str, str]:
         if self._provider == "vllm":
@@ -992,7 +1049,11 @@ def _parse_usage(data: dict) -> dict[str, int] | None:
     """Extract flat numeric token usage from provider response envelopes."""
     usage = data.get("usage")
     if not isinstance(usage, dict):
-        return None
+        usage_metadata = data.get("usageMetadata")
+        if isinstance(usage_metadata, dict):
+            usage = usage_metadata
+        else:
+            return None
 
     parsed: dict[str, int] = {}
     for key, value in usage.items():
@@ -1186,6 +1247,37 @@ def _parse_anthropic_message(data: dict) -> tuple[str, str, str]:
     return raw_content, final_content, reasoning
 
 
+def _parse_gemini_response(data: dict) -> tuple[str, str, str]:
+    """Return raw text, final text, and reasoning from a Vertex Gemini response."""
+    candidates = data.get("candidates")
+    if not isinstance(candidates, list) or not candidates:
+        return "", "", ""
+
+    first = candidates[0]
+    if not isinstance(first, dict):
+        return "", "", ""
+
+    content = first.get("content")
+    if not isinstance(content, dict):
+        return "", "", ""
+
+    parts = content.get("parts")
+    if not isinstance(parts, list):
+        return "", "", ""
+
+    text_parts: list[str] = []
+    for part in parts:
+        if isinstance(part, dict):
+            text = part.get("text")
+            if isinstance(text, str):
+                text_parts.append(text)
+        elif isinstance(part, str):
+            text_parts.append(part)
+
+    final_content = "".join(text_parts)
+    return final_content, final_content, ""
+
+
 def _anthropic_vertex_host(region: str) -> str:
     """Return the Vertex AI host for global, multi-region, or regional Claude."""
     normalized = region.strip().lower()
@@ -1209,6 +1301,25 @@ def _infer_anthropic_vertex_context_window(model_name: str) -> int:
     if any(model in normalized for model in one_million_context_models):
         return 1_000_000
     return 200_000
+
+
+def _infer_google_vertex_context_window(model_name: str) -> int:
+    """Infer a conservative context window for Gemini on Vertex AI.
+
+    Gemini 2.5/3.x flash and pro publisher models advertise 1M-token
+    context. Fall back to 131,072 for other or older publisher ids.
+    """
+    normalized = model_name.lower()
+    one_million_markers = (
+        "gemini-2.5",
+        "gemini-3.5",
+        "gemini-3-5",
+        "gemini-3.0",
+        "gemini-3-0",
+    )
+    if any(marker in normalized for marker in one_million_markers):
+        return 1_000_000
+    return 131_072
 
 
 async def _run_token_command(command: str) -> str:

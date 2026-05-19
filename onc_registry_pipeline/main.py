@@ -259,6 +259,12 @@ class OncRegistryExtractionPipeline:
             anthropic_vertex_token_refresh_command=(
                 config.anthropic_vertex_token_refresh_command
             ),
+            google_vertex_project_id=config.google_vertex_project_id,
+            google_vertex_region=config.google_vertex_region,
+            google_vertex_token_env=config.google_vertex_token_env,
+            google_vertex_token_refresh_command=(
+                config.google_vertex_token_refresh_command
+            ),
         )
         self.chunker = SequentialChunker(
             chunk_target_tokens=config.chunk_target_tokens,
@@ -681,7 +687,7 @@ def main() -> None:
     parser.add_argument("output", help="Path to output directory")
     parser.add_argument(
         "--provider",
-        choices=["vllm", "azure-openai", "anthropic-vertex"],
+        choices=["vllm", "azure-openai", "anthropic-vertex", "google-vertex"],
         default="vllm",
         help="LLM endpoint provider (default: %(default)s)",
     )
@@ -698,8 +704,8 @@ def main() -> None:
         default=None,
         help=(
             "Model/deployment id. Defaults to provider env vars "
-            "($LLM_MODEL, $AZURE_OPENAI_MODEL, $ANTHROPIC_VERTEX_MODEL) "
-            "or auto when supported."
+            "($LLM_MODEL, $AZURE_OPENAI_MODEL, $ANTHROPIC_VERTEX_MODEL, "
+            "$GOOGLE_VERTEX_MODEL) or auto when supported."
         ),
     )
     parser.add_argument(
@@ -758,6 +764,36 @@ def main() -> None:
         ),
     )
     parser.add_argument(
+        "--google-vertex-project-id",
+        default=None,
+        help=(
+            "Google Cloud project id for Google Vertex (Gemini). Defaults to "
+            "$GOOGLE_VERTEX_PROJECT_ID."
+        ),
+    )
+    parser.add_argument(
+        "--google-vertex-region",
+        default=None,
+        help=(
+            "Vertex region/multi-region/global for Gemini. Defaults to "
+            "$GOOGLE_VERTEX_REGION, then $CLOUD_ML_REGION."
+        ),
+    )
+    parser.add_argument(
+        "--google-vertex-token-env",
+        default="GOOGLE_VERTEX_ACCESS_TOKEN",
+        help="Env var holding a Vertex bearer token for Gemini (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--google-vertex-token-refresh-command",
+        default=None,
+        help=(
+            "Command that prints a fresh Vertex bearer token. Defaults to "
+            "gcloud auth application-default print-access-token. Pass an "
+            "empty string to disable refresh."
+        ),
+    )
+    parser.add_argument(
         "--max-concurrent", type=int, default=16,
         help="Max concurrent diagnosis work units (default: %(default)s)",
     )
@@ -793,7 +829,7 @@ def main() -> None:
         help="LLM sampling temperature (default: %(default)s)",
     )
     parser.add_argument(
-        "--max-tokens", type=int, default=16384,
+        "--max-tokens", type=int, default=50000,
         help="Max tokens per LLM response (default: %(default)s)",
     )
     parser.add_argument(
@@ -852,6 +888,7 @@ def main() -> None:
         "vllm": os.getenv("VLLM_MODEL"),
         "azure-openai": os.getenv("AZURE_OPENAI_MODEL"),
         "anthropic-vertex": os.getenv("ANTHROPIC_VERTEX_MODEL"),
+        "google-vertex": os.getenv("GOOGLE_VERTEX_MODEL"),
     }
     llm_model = (
         args.model
@@ -875,6 +912,20 @@ def main() -> None:
         if args.anthropic_vertex_token_refresh_command is not None
         else default_config.anthropic_vertex_token_refresh_command
     )
+    google_vertex_project_id = (
+        args.google_vertex_project_id
+        or os.getenv("GOOGLE_VERTEX_PROJECT_ID")
+    )
+    google_vertex_region = (
+        args.google_vertex_region
+        or os.getenv("GOOGLE_VERTEX_REGION")
+        or os.getenv("CLOUD_ML_REGION")
+    )
+    google_vertex_token_refresh_command = (
+        args.google_vertex_token_refresh_command
+        if args.google_vertex_token_refresh_command is not None
+        else default_config.google_vertex_token_refresh_command
+    )
 
     if args.provider == "azure-openai" and not azure_endpoint:
         parser.error(
@@ -896,6 +947,22 @@ def main() -> None:
                 "--provider anthropic-vertex requires --model, $LLM_MODEL, "
                 "or $ANTHROPIC_VERTEX_MODEL"
             )
+    if args.provider == "google-vertex":
+        if not google_vertex_project_id:
+            parser.error(
+                "--provider google-vertex requires "
+                "--google-vertex-project-id or $GOOGLE_VERTEX_PROJECT_ID"
+            )
+        if not google_vertex_region:
+            parser.error(
+                "--provider google-vertex requires "
+                "--google-vertex-region, $GOOGLE_VERTEX_REGION, or $CLOUD_ML_REGION"
+            )
+        if llm_model == "auto":
+            parser.error(
+                "--provider google-vertex requires --model, $LLM_MODEL, "
+                "or $GOOGLE_VERTEX_MODEL"
+            )
 
     config = PipelineConfig(
         llm_provider=args.provider,
@@ -914,6 +981,10 @@ def main() -> None:
         anthropic_vertex_region=vertex_region,
         anthropic_vertex_token_env=args.anthropic_vertex_token_env,
         anthropic_vertex_token_refresh_command=vertex_token_refresh_command,
+        google_vertex_project_id=google_vertex_project_id,
+        google_vertex_region=google_vertex_region,
+        google_vertex_token_env=args.google_vertex_token_env,
+        google_vertex_token_refresh_command=google_vertex_token_refresh_command,
         max_retries=args.max_retries,
         max_concurrent_patients=args.max_concurrent,
         output_format=args.format,

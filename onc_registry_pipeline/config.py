@@ -18,14 +18,16 @@ class PipelineConfig(BaseModel):
     """Configuration for the NAACCR extraction pipeline."""
 
     # LLM endpoint settings
-    llm_provider: Literal["vllm", "azure-openai", "anthropic-vertex"] = "vllm"
+    llm_provider: Literal[
+        "vllm", "azure-openai", "anthropic-vertex", "google-vertex"
+    ] = "vllm"
     llm_model: str = "auto"
     llm_base_url: Optional[str] = None
 
     # vLLM server settings (kept for backwards-compatible CLI/config names)
     vllm_base_url: str = "http://localhost:8000/v1"
     vllm_model: str = "auto"  # discovered at runtime
-    vllm_max_tokens: int = 16384
+    vllm_max_tokens: int = 50000
     vllm_temperature: float = 0.0
     vllm_timeout: int = 300
     vllm_reasoning_parser: Optional[str] = "auto"
@@ -45,6 +47,14 @@ class PipelineConfig(BaseModel):
     anthropic_vertex_region: Optional[str] = None
     anthropic_vertex_token_env: str = "ANTHROPIC_VERTEX_ACCESS_TOKEN"
     anthropic_vertex_token_refresh_command: Optional[str] = (
+        "gcloud auth application-default print-access-token"
+    )
+
+    # Google Gemini on Vertex AI settings
+    google_vertex_project_id: Optional[str] = None
+    google_vertex_region: Optional[str] = None
+    google_vertex_token_env: str = "GOOGLE_VERTEX_ACCESS_TOKEN"
+    google_vertex_token_refresh_command: Optional[str] = (
         "gcloud auth application-default print-access-token"
     )
 

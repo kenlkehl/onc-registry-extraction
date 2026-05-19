@@ -441,3 +441,131 @@ async def test_anthropic_vertex_response_content_is_parsed() -> None:
 
     assert response.final_content == "{\"ok\": true}"
     assert response.parsed == {"ok": True}
+
+
+def test_google_vertex_builds_generate_content_request() -> None:
+    client = VLLMClient(
+        provider="google-vertex",
+        model="gemini-3.5-flash",
+        google_vertex_project_id="project-id",
+        google_vertex_region="global",
+    )
+
+    body = client._build_completion_body(
+        "ignored",
+        "system prompt",
+        "user prompt",
+        json_mode=True,
+    )
+
+    assert client._completion_url() == (
+        "https://aiplatform.googleapis.com/v1/projects/project-id/locations/global"
+        "/publishers/google/models/gemini-3.5-flash:generateContent"
+    )
+    assert body["systemInstruction"] == {"parts": [{"text": "system prompt"}]}
+    assert body["contents"] == [
+        {"role": "user", "parts": [{"text": "user prompt"}]},
+    ]
+    assert body["generationConfig"]["responseMimeType"] == "application/json"
+    assert body["generationConfig"]["maxOutputTokens"] == client._max_tokens
+
+
+def test_google_vertex_generate_text_omits_json_mime_type() -> None:
+    client = VLLMClient(
+        provider="google-vertex",
+        model="gemini-3.5-flash",
+        google_vertex_project_id="project-id",
+        google_vertex_region="global",
+    )
+
+    body = client._build_completion_body(
+        "ignored",
+        "system prompt",
+        "user prompt",
+    )
+
+    assert "responseMimeType" not in body["generationConfig"]
+
+
+async def test_google_vertex_response_content_is_parsed() -> None:
+    client = VLLMClient(
+        provider="google-vertex",
+        model="gemini-3.5-flash",
+        google_vertex_project_id="project-id",
+        google_vertex_region="global",
+    )
+    client._client = FakeHTTPClient(  # type: ignore[assignment]
+        {
+            "candidates": [
+                {
+                    "content": {
+                        "parts": [
+                            {"text": "{\"ok\":"},
+                            {"text": " true}"},
+                        ]
+                    }
+                }
+            ],
+            "usageMetadata": {
+                "promptTokenCount": 17,
+                "candidatesTokenCount": 5,
+                "totalTokenCount": 22,
+            },
+        }
+    )
+    client._model_profile = ModelProfile(
+        model_name="gemini-3.5-flash",
+        context_window=1_000_000,
+        model_size_class="medium",
+        provider="google-vertex",
+    )
+
+    response = await client._post_completion({}, attempt=1)
+
+    assert response.final_content == "{\"ok\": true}"
+    assert response.parsed == {"ok": True}
+    assert response.reasoning == ""
+
+
+async def test_google_vertex_generate_text_parses_usage_metadata() -> None:
+    http_client = RecordingHTTPClient(
+        [
+            FakeHTTPResponse(
+                {
+                    "candidates": [
+                        {"content": {"parts": [{"text": "Gemini summary."}]}}
+                    ],
+                    "usageMetadata": {
+                        "promptTokenCount": 9,
+                        "candidatesTokenCount": 3,
+                        "totalTokenCount": 12,
+                    },
+                }
+            )
+        ]
+    )
+    client = VLLMClient(
+        provider="google-vertex",
+        model="gemini-3.5-flash",
+        google_vertex_project_id="project-id",
+        google_vertex_region="global",
+    )
+    client._client = http_client  # type: ignore[assignment]
+    client._model_profile = ModelProfile(
+        model_name="gemini-3.5-flash",
+        context_window=1_000_000,
+        model_size_class="medium",
+        provider="google-vertex",
+    )
+
+    response = await client.generate_text("system", "user", max_tokens=64)
+
+    assert response.final_content == "Gemini summary."
+    assert response.usage == {
+        "promptTokenCount": 9,
+        "candidatesTokenCount": 3,
+        "totalTokenCount": 12,
+    }
+    body = http_client.requests[0]["json"]
+    assert body["generationConfig"]["maxOutputTokens"] == 64
+    assert "responseMimeType" not in body["generationConfig"]
