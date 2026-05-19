@@ -152,79 +152,26 @@ def test_diagnosis_document_window_handles_month_precision() -> None:
     ]
 
 
-def test_tumor_deduplication_uses_site_histology_laterality_and_date() -> None:
-    detector = TumorDetector(llm_client=None, schema_builder=None)  # type: ignore[arg-type]
-    chunks = [
-        DummyChunk("chunk_0", "left breast ductal carcinoma and lobular carcinoma"),
-        DummyChunk("chunk_1", "left breast ductal carcinoma"),
-    ]
-    raw_tumors = [
-        {
-            "cancer_type": "ductal carcinoma",
-            "histology": "ductal carcinoma",
-            "primary_site": "breast",
-            "laterality": "left",
-            "approximate_diagnosis_date": "2024-01",
-            "evidence": "left breast ductal carcinoma",
-            "_source_chunk_id": "chunk_0",
-        },
-        {
-            "cancer_type": "ductal carcinoma NOS",
-            "histology": "ductal carcinoma",
-            "primary_site": "breast",
-            "laterality": "left",
-            "approximate_diagnosis_date": "2024-01",
-            "evidence": "left breast ductal carcinoma",
-            "_source_chunk_id": "chunk_1",
-        },
-        {
-            "cancer_type": "lobular carcinoma",
-            "histology": "lobular carcinoma",
-            "primary_site": "breast",
-            "laterality": "left",
-            "approximate_diagnosis_date": "2024-01",
-            "evidence": "left breast lobular carcinoma",
-            "_source_chunk_id": "chunk_0",
-        },
-        {
-            "cancer_type": "ductal carcinoma",
-            "histology": "ductal carcinoma",
-            "primary_site": "breast",
-            "laterality": "right",
-            "approximate_diagnosis_date": "2024-01",
-            "evidence": "right breast ductal carcinoma",
-            "_source_chunk_id": "chunk_1",
-        },
-    ]
-
-    candidates = detector._deduplicate(raw_tumors, chunks)
-
-    assert len(candidates) == 3
-    diagnosis_keys = {candidate.diagnosis_key for candidate in candidates}
-    assert "breast|ductal carcinoma|left|2024-01" in diagnosis_keys
-    assert "breast|lobular carcinoma|left|2024-01" in diagnosis_keys
-    assert "breast|ductal carcinoma|right|2024-01" in diagnosis_keys
-
-
 async def test_tumor_detection_logs_reasoning_and_raw_output() -> None:
     log = CapturingLog()
     response = LLMResponse(
-        raw_content="<think>diagnosis reasoning</think>{\"tumors\": []}",
-        final_content="{\"tumors\": []}",
-        parsed={"tumors": []},
+        raw_content="<think>diagnosis reasoning</think>{\"diagnoses\": []}",
+        final_content="{\"diagnoses\": []}",
+        parsed={"diagnoses": []},
         reasoning="<think>diagnosis reasoning",
     )
     detector = TumorDetector(
         llm_client=FakeLLM(response),  # type: ignore[arg-type]
-        schema_builder=None,  # type: ignore[arg-type]
+        schema_builder=None,
         llm_log=log,
     )
 
-    tumors = await detector._detect_in_chunk(
-        DummyChunk("chunk_0", "No primary cancer diagnosis.", chunk_index=2)
+    updated = await detector._update_running_list(
+        DummyChunk("chunk_0", "No primary cancer diagnosis.", chunk_index=2),
+        [],
     )
 
-    assert tumors == []
+    assert updated == []
     assert len(log.entries) == 1
     entry = log.entries[0]
     assert entry["call_type"] == "tumor_detection"
@@ -233,6 +180,96 @@ async def test_tumor_detection_logs_reasoning_and_raw_output() -> None:
     assert entry["reasoning"] == response.reasoning
     assert entry["final_output"] == response.final_content
     assert entry["parsed"] == response.parsed
+
+
+async def test_running_list_updates_across_chunks_and_codes_via_second_pass() -> None:
+    """End-to-end: two chunks refine one dx, then the coding pass labels it."""
+
+    class ScriptedLLM:
+        def __init__(self, responses: list[LLMResponse]) -> None:
+            self._responses = list(responses)
+            self.calls: list[tuple[str, str]] = []
+
+        async def extract(self, system_prompt: str, user_prompt: str) -> LLMResponse:
+            self.calls.append((system_prompt, user_prompt))
+            return self._responses.pop(0)
+
+    first_chunk_response = LLMResponse(
+        raw_content="",
+        final_content="",
+        parsed={
+            "diagnoses": [
+                {
+                    "cancer_type": "adenocarcinoma",
+                    "primary_site": "lung",
+                    "histology": "adenocarcinoma",
+                    "laterality": "left",
+                    "approximate_diagnosis_date": "2023",
+                    "evidence": "left lung adenocarcinoma",
+                }
+            ]
+        },
+        reasoning="",
+    )
+    second_chunk_response = LLMResponse(
+        raw_content="",
+        final_content="",
+        parsed={
+            "diagnoses": [
+                {
+                    "cancer_type": "adenocarcinoma",
+                    "primary_site": "left upper lobe lung",
+                    "histology": "adenocarcinoma",
+                    "laterality": "left",
+                    "approximate_diagnosis_date": "2023-04",
+                    "evidence": "LUL lung adenocarcinoma diagnosed April 2023",
+                }
+            ]
+        },
+        reasoning="",
+    )
+    coding_response = LLMResponse(
+        raw_content="",
+        final_content="",
+        parsed={
+            "coded": [
+                {"primary_site_code": "C34.1", "histology_code": "8140"}
+            ]
+        },
+        reasoning="",
+    )
+
+    scripted = ScriptedLLM(
+        [first_chunk_response, second_chunk_response, coding_response]
+    )
+    detector = TumorDetector(llm_client=scripted, schema_builder=None)
+
+    chunks = [
+        DummyChunk("chunk_0", "Patient with left lung adenocarcinoma in 2023.", chunk_index=0),
+        DummyChunk("chunk_1", "LUL lung adenocarcinoma diagnosed April 2023.", chunk_index=1),
+    ]
+    candidates = await detector.detect(chunks)
+
+    assert len(candidates) == 1
+    cand = candidates[0]
+    assert cand.primary_site_code == "C34.1"
+    assert cand.histology_code == "8140"
+    assert cand.laterality == "left"
+    assert cand.approximate_date == "2023-04"
+    assert "chunk_0" in cand.relevant_chunk_ids
+    assert "chunk_1" in cand.relevant_chunk_ids
+    assert len(scripted.calls) == 3
+
+
+def test_topography_and_morphology_normalization() -> None:
+    assert TumorDetector._normalize_topography("C50.4") == "C50.4"
+    assert TumorDetector._normalize_topography("c504") == "C50.4"
+    assert TumorDetector._normalize_topography("C 18.7") == "C18.7"
+    assert TumorDetector._normalize_topography("invalid") == ""
+
+    assert TumorDetector._normalize_morphology("8140") == "8140"
+    assert TumorDetector._normalize_morphology("8140/3") == "8140"
+    assert TumorDetector._normalize_morphology("invalid") == ""
 
 
 async def test_narrative_summary_logs_reasoning_and_raw_output() -> None:

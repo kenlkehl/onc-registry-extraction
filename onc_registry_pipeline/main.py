@@ -179,6 +179,48 @@ def _tumor_candidate_from_dict(data: dict[str, Any]) -> TumorCandidate:
     return TumorCandidate(**kwargs)
 
 
+_PRIMARY_SITE_ITEM = 400
+_HISTOLOGY_ITEM = 522
+
+
+def _seed_diagnosis_codes(
+    prior: dict[int, ExtractionResult], tumor: TumorCandidate
+) -> None:
+    """Pre-seed Pass-1 with primary site / histology codes from Pass-0 coding.
+
+    When the Pass-0 coding call assigned ICD-O-3 topography (item 400) or
+    morphology (item 522), insert high-confidence ExtractionResults so the
+    downstream chunk extractor skips those items (it filters at
+    HIGH_CONFIDENCE_THRESHOLD).  Other NAACCR items still extract normally.
+    """
+    site_code = (tumor.primary_site_code or "").strip()
+    if site_code:
+        prior[_PRIMARY_SITE_ITEM] = ExtractionResult(
+            item_number=_PRIMARY_SITE_ITEM,
+            item_name="Primary Site",
+            extracted_value=tumor.primary_site_hint or site_code,
+            resolved_code=site_code,
+            confidence=1.0,
+            evidence_text=tumor.evidence,
+            source_chunk_id="pass0_coding",
+            source_chunk_type="diagnosis_coding",
+            pass_number=-1,
+        )
+    hist_code = (tumor.histology_code or "").strip()
+    if hist_code:
+        prior[_HISTOLOGY_ITEM] = ExtractionResult(
+            item_number=_HISTOLOGY_ITEM,
+            item_name="Morph--Type&Behav ICD-O-3",
+            extracted_value=tumor.histology or hist_code,
+            resolved_code=hist_code,
+            confidence=1.0,
+            evidence_text=tumor.evidence,
+            source_chunk_id="pass0_coding",
+            source_chunk_type="diagnosis_coding",
+            pass_number=-1,
+        )
+
+
 class OncRegistryExtractionPipeline:
     """Main pipeline orchestrator with round-based parallel extraction.
 
@@ -335,6 +377,7 @@ class OncRegistryExtractionPipeline:
             # Build work units
             for tumor in tumors:
                 prior = self._build_structured_prior(patient_set)
+                _seed_diagnosis_codes(prior, tumor)
                 diagnosis_window = _diagnosis_document_window(tumor.approximate_date)
                 if diagnosis_window is None:
                     scoped_chunks = chunks
@@ -483,6 +526,16 @@ class OncRegistryExtractionPipeline:
 
         try:
             payload = read_json(path)
+            version = payload.get("schema_version")
+            if version != 2:
+                logger.info(
+                    "Discarding pass-0 checkpoint for patient %s "
+                    "(schema_version %r != 2): %s",
+                    patient_id,
+                    version,
+                    path,
+                )
+                return None
             tumors = payload.get("tumors", [])
             if not isinstance(tumors, list):
                 raise ValueError("pass-0 checkpoint tumors field is not a list")
@@ -505,7 +558,7 @@ class OncRegistryExtractionPipeline:
         """Persist pass-0 tumor detection results for one patient."""
         path = _patient_tumor_checkpoint_path(checkpoint_dir, patient_id)
         payload = {
-            "schema_version": 1,
+            "schema_version": 2,
             "patient_id": patient_id,
             "tumors": [asdict(tumor) for tumor in tumors],
         }

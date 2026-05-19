@@ -8,6 +8,7 @@ __pycache__/
 dist/
 build/
 .eggs/
+*.ipynb*
 
 # Virtual environments
 .venv/
@@ -37,5 +38,4 @@ htmlcov/
 .ruff_cache/
 
 # Output
-output/
 *.log
