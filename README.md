@@ -1,6 +1,6 @@
 # Oncology Registry NAACCR v26 Abstraction Pipeline
 
-Automated extraction of [NAACCR v26](https://www.naaccr.org/) cancer registry data from EHR clinical text using a local LLM. Produces registry-grade output suitable for state cancer registry submission.
+Automated extraction of [NAACCR v26](https://www.naaccr.org/) cancer registry data from EHR clinical text using a local LLM.
 
 ## What it does
 
