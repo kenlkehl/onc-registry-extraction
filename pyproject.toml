@@ -26,6 +26,7 @@ dev = [
 onc-registry-pipeline = "onc_registry_pipeline.main:main"
 onc-registry-convert = "onc_registry_pipeline.convert:main"
 onc-registry-compress-notes = "onc_registry_pipeline.compress_notes:main"
+onc-registry-score-oncdrs = "onc_registry_pipeline.score_oncdrs:main"
 
 [build-system]
 requires = ["hatchling"]

@@ -256,6 +256,45 @@ uv run onc-registry-convert output/naaccr_output.xml output/data.csv \
 
 The `--readable-names` flag replaces XML IDs (e.g., `primarySite`) with full NAACCR item names (e.g., `Primary Site`) using the data dictionary. Each tumor is one row/object, with patient-level and root-level items merged in so every record is self-contained.
 
+### Scoring against DFCI OncDRS registry data
+
+The `onc-registry-score-oncdrs` tool evaluates extraction output against gold-standard
+cancer-registry labels. **It is specific to Dana-Farber (DFCI) OncDRS exports** — the
+`CANCER_DIAGNOSIS` (CAREG) table with columns like `DFCI_MRN`, `DIAGNOSIS_DT`,
+`SITE_CD`, `HISTOLOGY_CD`, `BEHAVIOR_CD`, `BEST_AJCC_STAGE_CD`, `CLIN_T_CD`, and the
+`SSDI_*` items — and is not a generic NAACCR scorer.
+
+```bash
+# Score the pipeline's CSV output against an OncDRS CANCER_DIAGNOSIS export
+uv run onc-registry-score-oncdrs \
+    output/naaccr_output.csv \
+    REQ_..._CANCER_DIAGNOSIS_CAREG.csv \
+    scoring/ \
+    --year-min 2017 --year-max 2024 --behaviors 3
+```
+
+Prerequisite: run the pipeline with `--format csv` **and** include an `mrn` column
+(equal to `DFCI_MRN`) in the extraction input, so the output carries NAACCR item 2300
+— the key used to join predictions back to registry patients.
+
+How it scores:
+
+- Predicted tumors are greedily matched to each patient's registry diagnoses (best
+  ICD-O-3 organ-level site, tie-broken by smallest diagnosis-date difference). Extra
+  predicted tumors (patients have non-scored diagnoses) are reported, not penalized.
+- Each registry field is compared at an exact and a lenient level (e.g. primary site
+  full `C504` vs organ-level `C50`; histology 4-digit vs 3-digit; AJCC T/N/M exact vs
+  main category; diagnosis date exact / within 30·90·365 d).
+- Because OncDRS codes the **AJCC stage group** densely while the model fills **SEER
+  summary stage** densely, a `stage_extent_crosswalk` metric bridges the two systems
+  (0→in situ, I→localized, II/III→regional, IV→distant) so staging skill isn't
+  understated.
+- Every field reports `accuracy` (strict — abstention counts as wrong), `coverage`
+  (did the model answer?), and `accuracy_attempted` (accuracy when it answered).
+
+Outputs to the given directory: `per_diagnosis_scored.csv` (ground truth vs matched
+prediction with per-field flags), `field_metrics.csv`, and `field_metrics.json`.
+
 ### Compress notes CLI
 
 ```
