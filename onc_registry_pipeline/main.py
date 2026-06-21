@@ -349,18 +349,26 @@ class OncRegistryExtractionPipeline:
             llm_log=self.llm_log,
         )
 
-        for patient_set in patient_sets:
+        # Tumor detection (pass 0) runs concurrently ACROSS patients, bounded by
+        # the same concurrency limit as the extraction rounds. Each patient's own
+        # chunks are still walked sequentially inside detector.detect() because the
+        # running-list refinement for chunk N depends on chunk N-1; only the
+        # cross-patient dimension is parallelized.
+        detect_semaphore = asyncio.Semaphore(self.config.max_concurrent_patients)
+
+        async def _detect_for_patient(patient_set):
             chunks = self.chunker.chunk_documents(patient_set.documents)
             if not chunks:
                 logger.warning("Patient %s: no chunks produced", patient_set.patient_id)
-                continue
+                return patient_set, None, None
 
             tumors = self._load_patient_tumor_checkpoint(
                 patient_set.patient_id,
                 checkpoint_dir,
             )
             if tumors is None:
-                tumors = await detector.detect(chunks)
+                async with detect_semaphore:
+                    tumors = await detector.detect(chunks)
                 self._save_patient_tumor_checkpoint(
                     patient_set.patient_id,
                     tumors,
@@ -379,8 +387,16 @@ class OncRegistryExtractionPipeline:
                 len(chunks),
                 len(tumors),
             )
+            return patient_set, chunks, tumors
 
-            # Build work units
+        detection_results = await asyncio.gather(
+            *(_detect_for_patient(ps) for ps in patient_sets)
+        )
+
+        # Build work units (no LLM calls here; cheap and order-stable).
+        for patient_set, chunks, tumors in detection_results:
+            if not chunks or tumors is None:
+                continue
             for tumor in tumors:
                 prior = self._build_structured_prior(patient_set)
                 _seed_diagnosis_codes(prior, tumor)
