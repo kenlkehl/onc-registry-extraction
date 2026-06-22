@@ -73,6 +73,27 @@ TEXT_ITEMS = [
     2600, 2610, 2620, 2630, 2640, 2650, 2660, 2670, 2680,
 ]
 
+# TNM T/N/M and stage-group items (clinical and pathologic, TNM and AJCC TNM).
+# Valid values for these are single-character mains (0-4, IS, X, A) with optional
+# prefixes/subdivisions, plus the sentinels 88/99 -- never a multi-digit integer.
+# The model occasionally echoes a NAACCR item number (e.g. 1001, 970) as the
+# value; those resolve to confidence 0.0 and would otherwise pollute output.
+_STAGING_CODE_ITEMS = frozenset({
+    880, 890, 900, 910, 940, 950, 960, 970,
+    1001, 1002, 1003, 1004, 1011, 1012, 1013, 1014,
+})
+
+
+def _is_item_number_leak(value: str) -> bool:
+    """True if *value* looks like a NAACCR item number leaked into a staging field.
+
+    Valid T/N/M/stage-group components are 0-4 (single digit) or letter/prefix
+    forms; the only valid multi-digit codes are the sentinels 88 and 99. Any
+    other pure integer >= 5 (e.g. 970, 1001-1014) is an item-number leak.
+    """
+    s = value.strip()
+    return s.isdigit() and s not in ("88", "99") and int(s) >= 5
+
 
 # ---------------------------------------------------------------------------
 # ChunkExtractor
@@ -441,6 +462,17 @@ class ChunkExtractor:
             resolved_code, resolution_confidence = self._resolver.resolve(
                 item.item_number, raw_value
             )
+
+            # Drop NAACCR item numbers that leaked into a staging field rather
+            # than recording them as bogus T/N/M/stage-group values.
+            if item.item_number in _STAGING_CODE_ITEMS and _is_item_number_leak(
+                resolved_code
+            ):
+                logger.debug(
+                    "Dropping item-number leak %r for staging item %s (%s).",
+                    resolved_code, item.item_number, item.name,
+                )
+                continue
 
             if resolution_confidence > 0.0:
                 final_confidence = min(llm_confidence, resolution_confidence)
