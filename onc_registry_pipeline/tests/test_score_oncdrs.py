@@ -133,7 +133,7 @@ def test_clin_t_attempted_vs_strict() -> None:
         "site": "C50.4", "hist": "8500", "behavior": "3", "lat": "1", "grade": "9",
         "summary": "1", "clin_t": "cT1", "clin_n": "cN0", "clin_m": "cM0",
         "ajcc": "99", "er": "", "pr": "", "her2": "",
-        "dxdate": pd.Timestamp("2020-01-15"),
+        "dxdate": pd.Timestamp("2019-01-15"),
     }]}
     _, _, summary = s.score(preds, df)
     f = summary["fields"]
